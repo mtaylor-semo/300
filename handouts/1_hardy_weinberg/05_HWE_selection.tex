@@ -1,0 +1,533 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[11pt, addpoints]{exam}
+\usepackage{graphicx}
+	\graphicspath{{/Users/goby/Pictures/teach/300/}
+	{img/}} % set of paths to search for images
+
+\usepackage{geometry}
+\geometry{letterpaper, bottom=1in}                   
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{amssymb, amsmath}
+\usepackage{mathtools}
+	\everymath{\displaystyle}
+
+\usepackage{fontspec}
+\setmainfont[Ligatures={TeX}, BoldFont={* Bold}, ItalicFont={* Italic}, BoldItalicFont={* BoldItalic}, Numbers={Proportional}]{Linux Libertine O}
+\setsansfont[Scale=MatchLowercase,Ligatures=TeX]{Linux Biolinum O}
+%\setmonofont[Scale=MatchLowercase]{Inconsolata}
+\usepackage{microtype}
+
+\usepackage{unicode-math}
+\setmathfont[Scale=MatchLowercase]{Asana Math}
+
+\newfontfamily{\tablenumbers}[Numbers={Monospaced}]{Linux Libertine O}
+\newfontfamily{\libertinedisplay}{Linux Libertine Display O}
+
+\usepackage{booktabs}
+%\usepackage{tabularx}
+\usepackage{longtable}
+%\usepackage{siunitx}
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+
+\usepackage{enumitem}
+
+\usepackage{titling}
+\setlength{\droptitle}{-60pt}
+\posttitle{\par\end{center}}
+\predate{}\postdate{}
+
+\renewcommand{\solutiontitle}{\noindent}
+\unframedsolutions
+\SolutionEmphasis{\bfseries}
+
+\pagestyle{headandfoot}
+\firstpageheader{BI 300: Evolution}{}{\ifprintanswers\textbf{KEY}\else Name: \enspace \makebox[2.5in]{\hrulefill}\fi}
+\runningheader{}{}{\footnotesize{pg. \thepage}}
+\footer{}{}{}
+\runningheadrule
+
+%\printanswers
+
+\begin{document}
+
+\subsection*{Hardy-Weinberg Equilibrium: Natural Selection (\numpoints\ points)}
+
+This exercise will look at how \textbf{natural selection}, both positive
+and negative, can alter genetic variation in a population. We'll
+continue to look at a single locus with two haplotypes (\emph{A} and
+\emph{a}). Natural selection can act on both the genotype and the
+phenotype. For this exercise, we will assume that natural selection is
+acting only on the phenotype but that the phenotype is determined
+entirely by the genotype. In other words, the environment does not
+affect the phenotype. When this is so, natural selection is effectively
+acting directly on the genotype through the phenotype. Later in class,
+we'll consider the relative contribution of the environment on the
+phenotype.
+
+\begin{questions}
+
+\question[1]
+What do think positive natural selection, or simply
+\textbf{positive selection}, means? Similarly, what do you think
+\textbf{negative selection} means?
+\vspace*{\stretch{1}}
+
+\question[1]
+Based on your reading and group discussion, define
+\textbf{relative} \textbf{fitness}.
+\vspace*{\stretch{1}}
+
+\question[1]
+Describe the relationship between natural selection and
+relative fitness.
+\vspace*{\stretch{1}}
+
+\question[1]
+Do you think you can predict the number of generations it would take for a beneficial mutation to become fixed in a population? Explain
+\vspace*{\stretch{1}}
+
+\fullwidth{%
+\textbf{Relative fitness} is represented by \emph{\textbf{w}}, which can
+vary from 0 (no fitness) to 1 (maximum fitness). In models like the HWE,
+one genotype is assumed to have the highest fitness. The other genotypes
+may have equal or lower fitness. For example, the \emph{AA} genotype may
+have the highest fitness, so \emph{w} = 1.0. \emph{Aa} may have a lower
+relative fitness (\emph{w} = 0.9) and \emph{aa} may have the lowest
+relative fitness (\emph{w} = 0.8). In previous HWE exercises, fitness
+was assumed to be equal (\emph{w} = 1) for each genotype to satisfy the
+assumption of no natural selection. We will now see how fitness
+differences among genotypes affects the genetic variation of
+populations.
+}%end fullwidth
+\newpage
+
+\question
+Assume \emph{N}\textsubscript{e} = 10,000 and a starting
+frequency for Haplotype \emph{A} of 0.3. The fitness of genotype
+\emph{AA} is \emph{w} = 1, the fitness of genotype \emph{Aa} is \emph{w}
+= 0.75 and the fitness of genotype \emph{aa} is \emph{w} = 0.5. Predict
+on the graph below how the frequency of Haplotype \emph{A} will change
+in the population in response to selection. All other assumptions of
+HWE, except for infinite population size, are met. (Mental question:
+will drift be significant?)
+
+\ifprintanswers
+	{\bfseries %
+	POP SIZE = 10,000\\
+	\# POPS = 10\\
+	FREQ = 0.3\\
+	GENERATIONS = 1000\\	
+	FITNESS = 1, 0.75, and 0.5, top to bottom. }\vspace*{16\baselineskip}
+\else
+	\begin{center}
+		\includegraphics[height=20\baselineskip]{prediction_graph}
+	\end{center}
+\fi
+
+\question
+Explain the reasoning you used to arrive at your prediction.
+Compare your prediction to those made by others in your group. Discuss
+any differences with your group.
+
+\newpage
+
+\question
+On the graph below, draw the results of the simulation.
+
+	\begin{center}
+		\includegraphics[height=20\baselineskip]{prediction_graph}
+	\end{center}
+
+\question
+Did the results agree with your predictions? Discuss ideas
+with your group, and then explain why you think your results did or did
+not agree.
+\vspace*{\stretch{1}}
+
+\question[1]
+Based on these results, can you tell if Haplotype \emph{A}
+is subject to positive selection or if Haplotype \emph{a} is subject to
+negative selection? Think about this carefully, discuss with your group,
+and then explain.
+
+\ifprintanswers 
+	\textbf{No.}
+	\vspace*{\stretch{1}}
+\else
+	\vspace*{\stretch{1}}
+\fi
+
+\newpage
+
+\fullwidth{%
+Without addition information we cannot determine whether natural
+selection is acting positively on \emph{A} or negatively on \emph{a}. We
+do know, however, that the \emph{AA} genotype has the selective
+advantage in the population because it has the highest fitness. The
+relative fitness difference between the genotype with the highest
+fitness (\emph{w} = 1.0) and genotypes with lower fitness is called the
+\textbf{selection} \textbf{coefficient} (or the \textbf{strength of
+selection}), represented by \emph{\textbf{s}}. In the first simulation,
+the relative fitness of \emph{Aa} was 0.75, so the selection coefficient
+relative to \emph{AA} was \emph{s} = 1 -- 0.75 = 0.25.
+}%end fullwidth
+
+\question[1]
+What was the selection coefficient for \emph{aa}?
+\ifprintanswers
+	\textbf{0.5}
+	\vspace*{\stretch{0.5}}
+\else
+	\vspace*{\stretch{0.5}}
+\fi
+
+\fullwidth{%
+Selection coefficients this large are known in natural populations but
+are probably uncommon for most loci. What if the selective advantage of
+a genotype is very slight, such as 0.01 or 0.02?
+}% end fullwidth
+
+\question
+Assume \emph{N}\textsubscript{e} = 10,000. The starting
+frequency of Haplotype \emph{A} is 0.3. The relative fitness (\emph{w})
+of the three genotypes are 1.0, 0.99 and 0.98 for \emph{AA}, \emph{Aa}
+and \emph{aa}, respectively. Draw your prediction for the change in
+frequency for Haplotype \emph{A} on the graph.
+
+\ifprintanswers
+	{\bfseries %
+	POP SIZE = 10,000\\
+	\# POPS = 10\\
+	FREQ = 0.3\\
+	GENERATIONS = 1000\\	
+	FITNESS = 1, 0.99, and 0.98, top to bottom. }\vspace*{16\baselineskip}
+\else
+	\begin{center}
+		\includegraphics[height=20\baselineskip]{prediction_graph}
+	\end{center}
+\fi
+
+\question
+Explain the reasoning you used to arrive at your
+predictions. Compare your prediction to those made by others in your
+group. Discuss any differences with your group.
+\vspace*{\stretch{1}}
+\newpage
+
+\question
+Draw the results of the simulation on this graph.
+	\begin{center}
+		\includegraphics[height=20\baselineskip]{prediction_graph}
+	\end{center}
+
+\question
+Did the results agree with your predictions? Discuss ideas
+with your group, and then explain why you think your results did or did
+not agree.
+\vspace*{\stretch{1}}
+
+\question[1]
+Let's now consider a small population with an effective
+size of 100 diploid individuals. In the absence of natural selection,
+calculate the probability that a new mutation will become fixed in the
+population. Show your work.
+
+\ifprintanswers
+	\textbf{1/200 = 0.005} \vspace*{\stretch{1}}
+\else
+	\vspace*{\stretch{1}}
+\fi
+\newpage
+
+\question
+Assume an effective population size of 100, a starting
+frequency of Haplotype \emph{A} of 0.005, and relative fitnesses of 1.0,
+0.99 and 0.98 for \emph{AA}, \emph{Aa} and \emph{aa} respectively. On
+the graph below, draw your prediction of the frequency change of
+Haplotype \emph{A}. Draw 4 different lines (four populations) to
+consider different possible outcomes.
+
+\ifprintanswers
+	{\bfseries %
+	Pop Size = 100\\
+	\# {\LARGE POPS = 100}\\
+	FREQ = 0.005\\
+	Generations = 1000\\	
+	Fitness = 1, 0.99, and 0.98, top to bottom. }\vspace*{16\baselineskip}
+	
+	\textbf{Run 10 times with just drift, then 10 times with selection. Compare results.}
+\else
+	\begin{center}
+		\includegraphics[height=20\baselineskip]{prediction_graph}
+	\end{center}
+\fi
+
+\question
+Describe the results and compare them to your four
+predictions.
+
+\newpage
+
+\fullwidth{%
+Given our starting assumptions, Haplotype \emph{A} had a 0.005
+probability of going to fixation due to genetic drift alone (0.5\%
+chance). But, the slight selective advantage of the \emph{AA} genotype
+increased the probability of fixation to about 0.02. So, instead of
+fixation in about 1 of every 200 populations (on average), the slight
+selective advantage led to fixation in about 2 of every 100 populations
+(2\%).
+}%end fullwidth
+
+\fullwidth{%
+Will natural selection always override the effects of genetic drift? No.
+Even in the above simulation, genetic drift was still a factor but
+selection increased the chances of fixation for the genotype with the
+selective advantage. If the effective population size is small enough,
+or if the strength of selection is very weak, drift will have a greater
+effect than selection. If \emph{s} \textless{}\textless{}
+1/(4\emph{N}\textsubscript{e}) then drift will have a greater effect
+than selection on genetic variation in the population.
+}%end fullwidth
+
+\fullwidth{%
+For example, if \emph{N}\textsubscript{e} is 50, then the selection
+coefficient must be greater than about 0.005 (= 1/200) or genetic drift
+will be the principle cause of haplotype frequency change.
+}%end fullwidth
+
+
+\question[2]
+What should be the strength of selection in a population of
+\emph{N}\textsubscript{e} = 100 to overcome the effects of genetic
+drift? If \emph{N}\textsubscript{e} = 10,000 or 50,000? Show your work.
+
+\begin{parts}
+	\part $N_e =$ 100: \ifprintanswers\textbf{0.0025}\fi\vspace*{\stretch{1}}
+	
+	\part $N_e =$ 10,000: \ifprintanswers\textbf{0.000025}\fi\vspace*{\stretch{1}}
+
+	\part $N_e =$ 50,000: \ifprintanswers\textbf{0.000005}\fi\vspace*{\stretch{1}}
+\end{parts}
+
+\fullwidth{%
+You must remember that genetic drift is present in populations of all
+sizes. When considering both genetic drift and natural selection, drift
+is more prevalent in small populations unless selection is strong. As
+population size increases, even weak selection can override the effects
+of genetic drift because 1/(4\emph{N}\textsubscript{e}) will be very
+small.
+}%end fullwidth
+
+\fullwidth{%
+This relationship between genetic drift and natural selection can have
+important consequences in natural populations. For example, a beneficial
+mutation in a population of an endangered species (very small
+\emph{N}\textsubscript{e}) that increases survivorship in marginal
+habitat is more likely to be lost due to genetic drift. In contrast,
+even a slight selective advantage for resistance to antibiotics in a
+population of disease-causing bacteria may spread rapidly throughout the
+population in relatively few generations because the effective
+population sizes of bacteria tend to be extremely large.
+}
+
+\fullwidth{%
+\textbf{Heterozygotes: advantages and disadvantages}
+
+In a few cases, individuals that are heterozygous at a locus have a
+selective advantage over individuals that are homozygous at that locus.
+That is, \emph{w} = 1.0 for \emph{Aa} and \emph{w} \textless{} 1 for
+\emph{AA} and \emph{aa}. This is called \textbf{heterozygote advantage}.
+Heterozygote advantage is also called overdominance or heterosis but I
+prefer heterozygote advantage because it is self-descriptive.
+}%end
+
+\newpage
+
+\question
+Assume a population with \emph{N}\textsubscript{e} =
+10,000 individuals. Heterozygotes have the selective advantage and the
+coefficient of selection against the two homozygous genotypes is 0.05.
+(What is \emph{w} for each homozygous genotype?). Draw your predictions
+for the frequency change of Haplotype \emph{A}, given a low starting
+frequency of 0.05.
+
+\ifprintanswers
+	{\bfseries %
+	Pop Size = 10,000\\
+	\#Pops = 10\\
+	FREQ = 0.05\\
+	Generations = 1000\\	
+	Fitness = 0.95, 1, and 0.95, top to bottom. }\vspace*{16\baselineskip}
+\else
+	\begin{center}
+		\includegraphics[height=20\baselineskip]{prediction_graph}
+	\end{center}
+\fi
+
+\question
+Explain the reasoning you used to arrive at your
+prediction. Compare your prediction to those made by others in your
+group. Discuss any differences with your group.
+
+\newpage
+
+\question
+Draw the results of the simulation on this graph.
+	\begin{center}
+		\includegraphics[height=20\baselineskip]{prediction_graph}
+	\end{center}
+
+\question[2]
+Did the results agree with your predictions? Based on these
+results, write a general principle to explain the effect that a
+heterozygote advantage will have on the frequencies of two haplotypes at
+a locus. What do you predict if the selection coefficient differs for
+the two homozygotes (say, 0.05 and 0.1).
+
+\ifprintanswers
+	{\bfseries %
+	Pop Size = 10,000\\
+	\#Pops = 10\\
+	FREQ = 0.05\\
+	Generations = 1000\\	
+	Fitness = 0.95, 1, and 0.9, top to bottom. }
+\fi
+
+\newpage
+
+\question
+Draw the results of the simulations using s = 0.05 for
+\emph{AA} and s = 0.1 for \emph{aa} on the graph below. Did they agree
+with your general principle?
+	\begin{center}
+		\includegraphics[height=20\baselineskip]{prediction_graph}
+	\end{center}
+
+\question[1]
+Describe the effect that the heterozygote advantage has on
+genetic variation in a population.
+\vspace*{\stretch{1}}
+
+\fullwidth{%
+Heterozygotes can also have a selective disadvantage relative to both
+homozygotes, called \textbf{heterozygote disadvantage}, or
+underdominance. (Guess which term I prefer?)
+}%end fullwidth
+
+\newpage
+
+\question
+Assume \emph{N}\textsubscript{e} = 10,000 individuals, and
+the starting frequency of Haplotype \emph{A} is 0.5. Assume that both
+homozygous genotypes have the same fitness (\emph{w} = 1) but the
+fitness of the \emph{Aa} genotype is 0.99. What do you think will happen
+to the frequency of Haplotype \emph{A} in the population? You should be
+able to think of two alternatives.
+
+\ifprintanswers
+	{\bfseries %
+	Pop Size = 10,000\\
+	\#Pops = 10\\
+	FREQ = 0.5\\
+	Generations = 1000\\	
+	Fitness = 1, 0.99, and 1, top to bottom. }\vspace*{16\baselineskip}
+\else
+	\begin{center}
+		\includegraphics[height=20\baselineskip]{prediction_graph}
+	\end{center}
+\fi
+
+\question
+Explain the reasoning you used to arrive at your
+predictions. Compare your prediction to those made by others in your
+group. Discuss any differences with your group.
+
+\newpage
+
+\question
+Draw the results of the simulation.
+	\begin{center}
+		\includegraphics[height=20\baselineskip]{prediction_graph}
+	\end{center}
+
+\question[1]
+Describe what has happened to the haplotype frequencies in
+the simulated populations. How does this differ, if at all, from your
+predictions?
+
+\newpage
+
+\question[1]
+What if we assume an equal, low mutation rate of 0.01 from
+\emph{A} to \emph{a} and from \emph{a} to \emph{A}. Describe how you
+think the mutation rate will affect the outcome of heterozygote
+disadvantage, assuming the other conditions are the same. (Hint:
+remember what happened in the mutation exercise.)
+\vspace*{\stretch{1}}
+
+\question
+Describe what actually happened after the simulation is
+run.
+\vspace*{\stretch{1}}
+
+\question[1]
+Mutations that occur in coding DNA such as the exons of a
+gene are often detrimental and therefore subject to negative selection.
+Assume that haplotype \emph{a} is detrimental such that any individual
+that is homozygous \emph{aa} dies before reproducing (\emph{w} = 0.0)
+but the effect in heterozygotes is minimal (\emph{s} = 0.1). What should
+happen to haplotype \emph{A} in the population? 
+\vspace*{\stretch{1}}
+
+\newpage
+
+\question
+Now assume that mutations from \emph{A} to \emph{a} occur
+at a very low rate (0.01) in a population. On the graph below, draw your
+prediction for the frequency of Haplotype \emph{A} in the population, if
+Ne = 10,000, starting frequency of Haplotype A is 0.5, and the fitness
+is as described in the previous question.
+
+\ifprintanswers
+	{\bfseries %
+	Pop Size = 10,000\\
+	\#Pops = 10\\
+	FREQ = 0.5\\
+	Generations = 1000\\	
+	Fitness = 1, 0.9, and 0, top to bottom. 
+	
+	Mutation from A to a = 0.01\\
+	Mutation from a to A = 0}\vspace*{13\baselineskip}
+\else
+	\begin{center}
+		\includegraphics[height=20\baselineskip]{prediction_graph}
+	\end{center}
+\fi
+
+
+\question[1]
+Describe the results of the simulation. Did the results
+agree with your prediction? Why do you think that Haplotype \emph{A} did
+not become fixed in the population?
+\vspace*{\stretch{1}}
+
+\question[2]
+Finally, discuss within your group how you think these
+results might be affected by gene flow among populations. Write a brief
+summary of your ideas here.
+
+\ifprintanswers
+	\textbf{No change. Pops would still evolve together.}
+	\vspace*{\stretch{1}}
+\else
+	\vspace*{\stretch{1}}
+\fi
+\end{questions}
+
+\end{document}  

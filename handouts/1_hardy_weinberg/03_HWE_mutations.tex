@@ -1,0 +1,329 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[11pt, addpoints]{exam}
+\usepackage{graphicx}
+	\graphicspath{{/Users/goby/Pictures/teach/300/}
+	{img/}} % set of paths to search for images
+
+\usepackage{geometry}
+\geometry{letterpaper, bottom=1in}                   
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{amssymb, amsmath}
+\usepackage{mathtools}
+	\everymath{\displaystyle}
+
+\usepackage{fontspec}
+\setmainfont[Ligatures={TeX}, BoldFont={* Bold}, ItalicFont={* Italic}, BoldItalicFont={* BoldItalic}, Numbers={Proportional}]{Linux Libertine O}
+\setsansfont[Scale=MatchLowercase,Ligatures=TeX]{Linux Biolinum O}
+\setmonofont[Scale=MatchLowercase]{Linux Libertine Mono O}
+\usepackage{microtype}
+
+\usepackage{unicode-math}
+\setmathfont[Scale=MatchLowercase]{Asana Math}
+%\setmathfont[Scale=MatchLowercase]{XITS Math}
+
+% To define fonts for particular uses within a document. For example, 
+% This sets the Libertine font to use tabular number format for tables.
+\newfontfamily{\tablenumbers}[Numbers={Monospaced}]{Linux Libertine O}
+\newfontfamily{\libertinedisplay}{Linux Libertine Display O}
+
+\usepackage{booktabs}
+%\usepackage{tabularx}
+\usepackage{longtable}
+%\usepackage{siunitx}
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+
+\usepackage{enumitem}
+\usepackage{hyperref}
+%\usepackage{placeins} %PRovides \FloatBarrier to flush all floats before a certain point.
+\usepackage{hanging}
+
+\usepackage{titling}
+\setlength{\droptitle}{-60pt}
+\posttitle{\par\end{center}}
+\predate{}\postdate{}
+
+\renewcommand{\solutiontitle}{\noindent}
+\unframedsolutions
+\SolutionEmphasis{\bfseries}
+
+\pagestyle{headandfoot}
+\firstpageheader{BI 300: Evolution}{}{\ifprintanswers\textbf{KEY}\else Name: \enspace \makebox[2.5in]{\hrulefill}\fi}
+\runningheader{}{}{\footnotesize{pg. \thepage}}
+\footer{}{}{}
+\runningheadrule
+
+%\printanswers
+
+\begin{document}
+
+\subsection*{Hardy-Weinberg Equilibrium: Mutations (\numpoints\ points)}
+
+You have seen how the number of breeding individuals
+(\emph{N}\textsubscript{e}) in a population affects the number of new mutations that can occur in the population every generation. This exercise will examine how mutations
+that occur in a population affect haplotype frequencies. We'll continue to look 
+at a single locus with two haplotypes (\emph{A} and \emph{a}). 
+The rate at which new mutations occur in a population is generally very
+low. Even low mutation rates, however, can dramatically affect haplotype
+frequencies in a population over many generations. We'll use both low
+and high mutation rates to demonstrate this concept.
+
+\begin{questions}
+
+\question
+Assume $N_e$ = 1000 individuals and a
+starting frequency for Haplotype \emph{A} of 0.5, for 1000 generations. On the graph below,
+draw your prediction for how the frequency of Haplotype \emph{A} might
+change over 1000 generations when the mutation rate from \emph{A} to \emph{a} is very low
+(0.01 mutations per generation) and there is no mutation from \emph{a}
+to \emph{A}. 
+
+\ifprintanswers
+	{\bfseries Initial Freq of A to 0.5 \\	
+	Pop size = 1000\\	
+	Generations = 1000\\
+	Mutation from A to a = 0.01\\
+	Mutation from a to A = 0.0
+
+	DO Five Simulations
+	
+	\vspace{\baselineskip}
+	
+	REPEAT But Change:\\	
+	Mutation from A to a = 0.0\\
+	Mutation from a to A = 0.01
+	
+	DO Five Simulations}\vspace{9\baselineskip}
+\else
+		\begin{center}
+			\includegraphics[height=20\baselineskip]{prediction_graph}
+		\end{center}
+\fi
+
+\question[2]
+Explain the reasoning you used to arrive at your
+prediction. Compare your prediction to those made by others in your
+group. Discuss any differences with your group.%\vspace{1cm}
+
+\newpage
+
+\question On the graph below, draw the results from several runs of
+the simulation software.
+
+\begin{center}
+	\includegraphics[width=0.9\textwidth]{prediction_graph}
+\end{center}
+
+\question
+Did the results agree with your predictions? Compare the
+results with your predictions and those of your group. Discuss ideas
+with your group, and then explain why you think your results did or did
+not agree with your prediction.%\vspace{3cm}
+
+\begin{solution}
+BE SURE TO HAVE STUDENTS EXPLAIN SHAPE: WHY INITIAL RAPID DROP, FOLLOWED BY TAPER
+
+Becomes fixed for allele. Lots of copies of A, so even low mutation rate has lots to work with, but as more alleles become a / A, then fewer copies for mutations so rate of change slows down.
+\end{solution}
+
+\newpage
+
+\question
+On the graph below, draw with a solid line your prediction
+given the following assumptions: $N_e$ = 1000, a
+starting frequency of 0.5 for Haplotype \emph{A}, a mutation rate from
+\emph{A} to \emph{a} of 0.6 and a mutation rate from \emph{a} to
+\emph{A} of 0.3, for 1000 generations. Draw a dashed line to show your prediction for the
+reverse scenario: the mutation rate from \emph{A} to \emph{a} is 0.3 and
+the mutation rate from \emph{a} to \emph{A} is 0.6. Both mutations rates
+are unnaturally high but will serve to illustrate a point.
+
+\ifprintanswers
+	{\bfseries 
+	Pop size = 1000\\
+	Freq = 0.5\\
+	Generations = 1000\\
+	Mutation from A to a = 0.6,\\
+	a to A = 0.3\\
+	Five simulations
+	
+	THEN
+	
+	Mutations from A to a = 0.3,\\
+	a to A = 0.6\\
+	Five simulations}\vspace{10\baselineskip}
+\else
+	\begin{center}
+		\includegraphics[height=20\baselineskip]{prediction_graph}
+	\end{center}
+\fi
+
+\question[2] 
+Explain the reasoning you used to arrive at your
+predictions. Compare your prediction to those made by others in your
+group. Discuss any differences with your group.
+
+%\vspace*{\stretch{1}}
+\newpage
+
+\question 
+On the graph below, draw the results from several runs of
+the simulation software.
+
+\begin{center}
+	\includegraphics[width=0.9\textwidth]{prediction_graph}
+\end{center}
+
+\question Did the results agree with your predictions? Compare the
+results with your predictions and those of your group. Discuss ideas
+with your group, and then explain why you think your results did or did
+not agree with your prediction.
+
+%\ifprintanswers
+\begin{solution}[\stretch{1}]
+Will hit an equilibrium point. There will be more copies of a but a lower mutation rate balances against fewer copies of A which has a higher mutation rate. After the run, the frequencies will settle at $0.33\overline{3}$ for A and $0.66\overline{6}$ for a. To show how equilibrium is reached, multiple each frequencies by it’s mutation rate. The numbers will be equal.
+
+A: $0.333333 \times 0.6 = 0.2$ \qquad There ends up being an equal number
+
+a: $0.666666 \times 0.3 = 0.2$ \qquad of alleles mutating between the two states.
+\end{solution}
+%\else
+%	\vspace*{\stretch{1}}
+%\fi
+
+\question[2]
+Would you expect the results to change if the mutation rate
+is very low (say, 0.06 and 0.03)? Explain.
+\begin{solution} Reaches same equilibrium point but more slowly.\end{solution}
+\vspace*{\stretch{1}}
+
+\newpage
+
+\fullwidth{%
+The two haplotypes will reach a point of equilibrium where the rate of
+mutation from \emph{a} to \emph{A} is balanced by the rate of mutation
+from \emph{A} to \emph{a}. These observations show that the magnitude
+(0.6 vs 0.06) of the mutation rate does not affect the final point of
+equilibrium achieved by the two haplotypes. Only the time necessary to
+reach the point of equilibrium will change. Faster mutation rates will
+reach equilibrium between the haplotypes more quickly than slower
+mutation rates.
+
+\subsection*{Population size}
+
+Does population size matter? Would any of the results we observed with
+the above simulations change if we changed population size? For example,
+the first simulation started with $N_e$ = 1000, a mutation rate from \textit{A} to
+\textit{a} of 0.01 (no mutations from \textit{a} to \textit{A}), and a starting frequency
+for Haplotype A of 0.5. What would happen if $N_e$ = 100 or $N_e$ = 10,000, but the
+mutation rate did not change? 
+Find out with the next simulation.
+}% end fullwidth
+
+\question[2]
+Explain below the graph how you would expect the results to
+differ in a smaller population of $N_e$ = 100
+individuals and a larger population of $N_e$ =
+10,000 individuals. The mutation rate is still 0.01 for \textit{A} to
+\textit{a}, with no mutations from \textit{a} to \textit{A}, and the starting frequency is still
+0.5. If you would not expect the results to differ, then
+explain why not. Draw your predictions on the graph. 
+For both runs, use a mutation rate from \emph{A} to \emph{a} of 0.01, no mutations from
+\emph{a} to \emph{A}, and a starting frequency for Haplotype \emph{A} of
+0.5, for 1000 generations.
+
+\ifprintanswers
+	{\bfseries 
+	Initial Freq of A to 0.5\\
+	Pop size = 100\\
+	Generations = 1000\\
+	Mutation from A to a = 0.01\\
+	Mutation from a to A = 0.0\\
+	Run several, THEN\vspace{\baselineskip}
+	
+	Pop size = 10,000\\
+	Run several}\vspace{11\baselineskip}
+\else
+	\begin{center}
+		\includegraphics[height=20\baselineskip]{prediction_graph}
+	\end{center}
+\fi
+
+\newpage
+
+\question
+On the graph below, draw the results of the simulation.
+
+\begin{center}
+	\includegraphics[width=0.9\textwidth]{prediction_graph}
+\end{center}
+
+\question
+Did the results agree with your predictions? Compare the
+results with your predictions and those of your group. Discuss ideas
+with your group, and then explain why you think your results did or did
+not agree with your prediction.
+
+\begin{solution}
+Mutation rate is independent of population size. Drift is more pronounced in small population, so more random variation in frequency but ultimately still lost.
+\end{solution}
+
+\newpage
+
+\fullwidth{
+You can think about the relationship between mutation rate and
+population size another way (recalling back to the exercise on mutation
+rates). The mutation rate is relatively constant, such as $2.2 \times
+10^{-9}$ mutations per base pair per generation, and is
+independent of population size. Each diploid individual in a population
+of size $N_e$ has a chance of getting a new mutation
+in one of its two haplotype copies. (Although mutations can occur in all 
+individuals in a population, only heritable mutations are important so the 
+total number of mutations is considered for effective population size and not census
+population size.) Thus, if $2N_e$ represents the haplotype copy number in the population, and $\mu$
+represents the mutation rate, $2N_e\mu$ represents the total number of new mutations that will occur, on
+average, each generation in a population of breeding individuals. If
+$2N_e$ is large, then a large number of total
+mutations will occur in the population in each generation. If
+$2N_e$ is small, then only a small number of total
+mutations will occur in each generation in the population.
+}%end fullwidth
+
+\question[2]
+Convince yourself by multiplying a mutation rate ($\mu$) of
+0.02 by: 
+\begin{parts}
+	\part $N_e$ = 100,000:
+		\ifprintanswers
+			\qquad $2N_e \times \mu = 2 \times 100,000 \times 0.02 = 4,000$\vspace{3\baselineskip}
+		\else
+			\vspace{3\baselineskip}
+		\fi
+
+	\part $N_e$ = 1,000:
+		\ifprintanswers
+			\qquad $2N_e \times \mu = 2 \times 1,000 \times 0.02 = 40$\vspace{3\baselineskip}
+		\else
+			\vspace{3\baselineskip}
+		\fi
+\end{parts}
+
+\fullwidth{%
+Thus, although all populations may have the same mutation \emph{rate},
+the absolute number of new mutations that occur in a population is
+proportional to effective population size. This will become important
+later when we consider natural selection. From the lecture on genetic drift, you should recall that the neutral
+mutation rate is the basis of the \textbf{Neutral Theory} and the rate
+at which \textbf{nonadaptive evolution} occurs in populations via
+genetic drift.
+}%end fullwidth
+
+\end{questions}
+
+
+\end{document}  

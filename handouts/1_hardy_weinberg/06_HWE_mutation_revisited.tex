@@ -1,0 +1,270 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[11pt, addpoints]{exam}
+\usepackage{graphicx}
+	\graphicspath{{/Users/goby/Pictures/teach/300/}
+	{img/}} % set of paths to search for images
+
+\usepackage{geometry}
+\geometry{letterpaper, bottom=1in}                   
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{amssymb, amsmath}
+\usepackage{mathtools}
+	\everymath{\displaystyle}
+
+\usepackage{fontspec}
+\setmainfont[Ligatures={TeX}, BoldFont={* Bold}, ItalicFont={* Italic}, BoldItalicFont={* BoldItalic}, Numbers={Proportional}]{Linux Libertine O}
+\setsansfont[Scale=MatchLowercase,Ligatures=TeX]{Linux Biolinum O}
+\setmonofont[Scale=MatchLowercase]{Inconsolata}
+\usepackage{microtype}
+
+\usepackage{unicode-math}
+\setmathfont[Scale=MatchLowercase]{Asana Math}
+%\setmathfont[Scale=MatchLowercase]{XITS Math}
+
+% To define fonts for particular uses within a document. For example, 
+% This sets the Libertine font to use tabular number format for tables.
+\newfontfamily{\tablenumbers}[Numbers={Monospaced}]{Linux Libertine O}
+\newfontfamily{\libertinedisplay}{Linux Libertine Display O}
+
+\usepackage{booktabs}
+%\usepackage{tabularx}
+\usepackage{longtable}
+%\usepackage{siunitx}
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+
+\usepackage{enumitem}
+\usepackage{hyperref}
+%\usepackage{placeins} %PRovides \FloatBarrier to flush all floats before a certain point.
+\usepackage{hanging}
+
+\usepackage{titling}
+\setlength{\droptitle}{-60pt}
+\posttitle{\par\end{center}}
+\predate{}\postdate{}
+
+\renewcommand{\solutiontitle}{\noindent}
+\unframedsolutions
+\SolutionEmphasis{\bfseries}
+
+\pagestyle{headandfoot}
+\firstpageheader{BI 300: Evolution}{}{\ifprintanswers\textbf{KEY}\else Name: \enspace \makebox[2.5in]{\hrulefill}\fi}
+\runningheader{}{}{\footnotesize{pg. \thepage}}
+\footer{}{}{}
+\runningheadrule
+
+%\printanswers
+
+\begin{document}
+
+\subsection*{Selection for Favorable Mutations (\numpoints\ points)}
+
+In the exercise on mutation rates, we saw that even small mutation rates
+can generate a large number of mutations in populations of reasonable
+size. Considering only mutations that affect phenotype, most are likely
+to be detrimental and removed by natural selection but some mutations
+will provide an advantage and will be favored by natural selection.
+Let's look at a specific example.
+
+Michael Nachman and colleagues have studied populations of rock pocket
+mice (\textit{Chaetodipus intermedius}) in the deserts of Mexico, Arizona
+and New Mexico. The desert is a patchwork mosaic of light-colored
+granitic rock and dark basaltic rock from ancient lava flows.
+Interestingly, the population of rock pocket mice consists of
+individuals with light-colored fur that live primarily on light-colored
+rocks and dark-colored individuals that live primarily on dark-colored
+rocks.
+
+Nachman and colleagues discovered that the difference in fur color of
+rock pocket mice is due to a mutation in a gene called the
+melanocortin-1 receptor, or \textit{MC1R}. Several independent studies of
+this gene have revealed that any one of at least 10 different mutations
+will change the fur color of mice from light to dark. That is, there are
+at least 10 different ways that a mutation can change the fur color.
+
+\textbf{Show your work throughout. Include units of measure (mutations, year, mice, etc.)}
+\begin{questions}
+
+\question[1]
+\label{mutes_per_mouse}For mathematical simplicity, assume the mutation rate is $2.0
+\times 10^{-9}$ per bp per generation (which is slightly lower
+than the $2.2 \times 10^{-9}$ per bp per generation mutation
+rate used in an earlier exercise). There are 10 types of mutations per
+allele copy that can cause dark fur color, and two copies of each gene
+in each mouse. Multiply the figures together to calculate the number of
+mutations that would occur per mouse. What result do you get? Show your work.
+
+\ifprintanswers\vspace{\baselineskip}
+	\textbf{0.000000002 mutations $\times$ 10 sites $\times$ 2 copies = 0.00000004 mutations per mouse.}
+	\vspace*{\stretch{1}}
+\else
+	\vspace*{\stretch{1}}
+\fi
+
+\question[1]
+\label{how_many_mice}Fractional mutations in a single mouse are impossible so
+convert this to the chance of a singe mouse getting one of the favorable
+mutations (equivalent to one mutation per how many mice?) by dividing 1
+by the result from question (\ref{mutes_per_mouse}). Show your work.
+%\vspace*{\stretch{1}}
+
+\ifprintanswers\vspace{\baselineskip}
+	\textbf{1/0.00000004 mice = 1 in 25,000,000 per mouse.}
+	\vspace*{\stretch{1}}
+\else
+	\vspace*{\stretch{1}}
+\fi
+
+\fullwidth{%
+These are long odds for a single mouse but as before, we have to account
+for all of the offspring produced in a population each generation. We
+previously assumed that small mammals had an effective population size
+of about 100,000 individuals. Let's be more conservative this time, and
+use the following assumptions: $N_e$ = 10,000
+individuals, of which exactly half is female, and each female produces 5
+offspring per year. (In real life, female \textit{Chaetodipus intermedius}
+produce 2--3 clutches per year with 3--6 offspring in each clutch.)
+}%end fullwidth
+\newpage
+
+\question[1]
+\label{how_many_offspring}How many offspring are produced in the population each year? Show your work.
+
+\ifprintanswers\vspace{\baselineskip}
+	\textbf{5000 female mice $\times$ 5 offspring per female = 25,000 offspring.}
+	\vspace*{\stretch{1}}
+\else
+	\vspace*{\stretch{1}}
+\fi
+
+\question[1]
+\label{mutes_per_year}Using the figures you calculated for questions (\ref{how_many_mice}) and (\ref{how_many_offspring}),
+a new mutation should occur once every how many years? Show your work.
+
+\ifprintanswers\vspace{\baselineskip}
+	\textbf{25,000 mice/year $\times$ 1 mutation/25,000,000 mice = 0.001 mutations per year.}
+	
+	\textbf{0.001 mutations per year $\times$ 1000 = 1 mutation every 1000 years}
+	\vspace*{\stretch{1}}
+\else
+	\vspace*{\stretch{1}}
+\fi
+
+\fullwidth{%
+Although this is a long time to us, this is a ``blink of an eye'' for
+evolutionary time scales. Again, the numbers we used are conservative so
+the actual values could be much higher.
+}%end fullwidth
+
+\question[1]
+\label{ten_mutations}Calculate the amount of time for one of the 10 mutations to
+appear in the population using the following assumptions. Show your work.
+
+\begin{itemize}
+\item
+  breeding females: 50,000
+\item
+  offspring produced per female per year: 10
+\end{itemize}
+
+\ifprintanswers\vspace{\baselineskip}
+	\textbf{500,000 offspring per year} 
+	
+	\textbf{500,000/25,000,000 = 50 years}
+	\vspace*{\stretch{2}}
+\else
+	\vspace*{\stretch{2}}
+\fi
+
+\fullwidth{%
+Although less conservative, the assumptions given for question (\ref{ten_mutations}) are
+reasonable for many species, including \emph{C. intermedius}. The results of your calculations for questions (\ref{mutes_per_year}) and (\ref{ten_mutations}) show you that advantageous
+mutations to specific genes can occur very often over evolutionary time
+scales.
+}%end fullwidth
+\newpage
+
+\fullwidth{%
+Any one of these mutations to \emph{MC1R} conveys a selective
+advantage to rock pocket mice that live on the dark basalt. You can use
+the mathematics of population genetics to estimate the number of
+generations that are needed for all of the individuals in a population
+to have the new advantageous mutation. The equation is 
+
+\[t = \frac{2}{s}\ln(2N_e) \]
+
+where \emph{t} is the time in generations, \emph{s} is the selection
+coefficient, and $N_e$ is the effective population size.
+
+Nachman and colleagues used population genetic mathematics and empirical
+haplotype frequencies to estimate that the effective population size of
+\emph{C. intermedius} was between 10,000 and 100,000 individuals. They
+also estimated that the selection coefficients (\emph{s}) ranged from
+0.39--0.013 against light-colored mice on dark rocks, and from
+0.020--0.0002 against dark-colored mice on light rocks.\footnotemark
+}
+
+\question[2]
+Using the equation above, fill in the four blanks in the table below to show
+the number of generations needed for dark fur color to spread through a
+population following the new mutation. Round your results to whole
+generations. You do not have to show your work for this question.
+
+
+\begin{longtable}[c]{@{}lcc@{}}
+\toprule
+& $N_e$ = 10,000 & $N_e$ = 100,000\\
+\midrule\\[1em]
+$s = 0.01$ &%
+	\ifprintanswers
+		\textbf{1981}
+	\else
+		\rule{2.5cm}{0.4pt} 
+	\fi &
+	\ifprintanswers
+		\textbf{2441}
+	\else
+		\rule{2.5cm}{0.4pt} 
+	\fi \\[2.2em]
+
+$s = 0.2$ &%
+	\ifprintanswers
+		\textbf{99}
+	\else
+		\rule{2.5cm}{0.4pt} 
+	\fi &
+	\ifprintanswers
+		\textbf{122}
+	\else
+		\rule{2.5cm}{0.4pt} 
+	\fi \\
+\bottomrule
+\end{longtable}
+
+\fullwidth{%
+You should now understand that favorable mutations could occur often and
+spread quickly in populations of reasonable size. Even if some
+advantageous mutations are lost due to genetic drift, further mutations
+to the same gene are very likely to occur again in a fairly short period
+of evolutionary time. In this example, most estimates of \emph{s} are
+much greater than $1/4N_e$, so natural selection has
+a much greater chance of overriding the effects of genetic drift (see
+the previous handout on the strength of selection).
+}%
+\end{questions}
+
+
+\vfill
+
+\footnotetext{For more details of the study and calculations, see Hoekstra, H.E.,
+K.E. Drumm, and M.W. Nachman, 2004. Ecological genetics of adaptive
+color polymorphism in pocket mice: geographic variation in selected and
+neutral genes. Evolution 58: 1329--1341, and related information in your
+text.}
+
+\end{document}  

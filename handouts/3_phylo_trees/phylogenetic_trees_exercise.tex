@@ -1,0 +1,223 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[11pt, addpoints]{exam}
+\usepackage{graphicx}
+	\graphicspath{{/Users/goby/Pictures/teach/300/exercises/}} % set of paths to search for images
+
+\usepackage{geometry}
+\geometry{letterpaper, bottom=1in}                   
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{amssymb, amsmath}
+\usepackage{mathtools}
+	\everymath{\displaystyle}
+
+\usepackage{fontspec}
+\setmainfont[Ligatures={TeX}, BoldFont={* Bold}, ItalicFont={* Italic}, BoldItalicFont={* BoldItalic}, Numbers={Proportional}]{Linux Libertine O}
+\setsansfont[Scale=MatchLowercase,Ligatures=TeX]{Linux Biolinum O}
+\usepackage{microtype}
+
+\usepackage{unicode-math}
+\setmathfont[Scale=MatchLowercase]{Asana Math}
+%\setmathfont[Scale=MatchLowercase]{XITS Math}
+
+% To define fonts for particular uses within a document. For example, 
+% This sets the Libertine font to use tabular number format for tables.
+\newfontfamily{\tablenumbers}[Numbers={Monospaced}]{Linux Libertine O}
+\newfontfamily{\libertinedisplay}{Linux Libertine Display O}
+ 
+ \usepackage{pdflscape}
+\usepackage{booktabs}
+%\usepackage{tabularx}
+\usepackage{longtable}
+%\usepackage{siunitx}
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+
+\usepackage{enumitem}
+%\usepackage{hyperref}
+%\usepackage{placeins} %PRovides \FloatBarrier to flush all floats before a certain point.
+%\usepackage{hanging}
+
+
+
+
+\renewcommand{\solutiontitle}{\noindent}
+\unframedsolutions
+\SolutionEmphasis{\bfseries}
+
+\pagestyle{headandfoot}
+\firstpageheader{BI 300: Evolution}{}{\ifprintanswers\textbf{KEY}\else Name: \enspace \makebox[2.5in]{\hrulefill}\fi}
+\runningheader{}{}{\footnotesize{pg. \thepage}}
+\footer{}{}{}
+\runningheadrule
+
+%\printanswers
+
+\begin{document}
+
+\subsection*{Interpreting Phylogenetic Trees (\numpoints\ points)}
+
+Phylogenetic trees are hypotheses about the relationships among taxa,
+based on morpological or genetic evidence. Phylogenetic trees are also
+used to develop and test hypotheses about the evolutionary history of
+taxa. Interpreting phylogenetic trees is, therefore, an essential part
+of evolutionary biology. Learning to interpret phylogenetic trees is the
+purpose of this exercise, which uses phylogenetic trees that are based
+on the thesis research of one of my graduate students (Jameson and
+Taylor, in prep). The purpose of his research was to determine whether
+hovering behavior evolved once or twice in this group of fishes called
+gobies (genus \emph{Elacatinus}). In addition to behavior, we can also
+use the phylogenies to study the evolution of the colorful lateral
+stripe found on these gobies (see the photos on screen).
+
+Phylogenetic Tree A (on page~\pageref{treeA} at the end of this handout for easy
+removal) shows the species name, the color of the lateral stripe (blue,
+white, or yellow), and the type of behavior displayed (sponge-dwelling,
+cleaning, hovering) by each species. Study Tree A and answer the
+following questions.
+
+\begin{questions}
+
+\question[1]
+How many species are included on this tree?\ifprintanswers\quad\textbf{14}\fi
+
+\vspace*{\stretch{1}}
+
+\question[1]
+How many times did the cleaning behavior evolve?\ifprintanswers\quad\textbf{Once}\fi
+
+\vspace*{\stretch{1}}
+
+\question[1]
+How many times did the sponge-dwelling behavior evolve?\ifprintanswers\quad\textbf{Once}\fi
+
+\vspace*{\stretch{1}}
+
+\question[1]
+How many times did the hovering behavior evolve?\ifprintanswers\quad\textbf{Twice}\fi
+
+\vspace*{\stretch{1}}
+
+\question[2]
+Identify a monophyletic group in Tree A that has at least three
+different species in the group. List the species here, and then put a
+large, solid dot on the branch in Tree A that represents the common
+ancestor for your monophyletic group.
+
+\vspace*{\stretch{1}}
+
+\newpage
+
+\question[2]
+Assuming that a colored lateral stripe arose in the common ancestor
+to all of these species, what is the most likely ancestral lateral
+stripe color? Can you state with 100\% certainty that this color is the
+ancestral lateral stripe color? Why or why not? Use the principle of
+maximum parsimony to explain why the color you chose is the most likely
+ancestral state.
+
+\vspace*{\stretch{2}}
+
+\question[1]
+What two colors are the derived states relative to the ancestral
+color you listed above. For each color, write how many times that color
+evolved (use the principle of parsimony).
+
+\ifprintanswers\quad\textbf{Blue: 3 Times.}\quad\textbf{White: 5 times}\fi
+
+\vspace*{\stretch{1}}
+
+\question[2]
+According to the phylogeny, are \emph{illecebrosus} and
+\emph{prochilos} sister species? Explain why or why not.
+
+\vspace*{\stretch{2}}
+
+\question[2]
+According to the phylogeny, are \emph{figaro} and \emph{randalli}
+sister species? Are they sister taxa? Explain why or why not.
+
+\vspace*{\stretch{2}}
+
+\newpage
+
+\question[2]
+According to the hypothesis, what is the sister group to
+\emph{xanthiprora}? If the sister group has only one species that is
+sister to \emph{xanthiprora}, then list that one species. If the group
+contains more than one species, then list all of the species that would
+be included in this group.
+
+\vspace*{\stretch{1.5}}
+
+\uplevel{%
+The tree you just examined above is based on a combined analysis of four
+genetic markers: \emph{cytochrome oxidase I} and \emph{cytochrome b}
+(from the mitochondrial genome) and \emph{recombination activation gene
+1} and \emph{rhodopsin} (from the nuclear genome). The genetic markers
+were also analyzed separately. Trees B and C show the results for two of
+the genetic markers. Tree B shows the results of the \emph{cytochrome
+oxidase I} (\emph{COI)} analysis and Tree C shows the results of the
+\emph{cytochrome b} (\emph{mtcytb}) analysis (both on page~\pageref{two_trees}).%
+}
+
+\question[2]
+Compare trees B and C. Do they show the same relationships among the
+different species? If not, describe a few ways in which they differ.
+
+\vspace*{\stretch{1}}
+
+\question[2]
+Provide reasoned speculation about why the separate analyses
+resulted in two different phylogenetic trees if they used exactly the
+same individuals.
+
+\vspace*{\stretch{1}}
+
+\question[2]
+Speculate how you might resolve this problem.
+
+\vspace*{\stretch{1}}
+
+\end{questions}
+
+\newpage
+
+\noindent This page could have been wastefully left blank but instead I give you
+ pictures. Here is a picture of \emph{Elacatinus genie} cleaning
+around the eye of a Nassau grouper.
+
+\begin{center}
+	\includegraphics[width=0.85\textwidth]{phylo_tree_genie}
+\end{center}
+
+\vspace*{1\baselineskip}
+
+\noindent Here is \emph{Elacatinus prochilos} (?) cleaning a Powderblue Tang.
+This picture is from an aquarium. This subgenus of \emph{Elacatinus} is
+endemic to the western Atlantic Ocean, primarily the Caribbean Sea. The
+tang is from the Indian Ocean.
+
+\begin{center}
+	\includegraphics[width=0.85\textwidth]{phylo_tree_prochilos}
+\end{center}
+
+\newpage
+
+\includegraphics[width=\textwidth]{phylo_tree_treeA}\label{treeA}
+
+\newpage
+
+\begin{landscape}
+
+\includegraphics[height=\textheight]{phylo_tree_treeB}\label{two_trees}%
+\hfill\includegraphics[height=\textheight]{phylo_tree_treeC}
+
+\end{landscape}
+
+
+\end{document}  

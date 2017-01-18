@@ -1,0 +1,111 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[11pt, addpoints]{exam}
+\usepackage{graphicx}
+	\graphicspath{{/Users/goby/Pictures/teach/300/}
+	{img/}} % set of paths to search for images
+
+\usepackage{geometry}
+\geometry{letterpaper, bottom=1in}                   
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{amssymb, amsmath}
+\usepackage{mathtools}
+	\everymath{\displaystyle}
+
+\usepackage{fontspec}
+\setmainfont[Ligatures={TeX}, BoldFont={* Bold}, ItalicFont={* Italic}, BoldItalicFont={* BoldItalic}, Numbers={Proportional}]{Linux Libertine O}
+\setsansfont[Scale=MatchLowercase,Ligatures=TeX]{Linux Biolinum O}
+\setmonofont[Scale=MatchLowercase]{Inconsolata}
+\usepackage{microtype}
+
+\usepackage{unicode-math}
+\setmathfont[Scale=MatchLowercase]{Asana Math}
+
+\newfontfamily{\tablenumbers}[Numbers={Monospaced}]{Linux Libertine O}
+\newfontfamily{\libertinedisplay}{Linux Libertine Display O}
+
+\usepackage{booktabs}
+%\usepackage{tabularx}
+%\usepackage{longtable}
+%\usepackage{siunitx}
+
+\usepackage{hanging}
+
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+
+%\usepackage{enumitem}
+
+%\usepackage{titling}
+%\setlength{\droptitle}{-60pt}
+%\posttitle{\par\end{center}}
+%\predate{}\postdate{}
+
+\renewcommand{\solutiontitle}{\noindent}
+\unframedsolutions
+\SolutionEmphasis{\bfseries}
+
+\pagestyle{headandfoot}
+\firstpageheader{BI 300: Evolution}{}{}
+\runningheader{}{}{\footnotesize{pg. \thepage}}
+\footer{}{}{}
+\runningheadrule
+
+%\printanswers
+
+\begin{document}
+
+\subsection*{Columbine Species and Pollinators}
+
+Most columbines are pollinated by only bumblebees, only hummingbirds or
+only hawkmoths. A few species have two pollinators, which is indicated
+in the table. Both pollinators contribute about equally to pollination
+success in columbines.
+
+\vspace{\baselineskip}
+
+\begin{tabular}[c]{@{}ll@{}}
+\toprule
+Species & Pollinator\tabularnewline
+\midrule
+BA & Hummingbirds / Hawkmoths\tabularnewline
+BR & Bumblebees\tabularnewline
+CA & Hummingbirds\tabularnewline
+CH.CHI & Hawkmoths\tabularnewline
+CH.NM & Hawkmoths\tabularnewline
+CHAP & Hawkmoths\tabularnewline
+COAL & Hawkmoths\tabularnewline
+COOC.CO & Bumblebees\tabularnewline
+COOC.UT & Hawkmoths\tabularnewline
+COOC.WY & Bumblebees\tabularnewline
+DE & Hummingbirds\tabularnewline
+EL & Hummingbirds\tabularnewline
+EX & Hummingbirds\tabularnewline
+FL & Hummingbirds\tabularnewline
+FO.E & Hummingbirds\tabularnewline
+FO.W & Hummingbirds\tabularnewline
+HI & Hawkmoths\tabularnewline
+JO & Bumblebees\tabularnewline
+LA & Bumblebees\tabularnewline
+LO.AZ & Hawkmoths\tabularnewline
+LO.TX & Hawkmoths\tabularnewline
+MI & Hummingbirds / Hawkmoths\tabularnewline
+PI & Hawkmoths\tabularnewline
+PU & Hawkmoths\tabularnewline
+SA & Bumblebees\tabularnewline
+SC & Hawkmoths\tabularnewline
+SH & Hummingbirds\tabularnewline
+SK & Hummingbirds\tabularnewline
+Sp. nov.\footnotemark & Hawkmoths\tabularnewline
+TR & Hummingbirds\tabularnewline
+\bottomrule
+\end{tabular}
+
+\footnotetext{Sp. nov. means \emph{species novum}, which designates a new
+species without a formal scientific name.}
+
+\end{document}  

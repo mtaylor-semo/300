@@ -1,0 +1,88 @@
+\documentclass[letterpaper]{tufte-handout}
+
+%\geometry{showframe} % display margins for debugging page layout
+
+\usepackage{graphicx} % allow embedded images
+  \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+  \graphicspath{{img/}} % set of paths to search for images
+\usepackage{amsmath}  % extended mathematics
+\usepackage{booktabs} % book-quality tables
+\usepackage{units}    % non-stacked fractions and better unit spacing
+\usepackage{siunitx}
+\usepackage{multicol} % multiple column layout facilities
+\usepackage{microtype}   % filler text
+\usepackage{hyperref}
+%\usepackage{fancyvrb} % extended verbatim environments
+%  \fvset{fontsize=\normalsize}% default font size for fancy-verbatim environments
+
+\makeatletter
+% Paragraph indentation and separation for normal text
+\renewcommand{\@tufte@reset@par}{%
+  \setlength{\RaggedRightParindent}{1.0pc}%
+  \setlength{\JustifyingParindent}{1.0pc}%
+  \setlength{\parindent}{1pc}%
+  \setlength{\parskip}{0pt}%
+}
+\@tufte@reset@par
+
+% Paragraph indentation and separation for marginal text
+\renewcommand{\@tufte@margin@par}{%
+  \setlength{\RaggedRightParindent}{0pt}%
+  \setlength{\JustifyingParindent}{0.5pc}%
+  \setlength{\parindent}{0.5pc}%
+  \setlength{\parskip}{0pt}%
+}
+\makeatother
+
+
+\title{Study Guide 04\hfill}
+\author{Natural Selection}
+
+\date{} % without \date command, current date is supplied
+
+\begin{document}
+
+\maketitle	% this prints the handout title, author, and date
+
+%\printclassoptions
+
+\section{Vocabulary}\marginnote{\textbf{Read:} 170--172 (50,000 generations of selection); 177--179 (balancing selection and the heterozygote advantage in sickle cell anemia); 198--203; 234--237 (discusses selective sweeps in the lactase gene, but skim Chapter 8 for many nice examples of natural selection in action); 271--280. \\\textbf{Questions:} 187--188, MC 1--9, SA 1--3; 284 MC 6--8, SA 2 (revisited from earlier).} 
+\vspace{-1\baselineskip}
+\begin{multicols}{2}
+natural selection\\
+fitness ($w$)\\
+relative fitness\\
+positive selection\\
+negative selection\\
+directional selection\\
+stabilizing selection\\
+disruptive (diversifying)\\\hspace{1em}selection\\
+codon bias\\
+genetic hitchhiking\\
+heterozygote advantage\\
+heterozygote disadvantage\\
+selection coefficient ($s$)
+\end{multicols}
+
+\section{Concepts}
+
+You should \emph{write} clear and concise answers to each question in the Concepts section.  The questions are not necessarily independent.  Think broadly across lectures to see ``the big picture.'' 
+
+\begin{itemize}
+	\item Compare and contrast the Neutral Theory vs natural selection at the molecular genetic level (DNA and proteins).  Does the Neutral Theory completely discount the importance of natural selection?  Does natural selection discount the importance of neutral variation?
+
+	\item Explain the genetic evidence that supports natural selection at the genetic level.  Compare this to the evidence that supports the Neutral Theory (see Study Guide 03).
+
+	\item Describe the three modes of selection given in class.  Illustrate and explain each mode.  Provide examples (real or hypothetical) of each.  Relate each to different values of relative fitness ($w$).
+
+	\item Darwin?s basic idea was that natural selection affects the ability of an organism to survive and reproduce.  Thus, natural selection acts on the phenotype.  However, evolutionary change occurs at the genetic level.  Explain the relationship between phenotype, genotype and fitness to explain how natural selection determines whether evolutionary change can occur in a population.
+
+	\item Refer to questions 4--8 in the HWE: Selection exercise that we did.  For question 8, I asked if you could tell whether haplotype $A$ was subject to positive selection or haplotype $a$ was subject to negative selection.\sidenote{Do not think of $A$ and $a$ as dominant and recessive because they may not be. Think of them only as different alleles.} At the time, you could not tell without additional information.   You now know a technique that you could use to tell if haplotype $A$ was probably subject to positive selection.  Describe how you can use the ratio of non-synonymous to synonymous nucleotide substitutions to infer whether a haplotype evolved by positive selection.
+
+	\item Continuing from the previous question, what if you didn?t get a result that supported positive selection.  What would be the implications for haplotypes $A$ and  $a$.
+
+	\item Practice relating the modes of selection to the simulation we ran in class.  How would you expect the frequency of Allele $A$ to change if a population experienced positive directional selection for the $aa$ genotype?  The $AA$ phenotype?  Could you have directional selection towards the $Aa$ genotype?  If so, under what circumstances?  If not, why not?  Apply this same line of reasoning to stabilizing and disruptive selection, and to heterozygote advantage and disadvantage.
+
+\end{itemize}
+
+\end{document}

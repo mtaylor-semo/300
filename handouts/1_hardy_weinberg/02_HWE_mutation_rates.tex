@@ -1,0 +1,278 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[11pt, addpoints]{exam}
+\usepackage{graphicx}
+	\graphicspath{{/Users/goby/Pictures/teach/300/}
+	{img/}} % set of paths to search for images
+
+\usepackage{geometry}
+\geometry{letterpaper, bottom=1in}                   
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{amssymb, amsmath}
+\usepackage{mathtools}
+	\everymath{\displaystyle}
+
+\usepackage{fontspec}
+\setmainfont[Ligatures={TeX}, BoldFont={* Bold}, ItalicFont={* Italic}, BoldItalicFont={* BoldItalic}, Numbers={Proportional}]{Linux Libertine O}
+\setsansfont[Scale=MatchLowercase,Ligatures=TeX]{Linux Biolinum O}
+%\setmonofont[Scale=MatchLowercase]{Inconsolata}
+\usepackage{microtype}
+
+\usepackage{unicode-math}
+\setmathfont[Scale=MatchLowercase]{Asana Math}
+%\setmathfont[Scale=MatchLowercase]{XITS Math}
+
+% To define fonts for particular uses within a document. For example, 
+% This sets the Libertine font to use tabular number format for tables.
+\newfontfamily{\tablenumbers}[Numbers={Monospaced}]{Linux Libertine O}
+\newfontfamily{\libertinedisplay}{Linux Libertine Display O}
+
+\usepackage{booktabs}
+%\usepackage{tabularx}
+\usepackage{longtable}
+%\usepackage{siunitx}
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+
+\usepackage{enumitem}
+\usepackage{hyperref}
+%\usepackage{placeins} %PRovides \FloatBarrier to flush all floats before a certain point.
+\usepackage{hanging}
+
+\usepackage{titling}
+\setlength{\droptitle}{-60pt}
+\posttitle{\par\end{center}}
+\predate{}\postdate{}
+
+\renewcommand{\solutiontitle}{\noindent}
+\unframedsolutions
+\SolutionEmphasis{\bfseries}
+
+\pagestyle{headandfoot}
+\firstpageheader{BI 300: Evolution}{}{\ifprintanswers\textbf{KEY}\else Name: \enspace \makebox[2.5in]{\hrulefill}\fi}
+\runningheader{}{}{\footnotesize{pg. \thepage}}
+\footer{}{}{}
+\runningheadrule
+
+%\printanswers
+
+\begin{document}
+
+\subsection*{Generations of Mutations (\numpoints\ points)}
+
+Kumar and Subramanian (2002, Proc. Natl. Acad. Sci. 99: 803--808) compared 
+the DNA sequences of 5669 protein-encoding genes from 326 species of mammals. 
+Their results suggest that the average mutation rate among mammals is $2.2 \times
+10^{-9}$ per base pair (bp) per year. This means that, on average, a 
+point mutation has altered each nucleotide position in the mammalian protein-encoding 
+genome slightly more than twice (2.2 times) every billion (10\textsuperscript{9}) 
+years. Is this rate sufficient to explain the diversity of mammals? Mammals first 
+appeared in the fossil record about 200 million years ago, and life on Earth has
+existed for about 3.8 billion years. Given the diversity of mammals that has evolved 
+in a relatively brief period, this low mutation rate seems too low to create new genetic 
+variation sufficient for evolutionary change. Is this really the case?
+
+For simplicity, assume that you are studying mutation rates in a small mammal, such 
+as a rock pocket mouse or a meadow vole, which has a generation time of one year. 
+The mutation rate of $2.2 \times 10^{-9}$ per bp per year would then 
+correspond to $2.2 \times 10^{-9}$ mutations per bp per generation. 
+Generation time is important because new mutations are inherited only through 
+reproduction. As a rule, \emph{organisms with short generation times can evolve more 
+quickly than organisms with long generation times because new mutations are inherited 
+more often}.
+
+\begin{questions}
+
+\question
+\label{itm:kumar} The average diploid mammalian genome contains about 3
+billion (3 x 10\textsuperscript{9}) base pairs. Multiply the number of
+base pairs by the mutation rate (2.2 $\times$ 10\textsuperscript{-9} per bp per
+generation) to determine the number of new heritable mutations.
+(Reminder: when multiplying numbers in 10\textsuperscript{X} scientific
+notation to sum the exponents.) What result do you get?%\vspace{2cm}
+
+\ifprintanswers\vspace*{\baselineskip}{\bfseries%
+	$(3 \times 10^9) \times (2.2 \times 10^{-9})$ = 6.6 new mutations per generation.}
+	\vspace*{\stretch{1}}
+\else
+	\vspace*{\stretch{1}}
+\fi
+
+\fullwidth{%
+This is the average number of new mutations that a single offspring
+inherits from its parents.
+}%end fullwidth
+
+\question
+About 2.5\% of the mammalian genome is composed of
+functional, transcribed sequences that may affect the phenotype.
+Therefore, about 2.5\% of the new mutations can potentially affect the
+phenotype. How many mutations would this be?
+
+\ifprintanswers\vspace*{\baselineskip}{\bfseries%
+	$6.6 \times 0.025 = 0.165$ mutations may affect the phenotype.}
+	\vspace*{\stretch{1}}
+\else
+	\vspace*{\stretch{1}}
+\fi
+
+\fullwidth{%
+This is the average number of heritable mutations that potentially
+affect phenotype per offspring per generation. We have to account for
+all of the reproductive individuals in a population.
+}%end fullwidth
+
+\question 
+Small mammals, like mice and voles, generally have large
+population sizes. Assume that the population you are studying contains
+100,000 reproducing individuals. How many new mutations affecting the phenotype ccur, on
+average, in the population each generation?
+
+\ifprintanswers\vspace*{\baselineskip}{\bfseries%
+	$100,000 \times 0.165 = 16,500$ new mutations per generation in the population.}
+	\vspace*{\stretch{1}}
+\else
+	\vspace*{\stretch{1}}
+\fi
+
+\newpage
+
+\fullwidth{%
+You can see that a large number of new mutations can occur in a single
+population each generation. Most of these mutations will be detrimental
+and removed from the population by natural selection but if even a small
+fraction of these new mutations are beneficial then natural selection
+can cause these beneficial mutations to increase rapidly in frequency
+throughout the population during future generations.
+}%end fullwidth
+
+\question[5]
+\label{itm:nachman} Nachman and Crowell (2000, Genetics 156: 297--304) compared
+more than 16,000 nucleotides from human and chimpanzee genomes and
+estimated that the average mutation rate was 2.5 $\times$
+10\textsuperscript{-8} mutations per base pair per generation (not year). Use
+the mammalian genome size \emph{and} percent functional sequence from the
+previous example, and an effective population size of
+18,000\footnote{Sherry et al. 1997 (Genetics 147: 1977--1982) estimated
+ that human effective population size during the past 1--2 million years
+ was about 18,000 individuals.}, to calculate the number of new
+mutations in the human population each generation. You are repeating steps 
+1--3 from the first page but with new data, so show your work for
+each step of your calculations. 
+
+\ifprintanswers\vspace*{\baselineskip}{\bfseries%
+	$(3 \times 10^9) \times (2.5 \times 10^{-8}) = 75.$\bigskip
+	
+	$75 × 0.025 (2.5\%) = 1.875$\bigskip
+
+	$1.875 × 18,000 = 33,750$ new mutations per generation.}
+	\vspace*{\stretch{1}} 
+\else
+	\vspace*{\stretch{1}}
+\fi
+
+\fullwidth{%
+Comparisons of coding DNA sequences among many different
+groups of organisms have shown that mutation rates typically fall
+between the two values used above. These low mutation rates
+can generate considerable genetic variation in relatively little time
+due, in part, to the large genome size of most organisms and large
+population sizes.
+
+The two studies used here looked only at point mutations, where one nucleotide 
+substituted for another nucleotide. Other forms of mutation, including unequal 
+crossing over and gene duplication, further increase genetic variation available
+for potential evolution. In a later set of exercises, you will learn how population
+size and natural selection interact to increase the frequency of beneficial mutations
+in a population.
+}%end fullwidth
+
+\newpage
+
+\fullwidth{%
+\subsection*{The neutral mutation rate and nonadaptive evolution}
+
+Jaillon et al. (2004, Nature 431: 946--957) compared the non-coding genomes of humans and mice to estimate the neutral mutation rate ($\mu$) between these two lineages as $5.7 \times 10^{-9}$ per bp per year.  This value is equivalent to $\mu = 14.25 \times 10^{-8}$ per site per generation, assuming an average human generation time of 25 years. Use Sherry et al.'s estimate of $N_e$ of 18,000 individuals to calculate  the rate of nonadaptive evolution for a single locus in the human population. Compare the steps below to your lecture notes on nonadaptive evolution to understand what you are doing.
+}%end fullwidth
+
+\question
+\label{itm:jaillon} Calculate $2N_e$ to determine the total number of haplotypes for one locus in the human population.
+
+\ifprintanswers\vspace*{\baselineskip}{\bfseries%
+	$2N_e = 2 \times 18,000 = 36,000$ haplotypes.}
+	\vspace*{\stretch{1}} 
+\else
+	\vspace*{\stretch{1}}
+\fi
+
+
+\question
+Calculate $2N_e\mu$ (where $\mu$ is the neutral mutation rate \emph{per generation}) to determine the number of new mutations that can occur in those haplotypes each generation in this population.
+
+\ifprintanswers\vspace*{\baselineskip}{\bfseries%
+	$2N_e\mu = 36,000 \times 14.25 = 0.00513.$}
+	\vspace*{\stretch{1}}
+\else
+	\vspace*{\stretch{1}}
+\fi
+
+\question
+Calculate $\frac{1}{2N_e}$ to determine the probability that any one of those new mutations will become fixed in the population.
+
+\ifprintanswers\vspace*{\baselineskip}{\bfseries%
+	$\frac{1}{2N_e} = \frac{1}{36,000} = 0.0000277\overline{7}$}
+	\vspace*{\stretch{1}} 
+\else
+	\vspace*{\stretch{1}}
+\fi
+
+\question
+Multiply $2N_e\mu \times \frac{1}{2N_e}$ to calculate the rate of non-adaptive evolution for the locus. How does this rate compare to the neutral mutation rate ($\mu$) that you started with above?
+
+\ifprintanswers\vspace*{\baselineskip}{\bfseries%
+	$0.00513 \times 0.0000277\overline{7} = 0.0000001425 = 14.25 \times 10^{-8}$ Same rate.}	
+	\vspace*{\stretch{1}} 
+\else
+	\vspace*{\stretch{1}}
+\fi
+
+\fullwidth{%
+These calculations show that the rate of nonadaptive evolution is independent of population size. A small population will get relatively few new haplotypes by mutation each generation but each haplotype will have a relatively high probability of drifting to fixation. A large population will get lots of new haplotypes each generation but each haplotype will have a relatively low probability of drifting to fixation. Demonstrate this to yourself using $\mu$ = 0.001 for both $N_e$ of 100 and $N_e$ of 10,000. This demonstration could become the basis of a nice test question.
+}\newpage
+
+\fullwidth{%
+Jaillon et al. (2004) also determined that the neutral mutation rate of the Green-spotted Puffer (\textit{Tetraodon nigroviridis}, a species of fish and a model organism) was $14.6 \times 10^{-9}$ per nucleotide site per year. The Green-Spotted Puffer has a generation time of one year (Kai et al. 2001, Genome Biol. Evol. 3: 424--442) so the per year and per generation neutral mutation rates are equal. $N_e$ was estimated to be about 1,000,000 individuals (Neafsey et al. 2004, Mol. Biol. Evol. 21: 2310--2318).
+}%end fullwidth
+
+\question[5]
+Use the above information to calculate the rate of non-adaptive evolution in the Green-spotted Puffer. Show your work.
+
+\ifprintanswers\vspace*{\baselineskip}{\bfseries%
+	$2N_e\mu = 2 \times 1,000,000 \times (14.6 \times 10^{-9}) = 2,000,000 = 0.0292$
+	
+	$\frac{1}{2N_e} = \frac{1}{2 \times 1,000,000} = 0.0000005$
+	
+	$0.0292 \times 0.0000005 = 0.0000000146 = 14.6 \times 10^{-9}$ (equivalent to $1.46 \times 10^{-8}$)}
+	\vspace*{\stretch{1}} % perhaps a \vfill
+\else
+	\vspace*{\stretch{1}}
+\fi
+
+\question[5]
+Compare the mammalian mutation rate given by Kumar and Subramanian in Question (\ref{itm:kumar}) ($2.2 \times 10^{-9}$ per nucleotide site per generation) to the mammalian mutation rate given by Jaillon et al. in Question (\ref{itm:jaillon}) ($14.25 \times 10^{-8}$ per nucleotide site per generation). Explain why Jaillon's rate is so much higher than Kumar and Subramanian's rate. Hint: It's not because different organisms were compared. Both rates apply broadly to all mammals. It's also not time because both rates are standardized to generations.
+
+\ifprintanswers\vspace*{\baselineskip}
+{\bfseries Jaillon et al.'s rate is based on the neutral mutation rate. Because the mutations are neutral, they are not subject to natural selection. Kumar and Subramanian's estimates is based on protein-coding genes so the rate will be slower than the neutral mutation rate because many mutations are detrimental. Detrimental mutations will be removed by natural selection so the mutation rate will appear slower than the neutral mutation rate.}
+	\vspace*{\stretch{1}}
+\else
+	\vspace*{\stretch{1}}
+\fi
+
+\end{questions}
+
+
+\end{document}  

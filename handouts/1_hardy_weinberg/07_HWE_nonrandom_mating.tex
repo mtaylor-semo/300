@@ -1,0 +1,304 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[11pt, addpoints]{exam}
+\usepackage{graphicx}
+	\graphicspath{{/Users/goby/Pictures/teach/300/}
+	{img/}} % set of paths to search for images
+
+\usepackage{geometry}
+\geometry{letterpaper, bottom=1in}                   
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{amssymb, amsmath}
+\usepackage{mathtools}
+	\everymath{\displaystyle}
+
+\usepackage{fontspec}
+\setmainfont[Ligatures={TeX}, BoldFont={* Bold}, ItalicFont={* Italic}, BoldItalicFont={* BoldItalic}, Numbers={Proportional}]{Linux Libertine O}
+\setsansfont[Scale=MatchLowercase,Ligatures=TeX]{Linux Biolinum O}
+\setmonofont[Scale=MatchLowercase]{Inconsolata}
+\usepackage{microtype}
+
+\usepackage{unicode-math}
+\setmathfont[Scale=MatchLowercase]{Asana Math}
+%\setmathfont[Scale=MatchLowercase]{XITS Math}
+
+% To define fonts for particular uses within a document. For example, 
+% This sets the Libertine font to use tabular number format for tables.
+\newfontfamily{\tablenumbers}[Numbers={Monospaced}]{Linux Libertine O}
+\newfontfamily{\libertinedisplay}{Linux Libertine Display O}
+
+\usepackage{booktabs}
+%\usepackage{tabularx}
+\usepackage{longtable}
+%\usepackage{siunitx}
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+
+\usepackage{enumitem}
+\usepackage{hyperref}
+%\usepackage{placeins} %PRovides \FloatBarrier to flush all floats before a certain point.
+\usepackage{hanging}
+
+\usepackage{titling}
+\setlength{\droptitle}{-60pt}
+\posttitle{\par\end{center}}
+\predate{}\postdate{}
+
+\renewcommand{\solutiontitle}{\noindent}
+\unframedsolutions
+\SolutionEmphasis{\bfseries}
+
+\pagestyle{headandfoot}
+\firstpageheader{BI 300: Evolution}{}{\ifprintanswers\textbf{KEY}\else Name: \enspace \makebox[2.5in]{\hrulefill}\fi}
+\runningheader{}{}{\footnotesize{pg. \thepage}}
+\footer{}{}{}
+\runningheadrule
+
+%\printanswers
+
+\begin{document}
+
+\subsection*{Hardy-Weinberg Equilibrium: Non-Random Mating (\numpoints\ points)}
+
+The last assumption of HWE for us to explore is how haplotype
+frequencies change in non-randomly mating populations. In a randomly
+mating population, any individual has the same chance of mating with any
+other individual in the population. For example, if bluebirds truly
+mated at random, a bluebird near Cape Girardeau should have the same
+chance of mating with a bluebird near Sikeston, St. Louis or Chicago as
+it does with one near Cape Girardeau. In reality, however, two bluebirds
+near Cape Girardeau have a much greater chance of mating with each other
+than with bluebirds from Sikeston, St. Louis or Chicago.
+
+Non-random mating affects populations in a manner similar to genetic
+drift. This can be demonstrated with a simple mathematical exercise.
+
+\begin{questions}
+
+\question[1]
+The diagram below represents a single population of randomly
+mating individuals, called an \textbf{outbred population}. If all other assumptions of HWE are met, then what
+are the expected genotype frequencies in this population?
+
+\begin{center}
+	\includegraphics[width=0.5\textwidth]{nonrandom_mating_outbred}
+\end{center}
+
+\qquad\emph{A}\textsubscript{1}\emph{A}\textsubscript{1}:\ifprintanswers\quad\textbf{0.25}\fi\vspace{\baselineskip}
+
+\qquad\emph{A}\textsubscript{1}\emph{A}\textsubscript{2}:\ifprintanswers\quad\textbf{0.5}\fi\vspace{\baselineskip}
+
+\qquad\emph{A}\textsubscript{2}\emph{A}\textsubscript{2}:\ifprintanswers\quad\textbf{0.25}\fi\vspace{0.5\baselineskip}
+
+
+\fullwidth{Those genotype frequencies are expected if individuals in the outbreeding population are mating randomly.}
+
+\question[3]
+Assume that the population then becomes subdivided into two
+subpopulations by an impermeable barrier to dispersal, and that
+\emph{all other assumptions of HWE are met}. The population is now an \textbf{inbred population} because random mating can no longer occur among all individuals in the entire population. The haplotype frequencies
+for each population are shown below. Calculate the genotype frequencies
+for each inbred subpopulation to fill in the table on the next page.
+
+\begin{center}
+	\includegraphics[width=0.5\textwidth]{nonrandom_mating_inbred}
+\end{center}
+
+{\large
+\begin{longtable}[c]{@{}lccccc@{}}
+\toprule
+& \emph{A}\textsubscript{1} &%
+\emph{A}\textsubscript{2} &%
+\emph{A}\textsubscript{1}\emph{A}\textsubscript{1} &%
+\emph{A}\textsubscript{1}\emph{A}\textsubscript{2} &%
+\emph{A}\textsubscript{2}\emph{A}\textsubscript{2} \\[0.35cm]
+Inbred subpopulation 1 &%
+	 0.25 &%
+	 0.75 &%
+	 \ifprintanswers\textbf{0.0625}\else\rule{0.5in}{0.4pt}\fi &%
+	 \ifprintanswers\textbf{0.375}\else\rule{0.5in}{0.4pt}\fi &%
+	 \ifprintanswers\textbf{0.5625}\else\rule{0.5in}{0.4pt}\fi \\[0.35cm] 
+Inbred subpopulation 2 &%
+	0.75 &%
+	0.25 &%
+	\ifprintanswers\textbf{0.5625}\else\rule{0.5in}{0.4pt}\fi &%
+	\ifprintanswers\textbf{0.375}\else\rule{0.5in}{0.4pt}\fi &%
+	\ifprintanswers\textbf{0.0625}\else\rule{0.5in}{0.4pt}\fi \\[0.35cm]
+Inbred Average* &%
+	0.5 &%
+	0.5 &%
+	\ifprintanswers\textbf{0.3125}\else\rule{0.5in}{0.4pt}\fi &%
+	\ifprintanswers\textbf{0.375}\else\rule{0.5in}{0.4pt}\fi &%
+	\ifprintanswers\textbf{0.3125}\else\rule{0.5in}{0.4pt}\fi \tabularnewline
+\bottomrule
+\end{longtable}
+}%end Large
+
+\fullwidth{%
+* Calculate the average frequency of each genotype for both
+subpopulations by averaging the two values in each column.
+}%end fullwidth
+
+\question
+Fill in the table below with the results from Question 1.
+
+{\large
+\begin{longtable}[c]{@{}lccccc@{}}
+\toprule
+& \emph{A}\textsubscript{1} &%
+ \emph{A}\textsubscript{2} &%
+ \emph{A}\textsubscript{1}\emph{A}\textsubscript{1} &%
+ \emph{A}\textsubscript{1}\emph{A}\textsubscript{2} &%
+ \emph{A}\textsubscript{2}\emph{A}\textsubscript{2} \\[0.35cm]
+ Outbred Population &%
+ 	0.5 &%
+	0.5 &%
+	\ifprintanswers\textbf{0.25}\else\rule{0.5in}{0.4pt}\fi &%
+	\ifprintanswers\textbf{0.5}\else\rule{0.5in}{0.4pt}\fi &%
+	\ifprintanswers\textbf{0.25}\else\rule{0.5in}{0.4pt}\fi \tabularnewline
+\bottomrule
+\end{longtable}
+}%end Large
+
+\question[2]
+Describe how the genotype frequencies you calculated for
+the inbred population differ from the genotype frequencies you calculated for
+the outbred population. Which has greater heterozygosity and which has less heterozygosity?
+
+\begin{minipage}[t][1.5in]{\textwidth}%
+\begin{solution}
+The inbred population has lower heterozygosity.
+\end{solution}
+\end{minipage}
+
+\question[1]
+What happens to heterozygosity in an inbred population? What happens to heterozygosity in a small population? What do inbreed and genetic drift have in common with respect to heterozygosity?
+
+\begin{minipage}[t][1.5in]{\textwidth}%
+\begin{solution}
+Inbred populations have lower heterozygosity. Small populations have lower heterozygosity. Both inbreeding and genetic drift cause the loss of heterozygosity.
+\end{solution}
+\end{minipage}
+
+\fullwidth{%
+Small populations and inbred populations both lose heterozygosity.
+Reduced genetic variation reduces the ability of the population to adapt
+to changing environments.
+}%end Fullwidth
+
+\newpage
+
+%\fullwidth{%
+%\subsection*{Consequences of Inbreeding}
+%}%end fullwidth
+
+\fullwidth{%
+\textbf{Consequences of Inbreeding}\vspace{\baselineskip}
+
+Consider a population with a very rare recessive allele,
+\emph{A}\textsubscript{2}, at a frequency of 0.001.
+}%end Fullwidth
+
+\question[2]
+Calculate the following frequencies. Calculate the genotype frequencies to six digits after the decimal.\vspace{\baselineskip}
+
+\emph{A}\textsubscript{1}: \ifprintanswers\quad\ \textbf{0.999}\fi\vspace{\baselineskip}
+
+\emph{A}\textsubscript{1}\emph{A}\textsubscript{1}:\ifprintanswers\quad\textbf{0.998001}\fi\vspace{\baselineskip}
+
+\emph{A}\textsubscript{1}\emph{A}\textsubscript{2}:\ifprintanswers\quad\textbf{0.001998}\fi\vspace{\baselineskip}
+
+\emph{A}\textsubscript{2}\emph{A}\textsubscript{2}:\ifprintanswers\quad\textbf{0.000001}\fi\vspace{\baselineskip}
+
+\fullwidth{%
+Although the frequency of heterozygous individuals in the population is
+very small, heterozygotes appear 2000 times more frequently in the
+population (in this example) than individuals that are homozygous for
+the rare recessive allele. Copies of rare alleles are most often found
+in heterozygous individuals in outbreeding populations. This is known as
+\textbf{hidden} or \textbf{concealed genetic variation}. The
+variation is hidden because the recessive phenotype can be observed only
+in individuals homozygous for the rare allele, and these homozygotes are
+extremely rare. All other individuals express the dominant
+\emph{A}\textsubscript{1} phenotype.
+}%end fullwidth
+
+\question[2]
+Based on what you know about inbred populations and
+heterozygosity, describe how the frequency of the
+\emph{A}\textsubscript{2}\emph{A}\textsubscript{2} genotype should
+change over future generations. (Assume no fitness difference among
+genotypes.) Explain why.
+
+\begin{minipage}[t][1.5in]{\textwidth}%
+\begin{solution}
+Should increase because of decreasing heterozygosity / increasing homozygosity found in non-randomly mating populations.\end{solution}
+\end{minipage}
+
+\vfill
+
+\fullwidth{%
+This result has two consequences. The first consequence to consider is how average fitness in the population 
+would be affected if the rare recessive allele reduces fitness without causing death.
+}% end fullwidth
+
+\newpage
+
+\question[2]
+Describe what should happen to the average fitness of this
+inbred population (average number of offspring produced by all breeding
+individuals) if the rare recessive allele is detrimental (but is not lethal)? Explain why.
+
+\begin{minipage}[t][2in]{\textwidth}%
+\begin{solution}
+The average fitness will decline because more offspring will be produced that are homozygous for the detrimental allele.\end{solution}
+\end{minipage}
+
+\fullwidth{%
+The \textbf{heterozygote deficit} found in inbred populations is called
+\textbf{inbreeding depression} because the average fitness of the entire
+population (total number of offspring produced averaged across \emph{N}\textsubscript{e}) is generally lower than
+outbreeding populations. This phenomenon is easily seen in domestic
+animals bred for show quality. For example, many purebred dogs have
+congenital hip defects because these breeds are highly inbred compared
+to dogs overall. Some human groups also show abnormally high incidences
+of some genetic diseases and birth defects, such as hemophilia in the
+European Royal families during the 19th century or
+Ellis-van Creveld Syndrome (dwarfism and polydactyly) in Old Order Amish
+(founder effect and inbreeding).
+}%end Fullwidth
+
+\fullwidth{%
+The second consequence to consider is what would happen in the
+population if the rare allele were advantageous.
+}%end fullwidth
+
+\question[2]
+What would happen to the average fitness of an inbred
+population if the rare allele was beneficial? Explain why. Be sure to
+recall the concepts learned in the selection exercise.
+
+\begin{minipage}[t][2in]{\textwidth}%
+\begin{solution}
+For the same reason, fitness should increase. More homozygotes will appear with the rare, beneficial allele. Selection will have a greater chance of acting on the phenotype.\end{solution}
+\end{minipage}
+
+
+\fullwidth{%
+You should now understand why non-random mating would cause a population
+to deviate from HWE. The final point of this exercise is that, even in
+large populations, many alleles occur at frequencies \textless{} 0.01
+(1\%), which means that populations harbor an enormous amount of
+concealed variation that is only expressed in homozygotes. While many of
+these alleles may be detrimental, beneficial mutations also have a
+greater chance of phenotypic expression. This possibility is greatest in
+small populations or in non-randomly mating populations of any size.
+}%end fullwidth
+
+\end{questions}
+
+\end{document}  

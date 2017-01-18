@@ -1,0 +1,168 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[11pt, addpoints]{exam}
+%\usepackage{graphicx}
+%	\graphicspath{{/Users/goby/Pictures/teach/300/}
+%	{img/}} % set of paths to search for images
+
+\usepackage{geometry}
+\geometry{letterpaper, bottom=1in}                   
+%\geometry{landscape}                % Activate for for rotated page geometry
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+%\usepackage{amssymb, amsmath}
+%\usepackage{mathtools}
+%	\everymath{\displaystyle}
+
+\usepackage{fontspec}
+\setmainfont[Ligatures={Common,TeX}, BoldFont={* Bold}, ItalicFont={* Italic}, BoldItalicFont={* BoldItalic}, Numbers={Proportional}]{Linux Libertine O}
+\setsansfont[Scale=MatchLowercase,Ligatures=TeX]{Linux Biolinum O}
+%\setmonofont[Scale=MatchLowercase]{Inconsolata}
+\usepackage{microtype}
+
+\usepackage{unicode-math}
+\setmathfont[Scale=MatchLowercase]{Asana Math}
+
+\newfontfamily{\tablenumbers}[Numbers={Monospaced}]{Linux Libertine O}
+\newfontfamily{\libertinedisplay}{Linux Libertine Display O}
+
+\usepackage{hanging}
+
+%\usepackage{booktabs}
+%\usepackage{tabularx}
+%\usepackage{longtable}
+%\usepackage{siunitx}
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+
+\usepackage{enumitem}
+
+\usepackage{titling}
+\setlength{\droptitle}{-60pt}
+\posttitle{\par\end{center}}
+\predate{}\postdate{}
+
+\newlength{\myLength}
+\setlength{\myLength}{\parindent}
+
+\renewcommand{\solutiontitle}{\noindent}
+\unframedsolutions
+\SolutionEmphasis{\bfseries}
+
+\pagestyle{headandfoot}
+\firstpageheader{BI 300: Evolution. \numpoints~points.}{}{\ifprintanswers\textbf{KEY}\else Homeotic Genes\fi}
+\runningheader{}{}{\footnotesize{pg. \thepage}}
+\footer{}{}{}
+\runningheadrule
+
+\printanswers
+
+\begin{document}
+
+Read carefully the paper listed below and then type your answers to the following questions.
+Type the question number and then your answer. You do not need to retype the question. Hand-written
+assignments will not be accepted. You must have your completed answers
+with you in class or your assignment will be considered late. Assignments e-mailed to me after the \emph{start} of class will be
+considered late. \emph{Interpret} what you read; do not copy answers directly from the text (that would
+be plagiarism). Be prepared to discuss your answers in small groups and as a class. Failure
+to discuss these questions may result in a pop quiz with a point value
+equal to this assignment.
+
+\textbf{Failure to attend} \textbf{class} \textbf{on the due date} will
+result in an automatic 50\% deduction.
+
+\begin{hangparas}{1.5em}{1}
+Carroll, S.B. 1995. Homeotic genes and the evolution of arthropods and chordates. Nature 376: 479–485.
+
+\end{hangparas}
+
+
+\begin{questions}
+
+\question[5]
+What are the \emph{Hox} genes? How are they organized in the genome?
+  How does this organization relate to their expression in the
+  developing organism. Briefly describe the role of hox genes in the
+  evolution of the arthropod and chordate body plans.
+
+\begin{solution}
+Hox genes are homeotic developmental genes that “control the identity of the different body segments.  They determine the body plan of organisms.  They are arranged linearly on the chromosome(s).  This order is directly related to the order of expression along the anterior-posterior axis of the developing embryo. Changing when and where the hox genes work (in the diff. segments) leads to the evolution of different types of structures.
+\end{solution}
+\vspace*{\stretch{1}}
+
+\question[5]
+Carroll states that \emph{Hox} proteins bind to a four nucleotide core
+  sequence. Use the Internet to discover the exact sequence that is
+  recognized by the \emph{Hox} proteins, and type it below (cite your
+  source). Briefly but specifically describe how binding sites for
+  \emph{Hox} proteins might be gained or lost by target genes.
+  
+\begin{solution}
+5'–TAAT–3'.  The 5' T is most important.  Amino acids in the Hox protein that are just downstream seem to be most important for recognizing the next few nucleotides downstream of the binding site.  Different amino acids recognize different nucleotides.  Thus, a change in the nucleotide of a promotor region may change the Hox protein that binds to that site, changing expression.  Alternatively, if the amino acid changes, it may recognize a different promotor region.
+	
+For example, Bicoid uses lysine as AA9 which recognizes the G of CG pairs. Antennapeida uses glutamine to recognize the A of AT pairs.  If the lysine of Bicoid is changed to a glutamine, then Bicoid will recognize the Antennapedia binding site.
+\end{solution}
+\vspace*{\stretch{1}}
+
+\question[5]
+Carroll lists six potential ways in which \emph{Hox} genes might
+  affect the evolution of morphological differences. Pick any two and
+  explain them. You must answer more than simply restating what Carroll
+  writes. I want you to demonstrate some understanding of what you have
+  read. 
+
+\begin{solution}
+	\begin{enumerate}
+	\item Expansion within a complex. There are two main complexes in Drosophila: Antennapedia and Ultrabithorax.  Each with a different number of hox genes.  The different hox genes did not arise all at one time but arose throughout evolutionary history.  The order / timing of evolution may have played a role in the evolution of arthropod body plans.
+		\item Expansion within a class. Recent duplication of a hox gene leads to a series of genes that are very similar.  Carroll mentions the abd-B like genes paralogs 9-13.
+		\item Expansion in the number of complexes.  When did it go from 1-2-4? e.g., genome duplication.
+	
+	\item The loss of one or more hox genes.
+	
+	\item Change in the position, timing, or level of expression.  First two self-evident.  Level refers to the concentration gradient.  Higher concentration levels can lead to greater expression, with different results from lesser expression.
+	
+	\item Changes in regulatory interactions.  Once down-regulated, now neutral or up-regulated.
+	\end{enumerate}
+\end{solution}
+\vspace*{\stretch{1}}
+
+
+\question[5]
+When discussing the evolution of vertebrate limbs, Carroll states,
+  ``the Hox A and Hox D cluster genes expressed in the two limbs are
+  those that are normally expressed in the posterior of the main
+  vertebrate body axis, and they are deployed in very similar
+  spatiotemporal patterns in each limb.'' What do you think he means by
+  this? How does the arrangement of Hox genes correspond to the
+  development of limbs? (Hint: remember the arrangement of the Hox genes
+  on the chromosomes relative to their expression along the
+  anterior-posterior body axis. Another hint: Look up proximodistal if
+  you do not what it means. It's \emph{not} the name of a transformer!)
+
+\begin{solution}
+Paralogs 9–13 are now used in limb patterning.  The linear order of expression of the hox paralogs corresponds to the order of development of the tetrapod limb from the midline (proximal) to the distal end.
+\end{solution}
+\vspace*{\stretch{1}}
+
+\question[5]
+Use Google Scholar (scholar.google.com) to find a scientific paper
+  published in 2014 or later that demonstrates the evolutionary role of
+  one or more \emph{Hox} genes. Cite the paper properly and provide a
+  brief summary (small paragraph) of the findings. You can earn two extra credit points if you find a review paper that updates the information contained in Carroll 1995. I will determine whether the paper meets my criteria only after you have submitted this assignment.
+
+\vspace*{\stretch{1}}
+
+\question[5]
+Type below at least one key point of the paper (not related to the
+  questions above) and two questions about that paper that you do not
+  understand, or that you think follow up on some ideas presented in the
+  paper. You can use the key point and the questions to help generate
+  discussion in class. 
+
+\vspace*{\stretch{1}}
+
+\end{questions}
+
+\end{document}  

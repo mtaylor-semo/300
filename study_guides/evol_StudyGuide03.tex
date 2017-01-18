@@ -1,0 +1,90 @@
+\documentclass[letterpaper]{tufte-handout}
+
+%\geometry{showframe} % display margins for debugging page layout
+
+\usepackage{graphicx} % allow embedded images
+  \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+  \graphicspath{{img/}} % set of paths to search for images
+\usepackage{amsmath}  % extended mathematics
+\usepackage{booktabs} % book-quality tables
+\usepackage{units}    % non-stacked fractions and better unit spacing
+\usepackage{siunitx}
+\usepackage{multicol} % multiple column layout facilities
+\usepackage{microtype}   % filler text
+\usepackage{hyperref}
+%\usepackage{fancyvrb} % extended verbatim environments
+%  \fvset{fontsize=\normalsize}% default font size for fancy-verbatim environments
+
+\makeatletter
+% Paragraph indentation and separation for normal text
+\renewcommand{\@tufte@reset@par}{%
+  \setlength{\RaggedRightParindent}{1.0pc}%
+  \setlength{\JustifyingParindent}{1.0pc}%
+  \setlength{\parindent}{1pc}%
+  \setlength{\parskip}{0pt}%
+}
+\@tufte@reset@par
+
+% Paragraph indentation and separation for marginal text
+\renewcommand{\@tufte@margin@par}{%
+  \setlength{\RaggedRightParindent}{0pt}%
+  \setlength{\JustifyingParindent}{0.5pc}%
+  \setlength{\parindent}{0.5pc}%
+  \setlength{\parskip}{0pt}%
+}
+\makeatother
+
+
+\title{Study Guide 03\hfill}
+\author{Genetic Drift and the Neutral Theory}
+
+\date{} % without \date command, current date is supplied
+
+\begin{document}
+
+\maketitle	% this prints the handout title, author, and date
+
+%\printclassoptions
+
+\section{Vocabulary}\marginnote{\textbf{Read:} Pgs. 153--165, 271-280.\\\textbf{Questions:} pgs. 187-188, MC\ 1-5, SA\ 1--2; pg. 284, MC\ 6--8, SA\ 2.}
+\vspace{-1\baselineskip}
+\begin{multicols}{2}
+genetic drift\\
+census population size ($N$)\\
+effective population size ($N_e$)\\
+fixation\\
+fixed haplotype\\
+heterozygosity\\
+homozygosity\\
+founder effect\\
+bottleneck\\
+mutation rate ($\mu$)\\
+neutral mutations\\
+non-adaptive evolution\\
+haplotype substitution\\\hspace{1em}(in a population)\\
+Neutral Theory
+\end{multicols}
+
+\section{Concepts}
+
+You should \emph{write} clear and concise answers to each question in the Concepts section.  The questions are not necessarily independent.  Think broadly across lectures to see ``the big picture.'' 
+
+\begin{itemize}
+	\item Discuss the consequences of genetic drift.  Consider population size, the probability of any given haplotype going to fixation, what happens to heterozygosity in a population, and what happens among replicate populations (isolated populations with the same initial starting conditions and all subject to genetic drift.  Relate this to nonadaptive evolution.
+
+	\item Explain how effective population size differs from census population size (the total population size, or total of all potentially breeding adults).  Why must effective population size be considered instead of census population size? 
+
+	\item Compare and contrast bottleneck and founder effects.\sidenote{These types of drift were covered in BI 153 and will not be covered in lecture. You should review pages 163--165 and 584--586 for more information.} How do bottlenecks and founder effects relate to genetic drift?  Consider also how these phenomena affect genetic diversity in a population. 
+
+	\item Relate the neutral mutation rate to the rate of nonadaptive evolution by genetic drift in a population.  Does small vs. large population size matter? If so, why?  If not, why not?
+
+	\item What is meant by substitution of one haplotype for another in a population? 
+
+	\item How does the neutral mutation rate and genetic drift relate to the Neutral Theory? 
+
+	\item Explain the genetic evidence that supports the Neutral Theory.
+
+	\item If multiple (e.g., 10), independent populations are subject only to non-adaptive evolution, would you predict that the end result would be the same for each population? Explain why or why not.
+\end{itemize}
+
+\end{document}

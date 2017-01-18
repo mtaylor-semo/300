@@ -1,0 +1,136 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[t]{beamer}
+
+%%%% HANDOUTS For online Uncomment the following four lines for handout
+%\documentclass[t,handout]{beamer}  %Use this for handouts.
+%\usepackage{handoutWithNotes}
+%\pgfpagesuselayout{3 on 1 with notes}[letterpaper,border shrink=5mm]
+%	\setbeamercolor{background canvas}{bg=black!5}
+
+
+%%% Including only some slides for students.
+%%% Uncomment the following line. For the slides,
+%%% use the labels shown below the command.
+%\includeonlylecture{student}
+
+%% For students, use \lecture{student}{student}
+%% For mine, use \lecture{instructor}{instructor}
+
+
+%\usepackage{pgf,pgfpages}
+%\pgfpagesuselayout{4 on 1}[letterpaper,border shrink=5mm]
+
+% FONTS
+\usepackage{fontspec}
+\def\mainfont{Linux Biolinum O}
+\setmainfont[Ligatures={Common, TeX}, Contextuals={NoAlternate}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={Proportional}]{\mainfont}
+%\setmonofont[Scale=MatchLowercase]{Inconsolata} 
+\setsansfont[Scale=MatchLowercase]{Linux Biolinum O} 
+\usepackage{microtype}
+
+\usepackage{graphicx}
+	\graphicspath{%
+	{/Users/goby/Pictures/teach/300/}%
+	{/Users/goby/Pictures/teach/common/}} % set of paths to search for images
+
+\usepackage{amsmath,amssymb}
+
+%\usepackage{units}
+
+\usepackage{booktabs}
+\usepackage{multicol}
+%	\setlength{\columnsep=1em}
+
+\usepackage{textcomp}
+\usepackage{setspace}
+\usepackage{tikz}
+	\tikzstyle{every picture}+=[remember picture,overlay]
+
+\mode<presentation>
+{
+  \usetheme{Lecture}
+  \setbeamercovered{invisible}
+  \setbeamertemplate{items}[square]
+}
+
+\usepackage{calc}
+\usepackage{hyperref}
+
+\newcommand\HiddenWord[1]{%
+	\alt<handout>{\rule{\widthof{#1}}{\fboxrule}}{#1}%
+}
+
+
+
+\begin{document}
+
+% Lecture goals
+\lecture{student}{student}
+
+\begin{frame}{Hardy-Weinberg \highlight{equilibrium} occurs only\\when there is}
+	
+	\hangpara \highlight{no} genetic drift, 
+	\pause
+	
+	\hangpara \highlight{no} gene flow,
+	\pause
+	
+	\hangpara \highlight{no} mutation,
+	\pause
+	
+	\hangpara \highlight{no} mate choice, \pause \highlight{and}
+	
+	\hangpara \highlight{no} natural selection.
+	
+\end{frame}
+
+\begin{frame}{\highlight{Microevolution} occurs when there is}
+	
+	\hangpara genetic drift,
+	
+	\hangpara gene flow,
+	
+	\hangpara mutation,
+	
+	\hangpara non-random mating, \highlight{or}
+	
+	\hangpara natural selection.
+
+\end{frame}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{snowgeese_drift} }
+\begin{frame}[b,plain]{}
+\end{frame}
+}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{planktonic_starfish_geneflow} }
+\begin{frame}[b,plain]{}
+\textcolor{gray}{\Tiny Juvenile starfish, \textit{Luidia sarsi}, photo \textcopyright Richard R. Kirby, All Rights Reserved.}
+\end{frame}
+}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{mutation} }
+\begin{frame}[b,plain]{}
+\hfill\textcolor{gray!50!white}{\Tiny Illustrator unknown.}
+\end{frame}
+}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{mating_lions} }
+\begin{frame}[b,plain]{}
+\Tiny Mating lions (\textit{Panthera leo}) photo by Frank Vassen, Creative Commons.
+\end{frame}
+}
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{natural_selection} }
+\begin{frame}[b,plain]{}
+\hfill\Tiny Purple martin (\textit{Progne subs}) photo by Dori, Wikimedia Commons.
+\end{frame}
+}
+
+\end{document}

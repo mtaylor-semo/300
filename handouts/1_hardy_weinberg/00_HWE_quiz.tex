@@ -1,0 +1,108 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[11pt, addpoints]{exam}
+\usepackage{graphicx}
+	\graphicspath{{/Users/goby/Pictures/teach/300/}
+	{img/}} % set of paths to search for images
+
+\usepackage{geometry}
+\geometry{letterpaper, bottom=1in}                   
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{amssymb, amsmath}
+\usepackage{mathtools}
+	\everymath{\displaystyle}
+
+\usepackage{fontspec}
+\setmainfont[Ligatures={TeX}, BoldFont={* Bold}, ItalicFont={* Italic}, BoldItalicFont={* BoldItalic}, Numbers={Proportional}]{Linux Libertine O}
+\setsansfont[Scale=MatchLowercase,Ligatures=TeX]{Linux Biolinum O}
+%\setmonofont[Scale=MatchLowercase]{Inconsolata}
+\usepackage{microtype}
+
+\usepackage{unicode-math}
+\setmathfont[Scale=MatchLowercase]{Asana Math}
+%\setmathfont[Scale=MatchLowercase]{XITS Math}
+
+% To define fonts for particular uses within a document. For example, 
+% This sets the Libertine font to use tabular number format for tables.
+\newfontfamily{\tablenumbers}[Numbers={Monospaced}]{Linux Libertine O}
+\newfontfamily{\libertinedisplay}{Linux Libertine Display O}
+
+\usepackage{booktabs}
+%\usepackage{tabularx}
+\usepackage{longtable}
+%\usepackage{siunitx}
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+
+\usepackage{enumitem}
+\usepackage{hyperref}
+%\usepackage{placeins} %PRovides \FloatBarrier to flush all floats before a certain point.
+\usepackage{hanging}
+
+\renewcommand{\solutiontitle}{\noindent}
+\unframedsolutions
+\SolutionEmphasis{\bfseries}
+
+\pagestyle{headandfoot}
+\firstpageheader{BI 300: Evolution}{}{\ifprintanswers\textbf{KEY}\else Name: \enspace \makebox[2.5in]{\hrulefill}\fi}
+\runningheader{}{}{\footnotesize{pg. \thepage}}
+\footer{}{}{}
+\runningheadrule
+
+%\printanswers
+
+\begin{document}
+
+\subsection*{Hardy-Weinberg Principle Quiz (\numpoints\ points)}
+
+\begin{questions}
+
+\question[3]
+You should have reviewed the pages in your text on the Hardy-Weinberg Principle. Based on your review or prior knowledge, tell in your own words the purpose of the Hardy-Weinberg principle (your text calls it the Hardy-Weinberg Theorom).
+
+\ifprintanswers\vspace*{\baselineskip}{\bfseries%
+	The Hardy-Weinberg principle shows that allele and genotype frequencies cannot change in the absence of evolutionary process.}
+	\vspace*{\stretch{1}}
+\else
+	\vspace*{\stretch{1}}
+\fi
+
+\question[2]
+The Hardy-Weinberg Principle is based on two simple, related
+mathematical formulas. Write them here. 
+\begin{parts}
+	\part\ifprintanswers$p + q = 1$\vspace{2\baselineskip}\else \vspace{2\baselineskip}\fi
+	
+	\part\ifprintanswers$p^2 + 2pq + q^2 = 1$\vspace*{2\baselineskip}\else\vspace{2\baselineskip}\fi
+\end{parts}
+
+\question [5]
+Tell what each mathematical term (the variables) in each formula represents.
+\begin{parts}
+	\part \ifprintanswers\textbf{$p$ = frequency of allele 1}\vspace{2\baselineskip}\else \vspace{2\baselineskip}\fi
+	\part \ifprintanswers\textbf{$1$ = frequency of allele 2}\vspace*{2\baselineskip}\else \vspace*{2\baselineskip}\fi
+	\part \ifprintanswers\textbf{$p^2$ = frequency of homozygous genotype for allele 1}\vspace*{2\baselineskip}\else\vspace*{2\baselineskip}\fi
+	\part \ifprintanswers\textbf{$2pq$ = frequency of heterozygous genotype}\vspace*{2\baselineskip}\else\vspace*{2\baselineskip}\fi
+	\part \ifprintanswers\textbf{$q^2$ = frequency of homozygous genotype for allele 2}\vspace*{2\baselineskip}\else\vspace*{2\baselineskip}\fi
+\end{parts}
+
+\newpage
+
+\question[4]
+The Hardy-Weinberg equations have five assumptions. Your text names all five but suggests that only four apply to the equations. List the four assumptions mentioned by your text. List the fifth for 1 point extra credit. You do not have to explain the assumptions, just list them.
+
+\begin{parts}
+	\part \ifprintanswers\textbf{No mutations}\vspace*{2\baselineskip}\else\vspace*{2\baselineskip}\fi
+	\part \ifprintanswers\textbf{No migration}\vspace*{2\baselineskip}\else\vspace*{2\baselineskip}\fi
+	\part \ifprintanswers\textbf{No genetic drift/population infinitely large}\vspace*{2\baselineskip}\else\vspace*{2\baselineskip}\fi
+	\part \ifprintanswers\textbf{No natural selection}\vspace*{2\baselineskip}\else\vspace*{2\baselineskip}\fi
+	\part \ifprintanswers\textbf{Random mating}\vspace*{2\baselineskip}\else\vspace*{2\baselineskip}\fi
+\end{parts}
+\end{questions}
+
+
+\end{document}  

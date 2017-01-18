@@ -1,0 +1,118 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[11pt, addpoints]{exam}
+\usepackage{graphicx}
+	\graphicspath{{/Users/goby/Pictures/teach/300/}
+	{img/}} % set of paths to search for images
+
+\usepackage{geometry}
+\geometry{letterpaper, bottom=1in}                   
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{amssymb, amsmath}
+\usepackage{mathtools}
+	\everymath{\displaystyle}
+
+\usepackage{fontspec}
+\setmainfont[Ligatures={TeX}, BoldFont={* Bold}, ItalicFont={* Italic}, BoldItalicFont={* BoldItalic}, Numbers={Proportional}]{Linux Libertine O}
+\setsansfont[Scale=MatchLowercase,Ligatures=TeX]{Linux Biolinum O}
+\setmonofont[Scale=MatchLowercase]{Inconsolata}
+\usepackage{microtype}
+
+\usepackage{unicode-math}
+\setmathfont[Scale=MatchLowercase]{Asana Math}
+
+\newfontfamily{\tablenumbers}[Numbers={Monospaced}]{Linux Libertine O}
+\newfontfamily{\libertinedisplay}{Linux Libertine Display O}
+
+\usepackage{booktabs}
+%\usepackage{tabularx}
+%\usepackage{longtable}
+%\usepackage{siunitx}
+
+\usepackage{hanging}
+
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+
+%\usepackage{enumitem}
+
+%\usepackage{titling}
+%\setlength{\droptitle}{-60pt}
+%\posttitle{\par\end{center}}
+%\predate{}\postdate{}
+
+\renewcommand{\solutiontitle}{\noindent}
+\unframedsolutions
+\SolutionEmphasis{\bfseries}
+
+\pagestyle{headandfoot}
+\firstpageheader{BI 300: Evolution}{}{\ifprintanswers\textbf{KEY} \else Name \rule{2.5in}{0.4pt}\fi}
+\runningheader{}{}{\footnotesize{pg. \thepage}}
+\footer{}{}{}
+\runningheadrule
+
+%\printanswers
+
+\begin{document}
+
+\subsection*{Pollinators and Speciation in Columbine Plants (\numpoints\ points)}
+
+Justen Whittall and Scott Hodges study the evolution of flower
+morphology. Of special interest to them is a group of plants called
+columbines (genus \textit{Aquilegia}). \textit{Aquilegia} is a diverse group
+with about 70 known species. Columbine flowers have an unusual
+morphology. The inner petals have long spurs that extend backwards
+between the outer sepals. The spurs are filled with nectar that attracts
+pollinators, such as bumblebees, hummingbirds, and hawkmoths. In
+columbines, spur length and flower color vary among species. Spurs vary from
+1-15 cm and may be straight or curved. Sepal, petal and spur colors are
+typically blue, red, white, or yellow.
+
+\begin{center}
+	\includegraphics{columbine_parts}
+
+	{\footnotesize
+	www.fs.fed.us/wildflowers/beauty/columbines/flower.shtml}
+\end{center}
+
+For this exercise, you will work in a group of three students. Together,
+the three of you will use a phylogeny of 30 \textit{Aquilegia} species and
+varieties to explore how changes of flower color and spur length
+correspond to changes in columbine pollinators.
+
+The phylogeny is on the next page. Each student is responsible for
+matching the species on the phylogeny to the flower color (blue, red,
+yellow or white), the spur length (short, medium or long), or the
+pollinator (bumblebees, hummingbirds, or hawkmoths). You will then
+search for evolutionary patterns. For example, do the columbine species
+with red flowers share the same common ancestor or did red flower color
+evolve multiple times? Do all columbine species with short spurs share a
+common ancestor? What about columbine species that are pollinated by
+hawkmoths?
+
+Once you have established the patterns on the tree, compare your results
+with the results of the other members in your group. Do you find a
+relationship between flower color, spur length and pollinator?
+
+\begin{center}
+	\includegraphics[width=0.75\textwidth]{columbine_phylogeny}
+
+	{\footnotesize Bayesian probabilities are not presented but nearly all branches enjoy
+	Bayesian posterior probabilities \textgreater{} 0.95.}
+\end{center}
+
+\begin{questions}
+
+\question[5]
+How many pollinator shifts (from one pollinator group to
+another) do you identify on the tree? Do you detect an 
+association between pollinator, flower color, and spur length? Explain. 
+
+
+\end{questions}
+
+\end{document}  

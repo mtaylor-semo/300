@@ -1,0 +1,110 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[11pt, addpoints]{exam}
+\usepackage{graphicx}
+	\graphicspath{{/Users/goby/Pictures/teach/300/}
+	{img/}} % set of paths to search for images
+
+\usepackage{geometry}
+\geometry{letterpaper, bottom=1in}                   
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{amssymb, amsmath}
+\usepackage{mathtools}
+	\everymath{\displaystyle}
+
+\usepackage{fontspec}
+\setmainfont[Ligatures={TeX}, BoldFont={* Bold}, ItalicFont={* Italic}, BoldItalicFont={* BoldItalic}, Numbers={Proportional}]{Linux Libertine O}
+\setsansfont[Scale=MatchLowercase,Ligatures=TeX]{Linux Biolinum O}
+\setmonofont[Scale=MatchLowercase]{Inconsolata}
+\usepackage{microtype}
+
+\usepackage{unicode-math}
+\setmathfont[Scale=MatchLowercase]{Asana Math}
+
+\newfontfamily{\tablenumbers}[Numbers={Monospaced}]{Linux Libertine O}
+\newfontfamily{\libertinedisplay}{Linux Libertine Display O}
+
+\usepackage{booktabs}
+%\usepackage{tabularx}
+%\usepackage{longtable}
+%\usepackage{siunitx}
+
+\usepackage{hanging}
+
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+
+%\usepackage{enumitem}
+
+%\usepackage{titling}
+%\setlength{\droptitle}{-60pt}
+%\posttitle{\par\end{center}}
+%\predate{}\postdate{}
+
+\renewcommand{\solutiontitle}{\noindent}
+\unframedsolutions
+\SolutionEmphasis{\bfseries}
+
+\pagestyle{headandfoot}
+\firstpageheader{BI 300: Evolution}{}{}
+\runningheader{}{}{\footnotesize{pg. \thepage}}
+\footer{}{}{}
+\runningheadrule
+
+%\printanswers
+
+\begin{document}
+
+\subsection*{Columbine Spur Length}
+
+Spurs are short (7--12 mm), medium (14--24 mm) or long (26--130 mm). Match
+the spur length to the species codes on the phylogeny of the main
+handout.
+
+\vspace{\baselineskip}
+
+\begin{tabular}[c]{@{}ll@{}}
+\toprule
+Species & Spur Length\tabularnewline
+\midrule
+BA & Medium\tabularnewline
+BR & Short\tabularnewline
+CA & Medium\tabularnewline
+CH.CHI & Long\tabularnewline
+CH.NM & Long\tabularnewline
+CHAP & Long\tabularnewline
+COAL & Long\tabularnewline
+COOC.CO & Long\tabularnewline
+COOC.UT & Long\tabularnewline
+COOC.WY & Long\tabularnewline
+DE & Medium\tabularnewline
+EL & Medium\tabularnewline
+EX & Medium\tabularnewline
+FL & Medium\tabularnewline
+FO.E & Medium\tabularnewline
+FO.W & Medium\tabularnewline
+HI & Long\tabularnewline
+JO & Short\tabularnewline
+LA & Short\tabularnewline
+LO.AZ & Long\tabularnewline
+LO.TX & Long\tabularnewline
+MI & Long\tabularnewline
+PI & Long\tabularnewline
+PU & Long\tabularnewline
+SA & Short\tabularnewline
+SC & Long\tabularnewline
+SH & Medium\tabularnewline
+SK & Medium\tabularnewline
+Sp. nov.\footnotemark & Long\tabularnewline
+TR & Medium\tabularnewline
+\bottomrule
+\end{tabular}
+
+\footnotetext{Sp. nov. means \emph{species novum}, which designates a new
+species without a formal scientific name.}
+
+\end{document}  

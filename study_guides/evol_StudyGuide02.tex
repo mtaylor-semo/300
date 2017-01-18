@@ -1,0 +1,131 @@
+\documentclass[letterpaper]{tufte-handout}
+
+%\geometry{showframe} % display margins for debugging page layout
+
+\usepackage{graphicx} % allow embedded images
+  \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+  \graphicspath{{img/}} % set of paths to search for images
+\usepackage{amsmath}  % extended mathematics
+\usepackage{booktabs} % book-quality tables
+\usepackage{units}    % non-stacked fractions and better unit spacing
+\usepackage{multicol} % multiple column layout facilities
+\usepackage{microtype}   % filler text
+%\usepackage{fancyvrb} % extended verbatim environments
+%  \fvset{fontsize=\normalsize}% default font size for fancy-verbatim environments
+
+\makeatletter
+% Paragraph indentation and separation for normal text
+\renewcommand{\@tufte@reset@par}{%
+  \setlength{\RaggedRightParindent}{1.0pc}%
+  \setlength{\JustifyingParindent}{1.0pc}%
+  \setlength{\parindent}{1pc}%
+  \setlength{\parskip}{0pt}%
+}
+\@tufte@reset@par
+
+% Paragraph indentation and separation for marginal text
+\renewcommand{\@tufte@margin@par}{%
+  \setlength{\RaggedRightParindent}{0pt}%
+  \setlength{\JustifyingParindent}{0.5pc}%
+  \setlength{\parindent}{0.5pc}%
+  \setlength{\parskip}{0pt}%
+}
+\makeatother
+
+\title{Study Guide 02\hfill}
+
+%\author{Hardy-Weinberg and Evolution in Populations}
+
+\date{} % without \date command, current date is supplied
+
+\begin{document}
+
+\maketitle	% this prints the handout title, author, and date
+
+%\printclassoptions
+\section{Hardy-Weinberg Review}
+We\marginnote{\textbf{Read:} Pgs. 153--165, 271--280.\\\textbf{Questions:} pgs. 187--188, MC\ 1--5, SA\ 1--2; pg. 284, MC\ 6--8, SA\ 2.} covered two equations that are necessary to establish whether a population is in Hardy-Weinberg equilibrium. One equation is used to calculate allele frequencies. The other equation is used to calculate genotype frequencies. You must remember which equation is used for to calculate allele frequencies and which is used to calculate genotype frequencies. Failure to do so is the most common mistake made when students attempt to solve Hardy-Weinberg problems.
+
+\section{Allele Frequency}
+
+The equation for calculating \emph{allele frequencies} is 
+\begin{equation*}
+	p+q = 1,
+\end{equation*}
+	
+where $p$ is the frequency of allele 1, and $q$ is the frequency of allele 2. In class, we will use only two alleles for a single locus\sidenote{In reality, most genes have many more than two alleles. The calculation of allele frequencies is the same, but with a variable added for each allele. If a gene has three alleles, for example, the equation would be expanded to $p+q+r=1$}, such as $A$ and $a$.  Two variables ($p$ and $q$) are needed to represent two alleles.  Why not use $A$ and $a$ instead of $p$ and $q$?  The vast majority of genes have names longer than a single letter, such as \emph{sonic hedgehog} (\emph{shh}) or \emph{bone morphogenetic protein 4} (\emph{bmp4}). Writing equations with long gene names would get confusing. Variable names like $p$ and $q$ are easier to understand.  In addition, we do not have to concern ourselves with dominant and recessive alleles, codominant alleles, or other varieties of gene expression. 
+
+I use frequency and proportion interchangeably. They mean the same thing.  Given all alleles in a population, the proportion of them that is \emph{one particular allele} is the frequency of that allele.  The frequency of an allele represents how common the allele is in the population, expressed as a decimal fraction. For example, if a population has 124 total alleles and 31 of them are the $p$ allele, then $p=0.25$.  This means that 25\% of the alleles in the population are the $p$ allele.  The remaining proportion (75\%) are the $q$ allele.
+
+\section{Genotype Frequency}
+
+Diploid organisms have two alleles for each gene locus. The combination of alleles is the genotype for the gene locus. The genotype might be homozygous (two copies of the same allele) or heterozygous (two different alleles).  Given two alleles, there are three possible genotypes. Set aside $p$ and $q$ for the moment but consider two alleles, $A$ and $a$. The three possible genotypes are $AA$, $aa$, and $Aa$.  The \emph{genotype frequencies} in a population is calculated by
+\begin{equation*}
+p^2 + 2pq+q^2=1,
+\end{equation*}
+where $p^2$ is the frequency of one homozygous genotype (e.g., $AA$), $q^2$ is the frequency of the other homozygous genotype ($aa$), and $2pq$ is the frequency of the heterozygous genotype ($Aa$).  Three terms are needed to represent the three possible genotypes. 
+
+How are the two Hardy-Weinberg equations related?  Consider a large, randomly mating population with two alleles.  The alleles are present at frequencies $p$ and $q$.  The proportion of each genotype produced in the next generation is calculated by multiplying $p+q$ times itself\sidenote{Think of individuals \emph{multiplying} (mating) in a population.},
+\begin{equation*}
+(p+q)^2=
+(p+q)(p+q) =
+p^2 + pq + qp + q^2 =
+p^2 + 2pq + q^2.
+\end{equation*}
+
+
+\section{Vocabulary}
+\vspace{-1\baselineskip}
+\begin{multicols}{2}
+gene (gene locus)\\
+allele\\
+diploid\\
+homozygous (homozygote)\\
+heterozygous (heterozygote)\\
+population\\
+Hardy-Weinberg Equations\\
+Hardy-Weinberg Equilibrium\\
+genetic drift\\
+homozygosity\\
+heterozygosity\\
+bottleneck effect\\
+founder effect\\
+mutation\\
+gene flow\\
+emigration\\
+immigration\\
+inbreeding\\
+non-random mating\\
+natural selection\\
+\end{multicols}
+
+\section{Concepts}
+
+You should \emph{write} clear and concise answers to each question in the Concepts section.  Some of the questions will make more sense after we complete the genetic drift exercises and lecture 4.
+
+\begin{itemize}
+
+	\item What does it mean to say that a population is in Hardy-Weinberg equilibrium?
+
+	\item Know the two formulas that, together, are the Hardy-Weinberg Equations.
+
+	\item What do the Hardy-Weinberg equations demonstrate about allele frequencies in a population?
+
+	\item What is the difference between a heterozygote and a homozygote?
+
+	\item What is the difference between alleles and genotypes?  What is the difference between allele frequencies and genotype frequencies?
+
+	\item Which of the two Hardy-Weinberg formulas represent the frequencies of two alleles (at one gene locus) in a population?  Which of the two Hardy-Weinberg formulas represent the frequencies of the three possible genotypes (at one gene locus) in a population?
+
+	\item Be able to use the Hardy-Weinberg equations to derive allele frequencies and genotype frequencies in a population.  Be able to derive allele frequencies based on numbers on different phenotypes and genotypes in a population. 
+
+	\item What are the five evolutionary processes that cause allele frequencies in a population to deviate from Hardy-Weinberg equilibrium?  Explain how each causes allele frequencies to change.
+
+	\item What causes genetic drift to occur in a population? Is genetic drift present in all populations? Why? Is genetic drift more pronounced in large populations or small populations?  Why?
+
+	\item How does genetic drift affect heterozygosity and homozygosity in a population?  Is this a good thing or a bad thing for the population?  Why?  Be able to calculate the homozygosity or heterozygosity of a population, given the frequency of one allele or the frequency of one of the two homozygotes in the population. 
+
+
+\end{itemize}
+
+\end{document}

@@ -1,0 +1,223 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[11pt, addpoints]{exam}
+\usepackage{graphicx}
+	\graphicspath{{/Users/goby/Pictures/teach/300/}} % set of paths to search for images
+
+\usepackage{geometry}
+\geometry{letterpaper, bottom=1in}                   
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{amssymb, amsmath}
+\usepackage{mathtools}
+	\everymath{\displaystyle}
+
+\usepackage{fontspec}
+\setmainfont[Ligatures={TeX}, BoldFont={* Bold}, ItalicFont={* Italic}, BoldItalicFont={* BoldItalic}, Numbers={Proportional}]{Linux Libertine O}
+\setsansfont[Scale=MatchLowercase,Ligatures=TeX]{Linux Biolinum O}
+\setmonofont[Scale=MatchLowercase]{Inconsolata}
+\usepackage{microtype}
+
+\usepackage{unicode-math}
+\setmathfont[Scale=MatchLowercase]{Asana Math}
+%\setmathfont[Scale=MatchLowercase]{XITS Math}
+
+% To define fonts for particular uses within a document. For example, 
+% This sets the Libertine font to use tabular number format for tables.
+\newfontfamily{\tablenumbers}[Numbers={Monospaced}]{Linux Libertine O}
+\newfontfamily{\libertinedisplay}{Linux Libertine Display O}
+ 
+\usepackage{booktabs}
+%\usepackage{tabularx}
+\usepackage{longtable}
+%\usepackage{siunitx}
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+
+\usepackage{enumitem}
+%\usepackage{hyperref}
+%\usepackage{placeins} %PRovides \FloatBarrier to flush all floats before a certain point.
+%\usepackage{hanging}
+
+\renewcommand{\solutiontitle}{\noindent}
+\unframedsolutions
+\SolutionEmphasis{\bfseries}
+
+\pagestyle{headandfoot}
+\firstpageheader{BI 300: Evolution}{}{\ifprintanswers\textbf{KEY}\else Name: \enspace \makebox[2.5in]{\hrulefill}\fi}
+\runningheader{}{}{\footnotesize{pg. \thepage}}
+\footer{}{}{}
+\runningheadrule
+
+%\printanswers
+
+\begin{document}
+
+\subsection*{Speciation in Hawaiian Crickets (\numpoints\ points)}
+
+Evidence strongly suggests that most speciation occurs in allopatry.
+That is, ancestral populations were divided into different geographic
+areas by a barrier that prevented gene flow between the populations.
+However, some biologists argue that sympatric speciation is possible.
+Sympatric speciation occurs if new species arise from within a single,
+undivided population. Although sympatric speciation is possible, most
+evolutionary biologists think that allopatric speciation is the primary
+mode of speciation. For this exercise, you will explore the role of
+allopatric and sympatric speciation in the Hawaiian cricket genus
+\emph{Laupala}.
+
+\emph{Laupala} is a genus of flightless ground crickets endemic to the
+Hawaiian Islands. About 37 species are found on the ``high islands'' of
+the Hawaiian Islands (see figure on page \pageref{fig:cricket_phylogeny}. Some researchers have
+argued that \emph{Laupala} diversified by repeated dispersal of
+individuals from older islands to younger islands, with subsequent
+allopatric speciation on the younger islands. Other researchers have
+argued that \emph{Laupala} diversified by sympatric speciation. An
+ancestral population initially colonized each islands, followed by speciation
+within islands.
+
+This leads to two clear, competing hypotheses. \textbf{Hypothesis 1}
+(allopatric speciation) suggests that sister species should occur on
+separate islands. The basal species, those that branch off near the
+bottom of the phylogeny, should occur on the oldest islands, like Kauai
+and Oahu. Derived species, those that branch off near the top of the
+phylogeny, should occur on younger islands like Maui and Hawaii.
+\textbf{Hypothesis 2} (sympatric) proposes that most sister species
+should occur on the same island, although it does not exclude some
+allopatric speciation.
+
+To test these hypotheses, Tamra Mendelson and Kerry Shaw\footnote{Mendelson,
+  T.C., and K.L. Shaw. 2005. Nature 433: 375-376.} estimated a phylogeny
+for 26 species of \emph{Laupala}, including a mainland outgroup species
+(\emph{Paralaupala}, which can be ignored). The list of species and the
+island where each species lives is provided on page \pageref{tab:cricket_table}. Using
+genetic evidence to build the phylogeny and well-established geological
+evidence for the islands, Mendelson and Shaw compared the estimated
+dates of diversification within the genus to the timing for the
+geological origins of the different Hawaiian Islands. The figure on page \pageref{fig:cricket_phylogeny}
+ shows a simplified version of the phylogenetic tree produced by Mendelson
+and Shaw. They included many individuals from several populations for
+each species (see Figure 13.11 in your text). I reduced the tree to a
+single branch for each species but the tree is otherwise faithful to the
+original figure.\vspace{\baselineskip}
+
+\textbf{Your goal for this exercise is to evaluate the phylogenetic tree
+to determine whether the evidence is consistent with hypothesis 1,
+hypothesis 2, neither, or some combination of both.}
+
+\begin{enumerate}
+\item The table on page \pageref{tab:cricket_table} lists the \textit{Laupala} cricket species and the island where each species lives. Locate each species in the table on the phylogeny shown on page \pageref{fig:cricket_phylogeny}. Write the island name next to the species.
+
+\item Study the phylogeny for patterns that suggest allopatric or
+sympatric speciation, or perhaps a combination of both. That is, are the most closely related species found on the same island, which is consistent with sympatric speciation, or are they found on different islands, consistent with allopatric speciation?
+
+\item Answer the questions on the next page.
+
+\end{enumerate}
+
+\newpage
+
+\begin{questions}
+
+\question[4]
+Do basal species occur on older islands and do derived species occur
+on younger islands? Explain with specific examples from the phylogeny. Basal species are those that branch off near the base of the tree. Derived species branch off higher in the tree.
+
+\begin{minipage}[t][1.35in]{\textwidth}%
+\begin{solution}
+The basal group of the overall tree (\textit{L. kanaele} et al.) are on the oldest island (Kauai). The basal group of each of the two major clades also appear on the older islands, such as \textit{L. hapapa} on Oahu from the upper clade and \textit{L. tantalus} on Oahu from the older clade. The more derived species appear on the younger islands such as \textit{L. cesarian} and {L. eukolea} from Hawaii and Maui (respectively) or all the species on Hawaii from the lower clade.
+\end{solution} 
+\end{minipage}
+
+\question[4]
+Do sister species occur on different islands or do sister species
+occur on the same island? Explain with specific examples from the
+phylogeny. Sister species are two species that share the most recent common ancestor.
+
+\begin{minipage}[t][1.35in]{\textwidth}%
+\begin{solution}
+Most sister species occur on the same island, such as \textit{L. hualalai} and \textit{L. pruna} on Hawaii, or \textit{L. prosea} and \textit{L. vespertina} on Maui. All of the Kauai species are most closely related. The exceptions are (1) \textit{L. cesariana} (Hawaii) and \textit{L. eukolea} (Maui) and (2) \textit{L. melewiki} (Maui) and \textit{L. spisa} (Oahu).
+\end{solution}
+\end{minipage}
+
+\question[4]
+Does the evidence clearly support one hypothesis over the other?
+Explain.
+
+\begin{minipage}[t][1.35in]{\textwidth}%
+\begin{solution}
+The phylogenetic tree supports both hypotheses. The overall tree, as well as the two major clades support allopatric speciation (Hypothesis 1) among ancestral crickets. However, most crickets alive today occur sympatrically with their closest relatives, supporting sympatric speciation (Hypothesis 2).
+\end{solution}
+\end{minipage}
+
+\question[3]
+Can you think of a way in which \emph{recently diverged} species on
+the same island may still be genetically similar but that does not
+require sympatric speciation? Remember that sympatric speciation is
+thought to be \emph{very} unlikely and so other explanations must be
+ruled out. What do you think would have to be ruled out to support
+sympatric speciation?
+
+\begin{minipage}[t][1.3in]{\textwidth}%
+\begin{solution}
+You would have to show that the ancestral populations were never geographically isolated on the same island. Although many species now co-occur, that does not mean they always co-occurred. They may have been isolated on different parts of the island, occupied different habitats, etc.
+\end{solution}
+\end{minipage}
+
+\end{questions}
+
+\newpage
+
+\begin{longtable}[c]{@{}ll@{}}
+\toprule
+\textbf{Species} & \textbf{Island}\tabularnewline
+\midrule
+\endhead
+\emph{Laupala cesarina} & Hawaii\tabularnewline
+\emph{L. eukolea} & Maui\tabularnewline
+\emph{L. fugax} & Maui\tabularnewline
+\emph{L. hapapa} & Oahu\tabularnewline
+\emph{L. hualalai} & Hawaii\tabularnewline
+\emph{L. kanaele} & Kauai\tabularnewline
+\emph{L. koala} & Kauai\tabularnewline
+\emph{L. kohalensis} & Hawaii\tabularnewline
+\emph{L. kokeensis} & Kauai\tabularnewline
+\emph{L. kona} & Hawaii\tabularnewline
+\emph{L. makaio} & Maui\tabularnewline
+\emph{L. melewiki} & Maui\tabularnewline
+\emph{L. molokaiensis} & Molokai\tabularnewline
+\emph{L. neospisa} & Oahu\tabularnewline
+\emph{L. nigra} & Hawaii\tabularnewline
+\emph{L. oahuensis} & Oahu\tabularnewline
+\emph{L. orientalis} & Maui\tabularnewline
+\emph{L. pacifica} & Oahu\tabularnewline
+\emph{L. paranigra} & Hawaii\tabularnewline
+\emph{L. prosea} & Maui\tabularnewline
+\emph{L. pruna} & Hawaii\tabularnewline
+\emph{L. spisa} & Oahu\tabularnewline
+\emph{L. tantalis} & Oahu\tabularnewline
+\emph{L. vespertina} & Maui\tabularnewline
+\emph{L. wailua} & Kauai\tabularnewline
+\emph{Paralaupala kukui} & Mainland outgroup\tabularnewline
+\bottomrule
+\end{longtable}\label{tab:cricket_table}
+
+\newpage
+
+\begin{figure}[h!]
+
+	\ifprintanswers
+		\includegraphics[width=1\textwidth]{cricket_phylogeny_answers}
+	\else
+		\includegraphics[width=1\textwidth]{cricket_phylogeny}
+	\fi
+\vspace{\baselineskip}
+
+The major Hawaiian islands and their approximate ages are shown above left. The crickets of the genus \textit{Laupala} are shown on the phylogeny  above right. The approximate times of divergence for three points on the phylogeny are indicated by the gray circles. Ma = millions of years ago.
+
+\end{figure}\label{fig:cricket_phylogeny}
+
+\end{document}  
