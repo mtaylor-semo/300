@@ -9,19 +9,19 @@
 \usepackage{geometry}
 \geometry{letterpaper, bottom=1in}                   
 %\geometry{landscape}                % Activate for for rotated page geometry
-%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
 \usepackage{amssymb, amsmath}
 \usepackage{mathtools}
 	\everymath{\displaystyle}
 
 \usepackage{fontspec}
-\setmainfont[Ligatures={TeX}, BoldFont={* Bold}, ItalicFont={* Italic}, BoldItalicFont={* BoldItalic}, Numbers={Proportional}]{Linux Libertine O}
-\setsansfont[Scale=MatchLowercase,Ligatures=TeX]{Linux Biolinum O}
+\setmainfont[Ligatures={TeX, Common}, BoldFont={* Bold}, ItalicFont={* Italic}, BoldItalicFont={* BoldItalic}, Numbers={OldStyle,Proportional}]{Linux Libertine O}
+\setsansfont[Scale=MatchLowercase,Ligatures={TeX,Common}, Numbers={OldStyle,Proportional}]{Linux Biolinum O}
 %\setmonofont[Scale=MatchLowercase]{Inconsolata}
 \usepackage{microtype}
 
 \usepackage{unicode-math}
-\setmathfont[Scale=MatchLowercase]{Asana Math}
+\setmathfont[Scale=MatchLowercase, Numbers=Lining]{Asana Math}
 %\setmathfont[Scale=MatchLowercase]{XITS Math}
 
 % To define fonts for particular uses within a document. For example, 
@@ -40,23 +40,54 @@
 
 \usepackage{enumitem}
 \usepackage{hyperref}
-%\usepackage{placeins} %PRovides \FloatBarrier to flush all floats before a certain point.
 \usepackage{hanging}
 
-\usepackage{titling}
-\setlength{\droptitle}{-60pt}
-\posttitle{\par\end{center}}
-\predate{}\postdate{}
+\usepackage{enumitem}
+\setlist{leftmargin=*}
+\setlist[1]{labelindent=\parindent}
+\setlist[enumerate]{label=\textsc{\alph*}.}
+
+%\usepackage{titling}
+%\setlength{\droptitle}{-60pt}
+%\posttitle{\par\end{center}}
+%\predate{}\postdate{}
+
+\usepackage[sc]{titlesec}
 
 \renewcommand{\solutiontitle}{\noindent}
 \unframedsolutions
 \SolutionEmphasis{\bfseries}
+
+\renewcommand{\questionshook}{%
+	\setlength{\leftmargin}{-\leftskip}%
+}
+
+\makeatletter
+\def\SetTotalwidth{\advance\linewidth by \@totalleftmargin
+\@totalleftmargin=0pt}
+\makeatother
+
 
 \pagestyle{headandfoot}
 \firstpageheader{BI 300: Evolution}{}{\ifprintanswers\textbf{KEY}\else Name: \enspace \makebox[2.5in]{\hrulefill}\fi}
 \runningheader{}{}{\footnotesize{pg. \thepage}}
 \footer{}{}{}
 \runningheadrule
+
+\newcommand*\AnswerBox[2]{%
+    \parbox[t][#1]{0.92\textwidth}{%
+    \begin{solution}#2\end{solution}}
+    \vspace{\stretch{1}}
+}
+
+\newenvironment{AnswerPage}[1]
+    {\begin{minipage}[t][#1]{0.92\textwidth}%
+    \begin{solution}}
+    {\end{solution}\end{minipage}
+    \vspace{\stretch{1}}}
+
+\newlength{\basespace}
+\setlength{\basespace}{5\baselineskip}
 
 %\printanswers
 
@@ -90,9 +121,9 @@ more often}.
 \question
 \label{itm:kumar} The average diploid mammalian genome contains about 3
 billion (3 x 10\textsuperscript{9}) base pairs. Multiply the number of
-base pairs by the mutation rate (2.2 $\times$ 10\textsuperscript{-9} per bp per
+base pairs by the mutation rate ($2.2 \times 10^{-9}$ per bp per
 generation) to determine the number of new heritable mutations.
-(Reminder: when multiplying numbers in 10\textsuperscript{X} scientific
+(Reminder: when multiplying numbers in $10^X$ scientific
 notation to sum the exponents.) What result do you get?%\vspace{2cm}
 
 \ifprintanswers\vspace*{\baselineskip}{\bfseries%
@@ -150,7 +181,7 @@ can cause these beneficial mutations to increase rapidly in frequency
 throughout the population during future generations.
 }%end fullwidth
 
-\question[5]
+\question[4]
 \label{itm:nachman} Nachman and Crowell (2000, Genetics 156: 297--304) compared
 more than 16,000 nucleotides from human and chimpanzee genomes and
 estimated that the average mutation rate was 2.5 $\times$
@@ -248,7 +279,7 @@ These calculations show that the rate of nonadaptive evolution is independent of
 Jaillon et al. (2004) also determined that the neutral mutation rate of the Green-spotted Puffer (\textit{Tetraodon nigroviridis}, a species of fish and a model organism) was $14.6 \times 10^{-9}$ per nucleotide site per year. The Green-Spotted Puffer has a generation time of one year (Kai et al. 2001, Genome Biol. Evol. 3: 424--442) so the per year and per generation neutral mutation rates are equal. $N_e$ was estimated to be about 1,000,000 individuals (Neafsey et al. 2004, Mol. Biol. Evol. 21: 2310--2318).
 }%end fullwidth
 
-\question[5]
+\question[4]
 Use the above information to calculate the rate of non-adaptive evolution in the Green-spotted Puffer. Show your work.
 
 \ifprintanswers\vspace*{\baselineskip}{\bfseries%
@@ -262,7 +293,7 @@ Use the above information to calculate the rate of non-adaptive evolution in the
 	\vspace*{\stretch{1}}
 \fi
 
-\question[5]
+\question[2]
 Compare the mammalian mutation rate given by Kumar and Subramanian in Question (\ref{itm:kumar}) ($2.2 \times 10^{-9}$ per nucleotide site per generation) to the mammalian mutation rate given by Jaillon et al. in Question (\ref{itm:jaillon}) ($14.25 \times 10^{-8}$ per nucleotide site per generation). Explain why Jaillon's rate is so much higher than Kumar and Subramanian's rate. Hint: It's not because different organisms were compared. Both rates apply broadly to all mammals. It's also not time because both rates are standardized to generations.
 
 \ifprintanswers\vspace*{\baselineskip}
