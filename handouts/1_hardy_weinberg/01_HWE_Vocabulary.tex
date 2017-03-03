@@ -16,7 +16,7 @@
 \usepackage{fontspec}
 \setmainfont[Ligatures={TeX}, BoldFont={* Bold}, ItalicFont={* Italic}, BoldItalicFont={* BoldItalic}, Numbers={Proportional}]{Linux Libertine O}
 \setsansfont[Scale=MatchLowercase,Ligatures=TeX]{Linux Biolinum O}
-\setmonofont[Scale=MatchLowercase]{Inconsolata}
+%\setmonofont[Scale=MatchLowercase]{Inconsolata}
 \usepackage{microtype}
 
 \usepackage{unicode-math}
@@ -77,12 +77,13 @@ You are responsible for learning the meaning of these terms. They'll be used in 
 individuals in a population. Compare to effective population size.\medskip
 
 \textbf{Effective Population Size (\emph{N}\textsubscript{e})}: The
-number of breeding individuals in a population. Compare to (census)
-population size.\medskip
+number of breeding individuals in a population. Compare to census
+population size. In this course, ``population size'' refers to
+effective population size unless noted specifically.\medskip
 
-\textbf{Gene Flow}: The movement of genes between populations. Not all
-gene flow is associated with migration. For example, wind-borne pollen
-among populations represents gene flow without migration.\medskip
+\textbf{Gene Flow}: The movement of alleles between populations. Not all
+gene flow is associated with migration of individuals. For example, wind-borne pollen
+dispersing among populations represents gene flow without migration.\medskip
 
 \textbf{Genetic Drift}: The random variation in haplotype frequencies
 due to random events.\medskip
@@ -94,10 +95,12 @@ non-coding.\medskip
 that are heterozygous at a locus. Can be used for two or more loci.\medskip
 
 \textbf{Heterozygote Advantage}: Higher relative fitness (see) of
-heterozygotes compared to either homozygote.\medskip
+heterozygotes compared to either homozygote. Also known as
+heterosis or overdominance.\medskip
 
 \textbf{Heterozygote Disadvantage}: Lower relative fitness (see) of
-heterozygotes compared to either homozygote.\medskip
+heterozygotes compared to either homozygote. Also known as
+underdominance.\medskip
 
 \textbf{Homozygosity}: The proportion of individuals in a population
 that are homozygous at a locus. Can be used for two or more loci.\medskip
@@ -120,7 +123,12 @@ synonymous third codon position.\medskip
 
 \textbf{Nonsynonymous Substitutions}: any nucleotide mutation that
 changes the amino acid sequence in a protein. The number of
-nonsynonymous substitutions in an allele is represented by $dN$.\medskip
+nonsynonymous substitutions is represented by $dN$.\medskip
+
+\textbf{Population Size (\emph{N})}: The total number of individuals in
+a population. Often synonymous with census population size, depending
+on context. In this course, ``population size'' refers to
+effective population size unless noted specifically.  Compare to effective population size.\medskip
 
 \textbf{Positive Selection}: Any form of natural selection that
 increases the frequencey of beneficial alleles in a population. $\frac{dN}{dS} > 1$\medskip
@@ -139,7 +147,7 @@ genotype with a relative fitness of 0.95 is 0.05.\medskip
 
 \textbf{Synonymous Substitution}: any nucleotide mutation that does not
 change the amino acid sequence in a protein. The number of synonymous
-substitutions in an allele is represented by \emph{dS.}\medskip
+substitutions is represented by \emph{dS.}\medskip
 
 \textbf{Substitution (\emph{k})}: The replacement of an existing
 haplotype by a new haplotype in a population. For example, haplotype
@@ -147,9 +155,6 @@ haplotype by a new haplotype in a population. For example, haplotype
 population. Haplotype \emph{a} substituted for haplotype \emph{A}. Do
 not confuse with nonsynonymous and synonymous amino acid substitutions
 in proteins.\medskip
-
-\textbf{Population Size (\emph{N})}: The total number of individuals in
-a population. Compare to effective population size.\medskip
 
 \textbf{Modes of Selection}\medskip
 
@@ -189,13 +194,13 @@ relative fitness difference between \emph{w}\textsubscript{11} and
 
 \textbf{A few basics of population and molecular genetics.}
 
-$\frac{1}{2N} =$ the probability or frequency at which a new mutation will drift to
+$\frac{1}{2N_e} =$ the probability or frequency at which a new mutation will drift to
 fixation in a population.\medskip
 
 $2N_e\mu =$ the number of new mutations that will
 occur, on average, in a population each generation.\medskip
 
-$k = \frac{1}{2N} \times 2N_e\mu = \mu =$ the average rate at which new haplotypes substitute for previously
+$k = \frac{1}{2N_e} \times 2N_e\mu = \mu =$ the average rate at which new haplotypes substitute for previously
 existing haplotypes in a population by genetic drift.\medskip
 
 If $s \ll \frac{1}{4N_e}$, then drift will be the primary determinant of haplotype frequency
