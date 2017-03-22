@@ -36,12 +36,13 @@
 *.pxm
 *.wmf
 *.zip
+*.webarchive
 .DS_Store
 
 ## Folders
 exams/
 handouts/**/
-critical_analyses/**/
+#critical_analyses/**/
 _current_semester/
 past_semesters/
 support/
