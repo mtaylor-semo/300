@@ -1,7 +1,11 @@
 %!TEX TS-program = lualatex
 %!TEX encoding = UTF-8 Unicode
 
-\documentclass[11pt, addpoints]{exam}
+\documentclass[12pt]{exam}
+
+%\printanswers
+
+
 \usepackage{graphicx}
 	\graphicspath{{/Users/goby/Pictures/teach/300/}
 	{img/}} % set of paths to search for images
@@ -17,7 +21,7 @@
 \usepackage{fontspec}
 \setmainfont[Ligatures={TeX}, BoldFont={* Bold}, ItalicFont={* Italic}, BoldItalicFont={* BoldItalic}, Numbers={Proportional}]{Linux Libertine O}
 \setsansfont[Scale=MatchLowercase,Ligatures=TeX]{Linux Biolinum O}
-\setmonofont[Scale=MatchLowercase]{Inconsolata}
+%\setmonofont[Scale=MatchLowercase]{Inconsolata}
 \usepackage{microtype}
 
 \usepackage{unicode-math}
@@ -52,13 +56,12 @@
 \footer{}{}{}
 \runningheadrule
 
-%\printanswers
+\bonuspointpoints{point extra credit}{points extra credit}
 
 \begin{document}
 
 These questions are based on Koene, J.M. and H. Schulenburg. 2005. Shooting darts: co-evolution and
-counter-adaptation in hermaphroditic snails. BMC Evolutionary Biology 5:
-25.
+counter-adaptation in hermaphroditic snails. BMC Evolutionary Biology~5:25.
 
 Read this paper carefully and then type your answers. Type the question number and then your answer. You do not need to retype the question. Hand-written
 assignments will not be accepted. You must have your completed answers
@@ -75,13 +78,25 @@ result in an automatic 50\% deduction.
 
 \begin{questions}
 
+\question[3]
+What are allohormones? Include the citation for a credible scientific source.
+
+\ifprintanswers
+\begin{solution}
+An allohormone is defined as a substance that is transferred from one individual to another free-living member of the same species and that induces a direct behavioural or physiological response. (Koenig and ter Maat 2001. J. Comp. Physiol. A 187: 323.)
+\end{solution}
+\else\vspace*{\stretch{1}}
+\fi
+
+
 \question[5]
  What specific predictions do the authors test? What specific
   correlations of morphological variation would support the predictions?
   In other words, what structures should co-vary, and how should the
   structures co-vary?
 
-\ifprintanswers\begin{solution}
+\ifprintanswers
+\begin{solution}
 Dart elaboration will co-vary with mucous gland morphology (surface area).  More elaborate darts will have glands with enlarged surface area.  Less elaborate glands will have less gland surface area.
 
 Dart elaboration will co-vary with structural complexity of spermatophore-receiving organ (SRO). Vaguely worded as ``adaptations to counteract this effect are expected.''
@@ -96,14 +111,17 @@ What is sexual conflict? What do the authors mean by a
   ``co-evolutionary arms race''? Use your own words to explain.
   
 \ifprintanswers\begin{solution}
-Each sex has a vested interest in its own fitness, which is often at odds with the other sex.  Thus, one sex may try to increase its own fitness at the expense of the other sex.Each sex will try to overcome the fitness ``harm'' inflicted by the other sex, which escalates in adaptations.
+Each sex has a vested interest in its own fitness, which is often at odds with the other sex.  Thus, one sex may try to increase its own fitness at the expense of the other sex.
 
-Red queen hypothesis: Run as fast as you can to stay in place.\end{solution}
+Each sex will try to overcome the fitness ``harm'' inflicted by the other sex, which escalates in adaptations.
+
+Red queen hypothesis: Run as fast as you can to stay in place.
+\end{solution}
 \else\vspace*{\stretch{1}}
 \fi
 
 \question[5]
-\label{q:3}What is the specific form of sexual conflict in these hermaphroditic
+\label{q:sexual_conflict}What is the specific form of sexual conflict in these hermaphroditic
   snails, as determined from studies of \emph{Cantareus aspersus}? How
   does this affect fitness in these snails?
 
@@ -114,7 +132,7 @@ The love dart introduces an “allohormone” that inhibits sperm digestion by �
 \fi
 
 \question[5]
-\label{q:4}On page 2, the authors mention cryptic female choice? What do you
+\label{q:cryptic_choice}On page 2, the authors mention cryptic female choice? What do you
   think this means?
 
 \ifprintanswers\begin{solution}
@@ -124,31 +142,35 @@ Females receive sperm in the spermatophore-receiving organ.  Digestion of sperm 
 	\vspace*{\stretch{1}}
 \fi
 
-\question[10]
+\question[7]
 The authors suggest that the evidence supports their conclusion of a
   sexual conflict and a co-evolutionary arms race in these snails. What
   further study (if any) do you think is necessary to show that sexual
   conflict is \emph{actually} occurring in these snails? (Hint: think about the
-  specific form of sexual conflict identified in Q\ref{q:3}  and cryptic female
-  choice in Q\ref{q:4}.)
+  specific form of sexual conflict identified in question~\ref{q:sexual_conflict}  and cryptic female
+  choice in question~\ref{q:cryptic_choice}.)
 
 \ifprintanswers\begin{solution}
 Demonstrate that female do have cryptic female choice:  store and non-randomly use sperm for fertilization, especially in the increased diverticula in the SRO.
 
-That allohormone inhibition occurs in other species. - or hormones to counteract allohormone.Are the developmental pathways of these structures independent?
+That allohormone inhibition occurs in other species. - or hormones to counteract allohormone.
+
+Are the developmental pathways of these structures independent?
 \end{solution}
 \else\vspace*{\stretch{1}}
 \fi
 
-\question[2]
-\textbf{Optional Bonus:} The authors state on page two, near the
+\bonusquestion[2]
+The authors state on page two, near the
 end of the introduction, that they developed a molecular phylogeny for
 land snails because traditional phylogenies for these snails are derived
 primarily from reproductive characters. What is the importance of this
-statement relative to their results? (Hint: what are PICs?)
+statement relative to their results? (Hint: what are \textsc{pic}s?)
 
 \ifprintanswers\begin{solution}
-Needed to establish phylogenetic independence of characters.  Complex SRO and dart could be ancestral trait and all descendents have it.  PICs are phylogenetically independent contrasts.  Method to show that the occurrence of traits are independent of ancestry.  e.g., evolved multiple times.If the reproductive characters are used to make a phylogeny, then may group together species based on dart complexity.  Could make a polyphyletic group, which would give spurious results.  Molecular phylogeny is independent of reproductive characters.
+Needed to establish phylogenetic independence of characters.  Complex SRO and dart could be ancestral trait and all descendents have it.  PICs are phylogenetically independent contrasts.  Method to show that the occurrence of traits are independent of ancestry.  e.g., evolved multiple times.
+
+If the reproductive characters are used to make a phylogeny, then may group together species based on dart complexity.  Could make a polyphyletic group, which would give spurious results.  Molecular phylogeny is independent of reproductive characters.
 \end{solution}
 \else\vspace*{\stretch{1}}
 \fi
