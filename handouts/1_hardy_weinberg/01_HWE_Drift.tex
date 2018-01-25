@@ -1,32 +1,40 @@
 %!TEX TS-program = lualatex
 %!TEX encoding = UTF-8 Unicode
 
-\documentclass[11pt]{article}
-\usepackage{graphicx}
-	\graphicspath{{/Users/goby/Pictures/teach/300/}} % set of paths to search for images
+\documentclass[11pt, addpoints, hidelinks]{exam}
+
+%\printanswers
+
+\usepackage{fontspec}
+\setmainfont[Ligatures={TeX, Common}, BoldFont={* Bold}, ItalicFont={* Italic}, BoldItalicFont={* BoldItalic}, Numbers={OldStyle,Proportional}]{Linux Libertine O}
+\setsansfont[Scale=MatchLowercase,Ligatures={TeX,Common}, Numbers={OldStyle,Proportional}]{Linux Biolinum O}
+%\setmonofont[Scale=MatchLowercase]{Inconsolata}
+\usepackage{microtype}
 
 \usepackage{geometry}
 \geometry{letterpaper, bottom=1in}                   
 %\geometry{landscape}                % Activate for for rotated page geometry
-%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
-\usepackage{amssymb, amsmath}
-\usepackage{mathtools}
-	\everymath{\displaystyle}
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+%\usepackage{amssymb, amsmath}
+%\usepackage{mathtools}
+%\everymath{\displaystyle}
 
-\usepackage{fontspec}
-\setmainfont[Ligatures={TeX}, BoldFont={* Bold}, ItalicFont={* Italic}, BoldItalicFont={* BoldItalic}, Numbers={Proportional}]{Linux Libertine O}
-\setsansfont[Scale=MatchLowercase,Ligatures=TeX]{Linux Biolinum O}
-\setmonofont[Scale=MatchLowercase]{Inconsolata}
-\usepackage{microtype}
 
 \usepackage{unicode-math}
-\setmathfont[Scale=MatchLowercase]{Asana Math}
+\setmathfont[Scale=MatchLowercase, Numbers=Lining]{Asana Math}
 %\setmathfont[Scale=MatchLowercase]{XITS Math}
 
 % To define fonts for particular uses within a document. For example, 
 % This sets the Libertine font to use tabular number format for tables.
 \newfontfamily{\tablenumbers}[Numbers={Monospaced}]{Linux Libertine O}
 \newfontfamily{\libertinedisplay}{Linux Libertine Display O}
+
+
+\usepackage{graphicx}
+\graphicspath{{/Users/goby/Pictures/teach/300/exercises/}
+	{img/}} % set of paths to search for images
+
+
 
 \usepackage{booktabs}
 %\usepackage{tabularx}
@@ -37,47 +45,65 @@
 \newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
 \newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
 
+%\usepackage{hanging}
+
 \usepackage{enumitem}
-\usepackage{hyperref}
-%\usepackage{placeins} %PRovides \FloatBarrier to flush all floats before a certain point.
-\usepackage{hanging}
+\setlist{leftmargin=*}
+\setlist[1]{labelindent=\parindent}
+\setlist[enumerate]{label=\textsc{\alph*}.}
 
-\usepackage{titling}
-\setlength{\droptitle}{-60pt}
-\posttitle{\par\end{center}}
-\predate{}\postdate{}
+%\usepackage{titling}
+%\setlength{\droptitle}{-60pt}
+%\posttitle{\par\end{center}}
+%\predate{}\postdate{}
 
-%\setlength\parindent{0pt}
+\usepackage[sc]{titlesec}
 
-\usepackage{fancyhdr}
-\headheight = 13.6pt
-\fancypagestyle{firstpage}{%
-	\fancyhf{}
-	\fancyhead[L]{BI 300: Evolution}
-	\fancyhead[R]{Name: \enspace \makebox[2.5in]{\hrulefill}}
-	\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\solutiontitle}{\noindent}
+\unframedsolutions
+\SolutionEmphasis{\bfseries}
+
+\renewcommand{\questionshook}{%
+	\setlength{\leftmargin}{-\leftskip}%
 }
 
-\fancyhf{}
-\pagestyle{fancy}
-\fancyhead[R]{\thepage}
-\renewcommand{\headrulewidth}{0.4pt}
+\makeatletter
+\def\SetTotalwidth{\advance\linewidth by \@totalleftmargin
+	\@totalleftmargin=0pt}
+\makeatother
 
 
+\pagestyle{headandfoot}
+\firstpageheader{BI 300: Evolution}{}{\ifprintanswers\textbf{KEY}\else Name: \enspace \makebox[2.5in]{\hrulefill}\fi}
+\runningheader{}{}{\footnotesize{pg. \thepage}}
+\footer{}{}{}
+\runningheadrule
 
+\newcommand*\AnswerBox[2]{%
+	\parbox[t][#1]{0.92\textwidth}{%
+		\begin{solution}#2\end{solution}}
+	\vspace{\stretch{1}}
+}
 
-\title{HWE: Population Size and Genetic Drift}
-\author{BI 153 Lab 2 Assignment}
-\date{}                                           % Activate to display a given date or no date
+\newenvironment{AnswerPage}[1]
+{\begin{minipage}[t][#1]{0.92\textwidth}%
+		\begin{solution}}
+		{\end{solution}\end{minipage}
+	\vspace{\stretch{1}}}
+
+\newlength{\basespace}
+\setlength{\basespace}{5\baselineskip}
+
+\usepackage{hyperref}
 
 \begin{document}
-\thispagestyle{firstpage}
-\subsection*{Hardy-Weinberg Equilibrium: Population Size and Genetic Drift (20 pts)}
+%\thispagestyle{firstpage}
+\subsection*{Hardy-Weinberg Equilibrium: Population Size and Genetic Drift (\numpoints\ points)}
 
 Hardy-Weinberg Equilibrium (HWE) applies when a population meets five assumptions. Those assumptions
 are:
 
-\begin{enumerate}[label=\alph*.]
+\begin{enumerate}
 
 \item Random mating. Each individual in the population has the same
 probability of mating with any other individual in a population.
@@ -117,19 +143,31 @@ This exercise will violate the assumption of infinite population size.
 We will explore how haplotype frequencies change in large and small
 populations.
 
-\begin{enumerate}
-\item To begin, assume that a single locus has two haplotypes (\emph{A} and
+
+\begin{questions}
+\question[1]
+To begin, assume that a single locus has two haplotypes (\emph{A} and
 \emph{a}) in a population. Haplotype \emph{A} has a
 frequency of 0.3 in the population. What is the frequency of haplotype
-\emph{a} in the population? (1 pt)\vspace{1cm}
+\emph{a} in the population? \ifprintanswers \textbf{0.7} \fi
 
-\item What is the frequency of the \emph{AA} genotype? (1 pt)\vspace{1cm}
+\vspace{1cm}
 
-\item What is the frequency of the \emph{aa} genotype? (1 pt)\vspace{1cm}
+\question[1]
+What is the frequency of the \emph{AA} genotype? \ifprintanswers \textbf{0.09} \fi
 
-\item What is the frequency of heterozygotes? (1 pt)\vspace{1cm}
+\vspace{1cm}
 
-\end{enumerate}
+\question[1]
+What is the frequency of the \emph{aa} genotype? \ifprintanswers \textbf{0.49} \fi
+
+\vspace{1cm}
+
+\question[1]
+What is the frequency of heterozygotes? \ifprintanswers \textbf{0.42} \fi
+
+\vspace{1cm}
+
 
 Let's begin with a large \textbf{population size}, represented by
 \textbf{\textit{N}}. The number of individuals in the population is 10,000
@@ -139,20 +177,42 @@ population (gene flow), that there is no mutation, and that all of the
 individuals have the same chance of surviving and reproducing
 (\emph{i.e}., no natural selection).
 
-\begin{enumerate}[resume]
-\item Do you think the frequency of haplotype \emph{A} will change
+
+\question
+Do you think the frequency of haplotype \emph{A} will change
 or remain the same over the next 1,000 generations? Draw a line on the
 graph below to illustrate your prediction.
 
-\begin{center}
-	\includegraphics[width=0.9\textwidth]{prediction_graph}
-\end{center}
+\begin{minipage}[l][3.5in]{\textwidth}
 
-\item Explain the reasoning you used to arrive at your prediction.
+
+\ifprintanswers
+
+\bigskip
+
+{\Large \bfseries Pop size = 10,000\\
+Generations = 1000
+\\
+Initial Freq of A to 0.3 \bigskip
+
+Number populations to 1.
+\bigskip
+
+Run simulations 5 times.
+}
+
+\else
+	\begin{center}
+		\includegraphics[height=3.5in]{prediction_graph}
+	\end{center}
+\fi
+\end{minipage}
+
+
+\question[1] Explain the reasoning you used to arrive at your prediction.
 Compare your prediction to those made by others in your group. Discuss
-any differences with your group. (1 pt)
+any differences with your group.
 
-\end{enumerate}
 \newpage
 
 Draw the results from several simulations in the graph below.
@@ -161,31 +221,62 @@ Draw the results from several simulations in the graph below.
 	\includegraphics[width=0.9\textwidth]{prediction_graph}
 \end{center}
 
-\begin{enumerate}[resume]
 
-\item Did the results agree with your prediction? If the results did not agree, which assumption(s) of HWE do you think was violated? Discuss ideas with your group, and then explain \emph{why} you think violation of this assumption (or assumptions) gave the observed results.
-(2 pts)
-\end{enumerate}\vspace{6.5cm}
+
+\question[2] Did the results agree with your prediction? If the results did not agree, which assumption(s) of HWE do you think was violated? Discuss ideas with your group, and then explain \emph{why} you think violation of this assumption (or assumptions) gave the observed results.
+
+\begin{minipage}[t][6.5cm]{\textwidth}
+	\ifprintanswers
+		\textbf{Infinite Population size.}
+	\fi
+\end{minipage}
 
 An important assumption of HWE is that population size is infinitely large. Although 10,000 breeding individuals in a population is large, it is not infinitely large. Even 1 billion individuals in a population is not infinitely large. When populations are not infinitely large, then the haplotype frequencies can vary from generation to generation purely by chance events. This random variation in haplotype frequencies from generation to generation in a population is called \textbf{genetic drift}. The dashed line in the simulations shows the expected results if the population is infinitely large. By comparing the observed results to the dashed line, you can see how genetic drift affects populations that are not infinitely large. Small differences between the observed results and the dashed line means genetic drift has a small effect. Large differences mean that genetic drift has a large effect. The size of the effect of genetic drift is related to the size of the population.
 
-\begin{enumerate}[resume]
-\item Many natural populations, especially populations of
+
+\question
+Many natural populations, especially populations of
 endangered species, are much smaller than 10,000 breeding individuals.
 On the graph below, draw three lines to predict how the frequency of
 Haplotype \emph{A} (still at 0.3) will change over 1,000 generations for
 breeding populations of \emph{N} = 1,000, \emph{N} = 100, and \emph{N} =
 25 individuals.
 
-\begin{center}
-	\includegraphics[width=0.9\textwidth]{prediction_graph}
-\end{center}
+\begin{minipage}[t][3.5in]{\textwidth}
+	\ifprintanswers
+	{\Large \bfseries
+	
+	Set Initial Freq of A to 0.3
+\\
+	Generations = 1000
+\\
+	Number of Pops = 10 \bigskip
 
-\item Explain the reasoning you used to arrive at your
+	N = 1000, 10 simulations
+\bigskip
+
+	N = 100, 10 simulations
+\bigskip
+
+	N = 25, 10 simulations
+\bigskip
+
+	Students fill in table on next page.  Continue each simulation until allele either fixed or lost.
+	}
+
+	\else
+	\begin{center}
+		\includegraphics[width=0.9\textwidth]{prediction_graph}
+	\end{center}
+	\fi
+\end{minipage}
+
+\question[1] Explain the reasoning you used to arrive at your
 predictions. Compare your prediction to those made by others in your
-group. Discuss any differences with your group. (1 pt)
-\end{enumerate}%\vspace{6.5cm}
+group. Discuss any differences with your group.
+
 \newpage
+
 Let's run these simulations for 10 trials, with 10 populations in each
 trial. We'll do this for population sizes (\emph{N}) of 1,000
 individuals, 100 individuals, and 25 individuals. All other assumptions
@@ -224,20 +315,26 @@ Proportion (out of 100 populations) & & & & & &\tabularnewline
 \hline
 \end{longtable}
 
-\begin{enumerate}[resume]
-\item Did the results agree with your predictions? Explain for
-each population size. (2 pt)
+
+\question[2] Did the results agree with your predictions? Explain for
+each population size.
 
 \newpage
 
-\item How does the proportion of populations that are fixed for
+\question[1] How does the proportion of populations that are fixed for
 Haplotype \emph{A} compare to the starting frequency of Haplotype
 \emph{A}? Calculate the average of the three proportions. How does this
-compare to the starting frequency of Haplotype \emph{A}? (1 pt)\vspace{1in}
+compare to the starting frequency of Haplotype \emph{A}?
 
-\end{enumerate}
 
-This observation is an important component of genetic drift. At any
+\begin{minipage}[t][2.5cm]{\textwidth}
+	\ifprintanswers
+		\textbf{Should be near 0.3}
+	\fi
+\end{minipage}
+
+
+\textbf{This observation is an important component of genetic drift.} At any
 point in time, \emph{the chance of a haplotype becoming fixed in a
 population is the frequency of that haplotype in the population}. Thus,
 a haplotype with a frequency of 0.25 has a 25\% chance of becoming fixed
@@ -245,28 +342,31 @@ in a population in coming generations. As the frequency of a haplotype
 changes over time, so does the chance of that haplotype becoming fixed
 in the population change.
 
-\begin{enumerate}[resume]
 
-\item Consider two populations. One population has 10 diploid
+
+\question[1] Consider two populations. One population has 10 diploid
 individuals and the other population has 1,000 diploid individuals.
 Assume that a mutation creates a new haplotype in one individual in each
 population. What is the chance of the new haplotype going to fixation in
-each population? (Remember: these are diploid individuals.) (1 pt)\bigskip
+each population? (Remember: these are diploid individuals.)
 
-\emph{N} = 10:\bigskip
+\bigskip
 
-\emph{N} = 1,000:\bigskip
+\emph{N} = 10: \ifprintanswers \textbf{1/20 (0.05)} \fi \bigskip
 
-\end{enumerate}
+\emph{N} = 1,000:\ifprintanswers \textbf{1/2000 (0.0005)} \fi \bigskip
+
 
 You must remember that these numbers are probabilities. A haplotype with
 a frequency of 0.9 has a 90\% chance of going to fixation but that means
 the haplotype also has 10\% chance of being lost to the population. If,
 because of random events, the frequency of this haplotype decreases to
 0.75 after several generations, it would then have a 25\% chance of
-being lost to the population at some point in the future.\bigskip
+being lost to the population at some point in the future.
 
-\textbf{Heterozygosity}\bigskip
+\bigskip
+
+\subsection*{Heterozygosity}
 
 The amount of genetic variation in a population is estimated by
 \textbf{heterozygosity}. Heterozygosity is the proportion of individuals
@@ -274,43 +374,75 @@ in a population that are heterozygous at a particular locus. For
 example, if 53\% of the individuals in a population are \emph{Aa} at a
 locus, then the heterozygosity of the population is 0.53.
 
-\begin{enumerate}[resume]
-\item Based on this definition, write a definition and example
-for \textbf{homozygosity} (1 pt):\newpage
 
-\item Based on the results of the simulations, explain how
+\question[1] Based on this definition, write a definition and example
+for \textbf{homozygosity}:
+
+\begin{minipage}[t][2.5cm]{\textwidth}
+	\ifprintanswers
+		\textbf{Proportion of individuals in a population that are homozygous at a locus.}
+	\fi
+\end{minipage}
+
+\newpage
+
+\question[2] Based on the results of the simulations, explain how
 genetic drift affects heterozygosity and homozygosity in populations.
-Assume all other HWE assumptions are met. (2 pts)\vspace {6cm}
+Assume all other \textsc{hwe} assumptions are met.
 
-\item Thinking carefully about population size, the chance of
+\begin{minipage}[t][5cm]{\textwidth}
+	\ifprintanswers
+		\textbf{Genetic drift causes loss of heterozygosity / genetic variation.  Population becomes more homozygous at a locus.}
+	\fi
+\end{minipage}
+
+%\vspace {6cm}
+
+\question[2] Thinking carefully about population size, the chance of
 fixation, and the loss of heterozygosity in a population due to genetic
 drift, are the \emph{effects} of genetic drift more pronounced in a
-large population or a small population? Explain. (2 pts)\vspace{5cm}
-\end{enumerate}
+large population or a small population? Explain.
 
-\textbf{Effective Population Size}\bigskip
+\begin{minipage}[t][5cm]{\textwidth}
+	\ifprintanswers
+		\textbf{Drift is more pronounced in a small population.  Initial allele frequencies are higher, so greater probability of drifting to fixation, so greater chance of becoming homozygous / losing heterozygosity.}
+	\fi
+\end{minipage}
 
-\begin{enumerate}[resume]
-\item In natural populations, do you think all of the individuals
+\subsection*{Effective Population Size}
+
+\question[1] In natural populations, do you think all of the individuals
 have the same chance of reproducing in each generation or at any one
 point in time? Explain why or why not. Can you think of a real example
-to support your explanation? (1 pt)
-\end{enumerate}
+to support your explanation?
+
+\begin{minipage}[t][3cm]{\textwidth}
+	\ifprintanswers
+	\textbf{No.  Perhaps sexual selection, haremic zebras.  Some individuals are either younger or older than reproductive age.}
+	\fi
+\end{minipage}
+
 \newpage
 
 There are many reasons why some individuals in a population may not be able to reproduce. Some may be too young or too old and therefore not physiologically capable of reproduction. Some may not have been able to find a mate successfully for one reason or another. Therefore, the actual number of individuals reproducing may be much smaller than the total number of individuals in a population. The actual number of reproducing individuals in a population is called the \textbf{effective population size}, represented by \textbf{\emph{N}\textsubscript{e}}.
 
 The effective population size (\emph{N}\textsubscript{e}) may be, in many cases, much smaller than the \textbf{census population size} (\emph{N}, the total number of individuals in a population). For example, consider a population that has a census population size of 1,000 individuals but an effective population size of only 100.
 
-\begin{enumerate}[resume]
 
-\item Using the concepts of effective population size and
+
+\question[2] Using the concepts of effective population size and
 heterozygosity, explain why it is important to know
 \emph{N}\textsubscript{e} instead of \emph{N} for a population. In other
 words, what would be wrong if you estimated how quickly heterozygosity
 would change in the population over future generations if you assumed
-that \emph{all} of the individuals in a population were reproducing. (2
-pts)
-\end{enumerate}
+that \emph{all} of the individuals in a population were reproducing.
+
+\begin{minipage}[t][6cm]{\textwidth}
+	\ifprintanswers
+	\textbf{Effective population size is nearly always smaller than census population size.  Thus, heterozygosity is lost more quickly than would otherwise be predicted if based on census population size.}
+	\fi
+\end{minipage}
+
+\end{questions}
 
 \end{document}  
