@@ -15,7 +15,7 @@
 	\everymath{\displaystyle}
 
 \usepackage{fontspec}
-\setmainfont[Ligatures={TeX}, BoldFont={* Bold}, ItalicFont={* Italic}, BoldItalicFont={* BoldItalic}, Numbers={Proportional}]{Linux Libertine O}
+\setmainfont[Ligatures={TeX}, BoldFont={* Bold}, ItalicFont={* Italic}, BoldItalicFont={* BoldItalic}, Numbers={Proportional, OldStyle}]{Linux Libertine O}
 \setsansfont[Scale=MatchLowercase,Ligatures=TeX]{Linux Biolinum O}
 %\setmonofont[Scale=MatchLowercase]{Inconsolata}
 \usepackage{microtype}
@@ -48,16 +48,18 @@
 \SolutionEmphasis{\bfseries}
 
 \pagestyle{headandfoot}
-\firstpageheader{BI 300: Evolution}{}{\ifprintanswers\textbf{KEY}\else Name: \enspace \makebox[2.5in]{\hrulefill}\fi}
+\firstpageheader{\textsc{bi} 300: Evolution}{}{\ifprintanswers\textbf{KEY}\else Name: \enspace \makebox[2.5in]{\hrulefill}\fi}
 \runningheader{}{}{\footnotesize{pg. \thepage}}
 \footer{}{}{}
 \runningheadrule
+
+\usepackage[sc]{titlesec}
 
 %\printanswers
 
 \begin{document}
 
-\subsection*{Hardy-Weinberg Principle Quiz (\numpoints\ points)}
+\subsection*{Hardy-Weinberg principle quiz (\numpoints\ points)}
 
 \begin{questions}
 
