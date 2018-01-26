@@ -1,9 +1,19 @@
 %!TEX TS-program = lualatex
 %!TEX encoding = UTF-8 Unicode
 
-\documentclass[11pt, addpoints]{exam}
+\documentclass[11pt, addpoints, hidelinks]{exam}
+
+%\printanswers
+
+
+\usepackage{fontspec}
+\setmainfont[Ligatures={TeX, Common}, BoldFont={* Bold}, ItalicFont={* Italic}, BoldItalicFont={* BoldItalic}, Numbers={OldStyle,Proportional}]{Linux Libertine O}
+\setsansfont[Scale=MatchLowercase,Ligatures={TeX,Common}, Numbers={OldStyle,Proportional}]{Linux Biolinum O}
+%\setmonofont[Scale=MatchLowercase]{Inconsolata}
+\usepackage{microtype}
+
 \usepackage{graphicx}
-	\graphicspath{{/Users/goby/Pictures/teach/300/}
+	\graphicspath{{/Users/goby/Pictures/teach/300/exercises/}
 	{img/}} % set of paths to search for images
 
 \usepackage{geometry}
@@ -14,11 +24,6 @@
 \usepackage{mathtools}
 	\everymath{\displaystyle}
 
-\usepackage{fontspec}
-\setmainfont[Ligatures={TeX, Common}, BoldFont={* Bold}, ItalicFont={* Italic}, BoldItalicFont={* BoldItalic}, Numbers={OldStyle,Proportional}]{Linux Libertine O}
-\setsansfont[Scale=MatchLowercase,Ligatures={TeX,Common}, Numbers={OldStyle,Proportional}]{Linux Biolinum O}
-%\setmonofont[Scale=MatchLowercase]{Inconsolata}
-\usepackage{microtype}
 
 \usepackage{unicode-math}
 \setmathfont[Scale=MatchLowercase, Numbers=Lining]{Asana Math}
@@ -88,8 +93,6 @@
 
 \newlength{\basespace}
 \setlength{\basespace}{5\baselineskip}
-
-%\printanswers
 
 \begin{document}
 
