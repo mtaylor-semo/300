@@ -2,27 +2,34 @@
 %!TEX encoding = UTF-8 Unicode
 
 \documentclass[11pt, addpoints]{exam}
+
+%\printanswers
+
+\usepackage{fontspec}
+\setmainfont[Ligatures={TeX, Common}, BoldFont={* Bold}, ItalicFont={* Italic}, BoldItalicFont={* BoldItalic}, Numbers={OldStyle,Proportional}]{Linux Libertine O}
+\setsansfont[Scale=MatchLowercase,Ligatures={TeX,Common}, Numbers={OldStyle,Proportional}]{Linux Biolinum O}
+%\setmonofont[Scale=MatchLowercase]{Inconsolata}
+\usepackage{microtype}
+
 \usepackage{graphicx}
-	\graphicspath{{/Users/goby/Pictures/teach/300/exercises/}
+\graphicspath{{/Users/goby/Pictures/teach/300/exercises/}
 	{img/}} % set of paths to search for images
 
 \usepackage{geometry}
 \geometry{letterpaper, bottom=1in}                   
 %\geometry{landscape}                % Activate for for rotated page geometry
-%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
 \usepackage{amssymb, amsmath}
 \usepackage{mathtools}
-	\everymath{\displaystyle}
+\everymath{\displaystyle}
 
-\usepackage{fontspec}
-\setmainfont[Ligatures={TeX}, BoldFont={* Bold}, ItalicFont={* Italic}, BoldItalicFont={* BoldItalic}, Numbers={Proportional}]{Linux Libertine O}
-\setsansfont[Scale=MatchLowercase,Ligatures=TeX]{Linux Biolinum O}
-%\setmonofont[Scale=MatchLowercase]{Inconsolata}
-\usepackage{microtype}
 
 \usepackage{unicode-math}
-\setmathfont[Scale=MatchLowercase]{Asana Math}
+\setmathfont[Scale=MatchLowercase, Numbers=Lining]{Asana Math}
+%\setmathfont[Scale=MatchLowercase]{XITS Math}
 
+% To define fonts for particular uses within a document. For example, 
+% This sets the Libertine font to use tabular number format for tables.
 \newfontfamily{\tablenumbers}[Numbers={Monospaced}]{Linux Libertine O}
 \newfontfamily{\libertinedisplay}{Linux Libertine Display O}
 
@@ -36,15 +43,34 @@
 \newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
 
 \usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{hanging}
 
-\usepackage{titling}
-\setlength{\droptitle}{-60pt}
-\posttitle{\par\end{center}}
-\predate{}\postdate{}
+\usepackage{enumitem}
+\setlist{leftmargin=*}
+\setlist[1]{labelindent=\parindent}
+\setlist[enumerate]{label=\textsc{\alph*}.}
+
+%\usepackage{titling}
+%\setlength{\droptitle}{-60pt}
+%\posttitle{\par\end{center}}
+%\predate{}\postdate{}
+
+\usepackage[sc]{titlesec}
 
 \renewcommand{\solutiontitle}{\noindent}
 \unframedsolutions
 \SolutionEmphasis{\bfseries}
+
+\renewcommand{\questionshook}{%
+	\setlength{\leftmargin}{-\leftskip}%
+}
+
+\makeatletter
+\def\SetTotalwidth{\advance\linewidth by \@totalleftmargin
+	\@totalleftmargin=0pt}
+\makeatother
+
 
 \pagestyle{headandfoot}
 \firstpageheader{BI 300: Evolution}{}{\ifprintanswers\textbf{KEY}\else Name: \enspace \makebox[2.5in]{\hrulefill}\fi}
@@ -52,11 +78,24 @@
 \footer{}{}{}
 \runningheadrule
 
-%\printanswers
+\newcommand*\AnswerBox[2]{%
+	\parbox[t][#1]{0.92\textwidth}{%
+		\begin{solution}#2\end{solution}}
+	\vspace{\stretch{1}}
+}
+
+\newenvironment{AnswerPage}[1]
+{\begin{minipage}[t][#1]{0.92\textwidth}%
+		\begin{solution}}
+		{\end{solution}\end{minipage}
+	\vspace{\stretch{1}}}
+
+\newlength{\basespace}
+\setlength{\basespace}{5\baselineskip}
 
 \begin{document}
 
-\subsection*{Hardy-Weinberg Equilibrium: Natural Selection (\numpoints\ points)}
+\subsection*{Hardy-Weinberg equilibrium: natural selection (\numpoints\ points)}
 
 This exercise will look at how \textbf{natural selection}, both positive
 and negative, can alter genetic variation in a population. We'll

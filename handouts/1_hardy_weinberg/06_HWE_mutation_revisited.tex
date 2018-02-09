@@ -1,27 +1,31 @@
 %!TEX TS-program = lualatex
 %!TEX encoding = UTF-8 Unicode
 
-\documentclass[11pt, addpoints]{exam}
+\documentclass[11pt, hidelinks, addpoints]{exam}
+
+%\printanswers
+
+\usepackage{fontspec}
+\setmainfont[Ligatures={TeX, Common}, BoldFont={* Bold}, ItalicFont={* Italic}, BoldItalicFont={* BoldItalic}, Numbers={OldStyle,Proportional}]{Linux Libertine O}
+\setsansfont[Scale=MatchLowercase,Ligatures={TeX,Common}, Numbers={OldStyle,Proportional}]{Linux Biolinum O}
+%\setmonofont[Scale=MatchLowercase]{Inconsolata}
+\usepackage{microtype}
+
 \usepackage{graphicx}
-	\graphicspath{{/Users/goby/Pictures/teach/300/}
+\graphicspath{{/Users/goby/Pictures/teach/300/exercises/}
 	{img/}} % set of paths to search for images
 
 \usepackage{geometry}
 \geometry{letterpaper, bottom=1in}                   
 %\geometry{landscape}                % Activate for for rotated page geometry
-%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
 \usepackage{amssymb, amsmath}
 \usepackage{mathtools}
-	\everymath{\displaystyle}
+\everymath{\displaystyle}
 
-\usepackage{fontspec}
-\setmainfont[Ligatures={TeX}, BoldFont={* Bold}, ItalicFont={* Italic}, BoldItalicFont={* BoldItalic}, Numbers={Proportional}]{Linux Libertine O}
-\setsansfont[Scale=MatchLowercase,Ligatures=TeX]{Linux Biolinum O}
-\setmonofont[Scale=MatchLowercase]{Inconsolata}
-\usepackage{microtype}
 
 \usepackage{unicode-math}
-\setmathfont[Scale=MatchLowercase]{Asana Math}
+\setmathfont[Scale=MatchLowercase, Numbers=Lining]{Asana Math}
 %\setmathfont[Scale=MatchLowercase]{XITS Math}
 
 % To define fonts for particular uses within a document. For example, 
@@ -40,17 +44,33 @@
 
 \usepackage{enumitem}
 \usepackage{hyperref}
-%\usepackage{placeins} %PRovides \FloatBarrier to flush all floats before a certain point.
 \usepackage{hanging}
 
-\usepackage{titling}
-\setlength{\droptitle}{-60pt}
-\posttitle{\par\end{center}}
-\predate{}\postdate{}
+\usepackage{enumitem}
+\setlist{leftmargin=*}
+\setlist[1]{labelindent=\parindent}
+\setlist[enumerate]{label=\textsc{\alph*}.}
+
+%\usepackage{titling}
+%\setlength{\droptitle}{-60pt}
+%\posttitle{\par\end{center}}
+%\predate{}\postdate{}
+
+\usepackage[sc]{titlesec}
 
 \renewcommand{\solutiontitle}{\noindent}
 \unframedsolutions
 \SolutionEmphasis{\bfseries}
+
+\renewcommand{\questionshook}{%
+	\setlength{\leftmargin}{-\leftskip}%
+}
+
+\makeatletter
+\def\SetTotalwidth{\advance\linewidth by \@totalleftmargin
+	\@totalleftmargin=0pt}
+\makeatother
+
 
 \pagestyle{headandfoot}
 \firstpageheader{BI 300: Evolution}{}{\ifprintanswers\textbf{KEY}\else Name: \enspace \makebox[2.5in]{\hrulefill}\fi}
@@ -58,18 +78,31 @@
 \footer{}{}{}
 \runningheadrule
 
-%\printanswers
+\newcommand*\AnswerBox[2]{%
+	\parbox[t][#1]{0.92\textwidth}{%
+		\begin{solution}#2\end{solution}}
+	\vspace{\stretch{1}}
+}
+
+\newenvironment{AnswerPage}[1]
+{\begin{minipage}[t][#1]{0.92\textwidth}%
+		\begin{solution}}
+		{\end{solution}\end{minipage}
+	\vspace{\stretch{1}}}
+
+\newlength{\basespace}
+\setlength{\basespace}{5\baselineskip}
 
 \begin{document}
 
-\subsection*{Selection for Favorable Mutations (\numpoints\ points)}
+\subsection*{Selection for favorable mutations (\numpoints\ points)}
 
 In the exercise on mutation rates, we saw that even small mutation rates
 can generate a large number of mutations in populations of reasonable
 size. Considering only mutations that affect phenotype, most are likely
 to be detrimental and removed by natural selection but some mutations
 will provide an advantage and will be favored by natural selection.
-Let's look at a specific example.
+Here is a specific example.
 
 Michael Nachman and colleagues have studied populations of rock pocket
 mice (\textit{Chaetodipus intermedius}) in the deserts of Mexico, Arizona
@@ -82,7 +115,7 @@ rocks.
 
 Nachman and colleagues discovered that the difference in fur color of
 rock pocket mice is due to a mutation in a gene called the
-melanocortin-1 receptor, or \textit{MC1R}. Several independent studies of
+melanocortin-1 receptor, or \textit{\textsc{mc1r}}. Several independent studies of
 this gene have revealed that any one of at least 10 different mutations
 will change the fur color of mice from light to dark. That is, there are
 at least 10 different ways that a mutation can change the fur color.
@@ -190,7 +223,7 @@ scales.
 \newpage
 
 \fullwidth{%
-Any one of these mutations to \emph{MC1R} conveys a selective
+Any one of these mutations to \textit{\textsc{mc1r}} conveys a selective
 advantage to rock pocket mice that live on the dark basalt. You can use
 the mathematics of population genetics to estimate the number of
 generations that are needed for all of the individuals in a population
