@@ -1,6 +1,15 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
 \documentclass[letterpaper]{tufte-handout}
 
 %\geometry{showframe} % display margins for debugging page layout
+
+\usepackage{fontspec}
+\def\mainfont{Linux Libertine O}
+\setmainfont[Ligatures={Common,TeX}, Contextuals={NoAlternate}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={OldStyle}]{\mainfont}
+\setsansfont[Scale=MatchLowercase]{Linux Biolinum O} 
+\usepackage{microtype}
 
 \usepackage{graphicx} % allow embedded images
   \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
@@ -32,6 +41,10 @@
   \setlength{\parskip}{0pt}%
 }
 \makeatother
+
+% Set up the spacing using fontspec features
+\renewcommand\allcapsspacing[1]{{\addfontfeatures{LetterSpace=15}#1}}
+\renewcommand\smallcapsspacing[1]{{\addfontfeatures{LetterSpace=10}#1}}
 
 
 \title{Study Guide 05\hfill}
@@ -71,7 +84,7 @@ sympatric speciation\\
 
 You should \emph{write} clear and concise answers to each question in the Concepts section.  The questions are not necessarily independent.  Think broadly across lectures to see ``the big picture.'' 
 
-\begin{itemize}
+\begin{enumerate}
 	\item Explain the advantages and disadvantages of the biological species concept.  Why is this one most widely used?  What mode of reproduction is required for the biological species concept to apply?  What mode of reproduction would not fit the biological species concept?
 
 	\item Explain how geographical barriers and biological barriers contribute to the evolution of reproductive isolation between two populations.  Why are they not synonyms?
@@ -86,6 +99,6 @@ You should \emph{write} clear and concise answers to each question in the Concep
 
 	\item Which geographic mode of speciation is the most controversial?  Why?
 
-\end{itemize}
+\end{enumerate}
 
 \end{document}

@@ -1,6 +1,16 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
 \documentclass[letterpaper]{tufte-handout}
 
 %\geometry{showframe} % display margins for debugging page layout
+
+\usepackage{fontspec}
+\def\mainfont{Linux Libertine O}
+\setmainfont[Ligatures={Common,TeX}, Contextuals={NoAlternate}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={OldStyle}]{\mainfont}
+\setsansfont[Scale=MatchLowercase]{Linux Biolinum O} 
+\usepackage{microtype}
+
 
 \usepackage{graphicx} % allow embedded images
   \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
@@ -31,6 +41,11 @@
   \setlength{\parskip}{0pt}%
 }
 \makeatother
+
+% Set up the spacing using fontspec features
+   \renewcommand\allcapsspacing[1]{{\addfontfeatures{LetterSpace=15}#1}}
+   \renewcommand\smallcapsspacing[1]{{\addfontfeatures{LetterSpace=10}#1}}
+
 
 \title{{\scshape bi} 300 study guide 02\hfill}
 
@@ -105,7 +120,7 @@ natural selection\\
 
 You should \emph{write} clear and concise answers to each question in the Concepts section.  Some of the questions will make more sense after we complete the genetic drift exercises and lecture 4.
 
-\begin{itemize}
+\begin{enumerate}
 
 	\item What does it mean to say that a population is in Hardy-Weinberg equilibrium?
 
@@ -128,6 +143,6 @@ You should \emph{write} clear and concise answers to each question in the Concep
 	\item How does genetic drift affect heterozygosity and homozygosity in a population?  Is this a good thing or a bad thing for the population?  Why?  Be able to calculate the homozygosity or heterozygosity of a population, given the frequency of one allele or the frequency of one of the two homozygotes in the population. 
 
 
-\end{itemize}
+\end{enumerate}
 
 \end{document}
