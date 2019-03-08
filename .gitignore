@@ -42,7 +42,9 @@
 ## Folders
 exams
 img
-handouts/**/
+#handouts/**/
+giraffe_speciation_ORIG/
+species_exercise/
 #critical_analyses/**/
 _current_semester/
 past_semesters/
