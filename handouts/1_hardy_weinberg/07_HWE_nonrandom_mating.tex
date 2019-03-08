@@ -2,8 +2,11 @@
 %!TEX encoding = UTF-8 Unicode
 
 \documentclass[11pt, addpoints]{exam}
+
+%\printanswers
+
 \usepackage{graphicx}
-	\graphicspath{{/Users/goby/Pictures/teach/300/}
+	\graphicspath{{/Users/goby/Pictures/teach/300/exercises/}
 	{img/}} % set of paths to search for images
 
 \usepackage{geometry}
@@ -17,7 +20,7 @@
 \usepackage{fontspec}
 \setmainfont[Ligatures={TeX}, BoldFont={* Bold}, ItalicFont={* Italic}, BoldItalicFont={* BoldItalic}, Numbers={Proportional}]{Linux Libertine O}
 \setsansfont[Scale=MatchLowercase,Ligatures=TeX]{Linux Biolinum O}
-\setmonofont[Scale=MatchLowercase]{Inconsolata}
+%\setmonofont[Scale=MatchLowercase]{Inconsolata}
 \usepackage{microtype}
 
 \usepackage{unicode-math}
@@ -43,10 +46,12 @@
 %\usepackage{placeins} %PRovides \FloatBarrier to flush all floats before a certain point.
 \usepackage{hanging}
 
-\usepackage{titling}
-\setlength{\droptitle}{-60pt}
-\posttitle{\par\end{center}}
-\predate{}\postdate{}
+%\usepackage[sc{titling}
+%\setlength{\droptitle}{-60pt}
+%\posttitle{\par\end{center}}
+%\predate{}\postdate{}
+
+\usepackage[sc]{titlesec}
 
 \renewcommand{\solutiontitle}{\noindent}
 \unframedsolutions
@@ -58,13 +63,11 @@
 \footer{}{}{}
 \runningheadrule
 
-%\printanswers
-
 \begin{document}
 
-\subsection*{Hardy-Weinberg Equilibrium: Non-Random Mating (\numpoints\ points)}
+\subsection*{Hardy-Weinberg equilibrium: non-random mating (\numpoints\ points)}
 
-The last assumption of HWE for us to explore is how haplotype
+The last assumption of \textsc{hwe} for us to explore is how haplotype
 frequencies change in non-randomly mating populations. In a randomly
 mating population, any individual has the same chance of mating with any
 other individual in the population. For example, if bluebirds truly
@@ -81,7 +84,7 @@ drift. This can be demonstrated with a simple mathematical exercise.
 
 \question[1]
 The diagram below represents a single population of randomly
-mating individuals, called an \textbf{outbred population}. If all other assumptions of HWE are met, then what
+mating individuals, called an \textbf{outbred population}. If all other assumptions of \textsc{hwe} are met, then what
 are the expected genotype frequencies in this population?
 
 \begin{center}
@@ -100,8 +103,8 @@ are the expected genotype frequencies in this population?
 \question[3]
 Assume that the population then becomes subdivided into two
 subpopulations by an impermeable barrier to dispersal, and that
-\emph{all other assumptions of HWE are met}. The population is now an \textbf{inbred population} because random mating can no longer occur among all individuals in the entire population. The haplotype frequencies
-for each population are shown below. Calculate the genotype frequencies
+\emph{all other assumptions of \textsc{hwe} are met}. The population is now an \textbf{inbred population} because random mating can no longer occur among all individuals in the entire population. The haplotype frequencies
+for each population are shown below. \textit{The frequency of each allele averaged across the subpopulations is still 0.5.} Calculate the genotype frequencies
 for each inbred subpopulation to fill in the table on the next page.
 
 \begin{center}
@@ -164,7 +167,7 @@ Fill in the table below with the results from Question 1.
 \end{longtable}
 }%end Large
 
-\question[2]
+\question[1]
 Describe how the genotype frequencies you calculated for
 the inbred population differ from the genotype frequencies you calculated for
 the outbred population. Which has greater heterozygosity and which has less heterozygosity?
@@ -203,7 +206,7 @@ Consider a population with a very rare recessive allele,
 \emph{A}\textsubscript{2}, at a frequency of 0.001.
 }%end Fullwidth
 
-\question[2]
+\question[1]
 Calculate the following frequencies. Calculate the genotype frequencies to six digits after the decimal.\vspace{\baselineskip}
 
 \emph{A}\textsubscript{1}: \ifprintanswers\quad\ \textbf{0.999}\fi\vspace{\baselineskip}
@@ -227,7 +230,7 @@ extremely rare. All other individuals express the dominant
 \emph{A}\textsubscript{1} phenotype.
 }%end fullwidth
 
-\question[2]
+\question[1]
 Based on what you know about inbred populations and
 heterozygosity, describe how the frequency of the
 \emph{A}\textsubscript{2}\emph{A}\textsubscript{2} genotype should
@@ -248,7 +251,7 @@ would be affected if the rare recessive allele reduces fitness without causing d
 
 \newpage
 
-\question[2]
+\question[1]
 Describe what should happen to the average fitness of this
 inbred population (average number of offspring produced by all breeding
 individuals) if the rare recessive allele is detrimental (but is not lethal)? Explain why.
@@ -277,7 +280,7 @@ The second consequence to consider is what would happen in the
 population if the rare allele were advantageous.
 }%end fullwidth
 
-\question[2]
+\question[1]
 What would happen to the average fitness of an inbred
 population if the rare allele was beneficial? Explain why. Be sure to
 recall the concepts learned in the selection exercise.
@@ -290,7 +293,7 @@ For the same reason, fitness should increase. More homozygotes will appear with 
 
 \fullwidth{%
 You should now understand why non-random mating would cause a population
-to deviate from HWE. The final point of this exercise is that, even in
+to deviate from \textsc{hwe}. The final point of this exercise is that, even in
 large populations, many alleles occur at frequencies \textless{} 0.01
 (1\%), which means that populations harbor an enormous amount of
 concealed variation that is only expressed in homozygotes. While many of
