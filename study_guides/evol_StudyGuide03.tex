@@ -1,6 +1,15 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
 \documentclass[letterpaper]{tufte-handout}
 
 %\geometry{showframe} % display margins for debugging page layout
+
+\usepackage{fontspec}
+\def\mainfont{Linux Libertine O}
+\setmainfont[Ligatures={Common,TeX}, Contextuals={NoAlternate}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={OldStyle}]{\mainfont}
+\setsansfont[Scale=MatchLowercase]{Linux Biolinum O} 
+\usepackage{microtype}
 
 \usepackage{graphicx} % allow embedded images
   \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
@@ -34,6 +43,10 @@
 }
 \makeatother
 
+% Set up the spacing using fontspec features
+\renewcommand\allcapsspacing[1]{{\addfontfeatures{LetterSpace=15}#1}}
+\renewcommand\smallcapsspacing[1]{{\addfontfeatures{LetterSpace=10}#1}}
+
 
 \title{{\scshape bi} 300 study guide 03\hfill}
 \author{Genetic Drift and the Neutral Theory}
@@ -51,15 +64,15 @@
 \vspace{-1\baselineskip}
 \begin{multicols}{2}
 genetic drift\\
-census population size ($N$)\\
-effective population size ($N_e$)\\
+census population size $(N)$\\
+effective population size $(N_e)$\\
 fixation\\
 fixed haplotype\\
 heterozygosity\\
 homozygosity\\
 founder effect\\
 bottleneck\\
-mutation rate ($\mu$)\\
+mutation rate $(\mu)$\\
 neutral mutations\\
 non-adaptive evolution\\
 haplotype substitution\\\hspace{1em}(in a population)\\
@@ -70,22 +83,22 @@ Neutral Theory
 
 You should \emph{write} clear and concise answers to each question in the Concepts section.  The questions are not necessarily independent.  Think broadly across lectures to see ``the big picture.'' 
 
-\begin{itemize}
+\begin{enumerate}
 	\item Discuss the consequences of genetic drift.  Consider population size, the probability of any given haplotype going to fixation, what happens to heterozygosity in a population, and what happens among replicate populations (isolated populations with the same initial starting conditions and all subject to genetic drift.  Relate this to nonadaptive evolution.
 
 	\item Explain how effective population size differs from census population size (the total population size, or total of all potentially breeding adults).  Why must effective population size be considered instead of census population size? 
 
-	\item Compare and contrast bottleneck and founder effects.\sidenote{These types of drift were covered in BI 153 and will not be covered in lecture. You should review pages 163--165 and 584--586 for more information.} How do bottlenecks and founder effects relate to genetic drift?  Consider also how these phenomena affect genetic diversity in a population. 
+	\item Compare and contrast bottleneck and founder effects.\sidenote{These types of drift were covered in \textsc{bi}~163 and will not be covered in lecture. You should review pages 169–172 and 604–606 for more information.} How do bottlenecks and founder effects relate to genetic drift?  Consider also how these phenomena affect genetic diversity in a population. 
 
-	\item Relate the neutral mutation rate to the rate of nonadaptive evolution by genetic drift in a population.  Does small vs. large population size matter? If so, why?  If not, why not?
+	\item Relate the neutral mutation rate to the rate of nonadaptive evolution\sidenote{Non-adaptive evolution is evolution by genetic drift. Adaptive evolution is evolution by natural selection.} by genetic drift in a population.  Does small vs.~large population size matter? If so, why?  If not, why not?\sidenote{Hint: $\mu = 2N_e\mu \times \frac{1}{2N_e}$\label{foot:hint}}
 
 	\item What is meant by substitution of one haplotype for another in a population? 
 
-	\item How does the neutral mutation rate and genetic drift relate to the Neutral Theory? 
-
+	\item How does the neutral mutation rate and genetic drift relate to the Neutral Theory?\sidenote{See Sidenote~\ref{foot:hint}}
+	
 	\item Explain the genetic evidence that supports the Neutral Theory.
 
 	\item If multiple (e.g., 10), independent populations are subject only to non-adaptive evolution, would you predict that the end result would be the same for each population? Explain why or why not.
-\end{itemize}
+\end{enumerate}
 
 \end{document}

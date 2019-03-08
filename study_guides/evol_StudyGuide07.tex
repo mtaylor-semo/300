@@ -1,6 +1,15 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
 \documentclass[letterpaper]{tufte-handout}
 
 %\geometry{showframe} % display margins for debugging page layout
+
+\usepackage{fontspec}
+\def\mainfont{Linux Libertine O}
+\setmainfont[Ligatures={Common,TeX}, Contextuals={NoAlternate}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={OldStyle}]{\mainfont}
+\setsansfont[Scale=MatchLowercase]{Linux Biolinum O} 
+\usepackage{microtype}
 
 \usepackage{graphicx} % allow embedded images
   \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
@@ -33,6 +42,10 @@
 }
 \makeatother
 
+% Set up the spacing using fontspec features
+\renewcommand\allcapsspacing[1]{{\addfontfeatures{LetterSpace=15}#1}}
+\renewcommand\smallcapsspacing[1]{{\addfontfeatures{LetterSpace=10}#1}}
+
 
 \title{Study Guide 07\hfill}
 \author{The Genetic Toolkit}
@@ -46,7 +59,8 @@
 %\printclassoptions
 
 \section{Vocabulary}\marginnote{\textbf{Read:} 303--338; 142--143 (cis- and trans-acting elements).  We won't cover all of Ch. 10 but I will highlight many of the ideas in the chapter. This will form the basis for the next several lectures so you should study this chapter carefully. Also, you may want to review chapter 5 if you don't recall the basics of DNA and mutations.\\
-	\noindent\textbf{Questions:} pgs 339--340, MC 1,2,4--9,11, SA 2--5,6,8,10.\\You should be able to recognize the different toolkit genes names in class and discuss the examples of how the toolkit genes are used.}
+	\noindent\textbf{Questions:} pgs 339--340, MC 1,2,4--9,11, SA 2--5,6,8,10.\\
+	\noindent\textbf{Note:}You must be able to recognize the different toolkit genes names used in class and discuss the examples of how the toolkit genes are used.}
 \vspace{-1\baselineskip}
 \begin{multicols}{2}
 serial homology\\
@@ -60,7 +74,7 @@ co-option
 
 You should \emph{write} clear and concise answers to each question in the Concepts section.  The questions are not necessarily independent.  Think broadly across lectures to see ``the big picture.'' 
 
-\begin{itemize}
+\begin{enumerate}
 	\item What is the genetic toolkit?  What is the importance of the genetic toolkit to developmental biology?  What is the importance of the genetic toolkit to evolutionary biology?  
 
 	\item Can you briefly describe the examples of toolkit genes discussed in class that suggest why developmental toolkit genes are likely to be important to understanding the evolutionary history and diversification of life on earth?
@@ -73,6 +87,6 @@ You should \emph{write} clear and concise answers to each question in the Concep
 
 	\item What are regulatory genes?  Why is the relative concentration gradient of some regulatory genes important to the developing organism?  You may have to review the building of the fly slides.
 
-\end{itemize}
+\end{enumerate}
 
 \end{document}

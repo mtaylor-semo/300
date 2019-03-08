@@ -1,6 +1,15 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
 \documentclass[letterpaper]{tufte-handout}
 
 %\geometry{showframe} % display margins for debugging page layout
+
+\usepackage{fontspec}
+\def\mainfont{Linux Libertine O}
+\setmainfont[Ligatures={Common,TeX}, Contextuals={NoAlternate}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={OldStyle}]{\mainfont}
+\setsansfont[Scale=MatchLowercase]{Linux Biolinum O} 
+\usepackage{microtype}
 
 \usepackage{graphicx} % allow embedded images
   \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
@@ -33,6 +42,10 @@
 }
 \makeatother
 
+% Set up the spacing using fontspec features
+\renewcommand\allcapsspacing[1]{{\addfontfeatures{LetterSpace=15}#1}}
+\renewcommand\smallcapsspacing[1]{{\addfontfeatures{LetterSpace=10}#1}}
+
 
 \title{Study Guide 06\hfill}
 \author{Phylogenetic Trees}
@@ -45,14 +58,12 @@
 
 %\printclassoptions
 
-\section{Vocabulary}\marginnote{\textbf{Read:} Chapter 4. Focus on pages 93--105 for tree construction methods. Read the remainder for application of phylogenetic trees.\\
-	\noindent\textbf{Questions:} pgs. 116--117, MC\ 1--8, SA\ 1--5.} 
-
-\section{Concepts}
+\section{Concepts}\marginnote{\textbf{Read:} Chapter 4. Focus on pages 93--105 for tree construction methods. Read the remainder for application of phylogenetic trees.\\
+	\noindent\textbf{Questions:} pgs. 116--117, MC\ 1--8, SA\ 1--5.}
 
 You should \emph{write} clear and concise answers to each question in the Concepts section.  The questions are not necessarily independent.  Think broadly across lectures to see ``the big picture.'' 
 
-\begin{itemize}
+\begin{enumerate}
 	\item Be able to recognize and delineate monophyletic, paraphyletic and polyphyletic groups on a phylogenetic tree.
 
 	\item You should be able to map traits onto a phylogeny. You should be able to determine whether a character is ancestral or derived, homologous or convergent (analogous; independently evolved).
@@ -61,7 +72,7 @@ You should \emph{write} clear and concise answers to each question in the Concep
 
 	\item What kind of information do bootstrap values and Bayesian probability values convey about different clades on a phylogenetic tree?  What are the ``ideal'' minimum values for bootstrap and Bayesian probabilities.
 
-\end{itemize}
+\end{enumerate}
 
 \section{Detailed Vocabulary}
 

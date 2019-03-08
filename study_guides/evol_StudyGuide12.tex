@@ -1,7 +1,15 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
 \documentclass[letterpaper]{tufte-handout}
 
 %\geometry{showframe} % display margins for debugging page layout
 
+\usepackage{fontspec}
+\def\mainfont{Linux Libertine O}
+\setmainfont[Ligatures={Common,TeX}, Contextuals={NoAlternate}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={OldStyle}]{\mainfont}
+\setsansfont[Scale=MatchLowercase]{Linux Biolinum O} 
+\usepackage{microtype}
 \usepackage{graphicx} % allow embedded images
   \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
   \graphicspath{{img/}} % set of paths to search for images
@@ -33,6 +41,9 @@
 }
 \makeatother
 
+% Set up the spacing using fontspec features
+\renewcommand\allcapsspacing[1]{{\addfontfeatures{LetterSpace=15}#1}}
+\renewcommand\smallcapsspacing[1]{{\addfontfeatures{LetterSpace=10}#1}}
 
 \title{Study Guide 12\hfill}
 \author{Evolution of Humans and Flowering Plants}
@@ -58,7 +69,7 @@ MADS genes\\
 
 You should \emph{write} clear and concise answers to each question in the Concepts section.  The questions are not necessarily independent.  Think broadly across lectures to see ``the big picture.'' 
 
-\begin{itemize}
+\begin{enumerate}
 	\item Briefly state and explain 3--4 hypotheses that have been proposed to explain the selective advantage of bipedalism over quadrupedalism.  Do you think any one hypothesis is more likely than the others?  Why or why not?
 
 	\item Two hypotheses have been proposed for the dispersal of the genus \textit{Homo} from central Africa.  Briefly explain the two leading hypotheses for this dispersal.  Which one is supported by the genetic evidence.\sidenote{You do not have to explain the genetic evidence.}  During what geological period or periods did this occur? What era?
@@ -71,6 +82,6 @@ You should \emph{write} clear and concise answers to each question in the Concep
 
 	\item Discuss the evidence from the Ranunculaceae flowers (buttercup family) that suggests that the evolutionary history of MADS genes may be closely associated with diversity of angiosperms.\sidenote{Look it up if you do not know!}  Explain the evolution of floral diversity, as represented by the Ranunculaceae, due to natural selection for different types of pollination / pollinators.
 
-\end{itemize}
+\end{enumerate}
 
 \end{document}

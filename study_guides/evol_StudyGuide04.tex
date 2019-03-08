@@ -1,6 +1,15 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
 \documentclass[letterpaper]{tufte-handout}
 
 %\geometry{showframe} % display margins for debugging page layout
+
+\usepackage{fontspec}
+\def\mainfont{Linux Libertine O}
+\setmainfont[Ligatures={Common,TeX}, Contextuals={NoAlternate}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={OldStyle}]{\mainfont}
+\setsansfont[Scale=MatchLowercase]{Linux Biolinum O} 
+\usepackage{microtype}
 
 \usepackage{graphicx} % allow embedded images
   \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
@@ -10,7 +19,7 @@
 \usepackage{units}    % non-stacked fractions and better unit spacing
 \usepackage{siunitx}
 \usepackage{multicol} % multiple column layout facilities
-\usepackage{microtype}   % filler text
+\usepackage{microtype}
 \usepackage{hyperref}
 %\usepackage{fancyvrb} % extended verbatim environments
 %  \fvset{fontsize=\normalsize}% default font size for fancy-verbatim environments
@@ -34,6 +43,13 @@
 }
 \makeatother
 
+% Set up the spacing using fontspec features
+\renewcommand\allcapsspacing[1]{{\addfontfeatures{LetterSpace=15}#1}}
+\renewcommand\smallcapsspacing[1]{{\addfontfeatures{LetterSpace=10}#1}}
+
+
+\newcommand{\allele}[1]{\textit{#1}}
+
 
 \title{Study Guide 04\hfill}
 \author{Natural Selection}
@@ -51,7 +67,7 @@
 \vspace{-1\baselineskip}
 \begin{multicols}{2}
 natural selection\\
-fitness ($w$)\\
+fitness $\left(w\right)$\\
 relative fitness\\
 positive selection\\
 negative selection\\
@@ -62,27 +78,34 @@ codon bias\\
 genetic hitchhiking\\
 heterozygote advantage\\
 heterozygote disadvantage\\
-selection coefficient ($s$)
+selection coefficient $\left(s\right)$
 \end{multicols}
 
 \section{Concepts}
 
-You should \emph{write} clear and concise answers to each question in the Concepts section.  The questions are not necessarily independent.  Think broadly across lectures to see ``the big picture.'' 
+You should \emph{write} clear and concise answers to each question in the Concepts section.  The questions are not necessarily independent.  Think broadly across lectures to see “the big picture.”
 
 \begin{itemize}
 	\item Compare and contrast the Neutral Theory vs natural selection at the molecular genetic level (DNA and proteins).  Does the Neutral Theory completely discount the importance of natural selection?  Does natural selection discount the importance of neutral variation?
 
 	\item Explain the genetic evidence that supports natural selection at the genetic level.  Compare this to the evidence that supports the Neutral Theory (see Study Guide 03).
 
-	\item Describe the three modes of selection given in class.  Illustrate and explain each mode.  Provide examples (real or hypothetical) of each.  Relate each to different values of relative fitness ($w$).
+	\item Describe the three modes of selection given in class.  Illustrate and explain each mode.  Provide examples (real or hypothetical) of each.  Relate each to different values of relative fitness $\left(w\right)$.
 
-	\item Darwin?s basic idea was that natural selection affects the ability of an organism to survive and reproduce.  Thus, natural selection acts on the phenotype.  However, evolutionary change occurs at the genetic level.  Explain the relationship between phenotype, genotype and fitness to explain how natural selection determines whether evolutionary change can occur in a population.
+	\item Darwin's basic idea was that natural selection affects the ability of an organism to survive and reproduce.  Thus, natural selection acts on the phenotype.  However, evolutionary change occurs at the genetic level.  Explain the relationship between phenotype, genotype and fitness to explain how natural selection determines whether evolutionary change can occur in a population.
 
-	\item Refer to questions 4--8 in the HWE: Selection exercise that we did.  For question 8, I asked if you could tell whether haplotype $A$ was subject to positive selection or haplotype $a$ was subject to negative selection.\sidenote{Do not think of $A$ and $a$ as dominant and recessive because they may not be. Think of them only as different alleles.} At the time, you could not tell without additional information.   You now know a technique that you could use to tell if haplotype $A$ was probably subject to positive selection.  Describe how you can use the ratio of non-synonymous to synonymous nucleotide substitutions to infer whether a haplotype evolved by positive selection.
+	\item Refer to questions 4--8 in the HWE: Selection exercise that we did.  For question 8, I asked if you could tell whether haplotype $A$ was subject to positive selection or haplotype \allele{a} was subject to negative selection.\sidenote{Do not think of \allele{A} and \allele{a} as dominant and recessive because they may not be. Think of them only as different alleles.} At the time, you could not tell without additional information.   You now know a technique that you could use to tell if haplotype $A$ was probably subject to positive selection.  Describe how you can use the ratio of non-synonymous to synonymous nucleotide substitutions to infer whether a haplotype evolved by positive selection.
 
-	\item Continuing from the previous question, what if you didn?t get a result that supported positive selection.  What would be the implications for haplotypes $A$ and  $a$.
+	\item Continuing from the previous question, what if you didn't get a result that supported positive selection.  What would be the implications for haplotypes \allele{A} and  \allele{a}.
 
-	\item Practice relating the modes of selection to the simulation we ran in class.  How would you expect the frequency of Allele $A$ to change if a population experienced positive directional selection for the $aa$ genotype?  The $AA$ phenotype?  Could you have directional selection towards the $Aa$ genotype?  If so, under what circumstances?  If not, why not?  Apply this same line of reasoning to stabilizing and disruptive selection, and to heterozygote advantage and disadvantage.
+	\item Practice relating the modes of selection to the simulation
+	we ran in class.  How would you expect the frequency of Allele
+	\allele{A} to change if a population experienced positive directional
+	selection for the \allele{aa} genotype?  The \allele{AA} phenotype?  Could
+	you have directional selection towards the Aa genotype?  If
+	so, under what circumstances?  If not, why not?  Apply this
+	same line of reasoning to stabilizing and disruptive
+	selection, and to heterozygote advantage and disadvantage.
 
 \end{itemize}
 
