@@ -4,19 +4,19 @@
 \documentclass[11pt, addpoints]{exam}
 \usepackage{graphicx}
 	\graphicspath{{/Users/goby/Pictures/teach/300/}
-	{/Users/goby/Pictures/teach/300/exercises/}
+		{/Users/goby/Pictures/teach/300/exercises/}
 	{img/}} % set of paths to search for images
 
 \usepackage{geometry}
 \geometry{letterpaper, bottom=1in}                   
 %\geometry{landscape}                % Activate for for rotated page geometry
-\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
 \usepackage{amssymb, amsmath}
 \usepackage{mathtools}
 	\everymath{\displaystyle}
 
 \usepackage{fontspec}
-\setmainfont[Ligatures={TeX}, BoldFont={* Bold}, ItalicFont={* Italic}, BoldItalicFont={* BoldItalic}, Numbers={Proportional}]{Linux Libertine O}
+\setmainfont[Ligatures={TeX}, BoldFont={* Bold}, ItalicFont={* Italic}, BoldItalicFont={* BoldItalic}, Numbers={Proportional, OldStyle}]{Linux Libertine O}
 \setsansfont[Scale=MatchLowercase,Ligatures=TeX]{Linux Biolinum O}
 \setmonofont[Scale=MatchLowercase]{Inconsolatazi4}
 \usepackage{microtype}
@@ -40,15 +40,8 @@
 \newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
 \newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
 
-\makeatletter
-\def\SetTotalwidth{\advance\linewidth by \@totalleftmargin
-	\@totalleftmargin=0pt}
-\makeatother
-
 \usepackage{enumitem}
-\setlist{leftmargin=*}
-\setlist[1]{labelindent=\parindent}
-\setlist[enumerate]{label=\textsc{\alph*}.}
+	\setlist{resume, label=\Alph*., leftmargin=*}
 
 \usepackage[sc]{titlesec}
 
@@ -61,12 +54,8 @@
 \unframedsolutions
 \SolutionEmphasis{\bfseries}
 
-\renewcommand{\questionshook}{%
-	\setlength{\leftmargin}{-\leftskip}%
-}
-
 \pagestyle{headandfoot}
-\firstpageheader{BI 300: Evolution}{}{\ifprintanswers\textbf{KEY} \else Name \rule{2.5in}{0.4pt}\fi}
+\firstpageheader{\textsc{bi} 300: Evolution}{}{\ifprintanswers\textbf{KEY} \else Name \rule{2.5in}{0.4pt}\fi}
 \runningheader{}{}{\footnotesize{pg. \thepage}}
 \footer{}{}{}
 \runningheadrule
@@ -75,15 +64,15 @@
 
 \begin{document}
 
-\subsection*{Giraffes: One Species or Many? Part 1. (\numpoints\ points)}
+\subsection*{Giraffes: one species or many? Part 1. (\numpoints\ points)}
 
 Giraffes are found in several widely separated areas across western,
 central and southern Africa. The areas are not separated by obvious
 geographic barriers and may be remnants of a once wider distribution
-across the entire region (Fig. \ref{fig:giraffes}, left panel). As a result, most
+across the entire region (Fig.~\ref{fig:giraffes}, left panel). As a result, most
 researchers have treated the giraffe as a single species, \textit{Giraffa
 camelopardalis}. Confusing the issue, however, is that the coat patterns
-on giraffes are highly variable (Fig. 1, right panel) although each
+on giraffes are highly variable (Fig.~1, right panel) although each
 pattern tends to be associated with a specific region. Some researchers
 have argued that the giraffe is a \emph{single} species with several
 subspecies. Others have argued that coat patterns are a distinguishing
@@ -94,7 +83,7 @@ feature for \emph{different} species of giraffes.
 	\captionof{figure}{The distribution of African giraffes (left panel; dark areas) and the coat patterns of giraffes from different areas (right panel).\label{fig:giraffes}}
 \end{center}
 
-A study by David Brown and colleagues\footnote{Brown, D.M. et al. 2007.
+A study by David Brown and colleagues\footnote{Brown,~D.\,M.~et al.~2007.
   Extensive population genetic structure in the giraffe. BMC Biology 5:
   57.} used a variety of phylogenetic and population genetic analyses to
 estimate the actual number of giraffe species. You will perform one part
@@ -106,20 +95,20 @@ five different coat patterns (Fig.~\ref{fig:sample_sites}). Each sequence is ide
 the pattern of the giraffe (e.g., pattern1, pattern2, \ldots{},
 pattern5), plus a unique haplotype identifier (h1, h2, \ldots{}, h35).
 
-You will perform your analysis at a website that will build a phylogenetic tree for you using
-maximum likelihood. You will also have the site bootstrap the  You will then interpret
+You will perform your analysis at a website that will align your
+sequences and build a phylogenetic tree for you. You will then interpret
 the tree and decide whether you would consider the giraffe to be a
 single species or if you would recognize some number of different
 species. Finally, answer the three questions on page \pageref{sec:questions}. Type your
-answers to the questions in a Word document and upload a copy to the drop box by the assigned due date.
+answers to the questions in a Word document and upload a copy to the dropbox by the assigned due date.
 
 \begin{center}
 	\includegraphics[width=0.75\textwidth]{giraffe_fig2_samples}
 	\captionof{figure}{Sampled sites and coat patterns for this study. The numbers
-correspond to the pattern numbers that identify the DNA sequences (Brown et al. 2007).\label{fig:sample_sites}}
+correspond to the pattern numbers that identify the \textsc{dna} sequences (Brown~et~al.~2007).\label{fig:sample_sites}}
 \end{center}
 
-\subsubsection*{Perform the phylogenetic analysis}
+\subsection*{Perform the phylogenetic analysis}
 
 The website you will use performs several steps for you automatically,
 based on settings you provide (given to you below).
@@ -127,83 +116,119 @@ based on settings you provide (given to you below).
 \begin{enumerate}
 \item
   Go to the course website. Click on the link called ``Giraffe \textsc{dna}
-  Sequences.'' Select all and copy the sequences. Close the window.
+  Sequences''. Select all and copy the sequences.
 \item
-  Click on the link that says ``\textsc{ra}x\textsc{ml} phylogenetic analysis website.'' This
-  will take you to the website where you will perform the analysis. 
+  Click on the link that says ``Phylogenetic Analysis Website''. This
+  will take you to the website where you will perform the analysis (Fig.
+  \ref{fig:home_page}). Scroll down just a bit until you see the link called ``Advanced'',
+  then click it.
+\item Create your workflow (Fig.~\ref{fig:workflow}). The workflow consists of several steps
+  that you need to obtain your final tree. The workflow will align your
+  sequences,  perform a phylogenetic analysis, and draw the
+  tree. You do not need your alignment curated so uncheck Gblocks and
+  then click the “Create Workflow” button.
 \item
-  Paste the giraffe \textsc{dna} sequences into the large area
-  at the top of the page (Fig.~\ref{fig:home_page}).
-\item   
-  Enter your email address into the box indicated. You will receive an email
-  notification when the analysis is complete. (Fig.~\ref{fig:home_page})% (Fig. \ref{fig:phyml}).
-\item
-	In the area marked ``Bootstrap,'' click the first check box, labeled ``Number of alternative
-	runs on distinct starting trees (N).'' Leave the value at 100.
-\item
-	Click the “Compute” button.
+  Paste the giraffe sequences that you copied earlier into the area
+  marked “Input Data” (Fig.~\ref{fig:paste_sequences}) and then scroll down to set the
+  parameters for the PhyML phylogenetic analysis (Fig.~\ref{fig:phyml}).
 \end{enumerate}
 
-\newpage
+\begin{center}
+	\includegraphics[width=0.7\textwidth]{fig3_home_page}
+	\captionof{figure}{Home page of Phylogeny.fr, an online site for performing phylogenetic analyses.\label{fig:home_page}}
+\end{center}
+
+%\vfill
 
 \begin{center}
-	\includegraphics[height=0.95\textheight]{giraffe_fig3_home_page}
-	\captionof{figure}{\textsc{ra}x\textsc{ml} home page. Follow the steps in the order shown.\label{fig:home_page}}
+	\includegraphics[width=0.6\textwidth]{fig4_workflow}
+	\captionof{figure}{Workflow settings.\label{fig:workflow}}
 \end{center}
 
 \newpage
 
-If all goes well, the analysis should take less than 10 minutes to run (Test runs took about five minutes.) 
-You can wait patiently while the site does the hard work, or check your email every so often. 
-The email will include a link that will take you back to get your final results.
-
-\begin{enumerate}[resume]
-	\item After the analysis is complete, or after you click on the link in your email,
-	you will get the “Results for \textsc{ra}x\textsc{ml}” page. Click on 
-	“View tree” (Fig.~\ref{fig:click_to_view}).
-\end{enumerate}
-
-
 \begin{center}
-	\includegraphics[width=0.8\textwidth]{giraffe_fig4_click_to_view}
-	\captionof{figure}{Results of \textsc{ra}x\textsc{ml} page.\label{fig:click_to_view}}
+	\includegraphics[width=0.7\textwidth]{fig5_paste_sequences}
+	\captionof{figure}{Input Data for your giraffe sequences.\label{fig:paste_sequences}}
 \end{center}
 
-\begin{enumerate}[resume]
-	\item The final rendered tree will appear in the window. \emph{Save a copy of this tree.} 
-	
-	 This is the tree that you will upload to the drop box. This type of tree is called
-	a “phylogram” which shows variable branch lengths, based on number of 
-	genetic differences among sequences. The numbers near each node are the bootstrap values.
-	
-	\item Uncheck the box next to “Proportional edge length” in the “Options”
-	box to the right of the tree (Fig.~\ref{fig:proportiona_edge}). The tree should
-	redraw as a “cladogram.”
-	
-\end{enumerate}
+\vfill
 
 \begin{center}
-	\hfil\includegraphics[width=0.3\textwidth]{giraffe_fig5_options_checked}\hfil\includegraphics[width=0.3\textwidth]{giraffe_fig6_options_unchecked}\hfill
-	\captionof{figure}{Uncheck the Proportional edge lengths box to get a cladogram.\label{fig:proportiona_edge}}
+	\includegraphics[width=0.9\textwidth]{fig6_phyML_settings}
+	\captionof{figure}{PhyML settings for the phylogenetic analysis.\label{fig:phyml}}
 \end{center}
 
-\begin{enumerate}[resume]
-	\item Save a copy of the cladogram. \emph{You do not have to upload the cladogram to the drop box.}
+\noindent Set the substitution model to “HKY{\tablenumbers 85} (\textsc{dna/rna})” and then click the “Submit” button near the bottom of the page.
 
-	The cladogram ignores branch lengths, which might allow you to more easily identify some clades and their bootstrap support.
+%You may have to click “Advanced Settings\dots” to access 
+%some settings in this step. and then click all three
+%fixed buttons. Enter 0.24 for the gamma distribution parameter, 0.46 for
+%the proportion of invariant sites, and 58.4 for the
+%transition/transversion ratio. Check that you have set the parameters
+%correctly 
 
+\begin{enumerate}
 \item
-  Upload the PDF file to the ``Upload Giraffe Part 1 Files Here'' drop
+  Wait patiently. The full workflow should take less than five minutes but could last up to 10 minutes.
+  You will see an animated set of \textsc{dna} sequences during the alignment
+  step followed by an animated tree during the phylogenetic analysis
+  step (Fig.~\ref{fig:wait}).
+\end{enumerate}
+
+\begin{center}
+	\includegraphics[width=0.6\textwidth]{fig7_wait}
+	\captionof{figure}{Illustration of alignment and phylogenetic analysis steps.\label{fig:wait}}
+\end{center}
+
+\begin{enumerate}
+\item
+  The final rendered tree will appear in the window. This type of tree is called
+  a “phylogram” which shows variable branch lengths, based on number of 
+  genetic differences among sequences. You will save a copy of this tree.
+  
+  You may also want to save your tree as a cladogram. The cladogram ignores
+  branch lengths, making it easier for you to identify some clades and relationships.
+  You will find the option to change from phylogram to cladogram under “Tree style:”
+  near the bottom of the page.
+  
+  To save a copy of your phylogram, look for the the download options immediately 
+  below the tree (Fig.~\ref{fig:save_tree}). Click “\textsc{pdf}” to
+  save a \textsc{pdf} copy of your tree to your computer or flash drive. Name your file something
+  like “giraffe\_phylogram.pdf.” Confirm that the \textsc{pdf} file has been safely saved to your 
+  computer.
+  
+  Repeat this process if you want to save a copy of your tree as a cladogram. Be sure to
+  give your file a different name, like “giraffe\_cladogram.pdf.” Again, verify the file has
+  been safely saved before closing your browser window.
+  
+\end{enumerate}
+
+\begin{center}
+	\includegraphics[width=0.75\textwidth]{fig8_save_tree}
+	\captionof{figure}{Save a copy of your tree as a \textsc{pdf} file.\label{fig:save_tree}}
+\end{center}
+
+\begin{enumerate}
+\item
+  Upload the \textsc{pdf} file to the ``Upload Giraffe Part 1 Files Here'' drop
   box on the course website.
 \end{enumerate}
 
-\subsubsection*{How to Interpret Your Phylogenetic Tree}
+\subsection*{How to interpret your phylogenetic tree}
 
-The numbers on each branch are measures of confidence (bootstrap values) derived from
-100 bootstrap replicates. The higher the
-value, the more likely the clade reflects the relationships of the taxa (based
-on the data). As a rule of thumb, values of 70 or higher are considered
-good support for a clade. 
+The red numbers on each branch are measures of confidence derived using
+the approximate Log-Likelihood Ratio Test (aLRT; see Fig.~\ref{fig:phyml}), a new
+technique developed within the past few years. We did not discuss this
+one in class. The aLRT derives true probabilities. The higher the
+probability, the more likely the clade is the “correct” clade (based
+on the data). You do not have to use 0.95 as the limit to decide whether
+a clade is well supported. The authors who developed the test recommend
+using between 0.75--0.85 as the lower limit of confidence. If you choose
+a higher value, then you are requiring a higher probability before
+accepting a clade as well supported; this is a more conservative
+approach. You decide what probability level you want as part of your
+decision making process.
 
 Look for well-supported clades, where each clade contains all or nearly
 all of one pattern. Look at larger clades as well as the smaller clades
@@ -213,26 +238,24 @@ individuals with the same pattern but will also have at least one
 individual with one a different pattern. This happens because
 populations that are recently diverged will still share some of the same
 alleles. However, it could also be due to low levels of gene flow. This
-is OK. Real biological results are rarely clear-cut so we have to
+is \textsc{ok}. Real biological results are rarely clear-cut so we have to
 interpret the results, make the final decision, and justify our
 decision.
 
 After you have come to your decision, answer the following questions. 
-Upload your typed answers to the drop box. Part 2 will be available following 
-the due date for this exercise. Be sure you also upload a \textsc{png} or \textsc{pdf} of your phylogenetic tree.
+Upload your typed answers to the dropbox. Part~2 will be available following 
+the due date for this exercise. Be sure you also upload a \textsc{pdf} of your phylogenetic tree.
 
 %\vspace{1\baselineskip}
 
-\subsubsection*{Questions}
+\subsection*{Questions}
 \label{sec:questions}
 
 \begin{questions}
 
 \question[1]
 What minimum aLRT probability value did you decide to use for
-confidence? 
-
-\textbf{SKIP THIS QUESTION}
+confidence?
 
 \question[1]
 Based on your analysis, how many species of giraffe have you decided
@@ -241,9 +264,8 @@ are present in Africa?
 \question[10]
 Explain your reasoning for your decision. Be as clear and
 precise as possible, using examples from your phylogeny. Treat this
-answer as you would an essay question on an exam. This question has 
-many possible answers so I am not looking for a
-single “correct” answer. I want you to
+answer as you would an essay question on an exam. I am not looking for a
+single correct answer because this question has many possible answers. I want you to
 apply your knowledge and proper vocabulary gained from class.
 
 \end{questions}
