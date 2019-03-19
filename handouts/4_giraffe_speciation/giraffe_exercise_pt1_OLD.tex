@@ -4,6 +4,7 @@
 \documentclass[11pt, addpoints]{exam}
 \usepackage{graphicx}
 	\graphicspath{{/Users/goby/Pictures/teach/300/}
+		{/Users/goby/Pictures/teach/300/exercises/}
 	{img/}} % set of paths to search for images
 
 \usepackage{geometry}
@@ -76,7 +77,7 @@ subspecies. Others have argued that coat patterns are a distinguishing
 feature for \emph{different} species of giraffes.
 
 \begin{center}
-	\includegraphics[width=\textwidth]{fig1_color}
+	\includegraphics[width=\textwidth]{giraffe_fig1_color}
 	\captionof{figure}{The distribution of African giraffes (left panel; dark areas) and the coat patterns of giraffes from different areas (right panel).\label{fig:giraffes}}
 \end{center}
 
@@ -100,9 +101,9 @@ species. Finally, answer the three questions on page \pageref{sec:questions}. Ty
 answers to the questions in a Word document and upload a copy to the dropbox by the assigned due date.
 
 \begin{center}
-	\includegraphics[width=0.75\textwidth]{fig2_samples}
+	\includegraphics[width=0.75\textwidth]{giraffe_fig2_samples}
 	\captionof{figure}{Sampled sites and coat patterns for this study. The numbers
-correspond to the pattern numbers that identify the DNA sequences (Brown et al. 2007).\label{fig:sample_sites}}
+correspond to the pattern numbers that identify the DNA sequences (Brown et al. 007).\label{fig:sample_sites}}
 \end{center}
 
 \subsection*{Perform the phylogenetic analysis}
@@ -135,7 +136,7 @@ based on settings you provide (given to you below).
 	\captionof{figure}{Home page of Phylogeny.fr, an online site for performing phylogenetic analyses.\label{fig:home_page}}
 \end{center}
 
-\vfill
+%\vfill
 
 \begin{center}
 	\includegraphics[width=0.6\textwidth]{fig4_workflow}
@@ -156,17 +157,19 @@ based on settings you provide (given to you below).
 	\captionof{figure}{PhyML settings for the phylogenetic analysis.\label{fig:phyml}}
 \end{center}
 
-\noindent You may have to click “Advanced Settings\dots” to access 
-some settings in this step. Set the substitution model to ``HKY85'' and then click all three
-fixed buttons. Enter 0.24 for the gamma distribution parameter, 0.46 for
-the proportion of invariant sites, and 58.4 for the
-transition/transversion ratio. Check that you have set the parameters
-correctly and then click the ``Submit'' button near the bottom of the
+\noindent Set the substitution model to ``HKY85 (na)'' and then click the ``Submit'' button near the bottom of the
 page.
+
+%You may have to click “Advanced Settings\dots” to access 
+%some settings in this step. and then click all three
+%fixed buttons. Enter 0.24 for the gamma distribution parameter, 0.46 for
+%the proportion of invariant sites, and 58.4 for the
+%transition/transversion ratio. Check that you have set the parameters
+%correctly 
 
 \begin{enumerate}
 \item
-  Wait patiently. The full workflow should take less than five minutes.
+  Wait patiently. The full workflow should take less than five minutes but could last up to 10 minutes.
   You will see an animated set of DNA sequences during the alignment
   step followed by an animated tree during the phylogenetic analysis
   step (Fig. \ref{fig:wait}).
