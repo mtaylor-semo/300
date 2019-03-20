@@ -4,20 +4,21 @@
 \documentclass[11pt, addpoints]{exam}
 \usepackage{graphicx}
 	\graphicspath{{/Users/goby/Pictures/teach/300/}
+	{/Users/goby/Pictures/teach/300/exercises/}
 	{img/}} % set of paths to search for images
 
 \usepackage{geometry}
 \geometry{letterpaper, bottom=1in}                   
 %\geometry{landscape}                % Activate for for rotated page geometry
-%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
 \usepackage{amssymb, amsmath}
 \usepackage{mathtools}
 	\everymath{\displaystyle}
 
 \usepackage{fontspec}
-\setmainfont[Ligatures={TeX}, BoldFont={* Bold}, ItalicFont={* Italic}, BoldItalicFont={* BoldItalic}, Numbers={Proportional}]{Linux Libertine O}
+\setmainfont[Ligatures={TeX}, BoldFont={* Bold}, ItalicFont={* Italic}, BoldItalicFont={* BoldItalic}, Numbers={Proportional, OldStyle}]{Linux Libertine O}
 \setsansfont[Scale=MatchLowercase,Ligatures=TeX]{Linux Biolinum O}
-\setmonofont[Scale=MatchLowercase]{Inconsolata}
+%\setmonofont[Scale=MatchLowercase]{Inconsolata}
 \usepackage{microtype}
 
 \usepackage{unicode-math}
@@ -40,19 +41,22 @@
 \newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
 
 \usepackage{enumitem}
-	\setlist{resume, label=\Alph*., leftmargin=*}
+\setlist{resume, label=\textsc{\alph*}., leftmargin=*}
+\setlist[1]{labelindent=\parindent}
 
-%\usepackage{titling}
-%\setlength{\droptitle}{-60pt}
-%\posttitle{\par\end{center}}
-%\predate{}\postdate{}
+\usepackage[sc]{titlesec}
+
 
 \renewcommand{\solutiontitle}{\noindent}
 \unframedsolutions
 \SolutionEmphasis{\bfseries}
 
+\renewcommand{\questionshook}{%
+	\setlength{\leftmargin}{-\leftskip}%
+}
+
 \pagestyle{headandfoot}
-\firstpageheader{BI 300: Evolution}{}{\ifprintanswers\textbf{KEY} \else Name \rule{2.5in}{0.4pt}\fi}
+\firstpageheader{\textsc{bi} 300: Evolution}{}{\ifprintanswers\textbf{KEY} \else Name \rule{2.5in}{0.4pt}\fi}
 \runningheader{}{}{\footnotesize{pg. \thepage}}
 \footer{}{}{}
 \runningheadrule
@@ -61,10 +65,10 @@
 
 \begin{document}
 
-\subsection*{Giraffes: One Species or Many? Part 2. (\numpoints\ points)}
+\subsection*{Giraffes: one species or many? Part 2. (\numpoints\ points)}
 
-In addition to the phylogenetic analysis of mitochondrial DNA, Brown et
-al. used other population genetic analyses to estimate the number of
+In addition to the phylogenetic analysis of mitochondrial \textsc{dna}, Brown~et~al.~used 
+other population genetic analyses to estimate the number of
 giraffe species. Here are some of their results, which will help you
 further refine your decision.
 
@@ -72,18 +76,18 @@ further refine your decision.
 \item
   The authors used a measure similar to $F_\mathrm{ST}$,
   called $\Phi_{\mathrm{CT}}$, to estimate the amount of gene flow among
-  the six regions (Fig. 2; previous handout). Their calculated $\Phi_{\mathrm{CT}}$ value,
+  the six regions (Fig.~2; previous handout). Their calculated $\Phi_{\mathrm{CT}}$ value,
   based on only the mitochondrial control region, was 0.754. We looked
   at $F_\mathrm{ST}$ when we studied migration as part of our
   Hardy-Weinberg exercises. $\Phi_{\mathrm{CT}}$ is interpreted the same
-  as $F_\mathrm{ST}$. Values close to 0 indicate high
-  migration among populations. Values close to 1 indicate little to no migration.
+  as $F_\mathrm{ST}$. Values close to zero indicate high
+  migration among populations. Values close to one indicate little to no migration.
 \item
-  The authors also used nuclear DNA. Instead of nuclear DNA sequence,
+  The authors also used nuclear \textsc{dna}. Instead of nuclear DNA sequence,
   they used microsatellites. Microsatellites evolve rapidly (very high
   mutation rate) so are very useful in population genetic studies like the
-  giraffes. The authors developed a ``neighbor-joining network'' (Fig.
-  \ref{fig:njnetwork}), which is different from a phylogenetic tree but can be interpreted
+  giraffes. The authors developed a “neighbor-joining network” (Fig.~\ref{fig:njnetwork}), 
+  which is different from a phylogenetic tree but can be interpreted
   in a similar way.
 \end{enumerate}
 
@@ -92,7 +96,7 @@ further refine your decision.
 	\includegraphics[width=0.55\textwidth]{fig9_microsatellites}
 	\captionof{figure}{Neighbor-joining network, derived from 14 microsatellite loci
 sampled from 381 giraffes. The numbers correspond to the patterns shown
-in Fig. 2 (from Part 1). Look up locus on your vocabulary sheet if you don't remember
+in Fig.~2 (from Part 1). Look up locus on your vocabulary sheet if you don't remember
 what is a locus.\label{fig:njnetwork}}
 \end{center}
 
@@ -111,8 +115,8 @@ what is a locus.\label{fig:njnetwork}}
 \newpage
 
 Answer the following questions, based on your previous ideas and
-the new information from this exercise. Upload your typed answers to the dropbox called ``Upload Giraffe Part 2
-Files Here'' by the due date.  Please name the file LastName\_FirstName\_Giraffe2.doc.
+the new information from this exercise. Upload your typed answers to the dropbox called “Upload Giraffe Part 2
+Files Here” by the due date.  Please name the file LastName\_FirstName\_Giraffe2.doc.
 
 \subsection*{Questions}
 
@@ -125,7 +129,7 @@ think? (You do not have to change your mind.)
 \question[10]
 As you did in Part 1, describe why or how the additional evidence caused you to
 revise your estimate of the number of species. If you did not revise
-your estimate, explain why you were not convinced by the evidence. Be as
+your estimate, explain why you were not convinced by the evidence. Be 5
 clear and precise, and use examples from the new evidence and the previous phylogenetic tree.
 Treat this answer as you would an essay question on an exam. I am not
 looking for a single correct answer because this question has many answers. I
