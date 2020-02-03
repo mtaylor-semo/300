@@ -1,0 +1,161 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[letterpaper]{tufte-handout}
+
+%\geometry{showframe} % display margins for debugging page layout
+
+\usepackage{fontspec}
+\def\mainfont{Linux Libertine O}
+\setmainfont[Ligatures={Common,TeX}, Contextuals={NoAlternate}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={OldStyle}]{\mainfont}
+\setsansfont[Scale=MatchLowercase, Numbers={OldStyle}]{Linux Biolinum O} 
+\usepackage{microtype}
+
+\usepackage{graphicx} % allow embedded images
+  \setkeys{Gin}{width=\linewidth}
+  \graphicspath{	{/Users/goby/teach/163/lectures/}}%}%
+
+\usepackage{amsmath}  % extended mathematics
+\usepackage{booktabs} % book-quality tables
+%\usepackage{units}    % non-stacked fractions and better unit spacing
+%\usepackage{multicol} % multiple column layout facilities
+%\usepackage{fancyvrb} % extended verbatim environments
+%  \fvset{fontsize=\normalsize}% default font size for fancy-verbatim environments
+
+\usepackage{enumitem}
+
+\makeatletter
+% Paragraph indentation and separation for normal text
+\renewcommand{\@tufte@reset@par}{%
+  \setlength{\RaggedRightParindent}{1.0pc}%
+  \setlength{\JustifyingParindent}{1.0pc}%
+  \setlength{\parindent}{1pc}%
+  \setlength{\parskip}{0pt}%
+}
+\@tufte@reset@par
+
+% Paragraph indentation and separation for marginal text
+\renewcommand{\@tufte@margin@par}{%
+  \setlength{\RaggedRightParindent}{0pt}%
+  \setlength{\JustifyingParindent}{0.5pc}%
+  \setlength{\parindent}{0.5pc}%
+  \setlength{\parskip}{0pt}%
+}
+\makeatother
+
+% Set up the spacing using fontspec features
+   \renewcommand\allcapsspacing[1]{{\addfontfeatures{LetterSpace=15}#1}}
+   \renewcommand\smallcapsspacing[1]{{\addfontfeatures{LetterSpace=10}#1}}
+
+\newcommand\lecturefile{163_lecture02_fullsize}
+
+\title{{\scshape bi} 300 Hardy-Weinberg Review}
+
+\date{} % without \date command, current date is supplied
+
+\begin{document}
+
+\maketitle	% this prints the handout title, author, and date
+
+%\printclassoptions
+%\section*{Allele and genotype frequencies; Hardy-Weinberg equilibrium}
+
+This handout\marginnote{\textbf{Read:} pgs. 82--85} 
+reviews the two Hardy-Weinberg equations that model the evolutionary
+change of allele and genotype frequencies. I assume you learned these in 
+{\scshape bi}~163. If you did not take that course, you should read the pages
+listed at right from your optional but recommended textbook or a reliable online resource.
+
+\section*{Allele Frequency}
+
+The equation for calculating \emph{allele frequencies} is 
+\begin{equation*}
+p+q = 1,
+\end{equation*}
+
+where $p$ is the frequency of allele 1, and $q$ is the frequency of allele 2.\marginnote{Most genes have  more than two alleles. Allele frequencies are calculated the same but with a variable for each allele. If a gene has three alleles, for example, the equation would be expanded to $p+q+r=1.$} In class, we will use only two alleles for a single locus, such as $T_1$ and $T_2$.  Two variables ($p$ and $q$) are needed to represent two alleles.  Why not use $T_1$ and $T_2$\marginnote{When I write allele names, I'll use subscripts instead of upper and lower case because we (mostly) do not need to concern ourselves with dominance, codominance, incomplete dominance, etc.} instead of $p$ and $q$?  The vast majority of genes have names longer than a single letter, such as \emph{sonic hedgehog} (\emph{shh}) or \emph{bone morphogenetic protein 4} (\emph{bmp4}). Writing equations with long gene names would get confusing. Variable names like $p$ and $q$ are easier to understand.  
+
+Advanced uses of Hardy-Weinberg equations often express allele frequencies only in terms of $p$. If the frequency of one allele is $p$, then the frequency of the other allele is $1-p.$\marginnote{For two alleles, $p + q = 1$ so $q = 1-p.$}
+
+\section*{Genotype Frequency}
+
+
+Diploid organisms have two alleles for each gene locus. The combination of alleles is the genotype for the gene locus. The genotype might be homozygous (two copies of the same allele) or heterozygous (two different alleles).  Given two alleles, there are three possible genotypes. Set aside $p$ and $q$ for the moment but consider two alleles, $T_1$ and $T_2$. The three possible genotypes are $T_1T_1$, $T_2T_2$, and $T_1T_2$.  The \emph{genotype frequencies} in a population is calculated by
+
+\begin{equation*}
+p^2 + 2pq+q^2=1,
+\end{equation*}
+where $p^2$ is the frequency of one homozygous genotype (e.g., $T_1T_1$), $q^2$ is the frequency of the other homozygous genotype $(T_2T_2)$, and $2pq$ is the frequency of the heterozygous genotype $(T_1T_2)$.  Three terms are needed to represent the three possible genotypes. 
+
+In situations where $q$ is represented by $1-p,$ then $2pq$\marginnote{I tend to use $p$ and $q$ most often in class but this is subject to change.} is represented as $2p(1-p)$ and $q^2$ is represented as $(1-p)^2.$ Be sure you are comfortable recognizing the use of the equations and terms with and without $q$.
+
+How are the two Hardy-Weinberg equations related?  Consider a large, randomly mating population with two alleles.  The alleles are present at frequencies $p$ and $q$.  The proportion of each genotype produced in the next generation is calculated by multiplying $p+q$ times itself\marginnote{Think of individuals \emph{multiplying} (mating) in a population.},
+\begin{equation*}
+(p+q)^2=
+(p+q)(p+q) =
+p^2 + pq + qp + q^2 =
+p^2 + 2pq + q^2.
+\end{equation*}
+
+\section*{Assumptions of Hardy-Weinberg}
+
+A population will be in Hardy-Weinberg equilibrium if five assumptions are met.\marginnote{Other assumptions exist, such as diploid organisms with non-overlapping generations. We are assuming diploid organisms but disregarding non-overlapping generations. The principles are the same but the math becomes more complex.} The assumptions we will use are
+
+\begin{enumerate}
+
+	\item The population is infinitely large (no genetic drift),
+
+	\item no germ-line\marginnote{Germ-line cells are those that produce sperm and eggs. Mutations that do not occur in the germ line cannot be inherited and thus not subject to evolutionary processes.} mutations are occurring,
+
+	\item no gene flow among populations,
+
+	\item no natural selection, and
+
+	\item random mating.
+
+	
+\end{enumerate}
+
+We will explore violation of these assumptions in depth during the first several weeks of the semester.
+
+\section*{A practice problem}
+
+\noindent A population of 200 individuals in Hardy-Weinberg equilibrium
+has 72 individuals that are $A_1A_1$, 96 that are $A_1A_2$, and 32 
+that are $A_2A_2$. Calculate the allele and genotype frequencies 
+for this population.
+
+\bigskip
+
+\begin{tabular}{@{}ll@{}}
+	\toprule
+	& Frequency\tabularnewline
+	\midrule
+	& \tabularnewline
+	$A_1$		&	\rule{0.6in}{0.4pt}\tabularnewline[2em]
+	$A_2$		&	\rule{0.6in}{0.4pt}\tabularnewline[2em]
+	$A_1A_1$	&	\rule{0.6in}{0.4pt}\tabularnewline[2em]
+	$A_1A_2$	&	\rule{0.6in}{0.4pt}\tabularnewline[2em]
+	$A_2A_2$	&	\rule{0.6in}{0.4pt}\tabularnewline
+	\bottomrule
+\end{tabular}
+
+
+\vskip0pt plus 1fill
+
+
+\begin{margintable}
+\hfill \reflectbox{\begin{tabular}{@{}lr@{}}
+	\toprule
+	& Frequency\tabularnewline
+	\midrule
+	$A_1$		&	0.60\tabularnewline
+	$A_2$		&	0.40\tabularnewline
+	$A_1A_1$	&	0.36\tabularnewline
+	$A_1A_2$	&	0.48\tabularnewline
+	$A_2A_2$	&	0.16\tabularnewline
+	\bottomrule
+\end{tabular}}
+\end{margintable}
+
+\end{document}
