@@ -3,8 +3,10 @@
 
 \documentclass[11pt, addpoints]{exam}
 \usepackage{graphicx}
-	\graphicspath{{/Users/goby/Pictures/teach/300/}
+	\graphicspath{{/Users/goby/Pictures/teach/300/exercises/}
 	{img/}} % set of paths to search for images
+
+%\printanswers
 
 \usepackage{geometry}
 \geometry{letterpaper, bottom=1in}                   
@@ -48,24 +50,24 @@
 %\posttitle{\par\end{center}}
 %\predate{}\postdate{}
 
+\usepackage[sc]{titlesec}
+
 \renewcommand{\solutiontitle}{\noindent}
 \unframedsolutions
 \SolutionEmphasis{\bfseries}
 
 \pagestyle{headandfoot}
-\firstpageheader{BI 300: Evolution}{}{\ifprintanswers\textbf{KEY}\else Name: \enspace \makebox[2.5in]{\hrulefill}\fi}
+\firstpageheader{{\scshape bi}~300: Evolution}{}{\ifprintanswers\textbf{KEY}\else Name: \enspace \makebox[2.5in]{\hrulefill}\fi}
 \runningheader{}{}{\footnotesize{pg. \thepage}}
 \footer{}{}{}
 
-%\printanswers
-
 \begin{document}
 
-\subsection*{Hardy-Weinberg Equilibrium: Migration (\numpoints\ points)}
+\subsection*{Hardy-Weinberg Equilibrium: Gene Flow (\numpoints\ points)}
 
 This exercise will show how \textbf{gene flow} (the migration of
 breeding individuals among populations) affects haplotype frequency
-in a population. We'll continue to look at a single locus with two
+in a population. We will continue to look at a single locus with two
 haplotypes (\emph{A} and \emph{a}). The rate at which individuals move 
 among populations can vary depending on the dispersal ability of the 
 organisms and any geographic barriers such as unsuitable habitat 
