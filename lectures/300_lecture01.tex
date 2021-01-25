@@ -1,0 +1,282 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+%\documentclass[t]{beamer}
+
+%%%% HANDOUTS For online Uncomment the following four lines for handout
+\documentclass[t,handout]{beamer}  %Use this for handouts.
+\usepackage{handoutWithNotes}
+\includeonlylecture{student}
+\pgfpagesuselayout{3 on 1 with notes}[letterpaper,border shrink=5mm]
+%	\setbeamercolor{background canvas}{bg=black!5}
+
+
+%%% Including only some slides for students.
+%%% Uncomment the following line. For the slides,
+%%% use the labels shown below the command.
+
+%% For students, use \lecture{student}{student}
+%% For mine, use \lecture{instructor}{instructor}
+
+
+%\usepackage{pgf,pgfpages}
+%\pgfpagesuselayout{4 on 1}[letterpaper,border shrink=5mm]
+
+% FONTS
+\usepackage{fontspec}
+\def\mainfont{Linux Biolinum O}
+\setmainfont[Ligatures={Common, TeX}, Contextuals={NoAlternate}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={Proportional, OldStyle}]{\mainfont}
+%\setmonofont[Scale=MatchLowercase]{Inconsolata} 
+\setsansfont[Scale=MatchLowercase]{Linux Biolinum O} 
+\usepackage{microtype}
+
+\usepackage{graphicx}
+	\graphicspath{%
+	{/Users/goby/Pictures/teach/300/lectures/}%
+	{/Users/goby/Pictures/teach/163/common/}} % set of paths to search for images
+
+\usepackage{amsmath,amssymb}
+
+%\usepackage{units}
+
+\usepackage{booktabs}
+\usepackage{multicol}
+%	\setlength{\columnsep=1em}
+
+\usepackage{textcomp}
+\usepackage{setspace}
+\usepackage{tikz}
+	\tikzstyle{every picture}+=[remember picture,overlay]
+
+\mode<presentation>
+{
+  \usetheme{Lecture}
+  \setbeamercovered{invisible}
+  \setbeamertemplate{items}[square]
+}
+
+\usepackage{calc}
+\usepackage{hyperref}
+
+\newcommand\HiddenWord[1]{%
+	\alt<handout>{\rule{\widthof{#1}}{\fboxrule}}{#1}%
+}
+
+\usepackage{csquotes}
+
+\begin{document}
+	
+\lecture{student}{student}
+
+{
+	\usebackgroundtemplate{\includegraphics[width=\paperwidth]{evolution_intro}}
+	\begin{frame}[t]{\textcolor{white}{\textbf{BI 300: Evolution}}}
+\end{frame}
+}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{mike_snake}}
+\begin{frame}[t,plain]
+\large
+\vspace{5ex}
+\hangpara\hspace{17em} Mike Taylor
+
+\hangpara\hspace{17em} \textsc{rh} 217
+
+\hangpara\hspace{17em} mtaylor@semo.edu
+
+\hangpara\hspace{17em} Zoom office hours
+
+%	\hangpara \hspace{17em} \includegraphics[width=0.4cm]{twitter_icon} @MikeTaylor\textsc{semo}\\
+%\hspace{17em} \#\textsc{bi}348\textsc{taylor}
+\end{frame}
+}
+
+
+
+\lecture{instructor}{instructor}
+\begin{frame}{\highlight{Trigger alert.}}
+
+\hangpara Some of you may find the following images disturbing.
+
+\end{frame}
+
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{post_surgery_hematoma} }
+\begin{frame}[t]
+\end{frame}
+}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{pre_surgery_hematoma} }
+\begin{frame}[t]
+\end{frame}
+}
+
+\lecture{student}{student}
+
+% Lecture goals
+\lecture{student}{student}
+
+\begin{frame}[t]{Your objectives for this course are to}
+	
+	\hangpara explain the process of evolution, 
+	
+	\hangpara explain random and non-random evolutionary processes,
+	
+	\hangpara explain the evidence for evolution, and
+	
+	\hangpara apply your knowledge to solve evolutionary problems.
+	
+\end{frame}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{charles_darwin} }
+	\begin{frame}[t]
+\end{frame}
+}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{beagle_voyage} }
+\begin{frame}[t]{}
+\end{frame}
+}
+
+{
+\begin{frame}[t]{Darwin became famous as a naturalist during and after the voyage.}
+
+\begin{multicols}{2}
+
+\hangpara Published more than 20 books and hundreds of articles.
+
+\hangpara Developed his thoughts on the “species problem.”
+
+\hangpara Published \textit{On the Origin of Species} in 1859.
+
+\columnbreak
+
+\centering
+\includegraphics[width=0.33\textwidth]{beagle_cover}\\
+Voyage of the \textit{Beagle}
+
+\end{multicols}
+
+\end{frame}
+}
+
+{
+\begin{frame}[t]{Natural selection is similar to artificial selection.}
+	
+	\begin{multicols}{2}
+		
+		\hangpara Artificial selection for favored traits in domestic breeds.
+		
+		\hangpara Domestic breeds stem from wild-type species.
+				
+		\columnbreak
+		
+		\centering
+		\includegraphics[width=0.33\textwidth]{artificial_pigeons1}\\
+		\includegraphics[width=0.33\textwidth]{artificial_pigeons2}
+		
+	\end{multicols}
+	
+\end{frame}
+}
+
+{
+\begin{frame}[t]{Population growth is limited by resources.}
+	
+	\begin{multicols}{2}
+		
+		\hangpara \textit{Principle of Population} by Robert Malthus.
+		
+		\hangpara If human population growth can be limited by resources, then why not natural populations?
+		
+		\columnbreak
+		
+		\centering
+		\includegraphics[width=0.4\textwidth]{malthus_graph}
+%		\includegraphics[width=0.25\textwidth]{malthus_cover}
+		
+	\end{multicols}
+	
+\end{frame}
+}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{darwin_descent_modification} }
+\begin{frame}[t]{}
+\end{frame}
+}
+
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{descent_with_modification} }
+\begin{frame}[t]{}
+\end{frame}
+}
+
+\begin{frame}
+%\begin{tabular}{cc}
+\centering
+\includegraphics[width=\textheight]{feline_phylogeny} %&
+%\includegraphics[width=0.3\textwidth]{domestic_cat_phylogeny} \\
+%\end{tabular}
+\vfilll
+\end{frame}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{adaptation_by_natural_selection} }
+	\begin{frame}[t]{}
+\end{frame}
+}
+
+\begin{frame}[t]{What was missing from Darwin's concepts?}
+\vspace{-\baselineskip}
+\begin{multicols}{2}
+	\highlight{Species descend from common ancestor.}\bigskip
+
+\highlight{Adaptations evolve by natural selection.}
+
+\vspace{7\baselineskip}
+
+Charles Darwin, \textit{On the Origin of Species}, 1st edition, 1859
+
+	\columnbreak
+	\begin{displayquote}There is grandeur in this view of life, with its several powers, having been originally breathed into a few forms or into one; and that, whilst this planet has gone cycling on according to the fixed law of gravity, from so simple a beginning endless forms most beautiful and most wonderful have been, and are being, evolved.\end{displayquote}
+%— Charles Darwin, \textit{On the Origin of Species}, 1st edition, 1859
+	
+	
+\end{multicols}
+\end{frame}
+
+\begin{frame}{The \highlight{evolutionary synthesis} built upon Darwin's foundation.}
+
+\hangpara Natural selection and genetic processes that operate within species account for the \highlight{\textit{origin of new species.}}
+
+\end{frame}
+
+\begin{frame}[t]{The \highlight{evolutionary synthesis} determined that}
+\hangpara the unit of evolution is the population,
+
+\hangpara genetic variation is due to random mutation and genetic recombination,
+
+\hangpara genetic variation creates phenotypic variation, and
+
+\hangpara natural selection acting on phenotypic variation is the primary cause of evolutionary change.
+
+\end{frame}
+
+\begin{frame}[t]{The \highlight{evolutionary synthesis} determined that}
+\hangpara species are pools of shared alleles, 
+
+\hangpara speciation occurs when populations become reproductively isolated, and
+
+\hangpara macroevolution is the same process as microevolution.
+
+\end{frame}
+
+
+\end{document}
