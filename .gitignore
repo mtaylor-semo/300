@@ -38,6 +38,7 @@
 *.zip
 *.webarchive
 .DS_Store
+.Rhistory
 
 ## Folders
 exams
