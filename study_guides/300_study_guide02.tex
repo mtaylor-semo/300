@@ -1,0 +1,113 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[letterpaper]{tufte-handout}
+
+%\geometry{showframe} % display margins for debugging page layout
+
+\usepackage{fontspec}
+\def\mainfont{Linux Libertine O}
+\setmainfont[Ligatures={Common,TeX}, Contextuals={NoAlternate}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={OldStyle}]{\mainfont}
+\setsansfont[Scale=MatchLowercase]{Linux Biolinum O} 
+\usepackage{microtype}
+
+\usepackage[libertine]{newtxmath}
+
+\usepackage{graphicx} % allow embedded images
+  \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+  \graphicspath{{img/}} % set of paths to search for images
+\usepackage{amsmath}  % extended mathematics
+\usepackage{booktabs} % book-quality tables
+\usepackage{units}    % non-stacked fractions and better unit spacing
+\usepackage{siunitx}
+\usepackage{multicol} % multiple column layout facilities
+\usepackage{microtype}
+\usepackage{hyperref}
+%\usepackage{fancyvrb} % extended verbatim environments
+%  \fvset{fontsize=\normalsize}% default font size for fancy-verbatim environments
+
+\makeatletter
+% Paragraph indentation and separation for normal text
+\renewcommand{\@tufte@reset@par}{%
+  \setlength{\RaggedRightParindent}{1.0pc}%
+  \setlength{\JustifyingParindent}{1.0pc}%
+  \setlength{\parindent}{1pc}%
+  \setlength{\parskip}{0pt}%
+}
+\@tufte@reset@par
+
+% Paragraph indentation and separation for marginal text
+\renewcommand{\@tufte@margin@par}{%
+  \setlength{\RaggedRightParindent}{0pt}%
+  \setlength{\JustifyingParindent}{0.5pc}%
+  \setlength{\parindent}{0.5pc}%
+  \setlength{\parskip}{0pt}%
+}
+\makeatother
+
+% Set up the spacing using fontspec features
+\renewcommand\allcapsspacing[1]{{\addfontfeatures{LetterSpace=15}#1}}
+\renewcommand\smallcapsspacing[1]{{\addfontfeatures{LetterSpace=10}#1}}
+
+
+\newcommand{\allele}[1]{\textit{#1}}
+
+
+\title{Study Guide 02\hfill}
+\author{Natural selection and adaptations}
+
+\date{} % without \date command, current date is supplied
+
+\begin{document}
+
+\maketitle	% this prints the handout title, author, and date
+
+%\printclassoptions
+
+\section{Vocabulary}\marginnote{\textbf{Read:} 55--61, 62--65; 67--71} 
+\vspace{-1\baselineskip}
+\begin{multicols}{2}
+natural selection\\
+fitness\\
+relative fitness\\
+differential reproductive success\\
+individual selection \\
+genic selection \\
+kin selection \\
+identical by descent \\
+species selection \\
+\end{multicols}
+
+\section{Concepts}
+
+You should \emph{write} clear and concise answers to each question in the Concepts section.  The questions are not necessarily independent.  Think broadly across lectures to see “the big picture.”
+
+\begin{itemize}
+	
+	\item Explain what are adaptations. How do they evolve? What is the role of natural selection in the evolution of adaptations? How do adaptations affect the fitness of an organism?
+	
+	\item Explain the difference between fitness and relative fitness. Explain relative fitness in terms of differential reproductive success.
+	
+	\item Explain the difference between individual, genic, kin, and species selection.
+	
+	\item Is genic selection truly different from individual selection? Or, can you argue that genic selection is just a special case of individual selection? Justify your argument. Repeat this question separately for kin selection and for species selection.
+	
+	\item \textit{The Selfish Gene} (1976) \marginnote{Dawkins does not argue that genes have a will or specific selfish intent. He argues that genes evolve \emph{as if} they do.} was written by Richard Dawkins. He argues that genes (alleles, really) that are passed on evolve to serve their own interests, that is, the interests of the genes and not the whole organism. Explain this in terms of natural selection acting on the individual phenotype.
+	
+	\item Explain what it means to say that two gene copies are identical by descent.
+	
+	\item Could natural selection, at any level of organization (e.g., genic, individual, kin, etc.), ever cause the extunction of a population or a species?
+	
+	\item Explain criteria or measurements by which you might conclude that a population is better adapted after a certain evolutionary change than before the change.
+	
+	
+	
+	
+	
+	
+	
+	
+
+\end{itemize}
+
+\end{document}

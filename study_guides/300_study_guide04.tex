@@ -1,0 +1,147 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[letterpaper]{tufte-handout}
+
+%\geometry{showframe} % display margins for debugging page layout
+
+\usepackage{fontspec}
+\def\mainfont{Linux Libertine O}
+\setmainfont[Ligatures={Common,TeX}, Contextuals={NoAlternate}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={OldStyle}]{\mainfont}
+\setsansfont[Scale=MatchLowercase]{Linux Biolinum O} 
+\usepackage{microtype}
+
+\usepackage{graphicx} % allow embedded images
+  \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+  \graphicspath{{img/}} % set of paths to search for images
+\usepackage{amsmath}  % extended mathematics
+\usepackage{booktabs} % book-quality tables
+\usepackage{units}    % non-stacked fractions and better unit spacing
+\usepackage{siunitx}
+\usepackage{multicol} % multiple column layout facilities
+\usepackage{microtype}   % filler text
+\usepackage{hyperref}
+%\usepackage{fancyvrb} % extended verbatim environments
+%  \fvset{fontsize=\normalsize}% default font size for fancy-verbatim environments
+\makeatletter
+% Paragraph indentation and separation for normal text
+\renewcommand{\@tufte@reset@par}{%
+  \setlength{\RaggedRightParindent}{1.0pc}%
+  \setlength{\JustifyingParindent}{1.0pc}%
+  \setlength{\parindent}{0pc}%
+  \setlength{\parskip}{0.5\baselineskip}%
+}
+\@tufte@reset@par
+
+% Paragraph indentation and separation for marginal text
+\renewcommand{\@tufte@margin@par}{%
+  \setlength{\RaggedRightParindent}{0pt}%
+  \setlength{\JustifyingParindent}{0.5pc}%
+  \setlength{\parindent}{0.5pc}%
+  \setlength{\parskip}{0pt}%
+}
+\makeatother
+
+% Set up the spacing using fontspec features
+\renewcommand\allcapsspacing[1]{{\addfontfeatures{LetterSpace=15}#1}}
+\renewcommand\smallcapsspacing[1]{{\addfontfeatures{LetterSpace=10}#1}}
+
+
+\title{Study Guide 04\hfill}
+\author{Estimating phylogenetic trees}
+
+\date{} % without \date command, current date is supplied
+
+\begin{document}
+
+\maketitle	% this prints the handout title, author, and date
+
+\section{Vocabulary}\marginnote{\textbf{Read:} Chapter 2, pages 35--37, 47-50; Chapter 16, pages 402--406, 409--414.\\[1em]
+	\noindent Some vocabulary is defined below. I did not necessarily cover all of vocabulary in lecture but you \emph{must} know them.}
+
+\begin{multicols}{2}
+Plesiomorphic\\
+Ancestral character \\
+Symplesiomorphic \\
+Shared ancestral character \\
+Apomorphic \\
+Derived character \\
+Synapomorphic \\
+Shared derived character \\
+Homology \\
+Autapomorphic \\
+Outgroup \\
+Ingroup \\
+Mosaic evolution \\
+Homoplasy \\
+Convergent evolution \\
+Analogy \\
+Maximum parsimony \\
+Maximum likelihood \\
+Bayesian analysis \\
+Bootstrap \\
+\end{multicols}
+
+%\printclassoptions
+
+\section{Concepts}
+
+You should \emph{write} clear and concise answers to each question in the Concepts section.  The questions are not necessarily independent.  Think broadly across lectures to see ``the big picture.'' 
+
+\begin{enumerate}
+	
+	\item Explain the conceptual model that guides the maximum parsimony technique of phylogenetic analysis.
+
+	\item What kind of information do bootstrap values and Bayesian probability values convey about different clades on a phylogenetic tree?  What are the ``ideal'' minimum values for bootstrap and Bayesian probabilities.
+	
+	\item Explain the difference between homology and homoplasy.
+	
+	\item Explain the difference between synapomorphy and symplesiomorphy.
+	
+	\item Explain the difference between homology and analogy.
+	
+	\item Be able to construct a phylogeny from a presence/absence character matrix using parsimony techniques. Refer to the separate exercise(s) for practice.
+	
+	\item Explain mosaic evolution.\marginnote{Also called mosaic character of evolution. In this case, “character” means “nature of,” not a phenotypic character.}	
+
+\end{enumerate}
+
+\section{Detailed Vocabulary}
+
+\textbf{Taxon} (plural: taxa): a term of convenience to reference any particular category of organisms. For example, a taxon may reference a subspecies, a species, a genus, a family, an order, or some other named group. \textbf{Higher taxa} is frequently used to reference taxa above the species level.
+
+\textbf{Character}: any feature or trait that you can assess or measure.  For example, the number of digits on the manus or the nucleotide at a particular position in a DNA sequence.  Characters can be continuous (tail length, leaf width) or discrete (present /absent, ACGT).
+
+\textbf{Character State}: the specific value of the character. For example, five digits in the manus or an adenine at position 126 in a DNA sequence of 300 nucleotides. 
+
+\textbf{Ancestral Character}: any character that is found in the common ancestor of a taxon, as well as the descendants.  Another name for an ancestral character is a \textbf{plesiomorphy}. An ancestral character shared by two or more taxa is called a \textbf{symplesiomorphy}.
+
+\textbf{Derived Character}: any character that has evolved from the ancestral state. Derived characters are found in descendants but not their common ancestor. Derived characters shared among two or more taxa are necessary to develop phylogenetic trees.  A derived character found in only one taxon is not sufficient to determine the relationship of that taxon to other taxa.  A derived character that is shared between two or more taxa is called a \textbf{synapomorphy}.  A derived character unique to one taxon is an \textbf{autapomorphy}.
+
+\textbf{Homology}: a derived character shared among taxa due to descent from a common ancestor. For example, the bones in bird wings are homologous with and derived from the bones in the forelimb of a non-flying theropod dinosaur ancestor.
+
+\textbf{Homoplasy} (Analogy): similar character states among taxa that are not due to common ancestry. Analogous characters can evolve independently as a similar response to similar pressures from natural selection. For example, the wings of birds and insects evolved independently and are analogous structures.  The wings of birds and bats also evolved independently but are derived from the same homologous structures (the tetrapod forelimbs). Loss of characters (character reversal) can also result in analogies. For example, the loss of legs in snakes and some lizards occurred independently, but they are only distantly related. In addition, this makes them similar to some eels and earthworms, but the limbless bodies are analogous, not homologous. 
+
+\textbf{Ingroup}: the taxonomic group of interest; that is, the group that is the focus of the study. The ingroup would be supported by one or more homologies
+
+\textbf{Outgroup}: Outgroup taxa are usually closely related to the ingroup.  The outgroup helps to orient the direction of evolutionary change in the ingroup
+
+\textbf{Sister Species}: any two species that share the same most recent ancestor. 
+
+\textbf{Sister Taxa} (sister groups): any two monophyletic taxa that share the same ancestor. All sister species are sister taxa but not all sister taxa are sister species. For example, two genera can be sister taxa but are clearly not sister species.
+
+\textbf{Phylogenetic Analysis}: any type of analysis used to develop a hypothesis about the evolutionary relationships among taxa.  Phylogenetic analyses are used to develop phylogenetic trees. 
+
+The following three types of phylogenetic analyses are widely used. Maximum parsimony was favored initially but Maximum Likelihood and now Bayesian analyses are in widespread use. Each has advantages and disadvantages. These analytical techniques are briefly mentioned here (and briefly discussed in your text) because they have been used in some of the studies we will read.
+
+\textbf{Maximum Parsimony}: a commonly used method of phylogenetic analysis.  This method uses the principle of parsimony, which assumes that the simplest explanation is preferred over more complex explanations.  Thus, maximum parsimony phylogenetic analysis assumes that the best estimate of evolutionary history is the phylogenetic tree that requires the fewest evolutionary changes in character states. A tree with fewer changes across character states is less complex than a tree that requires more changes across character states.  This method is simple and quick.
+
+\textbf{Maximum Likelihood}: a commonly used method of phylogenetic analysis. The details are much more complex than parsimony but often results in better hypotheses about the evolutionary relationships among taxa. The method is complex and computer intensive. 
+
+\textbf{Bayesian Analysis}: a relatively new method that has become popular. The analytical details are also complex but also often results in better hypotheses than Maximum Parsimony. This method is generally as robust as Maximum Likelihood but is not as computer intensive, which explains why it has become popular.
+
+\textbf{Bootstrapping}: A non-parametric statistical method to estimate the reliability of support for each node in an evolutionary tree.  Bootstrap values range from 0-100. Values of 50 or higher are typically reported but values of 70 and higher indicate the best reliability. 
+
+\textbf{Bayesian Probability}: A parametric statistical method to estimate the reliability of support for each node in an evolutionary tree.  Probability values range from 0-1. For phylogenetic trees, values of 0.8-0.85 and higher indicate the best reliability. 
+
+\end{document}

@@ -1,0 +1,123 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[letterpaper]{tufte-handout}
+
+%\geometry{showframe} % display margins for debugging page layout
+
+\usepackage{fontspec}
+\def\mainfont{Linux Libertine O}
+\setmainfont[Ligatures={Common,TeX}, Contextuals={NoAlternate}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={OldStyle}]{\mainfont}
+\setsansfont[Scale=MatchLowercase]{Linux Biolinum O} 
+\usepackage{microtype}
+
+\usepackage{graphicx} % allow embedded images
+  \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+  \graphicspath{{img/}} % set of paths to search for images
+\usepackage{amsmath}  % extended mathematics
+\usepackage{booktabs} % book-quality tables
+\usepackage{units}    % non-stacked fractions and better unit spacing
+\usepackage{siunitx}
+\usepackage{multicol} % multiple column layout facilities
+\usepackage{microtype}   % filler text
+\usepackage{hyperref}
+%\usepackage{fancyvrb} % extended verbatim environments
+%  \fvset{fontsize=\normalsize}% default font size for fancy-verbatim environments
+\makeatletter
+% Paragraph indentation and separation for normal text
+\renewcommand{\@tufte@reset@par}{%
+  \setlength{\RaggedRightParindent}{1.0pc}%
+  \setlength{\JustifyingParindent}{1.0pc}%
+  \setlength{\parindent}{0pc}%
+  \setlength{\parskip}{0.5\baselineskip}%
+}
+\@tufte@reset@par
+
+% Paragraph indentation and separation for marginal text
+\renewcommand{\@tufte@margin@par}{%
+  \setlength{\RaggedRightParindent}{0pt}%
+  \setlength{\JustifyingParindent}{0.5pc}%
+  \setlength{\parindent}{0.5pc}%
+  \setlength{\parskip}{0pt}%
+}
+\makeatother
+
+% Set up the spacing using fontspec features
+\renewcommand\allcapsspacing[1]{{\addfontfeatures{LetterSpace=15}#1}}
+\renewcommand\smallcapsspacing[1]{{\addfontfeatures{LetterSpace=10}#1}}
+
+
+\title{Study Guide 03\hfill}
+\author{Phylogenetic systematics}
+
+\date{} % without \date command, current date is supplied
+
+\begin{document}
+
+\maketitle	% this prints the handout title, author, and date
+
+%\printclassoptions
+
+\section{Vocabulary}\marginnote{\textbf{Read:} Chapter 2, pages 28--35, including Box 2\textsc{a}, 39--41, 50; Chapter 16, pages 407--409.\\[1em] \noindent Some vocabulary is defined below.}
+\vspace{-1\baselineskip}
+\begin{multicols}{2}
+	phylogenetic systematics\\
+	phylogenetic tree (phylogeny)\\
+	branch \\
+	internal node\\
+	terminal node (tip) \\
+	taxon (plural: taxa) \\
+	root \\
+	clade \\
+	monophyletic \\
+	paraphyletic \\
+	polyphyletic \\
+	species tree \\
+	gene tree \\
+	gene duplication \\
+	paralogous genes (paralogs) \\
+	orthologous genes (orthologs) \\
+	adaptive radiation \\
+	incomplete lineage sorting \\
+\end{multicols}
+
+\section{Concepts}
+
+You should \emph{write} clear and concise answers to each question in the Concepts section.  The questions are not necessarily independent.  Think broadly across lectures to see ``the big picture.'' 
+
+\begin{enumerate}
+	
+	\item Be able to identify the parts of a phylogenetic tree.
+	
+	\item Be able to recognize and delineate monophyletic, paraphyletic and polyphyletic groups on a phylogenetic tree.
+
+	\item Explain the difference between paralogous and orthologous genes. Explain whether paralogous or orthologous genes should be used to construct a phylogenetic tree. Justify your answer.
+	
+	\item Explain the difference between a species tree and a gene tree.\marginnote{True in the sense of the actual evolutionary history of the species.} Will the gene tree always be an accurate reflection of the true species tree? Justify your answer.
+	
+	\item Explain incomplete lineage sorting. Explain how incomplete lineage sorting can affect interpretation of a phylogenetic tree. That is, if incomplete lineage sorting is present among a group of species, will you necessarily obtain the actual evolutionary history of the species? Why or why not?
+	
+	
+
+\end{enumerate}
+
+\section{Detailed Vocabulary}
+
+\textbf{Taxon} (plural: taxa): a term of convenience to reference any particular category of organisms. For example, a taxon may reference a subspecies, a species, a genus, a family, an order, or some other named group. \textbf{Higher taxa} is frequently used to reference taxa above the species level.
+
+\textbf{Branch}: The lines that represent the ancestral lineages of a group, or that represent the lineage leading to the current taxa at the tips.
+
+\textbf{Node}: The point where a branch splits into two descendants.  This is the implied ancestral taxon at the end of the lineage and also the implied speciation event forming the descendant taxa.
+
+\textbf{Tip}: the top end of a branch that represents a specific taxon; sometimes called terminal node.
+
+\textbf{Monophyletic Group}: a group that contains the common ancestor and all of the descendant taxa that evolved from that ancestor. Monophyletic groups can be identified by the presence of one or more shared, derived characters (synapomorphies) in the descendant taxa.
+
+\textbf{Clade}: another name for a monophyletic group.  Much easier to say than monophyletic.
+
+\textbf{Paraphyletic Group}: a group that contains the common ancestor and some but not all of the descendant taxa of that ancestor. 
+
+\textbf{Polyphyletic Group}: a group in which none of the included taxa share the same most recent common ancestor.  The last common ancestor of the taxa is not included in the group.
+
+
+\end{document}

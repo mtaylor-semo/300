@@ -1,0 +1,100 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[letterpaper]{tufte-handout}
+
+%\geometry{showframe} % display margins for debugging page layout
+
+\usepackage{fontspec}
+\def\mainfont{Linux Libertine O}
+\setmainfont[Ligatures={Common,TeX}, Contextuals={NoAlternate}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={OldStyle}]{\mainfont}
+\setsansfont[Scale=MatchLowercase]{Linux Biolinum O} 
+\usepackage{microtype}
+
+\usepackage{graphicx} % allow embedded images
+  \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+  \graphicspath{{img/}} % set of paths to search for images
+\usepackage{amsmath}  % extended mathematics
+\usepackage{booktabs} % book-quality tables
+\usepackage{units}    % non-stacked fractions and better unit spacing
+\usepackage{multicol} % multiple column layout facilities
+%\usepackage{fancyvrb} % extended verbatim environments
+%  \fvset{fontsize=\normalsize}% default font size for fancy-verbatim environments
+
+\makeatletter
+% Paragraph indentation and separation for normal text
+\renewcommand{\@tufte@reset@par}{%
+  \setlength{\RaggedRightParindent}{1.0pc}%
+  \setlength{\JustifyingParindent}{1.0pc}%
+  \setlength{\parindent}{1pc}%
+  \setlength{\parskip}{0pt}%
+}
+\@tufte@reset@par
+
+% Paragraph indentation and separation for marginal text
+\renewcommand{\@tufte@margin@par}{%
+  \setlength{\RaggedRightParindent}{0pt}%
+  \setlength{\JustifyingParindent}{0.5pc}%
+  \setlength{\parindent}{0.5pc}%
+  \setlength{\parskip}{0pt}%
+}
+\makeatother
+
+% Set up the spacing using fontspec features
+   \renewcommand\allcapsspacing[1]{{\addfontfeatures{LetterSpace=15}#1}}
+   \renewcommand\smallcapsspacing[1]{{\addfontfeatures{LetterSpace=10}#1}}
+   
+   
+\title{{\scshape bi} 300 study guide 01\hfill}
+\author{Darwin; The Evolutionary Synthesis.}
+
+\date{} % without \date command, current date is supplied
+
+\begin{document}
+
+\maketitle	% this prints the handout title, author, and date
+
+%\printclassoptions
+
+\section{Using the Study Guides}
+The\marginnote{\textbf{Read:} pgs. 6--9, 10--15, 16--20 (inc.~Box 1\textsc{a}).}	study guides will help you learn the material.  Each study guide contains vocabulary to learn and a series of questions based on the corresponding lectures and the assigned reading from the textbook.  The guides may also contain more information to supplement the lecture.  Read the study guides in advance of lecture to get familiar with the day's topic. Bring the study guide to class to see the vocabulary and questions in context of the lecture discussion.  This will help you recall the information during your daily (or every other day) study.
+
+% %\\\noindent\textbf{Questions:} pg. 24, 1, 5--7. I will not collect your answers to the questions but you should answer them. They may be used at the bases for exam or homework questions.
+
+\section{Vocabulary}
+\vspace{-1\baselineskip}
+\begin{multicols}{2}
+artificial selection\\
+natural selection\\
+descent with modification\\
+evolution\\
+The Evolutionary Synthesis\\
+microevolution\\
+macroevolution
+\end{multicols}
+
+%\marginnote{In anticipation of a Hardy-Weinberg pop quiz, \textbf{Study} pages 155--159,  especially boxes 6.2 and 6.3, and figure 6.3.}
+
+\noindent The vocabulary lists the terms from each lecture that you should know. You must be able to recognize and apply these terms in a broader context.  I will use the terms in lecture and on exams. If you do not know the terms, you may not fully understand the lecture or be able to answer a question on the exam. I expect you to use the proper vocabulary in your answers to questions on exams and assignments.  Get in the habitat of using terms as you learn the material.  I may not cover all terms in class or do so only in passing.  I expect that you will learn them by reading your textbook and using the glossary in your textbook, to put them into the context of organismal biology.
+
+\section{Concepts}
+
+You should \emph{write} clear and concise answers to each question in the Concepts section.  The questions are not necessarily independent.  Think broadly across lectures to see ``the big picture.''  Study guide questions may be used as a basis for short answer or essay questions on the exam. I may also create exam and assignment questions that do not appear on the study guides. These are guides, not exhaustive test banks.
+
+\begin{enumerate}
+	\item Define evolution?  What specifically changes over time?
+
+	\item How did Darwin use the idea of artificial selection to build his case for natural selection?  
+
+	\item Explain the difference between descent with modification and natural selection.  Are they related or two independent theories?  Explain.
+
+	\item Explain each of the two primary concepts from Darwin's \emph{On the Origin of Species}.  Although profound, these concepts were not widely accepted until well into the 20th century.  Why not?
+
+	\item Summarize the principles that came from the Evolutionary Synthesis\sidenote{The Evolutionary Synthesis is often called the Modern Synthesis. They are the same thing.}. To demonstrate your understanding, you must be able to synthesize these principles into a single narrative paragraph, rather than listing each item one by one.  
+
+	\item Briefly explain the importance of the Evolutionary Synthesis to Darwin's Theory of Natural Selection in the context of the early 20th Century.  In other words, how did the Evolutionary Synthesis help Darwin's concept of natural selection become more widely accepted among scientists?
+
+	\item Explain the difference between microevolution and macroevolution.  Do you think this difference is a real difference or merely a perceptive difference?  Justify your answer. 
+
+\end{enumerate}
+\end{document}
