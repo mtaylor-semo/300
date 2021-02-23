@@ -1,0 +1,119 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[letterpaper]{tufte-handout}
+
+%\geometry{showframe} % display margins for debugging page layout
+
+\usepackage{fontspec}
+\def\mainfont{Linux Libertine O}
+\setmainfont[Ligatures={Common,TeX}, Contextuals={NoAlternate}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={OldStyle}]{\mainfont}
+\setsansfont[Scale=MatchLowercase]{Linux Biolinum O} 
+\usepackage{microtype}
+
+\usepackage{graphicx} % allow embedded images
+  \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+  \graphicspath{{img/}} % set of paths to search for images
+\usepackage{amsmath}  % extended mathematics
+\usepackage{booktabs} % book-quality tables
+\usepackage{units}    % non-stacked fractions and better unit spacing
+\usepackage{siunitx}
+\usepackage{multicol} % multiple column layout facilities
+\usepackage{microtype}   % filler text
+\usepackage{hyperref}
+%\usepackage{fancyvrb} % extended verbatim environments
+%  \fvset{fontsize=\normalsize}% default font size for fancy-verbatim environments
+\makeatletter
+% Paragraph indentation and separation for normal text
+\renewcommand{\@tufte@reset@par}{%
+  \setlength{\RaggedRightParindent}{1.0pc}%
+  \setlength{\JustifyingParindent}{1.0pc}%
+  \setlength{\parindent}{0pc}%
+  \setlength{\parskip}{0.5\baselineskip}%
+}
+\@tufte@reset@par
+
+% Paragraph indentation and separation for marginal text
+\renewcommand{\@tufte@margin@par}{%
+  \setlength{\RaggedRightParindent}{0pt}%
+  \setlength{\JustifyingParindent}{0.5pc}%
+  \setlength{\parindent}{0.5pc}%
+  \setlength{\parskip}{0pt}%
+}
+\makeatother
+
+% Set up the spacing using fontspec features
+\renewcommand\allcapsspacing[1]{{\addfontfeatures{LetterSpace=15}#1}}
+\renewcommand\smallcapsspacing[1]{{\addfontfeatures{LetterSpace=10}#1}}
+
+
+\title{Study Guide 05\hfill}
+\author{Mutation and variation}
+
+\date{} % without \date command, current date is supplied
+
+\begin{document}
+
+\maketitle	% this prints the handout title, author, and date
+
+\section{Vocabulary}\marginnote{\textbf{Read:} Chapter 4, pages 79--85, 88--94; Read and study the Genetics Review document from the course web page.}
+
+\begin{multicols}{2}
+mutation \\
+beneficial mutation \\
+detrimental mutation \\
+segregation \\
+recombination \\
+point mutation \\
+synonymous substitution \\
+non-synonymous substitution \\
+insertion \\
+deletion \\
+indel \\
+frameshift mutation \\
+gene duplication \\
+paralog \\
+ortholog \\
+neofunctionalization \\
+subfunctionalization \\
+allele frequency \\
+genotype frequency \\
+Hardy-Weinberg equilibrium 
+\end{multicols}
+
+%\printclassoptions
+
+\section{Concepts}
+
+You should \emph{write} clear and concise answers to each question in the Concepts section.  The questions are not necessarily independent.  Think broadly across lectures to see ``the big picture.'' 
+
+\begin{enumerate}
+	
+	\item Read and study the Genetics Review document from the course web site. Just sayin’$\dots$.
+	
+	\item Describe how the Mendelian “laws” of segregation and assortment (recombination) increase genetic polymorphism in a population.
+	
+	\item Why are mutations the ultimate source of all genetic variation in a population? Why not segregation or recombination?
+	
+	\item Explain why non-synyonymous substitutions are subject to natural selection but synonymous substitutions are not.
+	
+	\item Describe why indels are usually going to be subject to negative selection.
+	
+	\item Describe the difference between neofunctionalization and subfunctionalization after gene duplication.
+	
+	\item This would be a good place to review lecture 3 to be sure you understand the difference between orthologs and paralogs.  
+	
+	\item If gene duplicates subfunctionalization, are the duplicates orthologs or paralogs? If one copy retains the original function and a duplicate copy evolves a new function, are the two copies orthologs or paralogs? Explain why for each question.
+	
+	\item What does it mean to say a population is in Hardy-Weinberg equilibrium (\textsc{hwe})?
+	
+	\item Describe the five assumptions necessary for \textsc{hwe} to exist in a population. Don't just list them. Explain them. Tell how violation of each assumption causes a population to deviate from equilibrium?
+	
+	\item If a population that is not in \textsc{hwe} meets all five assumptions, how long will it take for the population to return to equilibrium? Be able to demonstrate this given a frequency for one allele. (In the others, be able to use both \textsc{hwe} equations to show the return to equilibrium.)
+	
+	\item Be able to demonstrate the math for three alleles for one locus. We'll focus on two allele systems but you should understand and therefore be able to demonstrate how the \textsc{hwe} equations apply to multiple alleles. 
+	
+
+\end{enumerate}
+
+\end{document}
