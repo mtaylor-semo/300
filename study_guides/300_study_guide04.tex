@@ -19,7 +19,7 @@
 \usepackage{units}    % non-stacked fractions and better unit spacing
 \usepackage{siunitx}
 \usepackage{multicol} % multiple column layout facilities
-\usepackage{microtype}   % filler text
+\usepackage{enumitem}   % filler text
 \usepackage{hyperref}
 %\usepackage{fancyvrb} % extended verbatim environments
 %  \fvset{fontsize=\normalsize}% default font size for fancy-verbatim environments
@@ -110,38 +110,40 @@ You should \emph{write} clear and concise answers to each question in the Concep
 
 \textbf{Taxon} (plural: taxa): a term of convenience to reference any particular category of organisms. For example, a taxon may reference a subspecies, a species, a genus, a family, an order, or some other named group. \textbf{Higher taxa} is frequently used to reference taxa above the species level.
 
-\textbf{Character}: any feature or trait that you can assess or measure.  For example, the number of digits on the manus or the nucleotide at a particular position in a DNA sequence.  Characters can be continuous (tail length, leaf width) or discrete (present /absent, ACGT).
+\noindent\textbf{Character}: any feature or trait that you can assess or measure.  For example, the number of digits on the manus or the nucleotide at a particular position in a DNA sequence.  Characters can be continuous (tail length, leaf width) or discrete (present /absent, ACGT).
 
-\textbf{Character State}: the specific value of the character. For example, five digits in the manus or an adenine at position 126 in a DNA sequence of 300 nucleotides. 
+\noindent\textbf{Character State}: the specific value of the character. For example, five digits in the manus or an adenine at position 126 in a DNA sequence of 300 nucleotides. 
 
-\textbf{Ancestral Character}: any character that is found in the common ancestor of a taxon, as well as the descendants.  Another name for an ancestral character is a \textbf{plesiomorphy}. An ancestral character shared by two or more taxa is called a \textbf{symplesiomorphy}.
+\noindent\textbf{Ancestral Character}: any character that is found in the common ancestor of a taxon, as well as the descendants.  Another name for an ancestral character is a \textbf{plesiomorphy}. An ancestral character shared by two or more taxa is called a \textbf{symplesiomorphy}.
 
-\textbf{Derived Character}: any character that has evolved from the ancestral state. Derived characters are found in descendants but not their common ancestor. Derived characters shared among two or more taxa are necessary to develop phylogenetic trees.  A derived character found in only one taxon is not sufficient to determine the relationship of that taxon to other taxa.  A derived character that is shared between two or more taxa is called a \textbf{synapomorphy}.  A derived character unique to one taxon is an \textbf{autapomorphy}.
+\noindent\textbf{Derived Character}: any character that has evolved from the ancestral state. Derived characters are found in descendants but not their common ancestor. Derived characters shared among two or more taxa are necessary to develop phylogenetic trees.  A derived character found in only one taxon is not sufficient to determine the relationship of that taxon to other taxa.  A derived character that is shared between two or more taxa is called a \textbf{synapomorphy}.  A derived character unique to one taxon is an \textbf{autapomorphy}.
 
-\textbf{Homology}: a derived character shared among taxa due to descent from a common ancestor. For example, the bones in bird wings are homologous with and derived from the bones in the forelimb of a non-flying theropod dinosaur ancestor.
+\noindent\textbf{Homology}: a derived character shared among taxa due to descent from a common ancestor. For example, the bones in bird wings are homologous with and derived from the bones in the forelimb of a non-flying theropod dinosaur ancestor.
 
-\textbf{Homoplasy} (Analogy): similar character states among taxa that are not due to common ancestry. Analogous characters can evolve independently as a similar response to similar pressures from natural selection. For example, the wings of birds and insects evolved independently and are analogous structures.  The wings of birds and bats also evolved independently but are derived from the same homologous structures (the tetrapod forelimbs). Loss of characters (character reversal) can also result in analogies. For example, the loss of legs in snakes and some lizards occurred independently, but they are only distantly related. In addition, this makes them similar to some eels and earthworms, but the limbless bodies are analogous, not homologous. 
+\noindent\textbf{Homoplasy} (Analogy): similar character states among taxa that are not due to common ancestry. Analogous characters can evolve independently as a similar response to similar pressures from natural selection. For example, the wings of birds and insects evolved independently and are analogous structures.  The wings of birds and bats also evolved independently but are derived from the same homologous structures (the tetrapod forelimbs). Loss of characters (character reversal) can also result in analogies. For example, the loss of legs in snakes and some lizards occurred independently, but they are only distantly related. In addition, this makes them similar to some eels and earthworms, but the limbless bodies are analogous, not homologous. 
 
-\textbf{Ingroup}: the taxonomic group of interest; that is, the group that is the focus of the study. The ingroup would be supported by one or more homologies
+\newpage
 
-\textbf{Outgroup}: Outgroup taxa are usually closely related to the ingroup.  The outgroup helps to orient the direction of evolutionary change in the ingroup
+\noindent\textbf{Ingroup}: the taxonomic group of interest; that is, the group that is the focus of the study. The ingroup would be supported by one or more homologies
 
-\textbf{Sister Species}: any two species that share the same most recent ancestor. 
+\noindent\textbf{Outgroup}: Outgroup taxa are usually closely related to the ingroup.  The outgroup helps to orient the direction of evolutionary change in the ingroup
 
-\textbf{Sister Taxa} (sister groups): any two monophyletic taxa that share the same ancestor. All sister species are sister taxa but not all sister taxa are sister species. For example, two genera can be sister taxa but are clearly not sister species.
+\noindent\textbf{Sister Species}: any two species that share the same most recent ancestor. 
 
-\textbf{Phylogenetic Analysis}: any type of analysis used to develop a hypothesis about the evolutionary relationships among taxa.  Phylogenetic analyses are used to develop phylogenetic trees. 
+\noindent\textbf{Sister Taxa} (sister groups): any two monophyletic taxa that share the same ancestor. All sister species are sister taxa but not all sister taxa are sister species. For example, two genera can be sister taxa but are clearly not sister species.
+
+\noindent\textbf{Phylogenetic Analysis}: any type of analysis used to develop a hypothesis about the evolutionary relationships among taxa.  Phylogenetic analyses are used to develop phylogenetic trees. 
 
 The following three types of phylogenetic analyses are widely used. Maximum parsimony was favored initially but Maximum Likelihood and now Bayesian analyses are in widespread use. Each has advantages and disadvantages. These analytical techniques are briefly mentioned here (and briefly discussed in your text) because they have been used in some of the studies we will read.
 
-\textbf{Maximum Parsimony}: a commonly used method of phylogenetic analysis.  This method uses the principle of parsimony, which assumes that the simplest explanation is preferred over more complex explanations.  Thus, maximum parsimony phylogenetic analysis assumes that the best estimate of evolutionary history is the phylogenetic tree that requires the fewest evolutionary changes in character states. A tree with fewer changes across character states is less complex than a tree that requires more changes across character states.  This method is simple and quick.
+\noindent\textbf{Maximum Parsimony}: a commonly used method of phylogenetic analysis.  This method uses the principle of parsimony, which assumes that the simplest explanation is preferred over more complex explanations.  Thus, maximum parsimony phylogenetic analysis assumes that the best estimate of evolutionary history is the phylogenetic tree that requires the fewest evolutionary changes in character states. A tree with fewer changes across character states is less complex than a tree that requires more changes across character states.  This method is simple and quick.
 
-\textbf{Maximum Likelihood}: a commonly used method of phylogenetic analysis. The details are much more complex than parsimony but often results in better hypotheses about the evolutionary relationships among taxa. The method is complex and computer intensive. 
+\noindent\textbf{Maximum Likelihood}: a commonly used method of phylogenetic analysis. The details are much more complex than parsimony but often results in better hypotheses about the evolutionary relationships among taxa. The method is complex and computer intensive. 
 
-\textbf{Bayesian Analysis}: a relatively new method that has become popular. The analytical details are also complex but also often results in better hypotheses than Maximum Parsimony. This method is generally as robust as Maximum Likelihood but is not as computer intensive, which explains why it has become popular.
+\noindent\textbf{Bayesian Analysis}: a relatively new method that has become popular. The analytical details are also complex but also often results in better hypotheses than Maximum Parsimony. This method is generally as robust as Maximum Likelihood but is not as computer intensive, which explains why it has become popular.
 
-\textbf{Bootstrapping}: A non-parametric statistical method to estimate the reliability of support for each node in an evolutionary tree.  Bootstrap values range from 0-100. Values of 50 or higher are typically reported but values of 70 and higher indicate the best reliability. 
+\noindent\textbf{Bootstrapping}: A non-parametric statistical method to estimate the reliability of support for each node in an evolutionary tree.  Bootstrap values range from 0-100. Values of 50 or higher are typically reported but values of 70 and higher indicate the best reliability. 
 
-\textbf{Bayesian Probability}: A parametric statistical method to estimate the reliability of support for each node in an evolutionary tree.  Probability values range from 0-1. For phylogenetic trees, values of 0.8-0.85 and higher indicate the best reliability. 
+\noindent\textbf{Bayesian Probability}: A parametric statistical method to estimate the reliability of support for each node in an evolutionary tree.  Probability values range from 0-1. For phylogenetic trees, values of 0.8-0.85 and higher indicate the best reliability. 
 
 \end{document}
