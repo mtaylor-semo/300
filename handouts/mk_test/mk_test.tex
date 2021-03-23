@@ -1,0 +1,390 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[12pt, addpoints, hidelinks]{exam}
+
+%\printanswers
+
+\usepackage{fontspec}
+\setmainfont[Ligatures={TeX, Common}, BoldFont={* Bold}, ItalicFont={* Italic}, BoldItalicFont={* BoldItalic}, Numbers={OldStyle,Proportional}]{Linux Libertine O}
+\setsansfont[Scale=MatchLowercase,Ligatures={TeX,Common}, Numbers={OldStyle,Proportional}]{Linux Biolinum O}
+%\setmonofont[Scale=MatchLowercase]{Inconsolata}
+\usepackage{microtype}
+
+\usepackage{geometry}
+\geometry{letterpaper, bottom=1in}                   
+%\geometry{landscape}                % Activate for for rotated page geometry
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage[fleqn]{amsmath}
+%\usepackage{amssymb}
+%\usepackage{mathtools}
+%\everymath{\displaystyle}
+
+
+\usepackage{unicode-math}
+\setmathfont[Scale=MatchLowercase, Numbers=Lining]{Asana Math}
+%\setmathfont[Scale=MatchLowercase]{XITS Math}
+
+% To define fonts for particular uses within a document. For example, 
+% This sets the Libertine font to use tabular number format for tables.
+\newfontfamily{\tablenumbers}[Numbers={Monospaced}]{Linux Libertine O}
+\newfontfamily{\libertinedisplay}{Linux Libertine Display O}
+
+
+\usepackage{graphicx}
+\graphicspath{{/Users/goby/Pictures/teach/300/exercises/}
+	{img/}} % set of paths to search for images
+
+
+
+\usepackage{booktabs}
+%\usepackage{longtable}
+%\usepackage{siunitx}
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+
+\usepackage{multicol}
+
+\usepackage{enumitem}
+\setlist{leftmargin=*}
+\setlist[1]{labelindent=\parindent}
+\setlist[enumerate]{label=\textsc{\alph*}., ref=\textsc{\alph*}}
+
+\usepackage{tikz}
+\usetikzlibrary{trees}
+
+\usepackage{forest}
+\tikzstyle{block} = [rectangle, draw, fill=white, rounded corners,
+                 minimum size=2em]
+\tikzstyle{branch} = [thick, draw]
+
+\usetikzlibrary{positioning, backgrounds}
+
+
+\forestset{
+	every leaf node/.style={
+		if n children=0{#1}{}
+	},
+	every tree node/.style={
+		if n children=0{}{#1}
+	},
+	mytree/.style={
+		for tree={
+			edge path={
+				\noexpand\path [draw, thick, \forestoption{edge}] (!u.parent anchor) |- (.child anchor)\forestoption{edge label};
+			},
+			every tree node={draw=none,inner sep=0, outer sep=0, minimum size=0},
+			every leaf node/.style={align=left},
+			grow'=0,
+			parent anchor=east, 
+			child anchor=west,
+			anchor=west,
+			l sep=0.5cm,
+			s sep=3mm,
+			draw=none,
+			if n children=0{tier=word}{}
+		}
+	}
+}
+
+
+\usepackage[sc]{titlesec}
+
+\renewcommand{\solutiontitle}{\noindent}
+\unframedsolutions
+\SolutionEmphasis{\bfseries}
+
+\renewcommand{\questionshook}{%
+	\setlength{\leftmargin}{-\leftskip}%
+}
+
+\makeatletter
+\def\SetTotalwidth{\advance\linewidth by \@totalleftmargin
+	\@totalleftmargin=0pt}
+\makeatother
+
+
+\pagestyle{headandfoot}
+\firstpageheader{BI 300: Evolution}{}{\ifprintanswers\textbf{KEY}\else Name: \enspace \makebox[2.5in]{\hrulefill}\fi}
+\runningheader{}{}{\footnotesize{pg. \thepage}}
+\footer{}{}{}
+\runningheadrule
+
+\newcommand*\AnswerBox[2]{%
+	\parbox[t][#1]{0.92\textwidth}{%
+		\begin{solution}#2\end{solution}}
+	\vspace{\stretch{1}}
+}
+
+\newenvironment{AnswerPage}[1]
+{\begin{minipage}[t][#1]{0.92\textwidth}%
+		\begin{solution}}
+		{\end{solution}\end{minipage}
+	\vspace{\stretch{1}}}
+
+\newlength{\basespace}
+\setlength{\basespace}{5\baselineskip}
+
+\usepackage{hyperref}
+
+\begin{document}
+%\thispagestyle{firstpage}
+
+\subsection*{Testing for selection: McDonald-Kreitman Test (\numpoints\ points)}
+
+
+John McDonald and Martin Kreitman\footnote{McDonald, J.\,H.~and M. Kreitman.~1991.~Adaptive protein evolution at the \textit{Adh} locus in \textit{Drosophila}. Nature 351:\,652} developed a test to determine if a protein evolved by positive natural selection. The McDonald-Kreitman (\textsc{mk}) test is now a widely-applied test for positive selection in genes. This exercise will teach you how to perform the test.
+
+Dr.~Mohammed Noor of Duke University provides an excellent video review of the McDonald-Kreitman test. You can click \href{https://www.youtube.com/watch?v=aQXjpVkE-s4}{HERE} or the link on the course website.
+
+McDonald and Kreitman studied the evolution of the alcohol dehydrogenase gene \textit{(Adh)} in three species of \textit{Drosophila.} The relationships among the three species are shown here.
+
+\begin{forest} mytree
+[[,name=base
+	[[\textit{D. melanogaster}],
+	[\textit{D. simulans}]],
+		[\textit{D. yakuba}]
+]]
+\end{forest}
+
+The Adh enyzme breaks down toxic ethanol into compounds that can be used by cells. This enzyme goes to work the moment you consume an alcoholic beverage. In \textit{Drosophila}, Adh protects against consumption of fermented fruit (e.g., rotted apples) and thus may have evolved under positive selection.
+
+McDonald and Kreitman sequenced \textsc{dna} from the \textit{Adh} gene from several individuals of each species. The first four rows of sequence data are shown here. The nearly complete data can be found on page~\pageref{mk_data}.
+
+\begin{center}
+\includegraphics[width=6in]{mk_data_first_rows}
+\end{center}
+
+The first column lists the nucleotide position in the gene. The second column shows the consensus, or most common, nucleotide for the position. The columns under the species names list the observed nucleotide for the position from each individual. Dashes indicate the individual had the consensus nucleotide.
+
+The authors determined if observed nucleotide changes were synonymous or replacement (non-synonymous) and whether the differences among species were fixed or polymorphic.
+
+A nucleotide difference was fixed if all individuals of one species had one nucleotide but all individuals of the other species had a different nucleotide. For example, in the first row above, \textit{D. melanogaster} has T at position 781 but \textit{D. simulans} and \textit{D. yakuba} had the consensus G.  In the fourth row, \textit{D. melanogaster} was polymorphic for T or G, so nucleotide differences were not yet fixed among all three species.
+
+\subsubsection*{Experimental design}
+
+The \textsc{mk} test compares present differences \emph{within} species to historical (evolutionary) differences \emph{between} species. Nucleotide differences were categorized as 
+
+\begin{itemize}
+\item non-synonymous fixed differences between species ($D_n$),
+\item synonymous fixed differences between species ($D_s$),
+\item non-synonymous polymorphic differences within species ($P_n$), and
+\item synonymous polymorphic differences within species ($P_s$).
+\end{itemize}
+
+The data were arranged into a 2$\times$2 table like this.
+
+\begin{tabular}{@{}lcc@{}}
+\toprule
+ & Fixed & Polymorphic \\
+\midrule
+Non-synonymous	&	$D_n$ 	&	$P_n$ 	\\
+Synonymous		&	$D_s$ 	&	$P_s$	\\
+\bottomrule
+\end{tabular}
+
+The authors reasoned that if \textit{Adh} evolved neutrally,  the ratio of non-synonmous to synonymous substitutions should be the same \emph{between} species as it is \emph{within} species. If \textit{Adh} evolved under positive selection, there should be a greater number of fixed non-synonymous replacements between species. That is,
+
+If $\frac{D_n}{D_s} = \frac{P_n}{P_s}$, then the gene evolved neutrally. Mutations did not affect gene function so were not affected by selection.
+
+If $\frac{D_n}{D_s} > \frac{P_n}{P_s}$, the the gene evolved under positive directional selection. Amino acid changes in the protein were beneficial so favored by selection.
+
+If $\frac{D_n}{D_s} < \frac{P_n}{P_s}$, the the gene evolved under purifying selection. Amino acid changes were detrimental and removed by selection.
+
+\subsection*{G-test of Independence}
+
+Random mutations and random sampling of individuals almost guarantees $\frac{D_n}{D_s} \ne\frac{P_n}{P_s}$. A statistical test is necessary to determine if $\frac{D_n}{D_s}$ is statistically different from $\frac{P_n}{P_s}$. The authors used the G-test of Independence, which is comparable to the $\chi^2$ test.
+
+\bigskip
+
+The equation for the G-test of Independence is,
+\begin{equation}\label{eq:gtest}
+G = 2 \times \sum O_i \cdot \mathrm{ln}\left(\dfrac{O_i}{E_i}\right),
+\end{equation}
+
+where $O_i$ is the observed value for a cell in table and $E_i$ is the expected value for the cell. ln is the \emph{natural} log.  
+
+Equation~\ref{eq:gtest} can be rearranged into a longer equation that makes it \emph{easier} to follow the mathematics, and therefore easier to calculate by hand or in a spreadsheet. I've relabeled the $2\times2$ table from above to make the equations below easier to follow. 
+
+\begin{tabular}{@{}lcc@{}}
+\toprule
+ & Fixed & Polymorphic \\
+\midrule
+Non-synonymous	&	
+$A$ \textcolor{gray}{(\textit{D\textsubscript{n}})} &	
+$B$ \textcolor{gray}{(\textit{P\textsubscript{n}})} \\
+Synonymous		&	
+$C$ \textcolor{gray}{(\textit{D\textsubscript{s}})}	&	
+$D$ \textcolor{gray}{(\textit{P\textsubscript{s}})} \\
+\bottomrule
+\end{tabular}
+
+%\begin{tabular}{@{}lccc@{}}
+%\toprule
+% & Fixed & Polymorphic & Row Totals\\
+%\midrule
+%Non-synonymous	&	
+%$A$ \textcolor{gray}{(\textit{D\textsubscript{n}})} &	
+%$B$ \textcolor{gray}{(\textit{P\textsubscript{n}})}	&
+%$A + B$ \\
+%Synonymous		&	
+%$C$ \textcolor{gray}{(\textit{D\textsubscript{s}})}	&	
+%$D$ \textcolor{gray}{(\textit{P\textsubscript{s}})}	&
+%$C + D$ \\
+%Column Totals & $A + C$ & $B + D$ & $N (A+B+C+D)$\\
+%\bottomrule
+%\end{tabular}
+
+Equation~\ref{eq:gtest_long} below uses $A, B, C,$ and $D$ to reference the cells above. $N$ is the sum of all four values. You also need the row totals $A + B$ and $C + D$, and the column totals $A + C$ and $B + D$.
+%
+\begin{equation}\label{eq:gtest_long}
+\begin{split}
+G  = 2 \times &\left[ A \cdot \mathrm{ln}(A) + B \cdot \mathrm{ln}(B) + C \cdot \mathrm{ln}(C) + D \cdot \mathrm{ln}(D) + N \cdot \mathrm{ln}(N)\right.
+\\
+& - \left.(A+B) \cdot \mathrm{ln}(A+B) - (C+D) \cdot \mathrm{ln}(C+D) - (A+C) \cdot \mathrm{ln}(A+C) - (B+D) \cdot \mathrm{ln}(B+D)\right].
+\end{split}
+\end{equation}
+
+The steps to calculate $G$ with equation~\ref{eq:gtest_long} are:
+\begin{enumerate}
+\item Multiply the value of each cell by the natural log of the value, e.g., $A\cdot\mathrm{ln}(A)$, etc.  Add those four values together. You \emph{must} use the natural log function on your calculator or spreadsheet to obtain the correct values.\label{cell_calc}
+
+\item Sum together the values in $A, B, C,$ and $D$ to obtain $N$. Multiply $N$ by the natural log of itself and add it to the result from step~\ref{cell_calc}. \label{total_calc}
+
+\item Calculate the row totals (e.g., $A + B$) and column totals (e.g., $A + C$). Multiply each value by the natural log of each value, e.g. $(A + B) \cdot \mathrm{ln}(A + B)$.\label{rowcol_calc}
+
+\item Subtract the value obtained in step~\ref{rowcol_calc} from the value obtained in step~\ref{total_calc}, then multiply by 2. The result is $G$.
+
+\item Compare the result to a $\chi^2$ table for $\alpha = 0.05$ and 1 degree of freedom. For simplicity, if $G \ge 3.841$, then the result is significant. That is, the gene is evolving by natural selection. If $G < 3.841$, then the gene is evolving neutrally.
+\end{enumerate}
+
+
+\subsection*{Time to practice}
+
+Here are the results from the original McDonald and Kreitman study. Do the following calculations to be sure you understand how to do the \textsc{mk} test.
+
+\emph{You do not need to include answers to these two questions in your final document.}
+
+% Results from MK
+\begin{tabular}{@{}lrr@{}}
+\toprule
+ & Fixed & Polymorphic \\
+\midrule
+Non-synonymous	&	7 	&	2 	\\
+Synonymous		&	17 	&	42	\\
+\bottomrule
+\end{tabular}
+
+\begin{itemize}
+\item Calculate the ratios $\frac{D_n}{D_s}$ and $\frac{P_n}{P_s}$. Do the results suggest that \textit{Adh} has evolved by positive natural selection? Why?
+
+\item Perform a G-test of Independence on the results above. You should obtain $7.91$.\footnote{McDonald and Kreitman performed a continuity correction for $G$, used when values for one or more cells is less than~5. After correction, $G= 7.43$. We will not worry about the correction as it does not affect interpretation of the results.}
+If you did not, then you need to find your error and correct it. You will have to obtain correct answers for the problems below.
+\end{itemize}
+
+
+\subsection*{Time to solve.}
+
+\subsubsection*{Frigida gene in \textit{Arabidopsis}}
+
+Valérie Le Corre and her colleagues\footnote{Le Corre et al.~2002. D\textsc{na} polymorphism at the \textsc{frigida} gene in \textit{Arabidopsis thaliana}: extensive nonsynonymous variation is consistent with local selection for
+flowering time. Mol.~Biol.~Evol.~19:1261.} tested for positive selection in different exons of the \textsc{frigida} gene in two species of \textit{Arabidopsis} plants. Their results are summarized below.
+
+\begin{multicols}{2}
+% Results from Le Corre 2002.
+\begin{tabular}{@{}lrr@{}}
+\toprule
+Exon 1 & Fixed & Polymorphic \\
+\midrule
+Non-synonymous	&	38 	&	16 	\\
+Synonymous		&	30 	&	2	\\
+\bottomrule
+\end{tabular}
+
+%\bigskip
+
+\columnbreak
+
+% Results from Le Corre 2002.
+\begin{tabular}{@{}lrr@{}}
+\toprule
+Exons 2\,\&\,3 & Fixed & Polymorphic \\
+\midrule
+Non-synonymous	&	30 	&	5 	\\
+Synonymous		&	29 	&	5	\\
+\bottomrule
+\end{tabular}
+
+%\bigskip
+\end{multicols}
+
+\begin{questions}
+
+\question[5] Calculate $G$ for Exon 1. Show your work!
+
+\question[5] Calculate $G$ for Exons 2 and 3. Show your work!
+
+\question[5] Tell which exons show signs of positive selection or neutral evolution. Provide a reasonable hypothesis on why you think there is a difference between exon~1 and exons~2 \&~3.
+
+%\begin{enumerate}[label=\arabic*.]
+%\item Calculate $G$ for Exon 1. Show your work!
+%
+%\item Calculate $G$ for Exons 2 and 3. Show your work!
+%
+%\item Tell which exons show signs of positive selection or neutral evolution. 
+%
+%\item Provide a reasonable hypothesis on why you think there is a difference between exon~1 and exons~2 \&~3.
+%\end{enumerate}
+
+\subsubsection*{\textit{Adh} evolution in \textit{Drosophila}}
+
+The table on page~\pageref{mk_data} contains \emph{most} of the data used by McDonald and Kreitman when they developed their test. Your goal is to count the number of fixed and polymorphic replacement and synonymous substitutions. In short, you are completing the table below. I've excised a few rows from the original data so that the results will be different from those shown above.
+
+My goal here is for you to examine the data to get a feel for what fixed and polymorphic data look like. 
+
+%\begin{enumerate}[resume, label=\arabic*.]
+\question Make a table in your document similar to the one shown below.
+
+\question[5] Count the number of fixed, non-synonymous substitutions from the table on page~\pageref{mk_data} and enter it into the appropriate cell. Fill in the other three cells with the appropriate data you count from the table.
+
+\question[5] Calculate $G$ and report the value. Show your work!
+%\end{enumerate}
+
+\end{questions}
+
+\bigskip
+
+\begin{tabular}{@{}lrr@{}}
+\toprule
+\textit{Adh} & Fixed & Polymorphic \\
+\midrule
+&&\\[1em]
+Non-synonymous	&	\rule{0.5in}{0.4pt} &	\rule{0.5in}{0.4pt}  	\\[2em]
+Synonymous		&	\rule{0.5in}{0.4pt} &	\rule{0.5in}{0.4pt} \\
+\bottomrule
+\end{tabular}
+
+%\begin{tabular}{@{}lrrr@{}}
+%\toprule
+% & Fixed & Polymorphic &	Row totals\\
+%\midrule
+% &&&\\[1em]
+%Non-synonymous	&	\rule{0.5in}{0.4pt} &	\rule{0.5in}{0.4pt}  &	\rule{0.5in}{0.4pt}	\\[2em]
+%Synonymous		&	\rule{0.5in}{0.4pt} &	\rule{0.5in}{0.4pt}	 &	\rule{0.5in}{0.4pt}\\[2em]
+%Column totals	&	\rule{0.5in}{0.4pt} &	\rule{0.5in}{0.4pt}	 &	\rule{0.5in}{0.4pt}\\
+%\bottomrule
+%\end{tabular}
+
+\newpage
+
+%% Modification was the removal of the two rows of
+%% "2 poly" reducing the number of synonymous polymorphic
+%% sites from 42 to 38. This alters the result enough to
+%% guard against copying from the paper.
+\begin{center}
+\includegraphics[width=6in]{mk_test_data_modified}\label{mk_data}
+\end{center}
+
+\end{document}  

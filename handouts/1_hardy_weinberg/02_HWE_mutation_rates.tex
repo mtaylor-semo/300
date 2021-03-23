@@ -140,10 +140,10 @@ notation to sum the exponents.) What result do you get?%\vspace{2cm}
 	\vspace*{\stretch{1}}
 \fi
 
-\fullwidth{%
+%\fullwidth{%
 This is the average number of new mutations that a single offspring
 inherits from its parents.
-}%end fullwidth
+%}%end fullwidth
 
 \question
 About 2.5\% of the mammalian genome is composed of
@@ -158,16 +158,16 @@ phenotype. How many mutations would this be?
 	\vspace*{\stretch{1}}
 \fi
 
-\fullwidth{%
+%\fullwidth{%
 This is the average number of heritable mutations that potentially
 affect phenotype per offspring per generation. We have to account for
 all of the reproductive individuals in a population.
-}%end fullwidth
+%}%end fullwidth
 
 \question 
 Small mammals, like mice and voles, generally have large
 population sizes. Assume that the population you are studying contains
-100,000 reproducing individuals. How many new mutations affecting the phenotype ccur, on
+100,000 reproducing individuals. How many new mutations affecting the phenotype occur, on
 average, in the population each generation?
 
 \ifprintanswers\vspace*{\baselineskip}{\bfseries%
@@ -179,14 +179,14 @@ average, in the population each generation?
 
 \newpage
 
-\fullwidth{%
+%\fullwidth{%
 You can see that a large number of new mutations can occur in a single
 population each generation. Most of these mutations will be detrimental
 and removed from the population by natural selection but if even a small
 fraction of these new mutations are beneficial then natural selection
 can cause these beneficial mutations to increase rapidly in frequency
 throughout the population during future generations.
-}%end fullwidth
+%}%end fullwidth
 
 \question[4]
 \label{itm:nachman} Nachman and Crowell (2000, Genetics 156: 297--304) compared
@@ -194,10 +194,10 @@ more than 16,000 nucleotides from human and chimpanzee genomes and
 estimated that the average mutation rate was 2.5 $\times$
 10\textsuperscript{-8} mutations per base pair per generation (not year). Use
 the mammalian genome size \emph{and} percent functional sequence from the
-previous example, and an effective population size of
-18,000\footnote{Sherry et al. 1997 (Genetics 147: 1977--1982) estimated
- that human effective population size during the past 1--2 million years
- was about 18,000 individuals.}, to calculate the number of new
+previous example and an effective population size of
+18,000\footnote{Sherry et al.~1997 (Genetics 147: 1977--1982) estimated
+ the human effective population size during the past 1--2 million years
+ was about 18,000 individuals. For now, think of effective population size as the number of individuals that contribute offspring to the next generation. We'll refine this later.} to calculate the number of new
 mutations in the human population each generation. You are repeating steps 
 1--3 from the first page but with new data, so show your work for
 each step of your calculations. 
@@ -213,7 +213,7 @@ each step of your calculations.
 	\vspace*{\stretch{1}}
 \fi
 
-\fullwidth{%
+%\fullwidth{%
 Comparisons of coding DNA sequences among many different
 groups of organisms have shown that mutation rates typically fall
 between the two values used above. These low mutation rates
@@ -222,20 +222,23 @@ due, in part, to the large genome size of most organisms and large
 population sizes.
 
 The two studies used here looked only at point mutations, where one nucleotide 
-substituted for another nucleotide. Other forms of mutation, including unequal 
-crossing over and gene duplication, further increase genetic variation available
+substituted for another nucleotide. Other forms of mutation, including frameshift mutations and gene duplication, further increase genetic variation available
 for potential evolution. In a later set of exercises, you will learn how population
 size and natural selection interact to increase the frequency of beneficial mutations
 in a population.
-}%end fullwidth
+%}%end fullwidth
 
 \newpage
 
-\fullwidth{%
+%\fullwidth{%
 \subsection*{The neutral mutation rate and nonadaptive evolution}
 
-Jaillon et al. (2004, Nature 431: 946--957) compared the non-coding genomes of humans and mice to estimate the neutral mutation rate ($\mu$) between these two lineages as $5.7 \times 10^{-9}$ per bp per year.  This value is equivalent to $\mu = 14.25 \times 10^{-8}$ per site per generation, assuming an average human generation time of 25 years. Use Sherry et al.'s estimate of $N_e$ of 18,000 individuals to calculate  the rate of nonadaptive evolution for a single locus in the human population. Compare the steps below to your lecture notes on nonadaptive evolution to understand what you are doing.
-}%end fullwidth
+Evolution can be defined simply as genetic change in a population over time. Some mutations can change the amino acid structure of a protein and therefore be subject to natural selection.
+
+Mutations that occur in non-coding regions of the genome or synonymous substutions in coding regions are not (usually) subject are neutral. Neutral mutations are not subject to natural selection but still cause genetic change. \emph{Neutral mutations represent non-adaptive evolutionary change.} 
+
+Jaillon et al. (2004, Nature 431: 946--957) compared the non-coding genomes of humans and mice to estimate the neutral mutation rate ($\mu$) between these two lineages as $5.7 \times 10^{-9}$ per bp per year.  This value is equivalent to $\mu = 14.25 \times 10^{-8}$ per site per generation, assuming an average human generation time of 25 years. Sherry et al.~esimated the effective population size ($N_e$) at 18,000 individuals. Use Sherry et al.'s estimate of $N_e$ to calculate  the rate of non-adaptive evolution for a single locus in the human population. 
+%}%end fullwidth
 
 \question
 \label{itm:jaillon} Calculate $2N_e$ to determine the total number of haplotypes for one locus in the human population.
@@ -278,13 +281,15 @@ Multiply $2N_e\mu \times \frac{1}{2N_e}$ to calculate the rate of non-adaptive e
 	\vspace*{\stretch{1}}
 \fi
 
-\fullwidth{%
-These calculations show that the rate of nonadaptive evolution is independent of population size. A small population will get relatively few new haplotypes by mutation each generation but each haplotype will have a relatively high probability of drifting to fixation. A large population will get lots of new haplotypes each generation but each haplotype will have a relatively low probability of drifting to fixation. Demonstrate this to yourself using $\mu$ = 0.001 for both $N_e$ of 100 and $N_e$ of 10,000. This demonstration could become the basis of a nice test question.
-}\newpage
+\newpage
 
-\fullwidth{%
+%\fullwidth{%
+These calculations show that the rate of nonadaptive evolution is independent of population size. A small population will get relatively few new haplotypes by mutation each generation but each haplotype will have a relatively high probability of drifting to fixation. A large population will get lots of new haplotypes each generation but each haplotype will have a relatively low probability of drifting to fixation. Demonstrate this to yourself using $\mu$ = 0.001 for both $N_e$ of 100 and $N_e$ of 10,000. This demonstration could become the basis of a nice test question.
+%}\newpage
+
+%\fullwidth{%
 Jaillon et al. (2004) also determined that the neutral mutation rate of the Green-spotted Puffer (\textit{Tetraodon nigroviridis}, a species of fish and a model organism) was $14.6 \times 10^{-9}$ per nucleotide site per year. The Green-Spotted Puffer has a generation time of one year (Kai et al. 2001, Genome Biol. Evol. 3: 424--442) so the per year and per generation neutral mutation rates are equal. $N_e$ was estimated to be about 1,000,000 individuals (Neafsey et al. 2004, Mol. Biol. Evol. 21: 2310--2318).
-}%end fullwidth
+%}%end fullwidth
 
 \question[4]
 Use the above information to calculate the rate of non-adaptive evolution in the Green-spotted Puffer. Show your work.

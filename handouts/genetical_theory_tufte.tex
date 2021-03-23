@@ -1,0 +1,420 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[letterpaper,nofonts]{tufte-handout}
+
+%\geometry{showframe} % display margins for debugging page layout
+
+\usepackage{fontspec}
+\def\mainfont{Linux Libertine O}
+\setmainfont[Ligatures={Common,TeX}, Contextuals={NoAlternate}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={OldStyle}]{\mainfont}
+\setsansfont[Scale=MatchLowercase, Numbers={OldStyle}]{Linux Biolinum O} 
+\usepackage{microtype}
+
+\usepackage{graphicx} % allow embedded images
+  \setkeys{Gin}{width=\linewidth}
+  \graphicspath{	{/Users/goby/pictures/teach/300/review/}}%}%
+
+%\usepackage[parfill]{parskip}
+
+\usepackage{amsmath}  % extended mathematics
+%\usepackage{amsfonts}
+%\usepackage{amssymb}
+\usepackage{unicode-math}
+\setmathfont[Scale=MatchLowercase, Numbers=Lining]{Asana Math}
+\usepackage{cancel}
+%\usepackage{bm}
+
+\usepackage{booktabs} % book-quality tables
+%\usepackage{units}    % non-stacked fractions and better unit spacing
+%\usepackage{multicol} % multiple column layout facilities
+%\usepackage{fancyvrb} % extended verbatim environments
+%  \fvset{fontsize=\normalsize}% default font size for fancy-verbatim environments
+
+\usepackage{enumitem}
+
+\makeatletter
+% Paragraph indentation and separation for normal text
+\renewcommand{\@tufte@reset@par}{%
+  \setlength{\RaggedRightParindent}{1.0pc}%
+  \setlength{\JustifyingParindent}{1.0pc}%
+  \setlength{\parindent}{1pc}%
+  \setlength{\parskip}{0pt}%
+}
+\@tufte@reset@par
+
+% Paragraph indentation and separation for marginal text
+\renewcommand{\@tufte@margin@par}{%
+  \setlength{\RaggedRightParindent}{0pt}%
+  \setlength{\JustifyingParindent}{0.5pc}%
+  \setlength{\parindent}{0.5pc}%
+  \setlength{\parskip}{0pt}%
+}
+\makeatother
+
+\makeatletter
+\long\def\@caption#1[#2]#3{%
+  \par
+  \addcontentsline{\csname ext@#1\endcsname}{#1}%
+    {\protect\numberline{\csname the#1\endcsname}{\ignorespaces #2}}%
+  \begingroup
+    \@parboxrestore
+    \if@minipage
+      \@setminipage
+    \fi
+    \@tufte@caption@font\@tufte@caption@justification
+    \noindent\csname fnum@#1\endcsname. \ignorespaces#3\par% changed : to .
+  \endgroup}
+\makeatother
+
+% Set up the spacing using fontspec features
+\renewcommand\allcapsspacing[1]{{\addfontfeatures{LetterSpace=15}#1}}
+\renewcommand\smallcapsspacing[1]{{\addfontfeatures{LetterSpace=10}#1}}
+
+% Put footnote tags in the margin from within
+% the align environment. 
+% See https://tex.stackexchange.com/a/63042/39194
+\def\mathnote#1{%
+  \tag*{\rlap{\hspace\marginparsep\smash{\parbox[t]{\marginparwidth}{%
+  \footnotesize#1}}}}
+}
+
+\title{{\scshape bi} 300 Evolution by Selection on a Single Locus}
+
+\date{} % without \date command, current date is supplied
+
+\begin{document}
+
+\maketitle	% this prints the handout title, author, and date
+
+
+This example is modified from Futuyma and Kirkpatrick (2017).\footnote{\textit{Evolution}, 4th ed. Sinauer, Box 5\textsc{a}, page 109.} This document explains the mathematics of selection on a single locus with two alleles. Examples are worked in detail so  you can understand how the equations and numbers were derived.
+
+\emph{Work the examples and derivations yourself.} Do not just read through them. You will improve your understanding of the math by working through each step. Read the margin notes for additional detail.
+
+\section*{Genotype frequency}
+
+For a population in Hardy-Weinberg equilibrium, the expected genotype frequencies for individuals born into a population are calculated as,
+
+\begin{table}
+\begin{tabular}{@{}lccc@{}}
+\caption{Starting allele frequencies.}\label{tab:hwe}
+Genotype	& 
+$A_1A_1$	& 
+$A_1A_2$	& 
+$A_2A_2$ 	\tabularnewline[0.5em]
+%
+Frequency at birth		&
+$\left(1-p\right)^2$	&
+$2p\left(1-p\right)$	&
+$p^2$ 					\tabularnewline
+%
+\end{tabular}
+\end{table}\marginnote[-0.5\baselineskip]{Hardy-Weinberg equations often use $q = 1-p$. Thus, $q^2 = (1-p)^2$ and $2pq = 2p(1-p)$. I use $1-p$ here to simplify the math.}
+
+
+\subsection*{Worked problem for genotype frequencies}
+
+Given parameters $p = 0.3$ and $s = 0.02$, then initial genotype frequencies are
+{\setlength{\jot}{0.8em}
+\begin{align*}
+A_1A_1 &= \left(1-p\right)^2 = \left(1 - 0.3\right)^2 = \left(0.7\right)^2 = 0.49\\[1ex]
+A_1A_2 &= 2p(1-p) = 2(0.3)(0.7) = 0.42\\[1ex]
+A_2A_2 &= (0.3)^2 = 0.09.\mathnote{The three frequencies sum to 1.}
+\end{align*}
+}
+
+\section*{Allele frequencies}
+
+The frequency of allele $A_2$ is the frequency of the $A_2A_2$ genotype plus half the frequency of the $A_1A_2$ genotype. 
+
+\subsection*{Worked problem for allele frequencies}
+
+From Table~\ref{tab:hwe}, the frequency of $A_2A_2$ is $p^2$ and the frequency of $A_1A_2$ is $2p(1-p)$. Given  $p^2 = 0.09$ and $2p(1-p) = 0.42$, then the frequency ($p$) of the $A_2$ allele is
+{\setlength{\jot}{0.8em}
+\begin{align*}
+p &= 0.09 + \frac{1}{2}(0.42),\mathnote{Practice by solving for $A_1$ frequency if $A_1A_1$ frequency  is 0.49. $A_1A_2$ frequency is the same as the example.} \\
+  &= 0.09 + 0.21  \\
+  &= 0.3. 
+\end{align*}
+}
+
+\section*{Genotype frequencies after selection}
+
+After selection, the new genotype frequencies are calculated.
+
+\begin{table}
+\begin{tabular}{@{}lccc@{}}
+\caption{Genotype frequencies in adults after selection.}\label{tab:selection_freqs}
+Genotype	& 
+$A_1A_1$	& 
+$A_1A_2$	& 
+$A_2A_2$ 	\tabularnewline[0.5em]
+%
+Relative fitness $(w)$	&
+$1$			& 
+$1 + s$		&
+$1 + 2s$ 	\tabularnewline[0.5em]
+%
+Frequency in adults		&
+$\dfrac{\left(1-p\right)^2}{\overline{w}}$	&
+$\dfrac{2p\left(1-p\right)(1+s)}{\overline{w}}$	&
+$\dfrac{p^2(1+2s)}{\overline{w}}$ \tabularnewline
+\end{tabular}
+\end{table}
+
+\vspace{\baselineskip}
+
+ Relative fitness $(w)$ is the proportion of offspring produced by a genotype compared to a reference genotype. Here, $A_1A_1$ is the reference genotype so it has relative fitness $w_{11} = 1$.
+ %
+ \marginnote[-2\baselineskip]{Subscripts $1$ and $2$ for $w$ indicate alleles $A_1$ and $A_2$, respectively, in the genotypes. Thus, $w_{12}$ indicates relative fitness of heterozygotes and $w_{22}$ indicates relative fitness of the $A_2A_2$ genotype.}
+ 
+ The selection coefficient $(s)$ is a measure of the increase or decrease in relative fitness imparted by an allele in a genotype.  Positive $s$ increases relative fitness.
+ %
+ \marginnote{The selection coefficient is also called the “strength of selection.”} 
+ %
+ Negative $s$ reduces relative fitness. Here, allele $A_2$ imparts a selection coefficient of $s$ relative to allele $A_1.$
+ 
+Selection modifies a genotype frequency if the genotype has the $A_2$ allele (Table~\ref{tab:selection_freqs}). $A_1A_1$ is not affected because the $A_2$ allele is not present.
+%
+\marginnote{This applies for additive selection where each copy of the allele in the genotype adds the same strength of selection $(s)$. This is not always true for all alleles.}
+%
+$A_1A_2$ frequency changes by a factor of $1 + s$ because that genotype has one $A_2$ allele. $A_2A_2$ frequency changes by a factor of $1+2s$ because that genotype has two $A_2$ alleles. 
+
+
+%
+The new genotype frequencies must be normalized
+%
+\marginnote{If $s = 0$, then $\overline{w} = 1$ because selection is absent. All genotypes have the same relative fitness. See Table~\ref{tab:selection_freqs}.}
+%
+to the average fitness of the population $(\overline{w})$ so the frequencies still sum to 1. The average fitness of the three genotypes in a population is calculated as
+
+
+\marginnote[1.8\baselineskip]{See derivation on page~\pageref{deriv:w_mean_fitness}.}
+%
+\begin{equation}\label{eq:w_mean_fitness}
+\overline{w} = 1 + 2sp.
+\end{equation}
+
+
+
+\subsection*{Worked problem for genotype frequencies after selection}
+
+Calculate the genotype frequencies after selection, given the parameters $p = 0.3$ and $s = 0.02.$ 
+
+First, use equation~\ref{eq:w_mean_fitness} to calculate the mean fitness of the population.
+\begin{align*}
+\overline{w} = 1 + 2(0.3)(0.02) = 1.012.
+\end{align*}
+
+Then, use the equations in Table~\ref{tab:selection_freqs} to calculate the genotype frequencies after selection.
+
+{
+\setlength{\jot}{0.8em}
+\begin{align*}
+%\begin{aligned}
+A_1A_1 &= \dfrac{(1-0.3)^2}{1.012} \mathnote{Results rounded to four decimals to offset rounding error.}\\
+       &= \dfrac{0.49}{1.012}\\
+       &= 0.4842.\\
+A_1A_2 &= \dfrac{2(0.3)(1-0.3)(1 + 0.02)}{1.012} \\
+	   &= \dfrac{(0.6)(0.7)(1.02)}{1.012}\\
+	   &= 0.4233.\\
+A_2A_2 &= \dfrac{(0.3)^2(1+2(0.02))}{1.012} \\
+       &= \dfrac{(0.09)(1.04)}{1.012} \\
+       &= 0.0925. \mathnote{The frequencies after selection sum to 1.}
+%\end{aligned}
+\end{align*}
+}
+
+\section*{Allele frequencies after selection}
+
+From Table~\ref{tab:hwe},\marginnote{From first page: $0.09 + \frac{1}{2}(0.42) = 0.3,$} the initial frequency $(p)$ of $A_2$  is calculated as the frequency of $A_2A_2$ plus half the frequency of $A_1A_2.$ Using the same logic, the frequency of allele $A_2$ after selection $(p^\prime)$ can be calculated directly from $s$, $p$, and $\overline{w}$.
+
+\marginnote[2.3\baselineskip]{See derivation on page~\pageref{deriv:p_prime}.}
+%
+\begin{equation}\label{eq:p_prime}
+p^\prime = \dfrac{p\left[1 + s(1+p)\right]}{\overline{w}}.
+\end{equation}
+
+\subsection*{Worked problem for allele frequencies after selection}
+
+First, expand the numerator for $p^\prime$.
+\begin{align*}
+p^\prime &= \dfrac{p\left[1 +s(1 + p)\right]}{\overline{w}},\\
+         &= \dfrac{p + sp + sp^2}{\overline{w}}.
+\end{align*}
+
+\newpage
+
+Given $p = 0.3$, $s = 0.02$, and $\overline{w} = 1.012$ from above, and using the expanded $p^\prime$, then
+{\setlength{\jot}{0.8em}
+\begin{align*}
+p^\prime &= \dfrac{0.3 + 0.02\left(0.3\right) + 0.02\left(0.3^2\right)}{1.012}, \\
+         &= \dfrac{0.3 + 0.006 + 0.0018}{1.012}, \\
+         &= \dfrac{0.3078}{1.012},\\
+         &= 0.30415.
+\end{align*}
+}
+
+After selection, the frequency of $A_2$ is $0.30415$, an increase of $0.00415$ over the starting frequency of $0.3$. The new frequency of the $A_1$ allele is $1-0.03415 = 0.69585$.
+
+\section*{Allele frequency change}
+
+Selection causes the allele frequencies to change. You can calculate directly the allele frequency change  $\left(\Delta p\right)$ after one generation of selection. 
+
+\marginnote[2\baselineskip]{See derivation on page~\pageref{deriv:delta_p}.}
+%
+\begin{equation}\label{eq:delta_p}
+\Delta p = p^\prime - p = \dfrac{sp(1-p)}{\overline{w}}.
+\end{equation}
+
+When $s < 0.1$, Equation~\ref{eq:delta_p} can be estimated accurately by
+%
+\marginnote{As $s$ approaches zero, $\overline{w}$ approaches 1. See Equation~\ref{eq:w_mean_fitness}.}
+%
+\begin{equation}\label{eq:delta_p_approx}
+\Delta p = sp(1-p).
+\end{equation}
+%
+
+
+\subsection{Worked problem for allele frequency change}
+
+Using $p = 0.3$, $s = 0.02$, and $\overline{w} = 1.012$,\marginnote{Same values used previously.} then
+
+{\setlength{\jot}{0.8em}\begin{align*}
+\Delta p &= \dfrac{0.02(0.3)(1-0.3)}{1.012},\\
+         &= \dfrac{(0.006)(0.7)}{\overline{w}},\\
+         &= \dfrac{0.0042}{1.012}, \\
+         &= 0.00415.
+\end{align*}
+}
+
+This is the exact value obtained from the worked problem for Equation~\ref{eq:p_prime}. The approximation from Equation~\ref{eq:delta_p_approx} is $0.0042,$ which is very similar to the actual change.
+
+\newpage
+
+\section*{Derivations}
+
+Below are the derivations for Equations~\ref{eq:w_mean_fitness}–\ref{eq:delta_p}. The derivation for Equation~\ref{eq:w_mean_fitness} shows every step, explained when necessary in the margin notes. Subsequent derivations show slightly less detail but with some explanation in the margin notes. 
+
+\subsection*{Derivation of Equation~\ref{eq:w_mean_fitness}}
+%
+\label{deriv:w_mean_fitness}
+
+\begin{equation*}
+\overline{w} = 1 + 2sp.
+\end{equation*}
+
+First, expand each numerator.
+\begin{align*}
+%\setlength{\jot}{0.8em}
+%\begin{aligned}
+A_1A_1 &= (1-p)^2, \\
+       &= (1-p)(1-p),\\
+       &= 1-p-p-p^2, \\
+       &= 1-2p+p^2.\\[0.5em]
+A_1A_2 &= 2p(1-p)(1+s), \\
+       &= 2p(1 - p + s - sp), \\
+       &= 2p - 2p^2 + 2sp - 2sp^2.\\[0.5em]
+A_2A_2 &= p^2(1 + 2s), \\
+       &= p^2 + 2sp^2.
+%\end{aligned}
+\end{align*}
+
+Second, add together the expanded numerators to calculate $\overline{w}$. 
+\marginnote[1.3\baselineskip]{I've placed brackets around each numerator to help you identify them from the first step.}
+\begin{equation*}%\mathnote{}
+\overline{w} = [1-2p+p^2] + [2p - 2p^2 + 2sp - 2sp^2] + [p^2 + 2sp^2].
+\end{equation*}
+
+Finally, rearrange and combine like terms to reduce the equation to the final solution.
+\begin{align*}
+\overline{w} &= 1 + 2p - 2p + 2p^2 - p^2 - p^2 + 2p^2 - 2p^2 + 2sp + 2sp^2 - 2sp^2,\\
+%
+			 &= 1 + \cancel{2p} - \cancel{2p} + \cancel{2p^2} - \cancel{p^2} - \cancel{p^2} \ + \cancel{2p^2} - \cancel{2p^2} + 2sp + \cancel{2sp^2} - \cancel{2sp^2},\\
+%
+			 &= 1+2sp.
+\end{align*}
+
+\newpage
+
+\subsection*{Derivation of Equation~\ref{eq:p_prime}}
+%
+\label{deriv:p_prime}
+
+\begin{align*}
+p^\prime = \dfrac{p[1 + s(1 + p)]}{\overline{w}}.
+\end{align*}
+
+The frequency of $p$ is the frequency of $A_2A_2$ plus half the frequency of $A_1A_2$. From Table~\ref{tab:selection_freqs}, the frequency of the genotypes with the $A_2$ allele after selection is
+{
+\setlength{\jot}{0.8em}
+\begin{align*}
+A_2A_2 &= \dfrac{p^2 + 2sp^2}{\overline{w}},\\
+A_1A_2 &= \dfrac{2p(1-p)(1+s)}{\overline{w}},
+\end{align*}
+}
+therefore,
+{\setlength{\jot}{0.8em}
+\begin{align*}
+p^\prime &= \dfrac{p^2 + 2sp^2}{\overline{w}} + \dfrac{1}{2}\left[\dfrac{[2p(1-p)(1+s)]}{\overline{w}}\right],\\
+%
+         &= \dfrac{p^2 + 2sp^2}{\overline{w}} + \dfrac{1}{\cancel{2}}\left[\dfrac{\cancel{2}p(1-p)(1+s)}{\overline{w}}\right], \mathnote{Cancel the 2s.}\\
+%
+         &= \dfrac{p^2 + 2sp^2}{\overline{w}} + \dfrac{p(1-p)(1+s)}{\overline{w}},\\
+%
+         &= \dfrac{p^2 + 2sp^2 + p(1-p)(1+s)}{\overline{w}},\mathnote{Combine the terms over the common denominator.}\\
+%
+%         &= \dfrac{p^2 + 2sp^2 + p(1-p)(1+s)}{\overline{w}},\\
+%
+         &= \dfrac{p^2 + 2sp^2 + p(1-p +s-sp)}{\overline{w}},\mathnote{Expand $(1-p)(1+s)$.}\\
+%
+         &= \dfrac{p^2 + 2sp^2 + p - p^2 +sp - sp^2}{\overline{w}}, \mathnote{Multiply the expansion by $p$.}\\
+%
+         &= \dfrac{p + p^2 - p^2 + sp + 2sp^2 - [1]sp^2}{\overline{w}},\mathnote{Rearrange and combine like terms. I have shown the implicit [1] before the final term.}\\
+%
+         &= \dfrac{p + \cancel{p^2} - \cancel{p^2} + sp + \cancel{2}sp^2 - \cancel{[1]}sp^2}{\overline{w}},\\
+%
+         &= \dfrac{p + sp + sp^2}{\overline{w}},\\
+%
+         &= \dfrac{p[1 + s + sp]}{\overline{w}},\mathnote{Factor the $p.$}\\
+%
+         &= \dfrac{p[1 + s(1 + p)]}{\overline{w}}.\mathnote{Factor the $s.$}
+\end{align*}
+}
+
+\newpage
+
+\subsection{Derivation of Equation~\ref{eq:delta_p}}
+%
+\label{deriv:delta_p}
+
+\begin{align*}
+\Delta p = \dfrac{sp(1 -p)}{\overline{w}}.
+\end{align*}
+
+{\setlength{\jot}{0.8em}
+\begin{align*}
+\Delta p &= \dfrac{p[1+s(1+p)]}{\overline{w}} - p, \mathnote{Substitute equation~\ref{eq:p_prime} for $p^\prime$.}\\
+%
+         &= \dfrac{p + sp + sp^2}{\overline{w}} - p, \mathnote{Expand the numerator for $p^\prime$.}\\
+%
+         &= \dfrac{p + sp + sp^2}{\overline{w}} - \dfrac{p\overline{w}}{\overline{w}}, \mathnote{Multiply $p$ by $\overline{w}/\overline{w}$ so that $p$ can be subtracted from $p^\prime$.} \\
+%
+         &= \dfrac{p + sp + sp^2}{\overline{w}} - \dfrac{p(1 + 2sp)}{\overline{w}}, \mathnote{Substitute $1+2sp$ for $\overline{w}$ in the numerator (Equation~\ref{eq:w_mean_fitness}). No need to substitute for the denominator.} \\
+%
+         &= \dfrac{p + sp + sp^2}{\overline{w}} - \dfrac{p + 2sp^2}{\overline{w}}, \\
+%
+         &= \dfrac{p + sp + sp^2 -\left[p + 2sp^2\right]}{\overline{w}}, \mathnote{Combine terms of the common denominator.}\\
+%
+         &= \dfrac{p + sp + sp^2 -p - 2sp^2}{\overline{w}}, \\
+%
+         &= \dfrac{sp - sp^2}{\overline{w}}, \mathnote{Like terms canceled.}\\
+%
+         &= \dfrac{sp(1 -p)}{\overline{w}}. \mathnote{Factor $sp$ for final result.}
+\end{align*}
+}
+
+
+\end{document}

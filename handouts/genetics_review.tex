@@ -1,0 +1,257 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[letterpaper]{tufte-handout}
+
+%\geometry{showframe} % display margins for debugging page layout
+
+\usepackage{fontspec}
+\def\mainfont{Linux Libertine O}
+\setmainfont[Ligatures={Common,TeX}, Contextuals={NoAlternate}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={OldStyle}]{\mainfont}
+\setsansfont[Scale=MatchLowercase, Numbers={OldStyle}]{Linux Biolinum O} 
+\usepackage{microtype}
+
+\usepackage{graphicx} % allow embedded images
+  \setkeys{Gin}{width=\linewidth}
+  \graphicspath{	{/Users/goby/pictures/teach/300/review/}}%}%
+
+\usepackage{amsmath}  % extended mathematics
+\usepackage{booktabs} % book-quality tables
+%\usepackage{units}    % non-stacked fractions and better unit spacing
+%\usepackage{multicol} % multiple column layout facilities
+%\usepackage{fancyvrb} % extended verbatim environments
+%  \fvset{fontsize=\normalsize}% default font size for fancy-verbatim environments
+
+\usepackage{enumitem}
+
+\makeatletter
+% Paragraph indentation and separation for normal text
+\renewcommand{\@tufte@reset@par}{%
+  \setlength{\RaggedRightParindent}{1.0pc}%
+  \setlength{\JustifyingParindent}{1.0pc}%
+  \setlength{\parindent}{1pc}%
+  \setlength{\parskip}{0pt}%
+}
+\@tufte@reset@par
+
+% Paragraph indentation and separation for marginal text
+\renewcommand{\@tufte@margin@par}{%
+  \setlength{\RaggedRightParindent}{0pt}%
+  \setlength{\JustifyingParindent}{0.5pc}%
+  \setlength{\parindent}{0.5pc}%
+  \setlength{\parskip}{0pt}%
+}
+\makeatother
+
+\makeatletter
+\long\def\@caption#1[#2]#3{%
+  \par
+  \addcontentsline{\csname ext@#1\endcsname}{#1}%
+    {\protect\numberline{\csname the#1\endcsname}{\ignorespaces #2}}%
+  \begingroup
+    \@parboxrestore
+    \if@minipage
+      \@setminipage
+    \fi
+    \@tufte@caption@font\@tufte@caption@justification
+    \noindent\csname fnum@#1\endcsname. \ignorespaces#3\par% changed : to .
+  \endgroup}
+\makeatother
+
+% Set up the spacing using fontspec features
+\renewcommand\allcapsspacing[1]{{\addfontfeatures{LetterSpace=15}#1}}
+\renewcommand\smallcapsspacing[1]{{\addfontfeatures{LetterSpace=10}#1}}
+
+\title{{\scshape bi} 300 Genetics Review}
+
+\date{} % without \date command, current date is supplied
+
+\begin{document}
+
+\maketitle	% this prints the handout title, author, and date
+
+%\printclassoptions
+%\section*{Allele and genotype frequencies; Hardy-Weinberg equilibrium}
+
+Evolution is fundamentally a genetic process.\marginnote{Read pages 79–85.} To fully understand evolutionary processes, you must have a good grasp of core genetic concepts. You should have learned these concepts in previous course work. This handout will help you recall those concepts. You will have to complete a quiz to assess your recall of these concepts so review this document carefully and completely. 
+
+\subsection*{Dna Structure}
+
+Nearly all organisms have deoxyribonucleic acid (\smallcaps{\textbf{dna}}) as material to store the genetic information needed for the organism to live. Some viruses use \smallcaps{rna} for genetic information storage.
+
+D\,\smallcaps{na} is a macromolecule composed of nucleotides (Figure~\ref{fig:dna}). A nucleotide in \smallcaps{dna} has of one of four possible nitrogenous bases, adenine \smallcaps{(a)}, guanine \smallcaps{(G),} cytosine \smallcaps{(C),} or thymine \smallcaps{(T).} A fifth nitrogenous base, uracil \smallcaps{(U),} replaces thymine in ribonucleic acids (\smallcaps{rna}). The base determines the name of the nucleotide. You should know nucleotide names and their single letter abbreviations.
+
+\begin{figure}
+\includegraphics[width=\linewidth]{dna_nucleotides}
+
+\caption{A molecule of \smallcaps{dna}, showing the complementary, anti-parallel strands. Nucleotides are purines or pyrimidines. }\label{fig:dna}
+\end{figure}
+
+
+Adenine and guanine are purines. Cytosine and thymine and pyrimidines. Purines and pyrimidines have different chemical structures (Figures~\ref{fig:dna} and~\ref{fig:dna_structure}). A purine on one \smallcaps{dna} strand always bonds to a pyrimidine on the other strand. Adenine always bonds to thymine by two hydrogen bonds. Guanine bonds to cytosine by three hydrogen bonds.  Each nucleotide pair on complementary strands is called a \textbf{base pair (bp)}. A \smallcaps{dna} base pair in  can be \smallcaps{at} or \smallcaps{cg} (Figure~\ref{fig:dna_structure}).
+
+\begin{marginfigure}
+\includegraphics{dna_structure}
+\caption{Hydrogen bonds between anti-parallel, complementary strands.}\label{fig:dna_structure}
+\end{marginfigure}
+
+\subsection*{Chromosomes and Genes}
+
+Organismal \smallcaps{dna} is organized into \textbf{chromosomes}. All organisms have chromosomes but bacteria\marginnote{Bacteria broadly includes the domains Archaea and Eubacteria.} and eukaryotes have different types of chromosomes. Bacteria have a single, circular chromosome. Eukaryotes have one or more linear chromosomes.
+
+Most organisms have two copies of every chromosome. One copy is inherited from the mother (\textbf{maternal chromosome}). The other copy is inherited from the father (\textbf{paternal chromosome}).\marginnote{We will focus on diploid organisms during this course.} Organisms with two copies of every chromosome are called \textbf{diploid.} Some organisms have only one copy of every chromosome and are called \textbf{haploid.}\marginnote{Some species can be both diploid and haploid. For example, some parasitic wasps have diploid females and haploid males. Plants typically alternate between haploid and diploid generations.} Other organisms can be tetraploid (four copies of every chromosome) or even octoploid (eight copies) but these are uncommon.
+
+The linear chromosomes of eukaryotes are stored in the cell nucleus. In addition to the nucleus, a circular chromosome is found inside the mitochondria (plants and animals) and chloroplast (plants only) organelles of eukaryotes. Mitochondrial \smallcaps{dna} (\textbf{mt\,\smallcaps{dna}}) and chloroplast \smallcaps{dna}\marginnote{Chloroplasts belong to a class of plant organelles called plastids.} (\textbf{cp\,\smallcaps{dna}}) is usually maternal but in a few species can be inherited maternally or paternally. All \smallcaps{dna} collectively in a cell or organism is the \textbf{genome.} The genome is sometimes considered separate for nuclear \smallcaps{dna} and organelle \smallcaps{dna} (mitochrondrial or chloroplast).
+
+\begin{figure}
+\includegraphics[width=0.95\linewidth]{genetic_code}
+\caption{The universal genetic code.}\label{fig:genetic_code}
+\end{figure}
+
+\newpage
+
+\subsection*{The Universal Genetic Code}
+
+The protein or \smallcaps{rna} encoded by a gene is determined by the universal \textbf{genetic code} (Figure~\ref{fig:genetic_code}).\marginnote{The genetic code is “universal” because it is found in all living organisms, with only a few minor modifications in a few groups of organisms.} The genetic code describes the relationship between nucleotide triplets (\textbf{codons}) and specific amino acids. During translation, the codons are read  sequentially, beginning with a start codon (\smallcaps{atg}) and continuing until a stop codon (\smallcaps{taa, tag,} or \smallcaps{tga}) has been reached. A total of 64 unique three-nucleotide codons are possible with four nucleotides.
+
+
+\begin{figure}
+\includegraphics[width=\linewidth]{start_stop_codons}
+\caption{Diagrammatic gene showing start and stop codons bracketing the coding region.}
+\end{figure}
+
+The genetic code is “degenerate” because more than one codon can code for the same amino acid. Some amino acids, like proline and threonine, are encoded by four codons. Others, like phenylalanine and lysine, are encoded by two codons. Three amino acides are encoded by six codons and one amino acid is encoded by three codons. Only methionine is encoded by a just one codon, perhaps because \smallcaps{atg} is the start codon.
+
+
+\subsection*{Synonymous and Non-synonymous Substitutions}
+
+The positions of the three nucleotides in a codon are numbered 1, 2, and 3, respectively. The third position (the last nucleotide of the codon) can often vary without changing the amino acid. Proline, for example, is encoded by \smallcaps{cca, ccc, ccg,} and \smallcaps{ccg}. A point mutation\marginnote{A point mutation changes one nucleotide in the genome to another.} that changes a cytosine to a thymine at the third position of a proline still codes for proline. A mutation that changes a nucleotide without changing the amino acid is a \textbf{synonymous} substitution. 
+
+In comparison, a point mutation that changes a second position nucleotide \emph{always} changes the amino acid. For example, a mutation that changes \smallcaps{ccc} to \smallcaps{cgc} changes the proline to arginine. Any mutation that causes the codon to code for a different amino acid is called a \textbf{non-synonymous} substitution.
+
+\emph{The ratio of non-synonymous to synonymous substitutions in a coding region (gene) is an important tool to test for natural selection at the genetic level.}
+
+I will not expect you to memorize the genetic code but I will expect you to be able to interpret the table. You must be able to determine whether a nucleotide substitution is synonymous or non-synonymous.
+
+\subsection*{Genes and alleles, phenotypes and genotypes}
+
+A \textbf{gene}\marginnote{The number of genes in a genome varies among organismal groups. The genomes of most vertebrates have around 20,000–25,000 genes.} is a small section of a chromosome that codes for one of several types of \smallcaps{rna} or protein, such as hemoglobin. \textbf{Alleles} are variations of a gene and therefore codes for variations of the product. For example, normal $\beta$-hemoglobin has a glutamic acid as the sixth amino acid in the protein. Glutamic acid is encoded by \smallcaps{gag} (or another synonymous) codon. A non-synonymous mutation changes \smallcaps{gag} to \smallcaps{gtg} (valine). Valine instead of glutamic acid changes the structure of the hemoglobin protein, causing sickle-cell anemia.\marginnote{Genes are associated with characters, such as pea color or a protein like hemoglobin. Alleles are associated with traits, such as green or yellow peas or sickle-cell anemia.} The normal and sickle-cell alleles are two variations of the same hemoglobin gene.
+
+Different individuals have different combinations of alleles across their genome. These differences cause individuals to have different traits, or \textbf{phenotypes.} The phenotype can refer to a specific trait (e.g., green vs. yellow peas)\marginnote{Shout out to Gregor Mendel.} or combination of traits (e.g., round green vs. wrinkled yellow peas). The combination of alleles an individual has is the \textbf{genotype.} The genotype of a diploid individual is either \textbf{homozygous} or \textbf{heterozygous.} A \textbf{homozygote} has two copies of the same allele. A heterozygote has two different alleles.
+
+A gene with two alleles has one possible heterozygous and two possible homozygous genotypes.  For example, the hemoglobin gene has the normal hemoglobin allele (abbreviated \smallcaps{h}) and the sickle-cell allele (abbreviated \smallcaps{s}). An individual genotype can be homozygous (\smallcaps{hh} or \smallcaps{ss}) or heterozygous (\smallcaps{hs}).
+
+Many genes including coding \textbf{exons} and non-coding \textbf{introns.} The introns are removed during or after transcription. Most introns are not subject to natural selection at the genetic level.
+
+\begin{figure}
+\includegraphics{exons_introns}
+\caption{Diagrammitic gene showing coding exons and non-coding introns.}
+\end{figure}
+
+
+\subsection*{Locus and Haplotype}
+
+A \textbf{locus} (plural: \textbf{loci}) is \emph{any} segment of \smallcaps{dna.} A gene is a locus. A part of a gene is a locus. A segment of non-coding \smallcaps{dna} outside of a gene is a locus. Any genetic variation at a locus is a \textbf{haplotype.} An allele is a haplotype. A part of an allele is a haplotype. A specific \smallcaps{dna} sequence at a locus is a haplotype. 
+
+Evolutionary biologists speak often in terms of loci and haplotypes. Different haplotypes, even if they encode the same protein variant (e.g., \smallcaps{ccc} and \smallcaps{ccg} in an allele) can provide valuable information about the evolution of populations.
+
+\subsection*{Allele and Genotype Frequencies}
+
+A frequency is a numerical representation of a proportion, or some fraction of 100\%. An \textbf{allele frequency} describes how common one specific allele is out of all possible alleles for a specific gene. A \textbf{genotype frequency} describes how common one specific genotype is out of all possible genotypes. Genotypes are often expressed for a single gene but genotype frequencies can be expressed for combinations of two or more genes.  For example, the 9:3:3:1 ratio for a dihybrid cross represents genotype frequencies for two alleles at each of two genes. 
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Mathematics of Allele Frequencies}
+
+The equation for calculating \emph{allele frequencies} is 
+\begin{equation*}
+p+q = 1,
+\end{equation*}
+
+where $p$ is the frequency of allele 1, and $q$ is the frequency of allele 2.\marginnote{Most genes have  more than two alleles. Allele frequencies are calculated the same but with a variable for each allele. If a gene has three alleles, for example, the equation would be expanded to $p+q+r=1.$} In class, we will use only two alleles for a single locus, such as $T_1$ and $T_2$.  Two variables ($p$ and $q$) are needed to represent two alleles.  Why not use $T_1$ and $T_2$\marginnote{When I write allele names, I'll use subscripts instead of upper and lower case because we (mostly) do not need to concern ourselves with dominance, codominance, incomplete dominance, etc.} instead of $p$ and $q$?  The vast majority of genes have names longer than a single letter, such as \emph{sonic hedgehog} (\emph{shh}) or \emph{bone morphogenetic protein 4} (\emph{bmp4}). Writing equations with long gene names would get confusing. Variable names like $p$ and $q$ are easier to understand.  
+
+Advanced uses of Hardy-Weinberg equations often express allele frequencies only in terms of $p$. If the frequency of one allele is $p$, then the frequency of the other allele is $1-p.$\marginnote{For two alleles, $p + q = 1$ so $q = 1-p.$}
+
+\section*{Mathematics of Genotype Frequencies}
+
+
+Diploid organisms have two alleles for each gene locus. The combination of alleles is the genotype for the gene locus. The genotype might be homozygous (two copies of the same allele) or heterozygous (two different alleles).  Given two alleles, there are three possible genotypes. Set aside $p$ and $q$ for the moment but consider two alleles, $T_1$ and $T_2$. The three possible genotypes are $T_1T_1$, $T_2T_2$, and $T_1T_2$.  The \emph{genotype frequencies} in a population is calculated by
+
+\begin{equation*}
+p^2 + 2pq+q^2=1,
+\end{equation*}
+where $p^2$ is the frequency of one homozygous genotype (e.g., $T_1T_1$), $q^2$ is the frequency of the other homozygous genotype $(T_2T_2)$, and $2pq$ is the frequency of the heterozygous genotype $(T_1T_2)$.  Three terms are needed to represent the three possible genotypes. 
+
+In situations where $q$ is represented by $1-p,$ then $2pq$\marginnote{I tend to use $p$ and $q$ most often in class but this is subject to change.} is represented as $2p(1-p)$ and $q^2$ is represented as $(1-p)^2.$ Be sure you are comfortable recognizing the use of the equations and terms with and without $q$.
+
+How are the two Hardy-Weinberg equations related?  Consider a large, randomly mating population with two alleles.  The alleles are present at frequencies $p$ and $q$.  The proportion of each genotype produced in the next generation is calculated by multiplying $p+q$ times itself\marginnote{Think of individuals \emph{multiplying} (mating) in a population.},
+\begin{equation*}
+(p+q)^2=
+(p+q)(p+q) =
+p^2 + pq + qp + q^2 =
+p^2 + 2pq + q^2.
+\end{equation*}
+
+\section*{Assumptions of Hardy-Weinberg}
+
+A population will be in Hardy-Weinberg equilibrium if five assumptions are met.\marginnote{Other assumptions exist, such as diploid organisms with non-overlapping generations. We are assuming diploid organisms but disregarding non-overlapping generations. The principles are the same but the math becomes more complex.} The assumptions we will use are
+
+\begin{enumerate}
+
+	\item The population is infinitely large (no genetic drift),
+
+	\item no germ-line\marginnote{Germ-line cells are those that produce sperm and eggs. Mutations that do not occur in the germ line cannot be inherited and thus not subject to evolutionary processes.} mutations are occurring,
+
+	\item no gene flow among populations,
+
+	\item no natural selection, and
+
+	\item random mating.
+
+	
+\end{enumerate}
+
+We will explore violation of these assumptions during the semester.
+
+\section*{A practice problem}
+
+\noindent A population of 200 individuals in Hardy-Weinberg equilibrium
+has 72 individuals that are $A_1A_1$, 96 that are $A_1A_2$, and 32 
+that are $A_2A_2$. Calculate the allele and genotype frequencies 
+for this population.
+
+\bigskip
+
+\begin{tabular}{@{}ll@{}}
+	\toprule
+	& Frequency\tabularnewline
+	\midrule
+	& \tabularnewline
+	$A_1$		&	\rule{0.6in}{0.4pt}\tabularnewline[2em]
+	$A_2$		&	\rule{0.6in}{0.4pt}\tabularnewline[2em]
+	$A_1A_1$	&	\rule{0.6in}{0.4pt}\tabularnewline[2em]
+	$A_1A_2$	&	\rule{0.6in}{0.4pt}\tabularnewline[2em]
+	$A_2A_2$	&	\rule{0.6in}{0.4pt}\tabularnewline
+	\bottomrule
+\end{tabular}
+
+
+\vskip0pt plus 1fill
+
+
+\begin{margintable}
+\hfill \reflectbox{\begin{tabular}{@{}lr@{}}
+	\toprule
+	& Frequency\tabularnewline
+	\midrule
+	$A_1$		&	0.60\tabularnewline
+	$A_2$		&	0.40\tabularnewline
+	$A_1A_1$	&	0.36\tabularnewline
+	$A_1A_2$	&	0.48\tabularnewline
+	$A_2A_2$	&	0.16\tabularnewline
+	\bottomrule
+\end{tabular}}
+\end{margintable}
+
+\end{document}
