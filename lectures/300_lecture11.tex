@@ -1,0 +1,510 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[t]{beamer}
+
+%%%% HANDOUTS For online Uncomment the following four lines for handout
+%\documentclass[t,handout]{beamer}  %Use this for handouts.
+%\usepackage{handoutWithNotes}
+%\includeonlylecture{student}
+%\pgfpagesuselayout{3 on 1 with notes}[letterpaper,border shrink=5mm]
+
+\usefonttheme{professionalfonts}
+
+
+%%% Including only some slides for students.
+%%% Uncomment the following line. For the slides,
+%%% use the labels shown below the command.
+
+%% For students, use \lecture{student}{student}
+%% For mine, use \lecture{instructor}{instructor}
+
+% FONTS
+\usepackage{fontspec}
+\def\mainfont{Linux Biolinum O}
+\setmainfont[Ligatures={Common, TeX}, Contextuals={NoAlternate}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={Proportional, OldStyle}]{\mainfont}
+%\setmonofont[Scale=MatchLowercase]{Inconsolata} 
+\setsansfont[Scale=MatchLowercase]{Linux Biolinum O} 
+\setmonofont{Linux Libertine Mono O}
+
+\usepackage{microtype}
+
+\usepackage{unicode-math}
+\setmathfont[Scale=MatchLowercase]{Asana Math}
+
+\usepackage{graphicx}
+	\graphicspath{%
+	{/Users/goby/Pictures/teach/300/lectures/}%
+	{/Users/goby/Pictures/teach/163/common/}} % set of paths to search for images
+
+\usepackage{amsmath,amssymb}
+
+%\usepackage{units}
+
+\usepackage{booktabs}
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+
+
+\usepackage{multicol}
+%	\setlength{\columnsep=1em}
+\usepackage{enumitem}
+\usepackage{textcomp}
+\usepackage{setspace}
+\usepackage{tikz}
+	\tikzstyle{every picture}+=[remember picture,overlay]
+\usetikzlibrary{arrows}
+
+\mode<presentation>
+{
+  \usetheme{Lecture}
+  \setbeamercovered{invisible}
+  \setbeamertemplate{items}[square]
+}
+
+\usepackage{calc}
+\usepackage{hyperref}
+
+\newcommand\HiddenWord[1]{%
+	\alt<handout>{\rule{\widthof{#1}}{\fboxrule}}{#1}%
+}
+
+
+\usepackage{xifthen}
+\newcommand{\futuyma}[1]{%
+	\ifthenelse{\isempty{#1}}%
+	{Futuyma \& Kirkpatrick 2017, 4th ed.}%
+	{Fig.~#1~Futuyma \& Kirkpatrick 2017, 4th ed.}%
+}
+
+% This defines \amper for the fancy ampersand
+% to be used in the header. See
+% https://tex.stackexchange.com/a/58185/39194
+\usepackage{xspace}
+\newfontfamily\amperfont[Style=Alternate]{Linux Libertine O}    
+\makeatletter
+\DeclareRobustCommand{\amper}{{\amperfont\ifx\f@shape\scname\smaller[1.2]\fi\&}\xspace}
+\makeatother
+
+\newcommand{\backskip}{\vspace{-0.5\baselineskip}}
+
+\begin{document}
+
+\lecture{student}{student}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{species_intro}}
+\begin{frame}[b]
+
+\tiny \hfill \textcolor{white}{\futuyma{}}
+\end{frame}
+}
+
+
+\begin{frame}{What is a species?}
+
+
+\includegraphics[width=\linewidth]{species_what_is_species}
+
+\tinyfill \futuyma{9.2}
+
+\end{frame}
+
+%%
+
+
+\begin{frame}{Many species concepts have been defined.}
+
+\vspace{-2\baselineskip}
+
+\hangpara\begin{multicols}{2}
+Morphological\\
+Phylogenetic (I)\\
+Biological\\
+Ecological\\
+Phylogenetic (II)\\
+Evolutionary\\
+General Lineage\\
+Typological\\
+Cohesion\\
+%\columnbreak
+Genealogical\\
+Genotypic\\
+Recognition\\
+Phenetic\\
+Cladistic\\
+Diagnostic\\
+Polytypic\\
+Population\\[1ex]
+
+artificial concept\\
+\end{multicols}
+\end{frame}
+
+
+%%
+
+\begin{frame}{Two widely followed species concepts are$\dots$}
+
+
+\noindent\begin{multicols}{2}
+
+\reflectbox{\includegraphics[width=\linewidth]{species_evelynae1}}
+\vspace{1ex}
+\includegraphics[width=\linewidth]{species_evelynae2}
+
+\columnbreak
+
+\hangpara \highlight{morphological} species, and
+
+\hangpara \highlight{biological} species.
+\end{multicols}
+
+\tinyfill \textcopyright\,Paul Humann
+
+\end{frame}
+
+%%
+
+\begin{frame}{Morphological species can be diagnosed by morphology.}
+
+\backskip
+
+\includegraphics[width=\linewidth]{futuyma_fig9-6}
+
+\tinyfill \futuyma{9.6}
+
+\end{frame}
+
+\begin{frame}{The \textsc{bsc} defines species as$\dots$}
+
+\vspace{-\baselineskip}
+
+\hangpara groups of actually or potentially interbreeding populations, which are \emph{reproductively isolated} from other such groups.
+
+\hangpara What are the advantages of the \textsc{bsc?}
+
+\hangpara What are the disadvantages of the \textsc{bsc?}
+
+\hangpara Does the \textsc{bsc} actually tell us what \emph{is} a species?
+
+\end{frame}
+
+%%
+
+\begin{frame}[t]{\highlight{Allopatric} populations are difficult to test for reproductively isolation.}
+
+\backskip
+\centering
+
+\includegraphics[height=0.8\textheight]{futuyma_fig9-3}
+
+\tinyfill \futuyma{9.3}
+
+\end{frame}
+
+%%
+\begin{frame}
+
+\backskip
+
+\begin{multicols}{2}
+
+\centering
+\noindent \includegraphics[width=\linewidth]{species_fox_sparrow_forms}
+
+\columnbreak
+
+\centering
+\noindent\includegraphics[width=\linewidth]{species_fox_sparrow_map}
+
+\end{multicols}
+
+\tinyfill\textcopyright\,iBird Pro 12.5, Mitchell Waite Group
+
+\end{frame}
+
+%%
+
+
+\begin{frame}{\highlight{Hybrid zones} can form between \highlight{parapatric} species.}
+
+\backskip
+
+\centering
+
+\includegraphics[height=0.85\textheight]{futuyma_fig9-4}
+
+\tinyfill \futuyma{9.4}
+\end{frame}
+
+%%
+\begin{frame}{\highlight{Introgression} in hybrid zones introduces alleles into a species from another.}
+
+\backskip
+
+\centering
+\includegraphics[width=0.95\linewidth]{futuyma_fig9-5}
+
+\tinyfill \futuyma{9.5}
+
+\end{frame}
+
+
+%%
+
+\begin{frame}{\highlight{Speciation} is the evolution of two species from one ancestor.}
+
+\vspace{-\baselineskip}
+
+\centering
+
+\includegraphics[height=0.85\textheight]{species_speciation}
+
+\end{frame}
+
+%%
+
+\begin{frame}{Speciation occurs when populations evolve \highlight{reproductive isolating barriers.}}
+
+\backskip
+\centering
+
+\includegraphics[width=0.9\linewidth]{futuyma_tab9-1}
+
+\tinyfill Table 9.1 Futuyma \& Kirkpatrick 2017, 4th ed.
+
+\end{frame}
+
+%%
+
+\begin{frame}{\highlight{Temporal isolation:} species reproduce at different times. }
+
+\includegraphics[width=\linewidth]{species_temporal_cicada}
+
+\vfilll
+
+\tiny \highlight{prezygotic} \hfill \futuyma{9.9\textsc{b}} \quad \href{https://commons.wikimedia.org/wiki/File:Periodical_Cicada_Broods_of_the_United_States.png}{U\textsc{sda}, Wikimedia}
+
+\end{frame}
+
+%%
+
+\begin{frame}{\highlight{Mechanical isolation:} reproductive structures are incompatible.}
+
+\backskip
+
+\centering
+
+\includegraphics[height=0.8\textheight]{species_mechanical}
+
+\vfilll
+
+\tiny \highlight{Prezygotic} \hfill \futuyma{9.10}
+\end{frame}
+
+%%
+
+\begin{frame}{\highlight{Pollinator isolation}: Species use different pollinators.}
+
+\backskip
+
+\centering
+
+\includegraphics[height=0.85\textheight]{species_pollinator}
+
+\vfilll
+
+\tiny \highlight{Prezygotic} \hfill \futuyma{9.7}
+
+\end{frame}
+
+%%
+
+\begin{frame}{Species can be isolated by multiple barriers.}
+
+\backskip
+
+\centering
+
+\includegraphics[width=\linewidth]{species_multiple_barriers}
+
+\vfilll
+
+\tiny \highlight{Prezygotic} \hfill \futuyma{9.8}
+
+\end{frame}
+
+%%
+
+\begin{frame}{Sperm competition occurs post-mating.}
+
+\backskip
+
+\begin{multicols}{2}
+
+{\centering
+\noindent\includegraphics[width=0.95 \linewidth]{species_sperm_speed}
+}
+
+%\vspace{2em}
+
+\hangpara Sperm swim faster in promiscuous species (above).
+
+\columnbreak
+
+\onslide<2>{
+\noindent\includegraphics[width=\linewidth]{species_sperm_competition}
+}
+\end{multicols}
+
+\vfilll
+
+\tiny \highlight{Prezygotic}\quad Nascimento et al.~2008. J.R.~Soc.~Interface 5:297. \onslide<2>{\hfill Copper \& Phadnis 2017. Genome Bio.~Evol.~9:1938.}
+
+\end{frame}
+
+%%
+
+\begin{frame}{\highlight{Ecological inviability:} hybrids have reduced survival.}
+\includegraphics[width=\linewidth]{futuyma_fig9-11}
+
+\vfilll
+
+\tiny\highlight{postzygotic} \hfill \futuyma{9.11}
+
+\end{frame}
+
+%%
+
+\begin{frame}{\highlight{Hybrid sterility:} hybrids are incapable of reproducing.}
+
+\vspace{-\baselineskip}
+
+\begin{center}
+\includegraphics[height=0.85\textheight]{species_hybrid_sterility}
+\end{center}
+
+
+\vfilll
+
+\tiny \highlight{postzygotic}
+\end{frame}
+
+
+\begin{frame}{\highlight{Reinformcement} reduces hybridization.}
+
+\backskip
+
+\begin{multicols}{2}
+\includegraphics[width=\linewidth]{futuyma_fig9-17a}
+
+
+%\medskip
+
+%\includegraphics[width=\linewidth]{futuyma_fig9-17b}
+
+\columnbreak
+
+\includegraphics[width=\linewidth]{futuyma_fig9-17c}
+
+
+%\medskip
+
+%\includegraphics[width=\linewidth]{species_reinforcement_criteria}
+
+\end{multicols}
+
+\pause 
+
+\hangpara \highlight{Character displacement} is the divergence of a phenotype in \highlight{sympatry.}
+
+\tinyfill \futuyma{9.17}
+
+\end{frame}
+
+%%
+\begin{frame}
+\centering
+
+\includegraphics[width=\linewidth]{species_reinforcement_criteria}
+
+\tinyfill Hopkins 2013. New Phytologist 197: 1095.
+
+\end{frame}
+
+%%
+
+\begin{frame}{\highlight{Allopatric speciation} is the evolution of reproductive barriers between geographically separated populations.}
+
+\hangpara Geographic isolation is \emph{not} a biological reproductive barrier.
+
+\hangpara Gene flow is disrupted between allopatric populations.
+
+\end{frame}
+
+%%
+
+\begin{frame}{\highlight{Vicariance} divides a large population into smaller, isolated populations.}
+
+\vspace{-\baselineskip}
+
+\centering
+
+\includegraphics[width=0.85\linewidth]{/Users/goby/pictures/teach/163/lecture/allopatric_shrimp2}
+
+\end{frame}
+
+%%
+
+\begin{frame}{\highlight{Founder events} by dispersal can isolate populations.}
+
+\backskip
+
+\centering
+
+\includegraphics[height=0.87\textheight]{futuyma_fig9-21}
+
+\tinyfill \futuyma{9.21}
+\end{frame}
+
+%%
+
+\begin{frame}{\highlight{Sympatric speciation} occurs \emph{without} geographic isolation.}
+
+\backskip
+
+\centering
+
+\includegraphics[height=0.8\textheight]{futuyma_fig9-27}
+
+\tinyfill \futuyma{9.27}
+
+\end{frame}
+
+%%
+
+\begin{frame}{\textit{Rhagoletis pomonella} is the poster child for sympatric speciation.}
+
+\backskip
+
+\includegraphics[width=\linewidth]{futuyma_fig9-26}
+
+\tinyfill \futuyma{9.26}
+
+\end{frame}
+
+%%
+
+\begin{frame}{\highlight{Parapatric speciation} can occur when gene flow is reduced between adjacent populations.}
+
+\backskip
+
+\includegraphics[width=\linewidth]{futuyma_fig9-28}
+
+\tinyfill \futuyma{9.28}
+
+\end{frame}
+\end{document}
