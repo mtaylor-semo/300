@@ -1,0 +1,103 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[letterpaper]{tufte-handout}
+
+%\geometry{showframe} % display margins for debugging page layout
+
+\usepackage{fontspec}
+\def\mainfont{Linux Libertine O}
+\setmainfont[Ligatures={Common,TeX}, Contextuals={NoAlternate}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={OldStyle}]{\mainfont}
+\setsansfont[Scale=MatchLowercase]{Linux Biolinum O} 
+\usepackage{microtype}
+
+\usepackage{graphicx} % allow embedded images
+  \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+  \graphicspath{{img/}} % set of paths to search for images
+\usepackage{amsmath}  % extended mathematics
+\usepackage{booktabs} % book-quality tables
+\usepackage{units}    % non-stacked fractions and better unit spacing
+\usepackage{siunitx}
+\usepackage{multicol} % multiple column layout facilities
+\usepackage{microtype}   % filler text
+\usepackage{hyperref}
+
+\usepackage{enumitem}
+
+%\usepackage{fancyvrb} % extended verbatim environments
+%  \fvset{fontsize=\normalsize}% default font size for fancy-verbatim environments
+\makeatletter
+% Paragraph indentation and separation for normal text
+\renewcommand{\@tufte@reset@par}{%
+  \setlength{\RaggedRightParindent}{1.0pc}%
+  \setlength{\JustifyingParindent}{1.0pc}%
+  \setlength{\parindent}{0pc}%
+  \setlength{\parskip}{0.5\baselineskip}%
+}
+\@tufte@reset@par
+
+% Paragraph indentation and separation for marginal text
+\renewcommand{\@tufte@margin@par}{%
+  \setlength{\RaggedRightParindent}{0pt}%
+  \setlength{\JustifyingParindent}{0.5pc}%
+  \setlength{\parindent}{0.5pc}%
+  \setlength{\parskip}{0pt}%
+}
+\makeatother
+
+% Set up the spacing using fontspec features
+\renewcommand\allcapsspacing[1]{{\addfontfeatures{LetterSpace=15}#1}}
+\renewcommand\smallcapsspacing[1]{{\addfontfeatures{LetterSpace=10}#1}}
+
+
+\title{Study Guide 09\hfill}
+\author{Genetic drift, non-adaptive evolution, and adaptive evolution}
+
+\date{} % without \date command, current date is supplied
+
+\begin{document}
+
+\maketitle	% this prints the handout title, author, and date
+
+\section{Vocabulary}\marginnote{\textbf{Read:} to be updated.}
+
+\begin{multicols}{2}
+genetic drift \\
+non-adaptive evolution \\
+fixation \\
+probability of fixation \\
+haplotype substitution \\
+neutral mutation rate \\
+Neutral Theory \\
+selective sweep \\
+positive selection \\
+codon bias
+\end{multicols}
+
+%\printclassoptions
+
+\section{Concepts}
+
+You should \emph{write} clear and concise answers to each question in the Concepts section.  The questions are not necessarily independent.  Think broadly across lectures to see ``the big picture.'' 
+
+\begin{enumerate}
+	
+	\item Discuss the consequences of genetic drift.\marginnote{This item is also in the previous study guide but now I ask you specifically to relate drift to non-adaptive evolution.} Consider population size, the probability of any given haplotype going to fixation, what happens to heterozygosity in a population, and what happens among replicate populations (isolated populations with the same initial starting conditions and all subject to genetic drift.  Relate this to nonadaptive evolution.  
+
+	\item Relate the neutral mutation rate to the rate of nonadaptive evolution\sidenote{Non-adaptive evolution is evolution by genetic drift. Adaptive evolution is evolution by natural selection.} by genetic drift in a population.  Does small vs.~large population size matter? If so, why?  If not, why not?\sidenote{Hint: $\mu = 2N_e\mu \times \frac{1}{2N_e}$\label{foot:hint}}
+
+	\item What is meant by substitution of one haplotype for another in a population? 
+
+	\item How does the neutral mutation rate and genetic drift relate to the neutral theory of molecular evolution?\sidenote{Commonly called Neutral Theory.}\sidenote{See Sidenote~\ref{foot:hint}}
+
+	\item Explain the genetic evidence that supports the Neutral Theory.
+
+	\item If multiple (e.g., 10), independent populations are subject only to non-adaptive evolution, would you predict that the end result would be the same for each population? Explain why or why not.
+	
+	\item Compare and contrast the Neutral Theory vs natural selection at the molecular genetic level ({\scshape dna} and proteins).  Does the Neutral Theory completely discount the importance of natural selection?  Does natural selection discount the importance of neutral variation?
+
+	\item Selective sweeps, positive selection, and codon bias all provide evidence for natural selection at the genetic level. Would this evidence falsify the Neutral Theory?  Explain. 
+
+\end{enumerate}
+
+\end{document}

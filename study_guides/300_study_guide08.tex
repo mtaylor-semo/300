@@ -1,0 +1,94 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[letterpaper]{tufte-handout}
+
+%\geometry{showframe} % display margins for debugging page layout
+
+\usepackage{fontspec}
+\def\mainfont{Linux Libertine O}
+\setmainfont[Ligatures={Common,TeX}, Contextuals={NoAlternate}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={OldStyle}]{\mainfont}
+\setsansfont[Scale=MatchLowercase]{Linux Biolinum O} 
+\usepackage{microtype}
+
+\usepackage{graphicx} % allow embedded images
+  \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+  \graphicspath{{img/}} % set of paths to search for images
+\usepackage{amsmath}  % extended mathematics
+\usepackage{booktabs} % book-quality tables
+\usepackage{units}    % non-stacked fractions and better unit spacing
+\usepackage{siunitx}
+\usepackage{multicol} % multiple column layout facilities
+\usepackage{microtype}   % filler text
+\usepackage{hyperref}
+
+\usepackage{enumitem}
+
+%\usepackage{fancyvrb} % extended verbatim environments
+%  \fvset{fontsize=\normalsize}% default font size for fancy-verbatim environments
+\makeatletter
+% Paragraph indentation and separation for normal text
+\renewcommand{\@tufte@reset@par}{%
+  \setlength{\RaggedRightParindent}{1.0pc}%
+  \setlength{\JustifyingParindent}{1.0pc}%
+  \setlength{\parindent}{0pc}%
+  \setlength{\parskip}{0.5\baselineskip}%
+}
+\@tufte@reset@par
+
+% Paragraph indentation and separation for marginal text
+\renewcommand{\@tufte@margin@par}{%
+  \setlength{\RaggedRightParindent}{0pt}%
+  \setlength{\JustifyingParindent}{0.5pc}%
+  \setlength{\parindent}{0.5pc}%
+  \setlength{\parskip}{0pt}%
+}
+\makeatother
+
+% Set up the spacing using fontspec features
+\renewcommand\allcapsspacing[1]{{\addfontfeatures{LetterSpace=15}#1}}
+\renewcommand\smallcapsspacing[1]{{\addfontfeatures{LetterSpace=10}#1}}
+
+
+\title{Study Guide 08\hfill}
+\author{Genetic drift}
+
+\date{} % without \date command, current date is supplied
+
+\begin{document}
+
+\maketitle	% this prints the handout title, author, and date
+
+\section{Vocabulary}\marginnote{\textbf{Read:} to be updated.}
+
+\begin{multicols}{2}
+genetic drift \\
+heterozygosity \\
+homozygosity \\
+nucleotide diversity \\
+census population size $(N)$\\
+effective population size $(N_e)$\\
+bottleneck effect \\
+founder effect 
+\end{multicols}
+
+%\printclassoptions
+
+\section{Concepts}
+
+You should \emph{write} clear and concise answers to each question in the Concepts section.  The questions are not necessarily independent.  Think broadly across lectures to see ``the big picture.'' 
+
+\begin{enumerate}
+	
+	\item Discuss the consequences of genetic drift.  Consider population size, the probability of any given haplotype going to fixation, what happens to heterozygosity and homozygosity\marginnote{I did not specifically define homozygosity but you should be able to reason it out based on your understanding of heterozygosity. Homozygosity: $1-2pq.$ Why?} in a population. 
+
+	\item Explain how effective population size differs from census population size (the total population size, or total of all potentially breeding adults).  Why must effective population size be considered instead of census population size? 
+
+	\item Compare and contrast bottleneck and founder effects. How do bottlenecks and founder effects relate to genetic drift?  Consider also how these phenomena affect genetic diversity in a population. 
+	
+	\item You will not have to calculate nucleotide diversity but you should understand what it is, how it relates to heterozygosity, and to interpret relative differences in nucleotide diversity. That is, does a higher value of nucleotide diversity indicate higher or lower heterozygosity compared to a lower nucleotide diversity?	
+
+
+\end{enumerate}
+
+\end{document}

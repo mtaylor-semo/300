@@ -1,0 +1,104 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[letterpaper]{tufte-handout}
+
+%\geometry{showframe} % display margins for debugging page layout
+
+\usepackage{fontspec}
+\def\mainfont{Linux Libertine O}
+\setmainfont[Ligatures={Common,TeX}, Contextuals={NoAlternate}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={OldStyle}]{\mainfont}
+\setsansfont[Scale=MatchLowercase]{Linux Biolinum O} 
+\usepackage{microtype}
+
+\usepackage{graphicx} % allow embedded images
+  \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+  \graphicspath{{img/}} % set of paths to search for images
+\usepackage{amsmath}  % extended mathematics
+\usepackage{booktabs} % book-quality tables
+\usepackage{units}    % non-stacked fractions and better unit spacing
+\usepackage{siunitx}
+\usepackage{multicol} % multiple column layout facilities
+\usepackage{microtype}   % filler text
+\usepackage{hyperref}
+
+\usepackage{enumitem}
+
+%\usepackage{fancyvrb} % extended verbatim environments
+%  \fvset{fontsize=\normalsize}% default font size for fancy-verbatim environments
+\makeatletter
+% Paragraph indentation and separation for normal text
+\renewcommand{\@tufte@reset@par}{%
+  \setlength{\RaggedRightParindent}{1.0pc}%
+  \setlength{\JustifyingParindent}{1.0pc}%
+  \setlength{\parindent}{0pc}%
+  \setlength{\parskip}{0.5\baselineskip}%
+}
+\@tufte@reset@par
+
+% Paragraph indentation and separation for marginal text
+\renewcommand{\@tufte@margin@par}{%
+  \setlength{\RaggedRightParindent}{0pt}%
+  \setlength{\JustifyingParindent}{0.5pc}%
+  \setlength{\parindent}{0.5pc}%
+  \setlength{\parskip}{0pt}%
+}
+\makeatother
+
+% Set up the spacing using fontspec features
+\renewcommand\allcapsspacing[1]{{\addfontfeatures{LetterSpace=15}#1}}
+\renewcommand\smallcapsspacing[1]{{\addfontfeatures{LetterSpace=10}#1}}
+
+
+\title{Study Guide 10\hfill}
+\author{Gene flow}
+
+\date{} % without \date command, current date is supplied
+
+\begin{document}
+
+\maketitle	% this prints the handout title, author, and date
+
+\section{Vocabulary}\marginnote{\textbf{Read:} to be updated.}
+
+\begin{multicols}{2}
+gene flow \\
+cline \\
+fixation index $(F_{ST})$ \\
+Wahlund effect \\
+isolation by distance \\
+gene swamping \\
+tension zone
+\end{multicols}
+
+%\printclassoptions
+
+\section{Concepts}
+
+You should \emph{write} clear and concise answers to each question in the Concepts section.  The questions are not necessarily independent.  Think broadly across lectures to see ``the big picture.'' 
+
+\begin{enumerate}
+	
+	\item Explain what is a genetic cline? Would would a phenotypic phenomenon like Bergman's Rule\marginnote{Increasing body mass with increasing latitude.} follow a genetic cline?
+	
+	\item What is gene flow? On average, how much gene flow is necessary per generation between two populations to keep them genetically similar.
+	
+	\item What is the fixation index, $F_{ST}$? What does is represent?
+
+	\item Be able to calculate $F_{ST}$ using heterozygosity\marginnote{$F_{ST} = \dfrac{2pq - \sum c_i2p_iq_i}{2pq}$} from populations of equal or unequal sample size. You should be able to do this given allele frequencies or given the number of individuals of each genotype. That is, you calculate allele frequencies from genotype frequencies.
+	
+	\item Be able to calculate $F_{ST}$ given\marginnote{$F_{ST} = \dfrac{1}{1+4N_em}$} effective population size and migration rate. 
+	
+	\item Explain what is the Wahlund effect. Be able to recognize it given allele or genotype frequencies for two populations.
+	
+	\item Why does $F_{ST}$ increase with geographic distance among “stepping stone” populations? 
+	
+	\item Explain how gene swamping can overcome selection.\marginnote{$m \gg s$}
+	
+	\item Explain how underdominance can cause tension zones when there is hybridization (and thus potential gene flow)between populations of adjacent species.
+
+
+
+\end{enumerate}
+
+\end{document}
