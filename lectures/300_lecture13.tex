@@ -37,7 +37,7 @@
 \usepackage{graphicx}
 	\graphicspath{%
 	{/Users/goby/Pictures/teach/300/lectures/}%
-	{/Users/goby/Pictures/teach/163/common/}} % set of paths to search for images
+	{/Users/goby/Pictures/teach/163/lecture/}} % set of paths to search for images
 
 \usepackage{amsmath,amssymb}
 
@@ -92,6 +92,9 @@
 
 \newcommand{\backskip}{\vspace{-0.5\baselineskip}}
 
+%% Remove indent from multicol.
+\parindent=0pt
+
 \begin{document}
 
 \lecture{student}{student}
@@ -103,6 +106,38 @@
 \tinyfill  \textcolor{white}{\futuyma{}}
 \end{frame}
 }
+
+%%
+
+
+{
+	\usebackgroundtemplate{\includegraphics[width=\paperwidth]{intrasexual_selection_giraffes} }
+	\begin{frame}{\highlight{Intrasexual} selection is competition between males.}
+	
+	\vfilll
+	
+	\tiny \textcolor{white}{Luca Galuzzi, \href{http://www.galuzi.it}{www.galuzi.it}, \ccbysa{2.5}
+		\hfill \href{http://www.youtube.com/watch?v=C7HCIGFdBt8}{Link to Video}}
+	
+\end{frame}
+}
+
+%%
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{superb_bird_of_paradise} }
+\begin{frame}{\textcolor{orange5}{Intersexual} \textcolor{white!95!black}{selection is females choosing mates.}}
+
+\vfilll
+
+\tiny \textcolor{white}{\href{https://youtu.be/IPfW7iolmgc}{Link to Video} 
+	\hfill \href{https://youtu.be/1XkPeN3AWIE}{Bonus Video}}
+
+\end{frame}
+}
+
+
+%%
 
 \begin{frame}{\highlight{Sexual dimorphism} is the difference of  traits between sexes of the same species.}
 
@@ -134,273 +169,385 @@
 \textcopyright\,M.G.~Simpson, Plant Systematics 2010.
 \end{frame}
 
-
-\begin{frame}{\highlight{Asexual reproduction} occurs without meiosis and syngamy.}
-
-\includegraphics[width=\linewidth]{futuyma_fig10-20}
-
-\tinyfill \futuyma{10.20}
-
-\end{frame}
-
 %%
 
+\begin{frame}{Why are males sexually selected?}
 
-\begin{frame}{What are advantages and disadvantages of asexual reproduction?}
+\backskip
 
 \begin{multicols}{2}
+	\hangpara \highlight{Bateman's principle:} male \textit{Drosophila} sired more offspring if they mated with more females.
 
-\includegraphics[width=\linewidth]{sex_binary_fission}
+	\hangpara \highlight{Operational sex ratio:} females can be limiting resource for males.
 
-\columnbreak
-
-\includegraphics[width=\linewidth]{sex_budding_yeast}
-\end{multicols}
-
-\vfilll
-
-\tiny \href{https://www.sciencephoto.com/media/11784/view/dividing-bacterium-sem}{\textcopyright\,David Sharf, Science Photo Library} \hfill \href{https://commons.wikimedia.org/wiki/File:Saccharomyces_cerevisiae_SEM.jpg}{Mogana Das Murtey \& Patchamuthu Ramasamy, Wikimedia Commons, \ccbysa{3}}
-
-
-\end{frame}
-
-
-%%
-
-\begin{frame}{Is it good to maintain the same genome?}
-
-\begin{multicols}{2}
-\includegraphics[width=\linewidth]{futuyma_fig10-20a}
-
-\columnbreak
-
-\includegraphics[width=\linewidth]{sex_mullers_ratchet}
-
-\end{multicols}
-
-\pause
-
-\hangpara \highlight{Muller's Ratchet} is the accumulation of mildly deleterious mutations in asexual populations.
-
-\vfilll
-
-
-\tiny \futuyma{10.20} \hfill Brockhaus Konversations-Lexikon (1894, 14th edition, adapted by Georg Wiora.
-
-\end{frame}
-
-%%
-
-\begin{frame}{Sexual reproduction includes both meiotic recombination and syngamy.}
-
-%\hangpara Sex breaks up allele combinations. Is this good or bad?
-
-%\pause
-
-\hangpara What are the advantages and disadvantages of sexual reproduction?
-
-\end{frame}
-
-%%
-
-\begin{frame}{All else equal, does asexual or sexual reproduction have greater relative fitness?}
-
-\onslide<1-3>{
-\includegraphics[width=\linewidth]{sex_two_fold_cost}
-}
-
-\begin{tikzpicture}
-\onslide<1>{
-\fill [white] (0,0) rectangle (12,3.5);
-}
-
-
-\onslide<2>{\fill [white] (0,0) rectangle (12,2.5);}
-
-\end{tikzpicture}
-
-\onslide<3>{%
-\vspace{-\baselineskip}
-\hangpara \highlight{Two-fold cost of sex:} males reduce reproductive potential by a factor of two every generation.
-}
-
-
-\tinyfill \textcopyright\,Sinauer Associates, Inc.~2005
-
-\end{frame}
-
-%%
-
-\begin{frame}{If sex has a fitness cost, then why did sex evolve?}
-\vspace{-\baselineskip}
-
-\begin{multicols}{2}
-
-\centering
-
-\reflectbox{\includegraphics[width=0.9\linewidth]{sex_penguins}}
-
-\smallskip
-
-\includegraphics[width=0.9\linewidth]{sex_bees}
-
-\columnbreak
-
-\reflectbox{\includegraphics[width=0.9\linewidth]{sex_hoverflies}}
-
-\smallskip
-
-\includegraphics[width=0.8\linewidth]{sex_fleas}
-
-\end{multicols}
-\end{frame}
-
-%%
-
-\begin{frame}{Sexual reproduction breaks up allele combinations.}
-
-\hangpara Is this good or bad?
-
-\hangpara What if \emph{AB} is the ideal allele combination in an individual that is \emph{AB} on one chromosome and \emph{ab} on the other?
-
-\hangpara What if an \emph{individual} had a theoretically “perfect” genome? 
-
-
-\end{frame}
-
-
-\begin{frame}{Sexual reproduction has advantages in changing environments.}
-
-\hangpara \highlight{Red queen hypothesis}
-
-\hangpara \highlight{Selective interference} is reduced.\newline
-	\hspace*{1em} \highlight{Clonal interference}\newline
-	\hspace*{1em} \highlight{Ruby-in-the-rubbish}
+	\hangpara \highlight{Anisogamy}
 	
-\hangpara Enhanced rate of adaptation
-
-\end{frame}
-
-%%
-
-\begin{frame}{\highlight{Red queen hypothesis} describes the \emph{evolutionary arms race} between hosts and their pathogens.}
-
-\backskip
-
-\centering
-
-
-\includegraphics[height=0.79\textheight]{futuyma_fig10-22}
-
-\tinyfill \futuyma{10.22}
-
-
-\end{frame}
-
-%%
-
-\begin{frame}{\highlight{Clonal interference} slows adaptation in asexual species.}
-\backskip
-
-\centering
-
-
-\includegraphics[height=0.82\textheight]{futuyma_fig10-23}
-
-\tinyfill \futuyma{10.23}
-\end{frame}
-
-%%
-
-\begin{frame}{\highlight{Ruby-in-the-rubbish effect} links detrimental and beneficial mutations in asexual species.}
-\backskip
-
-\centering
-
-\includegraphics[width=\linewidth]{futuyma_fig10-24}
-
-\hangpara Analogous to selective sweep but genome wide.
-
-\tinyfill \futuyma{10.24}
-\end{frame}
-
-%%
-
-\begin{frame}{Muller's ratchet is a form of selective interference in areas of low recombination.}
-
-\backskip
-
-\begin{multicols}{2}
-\includegraphics[width=\linewidth]{futuyma_fig10-27}
-
 \columnbreak
 
-\includegraphics[width=\linewidth]{futuyma_fig10-26}
+\includegraphics[width=0.9\linewidth]{sex_bateman}
+
 \end{multicols}
 
 \vfilll
 
-\tiny \futuyma{10.27} \hfill \futuyma{10.26}
+\tinyfill Bateman 1948. Heredity 2:349. 
 
 \end{frame}
 
 %%
 
-\begin{frame}{Recombination speeds the rate of adaptation.}
+\begin{frame}{Intrasexual selection can be direct.}
 
 \backskip
 
-\centering
-
-\includegraphics[height=0.8\textheight]{futuyma_fig10-25}
-
-\tinyfill \futuyma{10.25}
-
-\end{frame}
-
-%%
-
-
-\begin{frame}{Many alternate mating strategies have evolved.}
-
-\vspace{-\baselineskip}
-
 \begin{multicols}{2}
-
-\hangpara \highlight{Sneaking male} strategy increases fitness of non-territorial males.
+\hangpara Visual ornaments can enhance apparent body size.
 
 \vspace{6\baselineskip}
 
-\hangpara \highlight{Sequential hermaphroditism} increases fitness of different age or size classes.
+\hangpara Same-sex contests based on size, weapons, or other traits.
 
 \columnbreak
 
 \centering
 
-\noindent\includegraphics[width=0.94\linewidth]{sex_sneaking_males}
+\includegraphics[width=0.7\linewidth]{sex_rwbl}
 
 \smallskip
 
-\reflectbox{\includegraphics[width=0.94\linewidth]{sex_blue-head_wrasse}}
+\includegraphics[width=0.8\linewidth]{sex_elk_combat}
+
+\end{multicols}
+	
+
+	
+\end{frame}
+
+%%
+
+\begin{frame}{Intrasexual selection can be indirect}
+\backskip
+
+\begin{multicols}{2}
+\hangpara Territories that limit movement.
+
+\hangpara External mechanisms that prevent copulation.
+
+\hangpara Internal mechanisms post-copulation.
+
+\columnbreak
+
+\centering
+
+\includegraphics[width=0.65\linewidth]{sex_mating_damselflies}
+
+\smallskip
+
+\includegraphics[width=0.65\linewidth]{sex_damselfly_penis}
+
+\end{multicols}
+	
+\end{frame}
+
+%%
+
+\begin{frame}{Female choice for male traits can be counteracted by other selective pressures.}
+
+\backskip
+
+\includegraphics[width=\linewidth]{sex_trinidad_guppies}
+
+\end{frame}
+
+%%
+
+\begin{frame}{Predators may cue in on same cues that females prefer.}
+
+\includegraphics[width=\linewidth]{sex_tungara_frogs}
+
+\tinyfill \href{https://www.smithsonianmag.com/science-nature/frogs-mating-call-also-attracts-predators-180949463/}{Audio of Tungara frogs calls.}
+\end{frame}
+
+%%
+
+\begin{frame}{Some females may be able to retain choice at the cellular level.}
+
+\backskip
+
+\begin{multicols}{2}
+
+\hangpara Multiple sperm enter egg of \textit{Beroë} (a comb jelly).
+
+\hangpara The egg pronuclei (red) visits all sperm pronuclei (black), then fuses with one.
+
+\columnbreak
+
+\vspace*{-2.5\baselineskip}\includegraphics[width=0.85\linewidth]{sex_beroe}
+
+\end{multicols}
+
+\vfilll
+
+\tiny Birkhead T.~2000. Promiscuity. Harvard Press.
+
+\end{frame}
+
+%%
+
+\begin{frame}{Why does sexual selection cause secondary sexual traits?}
+
+\hangpara \highlight{Direct benefits:} males display obvious benefits to female or her offspring.
+
+\hangpara \highlight{Indirect benefits:} Runaway sexual selection or good genes.
+
+\hangpara \highlight{Sensory bias:} females have an existing bias for trait, males later evolve trait.
+
+\hangpara \highlight{Sensory drive:} females prefer traits that standout from the background.
+
+\hangpara \highlight{Antagonistic coevolution:} conflicting self-interest leads to battle of the sexes.
+
+\end{frame}
+
+%%
+
+\begin{frame}{\highlight{Direct benefits:} males display obvious benefits to female or her offspring.}
+
+\backskip
+\begin{multicols}{2}
+
+\centering
+
+\includegraphics[width=\linewidth]{sex_bower}
+
+{\small Bower of Satin Bowerbird}
+
+\columnbreak
+
+\includegraphics[width=0.93\linewidth]{sex_hofi}
+
+\smallskip
+
+\includegraphics[width=0.93\linewidth]{sex_hofi_feeding}
+
+{\small House Finch}
+
+\end{multicols}
+
+\end{frame}
+
+
+%%
+
+\begin{frame}{\highlight{Runaway sexual selection} occurs if female preference is linked to male trait.}
+
+\vspace*{-\baselineskip}
+
+\includegraphics[width=\linewidth]{sex_runaway_selection}
+
+\end{frame}
+
+%%
+
+\begin{frame}{\highlight{Good genes:} Males sport traits that are energetically or ecologically costly.}
+
+\vspace{-\baselineskip}
+
+\begin{multicols}{2}
+
+\includegraphics[width=\linewidth]{sex_rnph}
+
+\smallskip
+
+\includegraphics[width=\linewidth]{sex_rnph_spurs}
+
+\columnbreak
+
+\begin{tabular}{@{}R{2cm}cc@{}}
+\toprule
+& \multicolumn{2}{c}{Genetic quality} \tabularnewline
+\cmidrule{2-3}
+Male traits & Good & Bad \tabularnewline
+\midrule
+Short tail (cheap) & Alive & Alive \tabularnewline
+Long tail (costly) & \highlight{Alive} & Dead \tabularnewline
+\bottomrule
+\end{tabular}
+
 \end{multicols}
 
 \end{frame}
 
 %%
 
-\begin{frame}{Sequential hermaphroditism can be \highlight{protogynous} or \highlight{protandrous.}}
+\begin{frame}{\highlight{Sensory bias} is when females have a pre-existing bias for a particular trait.}
 
+\backskip
 
-\includegraphics[width=\linewidth]{sex_sequential_hermaphroditism}
-
-\vfilll
-
-\tinyfill \textcopyright\,2005 Sinauer Associates, Inc.
+\includegraphics[width=\linewidth]{sex_sensory_bias}
 
 \end{frame}
 
 %%
 
+\begin{frame}{\highlight{Sensory drive} is a male response to female perception of signal relative to environment.}
+
+\hangpara Females prefer conspicuous signals that standout from the environment.
+
+\hangpara Perceptual sensitivity varies among environments.
+e.g., ability to perceive color varies with light regime
+
+\hangpara Male signals that match female perception are favored.
+
+\end{frame}
+
+%%
+
+\begin{frame}
+\begin{multicols}{2}
+
+\includegraphics[width=\linewidth]{sex_phylloscopus}
+
+\columnbreak
+
+\includegraphics[width=\linewidth]{sex_phylloscopus_graphs}
+
+\end{multicols}
+
+\begin{tikzpicture}
+\draw [->, ultra thick] (5.8,7.74) to (7.7,7.74);
+\draw [->, ultra thick] (5.8,2.35) to (9.65,2.62);
+\end{tikzpicture}
+
+
+\vfilll
+
+\tiny Martin Vavrik, Wikimedia (upper). David Cook, Flickr (lower)
+\end{frame}
+
+
+%%
+
+
+\begin{frame}{\highlight{Antagonistic coevolution} results from sexual conflict due to anisogamy.}
+
+\hangpara Females produce few, large eggs that are energetic costly.
+
+\hangpara Male produce many small sperm that are energetically cheap.
+
+\end{frame}
+
+%%
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{sex_social_monogamy}}
+\begin{frame}{\textcolor{white}{Are monogamous birds really monogamous?}}
+
+\vfilll
+
+\tiny \textcolor{white}{Sandysphotos2009, Wikimedia}
+\end{frame}
+}
+
+%%
+
+\begin{frame}{Flatworm penis fencing: a courtship duel.}
+
+\backskip
+
+\centering
+
+\includegraphics[width=0.95\linewidth]{sex_penis_fencing}
+
+\vfilll
+
+\tiny \href{http://www.youtube.com/watch?v=5fx-YgcP8Gg}{Link to video} \hfill Nico Michiels, University Tuebingen
+
+
+\end{frame}
+
+%%
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{sex_aggressive_mallards}}
+\begin{frame}
+
+\vfilll
+
+\tiny \href{https://www.youtube.com/watch?v=dQs1cw25dqw}{Link to video} \hfill AnemoneProjectors, Wikimedia
+\end{frame}
+}
+
+%%
+
+\begin{frame}
+
+\begin{multicols}{2}
+
+\centering
+
+\includegraphics[height=0.85\textheight]{sex_duck_penis}
+
+\columnbreak
+
+\includegraphics[height=0.85\textheight]{sex_duck_genitalia}
+
+\end{multicols}
+
+\vfilll
+
+\tiny McCracken et al. 2001. Nature 413: 128\hfill 
+Brennan et al. 2007. PLoS ONE 2(5):e418. 
+
+\end{frame}
+
+%%
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{sex_suicide}}
+\begin{frame}
+
+\begin{tikzpicture}
+\node at (2.5,-2) [text width=2cm] {\LARGE Sexual \highlight{suicide.}};
+\end{tikzpicture}
+
+
+\tinyfill Australian redback spider by Tony Hudson, Wikimedia Commons.
+\end{frame}
+}
+
+%%
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{sex_cannibalism}}
+\begin{frame}
+
+
+\begin{tikzpicture}
+\node at (4.5,-0.7) [text width=3.2cm] {\LARGE \textcolor{white}{Sexual}\\ \highlight{cannibalism.}};
+\end{tikzpicture}
+
+
+\vfilll
+
+\tiny \textcolor{white}{Oliver Koemmerling, Wikimedia Commons.\hfill \href{http://www.youtube.com/watch?v=KYp_Xi4AtAQ}{Link to video} \hfill \phantom{.}} 
+
+\end{frame}
+}
+
+%%
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{sex_humans}}
+\begin{frame}{\textcolor{white}{Does sexual selection occur in humans?}}
+
+%\vfilll
+
+\tinyfill AnemoneProjectors, Wikimedia
+\end{frame}
+}
+
+
+%%
 
 \end{document}
 
