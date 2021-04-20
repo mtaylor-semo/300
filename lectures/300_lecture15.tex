@@ -1,0 +1,384 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[t]{beamer}
+
+%%%% HANDOUTS For online Uncomment the following four lines for handout
+%\documentclass[t,handout]{beamer}  %Use this for handouts.
+%\usepackage{handoutWithNotes}
+%\includeonlylecture{student}
+%\pgfpagesuselayout{3 on 1 with notes}[letterpaper,border shrink=5mm]
+
+%\usefonttheme{professionalfonts}
+
+
+%%% Including only some slides for students.
+%%% Uncomment the following line. For the slides,
+%%% use the labels shown below the command.
+
+%% For students, use \lecture{student}{student}
+%% For mine, use \lecture{instructor}{instructor}
+
+% FONTS
+\usepackage{fontspec}
+\def\mainfont{Linux Biolinum O}
+\setmainfont[Ligatures={Common, TeX}, Contextuals={NoAlternate}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={Proportional, OldStyle}]{\mainfont}
+%\setmonofont[Scale=MatchLowercase]{Inconsolata} 
+\setsansfont[Scale=MatchLowercase]{Linux Biolinum O} 
+\setmonofont{Linux Libertine Mono O}
+
+\usepackage{microtype}
+
+\parindent=0pt
+
+\usepackage{unicode-math}
+\setmathfont[Scale=MatchLowercase]{Asana Math}
+
+\usepackage{graphicx}
+	\graphicspath{%
+	{/Users/goby/Pictures/teach/300/lectures/}%
+	{/Users/goby/Pictures/teach/163/lecture/}} % set of paths to search for images
+
+\usepackage{amsmath,amssymb}
+
+%\usepackage{units}
+
+\usepackage{booktabs}
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+
+
+\usepackage{multicol}
+%	\setlength{\columnsep=1em}
+\usepackage{enumitem}
+\usepackage{textcomp}
+\usepackage{setspace}
+\usepackage{tikz}
+	\tikzstyle{every picture}+=[remember picture,overlay]
+	\usetikzlibrary{arrows, arrows.meta}
+	\usetikzlibrary{positioning, backgrounds}
+
+\usepackage{forest}
+\forestset{
+    every leaf node/.style={
+        if n children=0{#1}{}
+    },
+    every tree node/.style={
+        if n children=0{}{#1}
+    },
+    mytree/.style={
+        for tree={
+            edge path={
+            \noexpand\path [draw, very thick, \forestoption{edge}] (!u.parent anchor) |- (.child anchor)\forestoption{edge label};
+            },
+            every tree node={draw=none,inner sep=0, outer sep=0, minimum size=0},
+            every leaf node/.style={align=left},
+            grow=east,
+            parent anchor=east, 
+            child anchor=west,
+            anchor=west,
+            l sep=5mm,
+            s sep=3mm,
+            draw=none,
+    			if n children=0{tier=word}{}
+        }
+    }
+}
+
+\mode<presentation>
+{
+  \usetheme{Lecture}
+  \setbeamercovered{invisible}
+  \setbeamertemplate{items}[square]
+}
+
+\usepackage{calc}
+\usepackage{hyperref}
+
+\newcommand\HiddenWord[1]{%
+	\alt<handout>{\rule{\widthof{#1}}{\fboxrule}}{#1}%
+}
+
+
+\usepackage{xifthen}
+\newcommand{\futuyma}[1]{%
+	\ifthenelse{\isempty{#1}}%
+	{Futuyma \& Kirkpatrick 2017, 4th ed.}%
+	{Fig.~#1~Futuyma \& Kirkpatrick 2017, 4th ed.}%
+}
+
+% This defines \amper for the fancy ampersand
+% to be used in the header. See
+% https://tex.stackexchange.com/a/58185/39194
+\usepackage{xspace}
+\newfontfamily\amperfont[Style=Alternate]{Linux Libertine O}    
+\makeatletter
+\DeclareRobustCommand{\amper}{{\amperfont\ifx\f@shape\scname\smaller[1.2]\fi\&}\xspace}
+\makeatother
+
+\newcommand{\backskip}{\vspace{-0.5\baselineskip}}
+
+%% Remove indent from multicol.
+\parindent=0pt
+
+\begin{document}
+
+\lecture{student}{student}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{macro_intro}}
+\begin{frame}[b]
+
+\vfilll
+
+\tiny  \textcolor{white}{\futuyma{}}
+\end{frame}
+}
+
+%%
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{macroevolution_dinosaurs} }
+\begin{frame}{\highlight{Macroevolution} is broad evolutionary changes over time between different lineages.}
+\end{frame}
+}
+
+\begin{frame}{\highlight{Macroevolution} happens because of microevolution.}
+
+	\centering
+	\begin{tikzpicture}
+		[remember picture, overlay,
+		myLine/.style={color=black,very thick},
+		myArrow/.style={color=orange6, thick, ->}]
+
+			\draw [myLine] (-3,-2) -- (0,-2);
+			\draw [myLine] (0,-2) -- (0,-0.7); % vertical lines
+			\draw [myLine] (0,-2) -- (0,-3.3);
+			\draw [myLine] (0,-0.7) -- (3,-0.7); % descendants
+			\draw [myLine] (0,-3.3) -- (3,-3.3); 
+
+		% Draw the tree:
+		
+			\draw [myLine] (-3,-2) -- (0,-2); % ancestor
+
+			\draw [myLine] (0,-2) -- (0,-0.7); % vertical lines
+			\draw [myLine] (0,-2) -- (0,-3.3);
+		
+			\draw [myLine] (0,-0.7) -- (3,-0.7); % descendants
+			\draw [myLine] (0,-3.3) -- (3,-3.3); 
+
+		% Ancestor microevolution
+			\node [color=blue6] at (-1.5,-1.8) {Microevolution}; % ancestor
+	
+		% Speciation
+		%	\node [color=orange6] (speciation) at (-1.5,-3.1) {Speciation};
+		%	\node [circle, draw=orange6, thick, minimum size=3mm] (speccirc) at (0,-2) {};
+		%	\draw [color=orange6, thick] (speciation) edge (speccirc);
+		
+		
+		% Descendant microevolution
+			\node [color=blue6] at (1.5,-0.5) {Microevolution}; % descendants
+			\node [color=blue6] at (1.5,-3.5) {Microevolution};
+
+		% Macroevolution
+			\node [color=orange6] (macro) at (1.7,-2) {Macroevolution};
+			\draw [myArrow] (macro.north) to (1.7,-0.8);
+			\draw [myArrow] (macro.south) to (1.7,-3.2);
+
+	\end{tikzpicture}
+
+\end{frame}
+
+%%
+
+\begin{frame}
+
+\centering
+
+\includegraphics[height=0.93\textheight]{evodevo_hox_phylogeny}
+
+\tinyfill Carroll et al., 2001. \textit{From DNA to Diversity.}
+\end{frame}
+
+%%
+
+
+\begin{frame}{Body plan complexity increased via \emph{Hox} expansion and co-option.}
+
+\backskip
+
+\centering
+
+\includegraphics[width=0.88\linewidth]{macro_hox_expansion}
+
+\tinyfill Peterson \& Davidson 2000. PNAS 97:4430.
+
+\end{frame}
+
+%%
+
+\begin{frame}{Jaws evolved before transition to land.}
+\backskip
+
+\centering
+
+\includegraphics[width=0.83\linewidth]{macro_jaws_first}
+
+\end{frame}
+%%
+
+\begin{frame}{Jaws evolved by specialization of toolkit genes.}
+
+%\backskip
+
+\centering
+
+\includegraphics[width=\linewidth]{macro_jaws_toolkit}
+
+\tinyfill Kuratani 2004. J Anat 205:335. Mehta \& Wainwright 2007. Nature 449:79.
+
+\end{frame}
+%%
+
+\begin{frame}{\highlight{CaM1} and \highlight{BMP4} influence jaw morphology of vertebrates.}
+
+\backskip
+
+\centering
+
+\includegraphics[width=0.95\linewidth]{macro_jaws_cam1}
+
+\tinyfill Parson \& Albertson 2009. Annu Rev Genet 43:369
+
+\end{frame}
+%%
+
+\begin{frame}{Bill shape influenced by \highlight{CaM1} and \highlight{BMP4.}}
+
+\backskip
+
+\centering
+
+\includegraphics[height=0.82\textheight]{macro_bill_shape}
+
+\tinyfill Abzhanov et al.~2004 Science 305:1462. Abzhanov et al.~2006 Nature 442:563.
+
+\end{frame}
+
+%%
+
+\begin{frame}{\highlight{CaM1} correlated with jaw width in fishes.}
+
+\backskip
+
+\centering
+
+\includegraphics[height=0.82\textheight]{macro_jaw_width}
+
+\tinyfill Parson \& Albertson 2009. Annu Rev Genet 43:369
+
+
+\end{frame}
+
+
+%%
+
+\begin{frame}{Tetrapod limbs evolved via co-option of Hox genes.}
+
+\backskip
+
+\centering
+
+\includegraphics[height=0.82\textheight]{macro_hox_limbs}
+
+\tinyfill \futuyma{15.12}
+
+\end{frame}
+
+%%
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{macro_hox_limbs_colinear}}
+\begin{frame}[b]
+
+\tinyfill Modified from Shubin et al.~1997. Nature 388:639
+
+\end{frame}
+}
+
+%%
+
+\begin{frame}{Homologous toolkit genes control limb patterning for arthropods and vertebrates.}
+
+\backskip
+
+\centering
+
+\includegraphics[width=\linewidth]{macro_animal_appendages}
+
+\tinyfill Shubin et al.~1997. Nature 388:639
+
+\end{frame}
+
+%%
+
+\begin{frame}
+
+\centering
+
+\includegraphics[height=0.95\textheight]{macro_therapod_phylogeny}
+
+\end{frame}
+
+%%
+
+\begin{frame}{\highlight{Heterotopy} is an evolutionary change in the spatial position of a character.}
+
+{\centering
+
+\includegraphics[width=\linewidth]{futuyma_fig20-7}
+}
+
+\hangpara The gene networks for condensations 2–4 in therapods shift to form digits 2–4 in birds.
+\tinyfill \futuyma{20.7}
+
+\end{frame}
+
+%%
+
+
+\begin{frame}{\highlight{Shh} and \highlight{Bmp2} determine growth of alligator and bird scales, and feathers.}
+
+\backskip
+
+\includegraphics[width=\linewidth]{macro_scales_feathers}
+
+
+\tinyfill Harris et al.~2002. J Exp Zool 294:160
+
+\end{frame}
+
+%%
+
+\begin{frame}{Would the same toolkit genes determine growth of mammalian hair?}
+
+\backskip
+
+\includegraphics[width=\linewidth]{macro_toolkit_feathers}
+
+\vfilll
+
+\tiny Chang et al.~2009. Int J Dev Biol 53:813\hfill Widelitz et al.~2003. J Exp Zool 298B:109
+
+
+
+\end{frame}
+
+
+
+%%
+
+\end{document}
+
+
