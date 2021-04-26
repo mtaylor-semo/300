@@ -1,0 +1,508 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[t]{beamer}
+
+%%%% HANDOUTS For online Uncomment the following four lines for handout
+%\documentclass[t,handout]{beamer}  %Use this for handouts.
+%\usepackage{handoutWithNotes}
+%\includeonlylecture{student}
+%\pgfpagesuselayout{3 on 1 with notes}[letterpaper,border shrink=5mm]
+
+%\usefonttheme{professionalfonts}
+
+
+%%% Including only some slides for students.
+%%% Uncomment the following line. For the slides,
+%%% use the labels shown below the command.
+
+%% For students, use \lecture{student}{student}
+%% For mine, use \lecture{instructor}{instructor}
+
+% FONTS
+\usepackage{fontspec}
+\def\mainfont{Linux Biolinum O}
+\setmainfont[Ligatures={Common, TeX}, Contextuals={NoAlternate}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={Proportional, OldStyle}]{\mainfont}
+%\setmonofont[Scale=MatchLowercase]{Inconsolata} 
+\setsansfont[Scale=MatchLowercase]{Linux Biolinum O} 
+\setmonofont{Linux Libertine Mono O}
+
+\usepackage{microtype}
+
+\parindent=0pt
+
+\usepackage{unicode-math}
+\setmathfont[Scale=MatchLowercase]{Asana Math}
+
+\usepackage{graphicx}
+	\graphicspath{%
+	{/Users/goby/Pictures/teach/300/lectures/}%
+	{/Users/goby/Pictures/teach/438/lectures/}} % set of paths to search for images
+
+\usepackage{amsmath,amssymb}
+
+%\usepackage{units}
+
+\usepackage{booktabs}
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+
+
+\usepackage{multicol}
+%	\setlength{\columnsep=1em}
+\usepackage{enumitem}
+\usepackage{textcomp}
+\usepackage{setspace}
+\usepackage{tikz}
+	\tikzstyle{every picture}+=[remember picture,overlay]
+\usetikzlibrary{arrows}
+
+\mode<presentation>
+{
+  \usetheme{Lecture}
+  \setbeamercovered{invisible}
+  \setbeamertemplate{items}[square]
+}
+
+\usepackage{calc}
+\usepackage{hyperref}
+
+\newcommand\HiddenWord[1]{%
+	\alt<handout>{\rule{\widthof{#1}}{\fboxrule}}{#1}%
+}
+
+
+\usepackage{xifthen}
+\newcommand{\futuyma}[1]{%
+	\ifthenelse{\isempty{#1}}%
+	{Futuyma \& Kirkpatrick 2017, 4th ed.}%
+	{Fig.~#1~Futuyma \& Kirkpatrick 2017, 4th ed.}%
+}
+
+% This defines \amper for the fancy ampersand
+% to be used in the header. See
+% https://tex.stackexchange.com/a/58185/39194
+\usepackage{xspace}
+\newfontfamily\amperfont[Style=Alternate]{Linux Libertine O}    
+\makeatletter
+\DeclareRobustCommand{\amper}{{\amperfont\ifx\f@shape\scname\smaller[1.2]\fi\&}\xspace}
+\makeatother
+
+\newcommand{\backskip}{\vspace{-0.5\baselineskip}}
+
+%% Remove indent from multicol.
+\parindent=0pt
+
+\begin{document}
+
+\lecture{student}{student}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{biogeo_intro}}
+\begin{frame}[b]
+
+%\tinyfill  \textcolor{white}{\futuyma{}}
+\end{frame}
+}
+
+%%
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{regions_terrestrial}}
+\begin{frame}{Eight \highlight{biogeographic realms} are recognized.}
+
+\tinyfill Modified from \futuyma{18.2}
+\end{frame}
+}
+
+
+%%
+
+\begin{frame}{Higher level taxa are usually \highlight{endemic} to a realm.}
+
+\backskip
+
+\includegraphics[width=\linewidth]{futuyma_fig18-3}
+	
+
+\tinyfill \futuyma{18.3}
+
+\end{frame}
+
+%%
+
+\begin{frame}{Realms are divided into \highlight{provinces}.}
+
+\backskip
+
+\centering
+
+\includegraphics[height=0.83\textheight]{regions_north_american_provinces}
+	
+
+\tinyfill \textcopyright\,Lomolino et al.~2005. \emph{Biogeography}
+
+\end{frame}
+
+
+%%
+
+\begin{frame}{Species ranges are endemic at smaller scales.}
+
+\backskip
+
+\includegraphics[height=0.83\textheight]{range_marmota}
+	
+
+\tinyfill \textcopyright\,Lomolino et al.~2005. \emph{Biogeography}
+
+
+\end{frame}
+
+%
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{range_allopatric}}
+\begin{frame}[t]{Closely related species have \highlight{allopatric} distributions.}
+
+\tinyfill \textcopyright\,Lomolino et al.~2005. \emph{Biogeography}
+
+\end{frame}
+}
+%
+%
+
+\begin{frame}{Ranges are hierarchical at higher taxonomic levels.}
+
+\backskip
+
+\centering 
+
+\includegraphics[height=0.83\textheight]{regions_endemism_hierarchy}
+	
+
+\tinyfill \textcopyright\,Lomolino et al.~2005. \emph{Biogeography}
+
+
+\end{frame}
+
+
+%
+%%
+
+\begin{frame}{Some taxa expand their range by \highlight{dispersal.}}
+
+\backskip
+
+\centering
+
+\includegraphics[height=0.83\textheight]{dispersal_jump_diffusion}
+	
+
+\tinyfill \textcopyright\,Lomolino et al.~2005. \emph{Biogeography}
+
+\end{frame}
+
+%%
+
+\begin{frame}{Humans have caused some range expansion.}
+
+\backskip
+
+\centering
+
+\includegraphics[height=0.83\textheight]{futuyma_fig18-5}
+	
+
+\tinyfill \futuyma{18.5}
+
+\end{frame}
+
+%%
+
+\begin{frame}{Some taxa have a \highlight{disjunt} distribution.}
+
+\backskip
+
+\centering
+
+\includegraphics[height=0.83\textheight]{futuyma_fig18-4}
+	
+
+\tinyfill \futuyma{18.4}
+
+\end{frame}
+%%
+
+\begin{frame}{Disjunct distributions can be caused by \highlight{vicariance.}}
+
+\backskip
+
+\centering
+
+\includegraphics[height=0.83\textheight]{vicariance_reptile_mammals}
+	
+
+\tinyfill \textcopyright\,Lomolino et al.~2005. \emph{Biogeography}
+
+\end{frame}
+
+%%
+
+\begin{frame}{Many modern taxa have vicariant distributions.}
+
+\backskip
+
+\centering
+
+\includegraphics[width=\linewidth]{vicariance_ratites}
+	
+
+\tinyfill \textcopyright\,Lomolino et al.~2005. \emph{Biogeography}
+
+\end{frame}
+
+
+%%
+
+\begin{frame}{Vicariance is reflected in phylogenetic trees.}
+
+\backskip
+
+\centering
+
+\includegraphics[width=\linewidth]{futuyma_fig18-9}
+	
+\tinyfill \futuyma{18.9}
+
+\end{frame}
+
+%%
+
+\begin{frame}{Dispersal can also be reflected in phylogenetic trees.}
+
+\backskip
+
+\centering
+
+\includegraphics[height=0.83\textheight]{futuyma_fig18-12}
+	
+\tinyfill \futuyma{18.12}
+
+\end{frame}
+
+%%
+
+\begin{frame}{\highlight{Phylogeography} studies the geographic distribution of gene lineages.}
+
+\backskip
+
+\centering
+
+\includegraphics[height=0.79\textheight]{futuyma_fig18-13}
+	
+\tinyfill \futuyma{18.13}
+
+\end{frame}
+
+%%
+
+\begin{frame}{Gene lineages are not always resolved by phylogenies.}
+
+\backskip
+
+\centering
+
+\includegraphics[height=0.83\textheight]{biogeo_gene_phylogeny}
+	
+\tinyfill Guo et al.~2019. Korean J Parasitol 57:153
+
+\end{frame}
+
+%%
+
+\begin{frame}{Gene lineages can be represented as a network.}
+
+\backskip
+
+\centering
+
+\includegraphics[height=0.83\textheight]{biogeo_gene_network}
+	
+\tinyfill Guo et al.~2019. Korean J Parasitol 57:153
+
+\end{frame}
+
+
+
+%%
+
+\begin{frame}{Phylogeography reflects evolutionary history, such as refugia and range expansion.}
+
+\backskip
+	\begin{columns}[T]
+		\begin{column}{0.6\textwidth}
+			\includegraphics[width=0.9\textwidth]{pleistocene_macgillivray_range} %\hspace*{1cm}
+		\end{column}
+		\begin{column}{0.4\textwidth}
+			\includegraphics[width=0.9\textwidth]{pleistocene_macgillivray_picture}
+		\end{column}
+	\end{columns}
+	\begin{tikzpicture}[overlay, line width=2pt]
+		\draw [<-] (1.7,1.5) -- (0.3,1.5) ;
+	\end{tikzpicture}
+	\vspace{\baselineskip}
+	
+	Is the breeding resident population of MacGillivray's Warbler in Mexico a refugial population?
+	
+\end{frame}
+%
+\lecture{instructor}{instructor}
+{\setbeamercolor{background canvas}{bg=black}
+\begin{frame}[plain]
+%	Placeholder to work out parsimony network
+\end{frame}}
+%
+\lecture{student}{student}
+\begin{frame}{\highlight{Parsimony network} supports refuge and range expansion for MacGillivray's Warbler.}
+	\vspace{-\baselineskip}
+	\begin{center}
+		\includegraphics[width=0.9\textwidth]{pleistocene_macgillivray_network}
+	\end{center}
+\end{frame}
+
+%%
+
+\begin{frame}{Similar patterns of divergence suggest shared biogeographic histories.}
+
+%\backskip
+
+\centering
+
+\includegraphics[width=\linewidth]{futuyma_fig18-14}
+	
+\tinyfill \futuyma{18.13}
+
+\end{frame}
+
+%%
+
+\begin{frame}{Ecologically similar species are allopatric. Dissimilar species can be sympatric.}
+
+\backskip
+
+\begin{multicols}{2}
+\includegraphics[width=\linewidth]{biogeo_morpho_divergence}
+
+\columnbreak
+
+\includegraphics[width=\linewidth]{futuyma_fig18-16}
+\end{multicols}
+
+\vfilll
+	
+\tiny Pigot \& Tobias 2013. Ecology Letters 16:330 \hfill \futuyma{18.16}
+
+\end{frame}
+
+%
+
+\begin{frame}{Taxa show a \highlight{latitudinal diversity gradient.}}
+
+%\backskip
+
+\centering
+
+\includegraphics[width=\linewidth]{futuyma_fig18-18}
+	
+	
+\begin{tikzpicture}
+
+\node at (-1,6) [text width=3.5cm] {Diversity is greatest in the tropics.};
+\end{tikzpicture}
+	
+\tinyfill \futuyma{18.18}
+
+\end{frame}
+
+%
+\begin{frame}[t,plain]{\highlight{Net primary productivity} is highest in the tropics.}
+
+\backskip
+\centering
+		\includegraphics[width=\textwidth]{diversity_gradient_npp}
+\end{frame}
+%
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{diversity_gradient_niche_conservatism_phylogeny}}
+\begin{frame}[t]{Oldest lineages are tropical. Younger lineages are temperate.}
+
+
+	\vfilll
+
+	\tiny \hfill Fig.~14.55\,\textcopyright Sinauer Associates, Inc.
+\end{frame}
+}
+
+%%
+
+\begin{frame}{The oldest tree frog lineages are tropical.}
+
+%\backskip
+
+\centering
+
+\includegraphics[width=\linewidth]{futuyma_fig18-20}
+	
+\tinyfill \futuyma{18.20}
+
+\end{frame}
+
+%
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{diversity_gradient_out_of_tropics}}
+\begin{frame}[t]{Tropics serve as cradle, museum, and immigration pump.}
+
+
+	\vfilll
+
+	\tiny \hfill Fig.~14.56\,\textcopyright Sinauer Associates, Inc.
+\end{frame}
+}
+
+
+%%
+
+\begin{frame}[t]{More marine bivalves tended to evolve first in tropics.}
+	\begin{center}
+		\includegraphics[width=\textwidth]{diversity_gradient_oot_first_occurrence}
+	\end{center}
+	
+	\vfilll
+	
+	\hfill \tiny Jablonski et al. 2013. Proc. Natl. Acad. Sci. 110: 10487.
+\end{frame}
+%
+\begin{frame}[t]{Marine bivalves appear later in temperate zones.}
+	\vspace{-\baselineskip}
+	\begin{center}
+		\includegraphics[height=0.75\textheight]{diversity_gradient_oot_first_occurrence2}
+	\end{center}
+	
+	\vfilll
+	
+	\hfill \tiny Jablonski et al. 2013. Proc. Natl. Acad. Sci. 110: 10487.
+\end{frame}
+%
+
+\begin{frame}{Diversity on “islands” varies by \highlight{area and isolation.}}
+	\centering
+		\includegraphics[height=0.8\textheight]{island_equilibrium}
+\end{frame}
+
+
+%%
+\end{document}
+
+
