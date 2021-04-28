@@ -1,0 +1,678 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[t]{beamer}
+
+%%%% HANDOUTS For online Uncomment the following four lines for handout
+%\documentclass[t,handout]{beamer}  %Use this for handouts.
+%\usepackage{handoutWithNotes}
+%\includeonlylecture{student}
+%\pgfpagesuselayout{3 on 1 with notes}[letterpaper,border shrink=5mm]
+
+\usefonttheme{professionalfonts}
+
+
+%%% Including only some slides for students.
+%%% Uncomment the following line. For the slides,
+%%% use the labels shown below the command.
+
+%% For students, use \lecture{student}{student}
+%% For mine, use \lecture{instructor}{instructor}
+
+% FONTS
+\usepackage{fontspec}
+\def\mainfont{Linux Biolinum O}
+\setmainfont[Ligatures={Common, TeX}, Contextuals={NoAlternate}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={Proportional, OldStyle}]{\mainfont}
+%\setmonofont[Scale=MatchLowercase]{Inconsolata} 
+\setsansfont[Scale=MatchLowercase]{Linux Biolinum O} 
+\setmonofont{Linux Libertine Mono O}
+
+\usepackage{microtype}
+
+\usepackage{unicode-math}
+\setmathfont[Scale=MatchLowercase]{Asana Math}
+
+\usepackage{graphicx}
+	\graphicspath{%
+	{/Users/goby/Pictures/teach/300/lectures/}%
+	{/Users/goby/Pictures/teach/438/lectures/}} % set of paths to search for images
+
+\usepackage{amsmath,amssymb}
+
+%\usepackage{units}
+\usepackage{mhchem}
+\usepackage{booktabs}
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+
+
+\usepackage{multicol}
+%	\setlength{\columnsep=1em}
+\usepackage{enumitem}
+\usepackage{textcomp}
+\usepackage{setspace}
+\usepackage{tikz}
+	\tikzstyle{every picture}+=[remember picture,overlay]
+\usetikzlibrary{arrows}
+
+\mode<presentation>
+{
+  \usetheme{Lecture}
+  \setbeamercovered{invisible}
+  \setbeamertemplate{items}[square]
+}
+
+\usepackage{calc}
+\usepackage{hyperref}
+
+\newcommand\HiddenWord[1]{%
+	\alt<handout>{\rule{\widthof{#1}}{\fboxrule}}{#1}%
+}
+
+
+\usepackage{xifthen}
+\newcommand{\futuyma}[1]{%
+	\ifthenelse{\isempty{#1}}%
+	{Futuyma \& Kirkpatrick 2017, 4th ed.}%
+	{Fig.~#1~Futuyma \& Kirkpatrick 2017, 4th ed.}%
+}
+
+% This defines \amper for the fancy ampersand
+% to be used in the header. See
+% https://tex.stackexchange.com/a/58185/39194
+\usepackage{xspace}
+\newfontfamily\amperfont[Style=Alternate]{Linux Libertine O}    
+\makeatletter
+\DeclareRobustCommand{\amper}{{\amperfont\ifx\f@shape\scname\smaller[1.2]\fi\&}\xspace}
+\makeatother
+
+\newcommand{\backskip}{\vspace{-0.5\baselineskip}}
+
+%% Remove indent from multicol.
+\parindent=0pt
+
+\begin{document}
+
+\lecture{student}{student}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{diversity_intro}}
+\begin{frame}[b]
+
+%\tinyfill  \textcolor{white}{\futuyma{}}
+\end{frame}
+}
+
+%%
+
+\begin{frame}{Fossil formation requires specific conditions.}
+
+\backskip
+
+\includegraphics[height=0.83\textheight]{diversity_fossil_formation}
+	
+
+\tinyfill \textcopyright Zimmer and Emlen, 2015. \textit{Evolution}
+
+\end{frame}
+
+%%
+
+
+\begin{frame}{The fossil record will always be incomplete.}
+
+\backskip
+
+\begin{multicols}{2}
+
+\hangpara Some periods are poorly represented.
+
+\hangpara Many lineages represented only by early and late stages.
+
+\hangpara Some taxa known from few specimens.
+
+\columnbreak
+
+\centering
+\noindent\includegraphics[width=\linewidth]{diversity_brachiopod}\\
+Brachiopod\,—\,early Permian
+
+\end{multicols}
+
+\end{frame}
+
+%%
+
+\begin{frame}{The fossil record has three types of bias.}
+
+\backskip
+
+\begin{multicols}{2}
+
+\hangpara \highlight{Geographic:} most fossils come from lowland or marine habitats.
+
+
+\hangpara \highlight{Taxonomic:} many species lack hard parts.
+
+
+\hangpara \highlight{Temporal:} Older geologic formations tend to be obscured.
+
+\columnbreak
+
+\centering
+\noindent\includegraphics[width=0.7\linewidth]{diversity_fossil_fish}
+
+\smallskip
+
+\noindent\includegraphics[width=0.7\linewidth]{diversity_fossil_insect}\\
+fishes and insect\,—\,Eocene
+
+\end{multicols}
+
+\end{frame}
+
+
+%%
+
+\begin{frame}{\highlight{Diversification rate $\left(D\right)$} in the fossil record can be calculated by:}
+
+\vspace*{-2\baselineskip}
+
+{\Large
+\begin{equation*}
+D = S - E
+\end{equation*}
+}% LARGE
+
+%\bigskip
+
+\hangpara $S =$ speciation (origination of new taxa),and\\
+$E =$ extinction of existing taxa.
+
+\medskip
+
+
+\hangpara If $D > 0$, then diversity increases. 
+
+\hangpara If $D < 0$, then diversitydecreases.
+
+\end{frame}
+
+%%
+
+\begin{frame}{The rate of change for taxa \emph{per unit time} is}
+
+\vspace*{-\baselineskip}
+
+{\Large
+\begin{equation*}
+\dfrac{\Delta N}{\Delta T} = \left(S - E\right)N = DN
+\end{equation*}
+}% LARGE
+
+%\bigskip
+
+\hangpara $N =$ number of current taxa.
+
+
+\end{frame}
+
+%%
+
+\begin{frame}{Marine diversity has increased over the last 600 \textsc{mya}$\dots$}
+
+\backskip
+
+\centering
+
+\includegraphics[height=0.83\textheight]{diversity_marine}
+	
+\tinyfill See \futuyma{19.4}
+
+\end{frame}
+
+%%
+
+\begin{frame}{$\dots$as has terrestrial diversity.}
+
+\backskip
+
+\begin{multicols}{2}
+
+\centering
+
+\includegraphics[width=0.9\linewidth]{diversity_insects}
+
+\smallskip
+
+\includegraphics[width=0.9\linewidth]{diversity_tetrapods}
+
+\columnbreak
+
+\includegraphics[width=0.9\linewidth]{diversity_plants}
+\end{multicols}
+
+\tinyfill \textcopyright Sinauer Assoc.~2005.
+\end{frame}
+
+%%
+
+\begin{frame}{Have origination and extinction rates changed over time?}
+
+\backskip
+
+\includegraphics[width=\linewidth]{diversity_orig_ext}
+	
+\tinyfill \textcopyright Zimmer and Emlem, 2015. \textit{Evolution}
+
+\end{frame}
+
+
+%%
+
+
+\begin{frame}{Origination rates $\left(S\right)$ have tended to decrease.}
+
+\backskip
+
+\centering
+
+\includegraphics[width=\linewidth]{diversity_originations}
+	
+\tinyfill \textcopyright Sinauer Assoc.~2005
+
+\end{frame}
+
+%%
+
+\begin{frame}{Extinction rates $\left(E\right)$ have tended to decrease.}
+
+\backskip
+
+\centering
+
+\includegraphics[height=0.83\textheight]{diversity_extinctions}
+
+\tinyfill \textcopyright Zimmer and Emlem 2015. \textit{Evolution}
+
+\end{frame}
+
+%
+
+\begin{frame}{\highlight{Turnover rate} is the link between S and E within taxa.}
+
+\backskip
+
+\begin{multicols}{2}
+{\Large
+\begin{equation*}
+D = S - E
+\end{equation*}
+}% LARGE
+
+\columnbreak
+
+\hangpara \textcolor{gray}{$D > 0$: increasing diversity}
+
+\hangpara \textcolor{gray}{$D < 0$: decreasing diversity}
+
+\end{multicols}
+
+\hangpara When compared among taxa:\\
+\hspace*{1em} Low origination = low extinction\\
+\hspace*{1em} High origination = high extinction
+
+\end{frame}
+
+%
+\begin{frame}{How can turnover rate be explained?}
+
+\backskip
+
+\begin{multicols}{2}
+
+\hangpara \highlight{Ecological specialization}
+
+\hangpara \highlight{Population dynamics}
+
+\hangpara \highlight{Geographic range}
+
+\columnbreak
+
+\centering
+\noindent\includegraphics[width=\linewidth]{diversity_ediacaran_example}
+
+\end{multicols}
+\end{frame}
+%
+
+\begin{frame}{How can turnover rate be explained?}
+
+\backskip
+
+\begin{multicols}{2}
+
+\noindent\includegraphics[width=\linewidth]{diversity_ediacaran_example}
+
+\columnbreak
+
+Did taxa with high turnover rates have specialized ecologies, low pop sizes, or small ranges?
+
+\bigskip
+
+Does loss of taxa with high turnover rates explain decreased rate of extinction and origination?
+
+\end{multicols}
+\end{frame}
+
+%%
+
+\begin{frame}{Mass extinctions cause diversity to decrease rapidly.}
+
+\backskip
+
+\centering
+
+\includegraphics[height=0.83\textheight]{diversity_marine}
+	
+\tinyfill See \futuyma{19.4}
+
+\end{frame}
+
+%%
+
+
+\begin{frame}{Five mass extinctions have occurred since the Cambrian.}
+
+\backskip
+
+\centering
+
+\includegraphics[height=0.83\textheight]{diversity_mass_extinctions}
+	
+\tinyfill \textcopyright Pearson Prentice Hall 2004.
+
+\end{frame}
+
+%%
+
+\begin{frame}{At least 75\% of species went extinct at each event.}
+
+
+
+\centering
+
+\begin{tabular}{@{}lcc@{}}
+\toprule
+Event & Genera & Species \tabularnewline
+\midrule
+End Ordovician & 57\% & 86\% \tabularnewline
+Late Devonian & 35\%  & 75\% \tabularnewline
+End Permian & 56\%  &  96\% \tabularnewline
+End Triassic & 47\% & 80\% \tabularnewline
+End Cretaceous \textsc{(k/t)} & 40\% & 76\% \tabularnewline
+\bottomrule
+\end{tabular}
+\end{frame}
+
+%%
+
+\begin{frame}{Rapid climate change is the ultimate cause of mass extinctions.}
+
+\backskip
+\begin{multicols}{2}
+\hangpara Asteroid impact
+
+\hangpara Volcanism
+
+\hangpara glaciation
+
+\hangpara Methane gas
+
+\hangpara Changing ocean currents\\
+\hspace*{1em} Anoxia
+
+\columnbreak
+
+\noindent Not all of these apply to all mass extinction events
+
+\end{multicols}
+
+\end{frame}
+
+%%
+
+
+\begin{frame}{Did mass extinctions coincide with impacts or volcanism?}
+
+\backskip
+
+\centering
+
+\includegraphics[width=\linewidth]{diversity_volcanism_asteroids}
+
+
+\end{frame}
+
+%%
+
+
+\begin{frame}{A 65 \textsc{my} old global iridium layer supports an asteroid impact.}
+
+\backskip
+
+\centering
+
+\includegraphics[height=0.78\textheight]{diversity_iridium_layer}
+	
+\tinyfill \textcopyright Zimmer and Emlen 2015. \textit{Evolution}
+
+\end{frame}
+
+%%
+
+
+\begin{frame}{$\delta$\textsuperscript{13}C and foraminifera also support impact.}
+
+\backskip
+
+\centering
+
+\includegraphics[height=0.78\textheight]{diversity_impact_evidence}
+	
+\tinyfill \textcopyright Zimmer and Emlen 2015. \textit{Evolution}
+
+\end{frame}
+
+%%
+
+
+
+\begin{frame}{180~km Chicxulub\textsuperscript{1} crater caused by 10~km asteroid.}
+
+\backskip
+
+\begin{multicols}{2}
+
+\includegraphics[width=\linewidth]{diversity_impact_site}
+
+\columnbreak
+
+\includegraphics[width=\linewidth]{diversity_impact_sonar}
+\end{multicols}
+
+\centering
+
+\vfilll
+	
+\tiny \textcolor{gray}{1. Cheek-she-loob (Wikipedia)}
+
+
+\end{frame}
+
+%%
+
+\begin{frame}{The Chicxulub impact caused negative global effects.}
+
+\backskip
+
+\begin{multicols}{2}
+
+\hangpara Atmospheric debris blocked sunlight for at least 6 months.\\
+\hspace*{1em} No photosynthesis.\\
+\hspace*{1em} Cooling, followed by heating.
+
+\hangpara Global wildfires.
+
+\hangpara Acid rain?
+
+\columnbreak
+
+\noindent \includegraphics[width=0.7\linewidth]{diversity_shocked_quartz}\\
+\noindent Shocked quartz in \textsc{k/t} boundary. Shocked quartz known only from impact sites (and nuclear test sites).
+
+
+\end{multicols}
+
+\vfilll
+	
+\tiny \textcolor{gray}{1. Cheek-she-loob (Wikipedia)}
+
+\end{frame}
+
+
+%%
+
+\begin{frame}{The Siberian traps produced lava ca.~251–250 \textsc{mya.}}
+
+\backskip
+
+\includegraphics[width=\linewidth]{diversity_siberian_traps}
+
+\end{frame}
+
+
+%%
+
+\begin{frame}{Volcanism caused global warming.}
+
+\backskip
+
+\begin{multicols}{2}
+
+\hangpara Temperature spike could have caused release of \ce{CH4}, \ce{CO2}, and water vapor.
+
+
+\hangpara Warming altered ocean circulation, causing an anoxic ocean.
+
+
+\columnbreak
+
+\centering
+
+\noindent\includegraphics[width=0.8\linewidth]{diversity_geological_temps}
+
+\end{multicols}
+
+\vfilll
+	
+\end{frame}
+
+%%
+
+
+\begin{frame}{\ce{CO2} increase coincides with End Permian.}
+
+\backskip
+
+\centering
+
+\includegraphics[height=0.83\textheight]{diversity_permian_co2}
+	
+\tinyfill \textcopyright Zimmer and Emlen 2015. \textit{Evolution}
+
+\end{frame}
+
+%%
+
+%%%
+
+
+\begin{frame}{Why has diversity increased for some taxa but not others?  Why has diversity increased since the Permian?}
+
+\backskip
+
+\begin{multicols}{2}
+
+\includegraphics[width=\linewidth]{diversity_marine}
+
+
+\columnbreak
+
+%\centering
+%\includegraphics[width=\linewidth]{diversity_ammonite}\\
+%ammonite
+
+
+\hangpara \highlight{Ecological Release}
+
+\hangpara \highlight{Ecological Divergence}
+
+\hangpara \highlight{Coevolution}
+
+
+\end{multicols}
+
+\end{frame}
+
+%%
+
+\begin{frame}{\highlight{Ecological release} allows taxa to exploit new ecological opportunities.}
+
+%\backskip
+
+\centering
+
+\includegraphics[width=\linewidth]{diversity_ecological_release}
+	
+\tinyfill \textcopyright Sinauer Assoc.~2005.
+
+\end{frame}
+
+%
+
+\begin{frame}{\highlight{Ecological divergence} can occur when taxa adapt to new niches.}
+
+%\backskip
+
+\centering
+
+\includegraphics[width=\linewidth]{futuyma_fig19-13}
+	
+\tinyfill \futuyma{19.13}
+
+\end{frame}
+
+%%
+
+\begin{frame}{Taxa coevolve as part of a community.}
+
+\hangpara Species exist in a community.
+
+\hangpara Species are resources for other species.
+
+\hangpara As one group diversifies, so does the other group.
+
+\hangpara Species interactions drives evolution of diversity.
+
+\end{frame}
+
+%
+
+
+%%
+\end{document}
+
+
