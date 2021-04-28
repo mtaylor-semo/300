@@ -1,13 +1,13 @@
 %!TEX TS-program = lualatex
 %!TEX encoding = UTF-8 Unicode
 
-\documentclass[t]{beamer}
+%\documentclass[t]{beamer}
 
 %%%% HANDOUTS For online Uncomment the following four lines for handout
-%\documentclass[t,handout]{beamer}  %Use this for handouts.
-%\usepackage{handoutWithNotes}
-%\includeonlylecture{student}
-%\pgfpagesuselayout{3 on 1 with notes}[letterpaper,border shrink=5mm]
+\documentclass[t,handout]{beamer}  %Use this for handouts.
+\usepackage{handoutWithNotes}
+\includeonlylecture{student}
+\pgfpagesuselayout{3 on 1 with notes}[letterpaper,border shrink=5mm]
 
 %\usefonttheme{professionalfonts}
 
@@ -22,7 +22,7 @@
 % FONTS
 \usepackage{fontspec}
 \def\mainfont{Linux Biolinum O}
-\setmainfont[Ligatures={Common, TeX}, Contextuals={NoAlternate}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={Proportional, OldStyle}]{\mainfont}
+\setmainfont[Ligatures={Common, TeX}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={Proportional, OldStyle}]{\mainfont}
 %\setmonofont[Scale=MatchLowercase]{Inconsolata} 
 \setsansfont[Scale=MatchLowercase]{Linux Biolinum O} 
 \setmonofont{Linux Libertine Mono O}
@@ -249,7 +249,8 @@
 
 \includegraphics[width=0.95\linewidth]{macro_jaws_cam1}
 
-\tinyfill Parson \& Albertson 2009. Annu Rev Genet 43:369
+\tinyfill Parson \& Albertson 2009. Annu Rev Genet 43:369
+
 
 \end{frame}
 %%
@@ -340,7 +341,7 @@
 \includegraphics[width=\linewidth]{futuyma_fig20-7}
 }
 
-\hangpara The gene networks for condensations 2–4 in therapods shift to form digits 2–4 in birds.
+\hangpara The gene networks for condensations 2–4 in therapods shift to form digits 1–3 in birds.
 \tinyfill \futuyma{20.7}
 
 \end{frame}
@@ -369,7 +370,8 @@
 
 \vfilll
 
-\tiny Chang et al.~2009. Int J Dev Biol 53:813\hfill Widelitz et al.~2003. J Exp Zool 298B:109
+\tiny Chang et al.~2009. Int J Dev Biol 53:813
+\hfill Widelitz et al.~2003. J Exp Zool 298B:109
 
 
 
