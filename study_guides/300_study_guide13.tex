@@ -1,0 +1,120 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[letterpaper]{tufte-handout}
+
+%\geometry{showframe} % display margins for debugging page layout
+
+\usepackage{fontspec}
+\def\mainfont{Linux Libertine O}
+\setmainfont[Ligatures={Common,TeX}, Contextuals={NoAlternate}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={OldStyle}]{\mainfont}
+\setsansfont[Scale=MatchLowercase]{Linux Biolinum O} 
+\usepackage{microtype}
+
+\usepackage{graphicx} % allow embedded images
+  \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+  \graphicspath{{img/}} % set of paths to search for images
+\usepackage{amsmath}  % extended mathematics
+\usepackage{booktabs} % book-quality tables
+\usepackage{units}    % non-stacked fractions and better unit spacing
+\usepackage{siunitx}
+\usepackage{multicol} % multiple column layout facilities
+\usepackage{microtype}   % filler text
+\usepackage{hyperref}
+
+\usepackage{enumitem}
+
+%\usepackage{fancyvrb} % extended verbatim environments
+%  \fvset{fontsize=\normalsize}% default font size for fancy-verbatim environments
+\makeatletter
+% Paragraph indentation and separation for normal text
+\renewcommand{\@tufte@reset@par}{%
+  \setlength{\RaggedRightParindent}{1.0pc}%
+  \setlength{\JustifyingParindent}{1.0pc}%
+  \setlength{\parindent}{0pc}%
+  \setlength{\parskip}{0.5\baselineskip}%
+}
+\@tufte@reset@par
+
+% Paragraph indentation and separation for marginal text
+\renewcommand{\@tufte@margin@par}{%
+  \setlength{\RaggedRightParindent}{0pt}%
+  \setlength{\JustifyingParindent}{0.5pc}%
+  \setlength{\parindent}{0.5pc}%
+  \setlength{\parskip}{0pt}%
+}
+\makeatother
+
+% Set up the spacing using fontspec features
+\renewcommand\allcapsspacing[1]{{\addfontfeatures{LetterSpace=15}#1}}
+\renewcommand\smallcapsspacing[1]{{\addfontfeatures{LetterSpace=10}#1}}
+
+
+\title{Study Guide 13\hfill}
+\author{Sexual selection}
+
+\date{} % without \date command, current date is supplied
+
+\begin{document}
+
+\maketitle	% this prints the handout title, author, and date
+
+\section{Vocabulary}\marginnote{\textbf{Read:} Chapter 10, pages 251–260.}
+
+\begin{multicols}{2}
+intrasexual selection\\
+intersexual selection\\
+sexual dimorphism\\
+primary sexual traits\\
+secondary sexual traits \\
+mate choice\\
+same-sex competition\\
+sperm competition\\
+direct benefits \\
+honest indicator \\
+indirect benefits \\
+sensory bias\\
+sensory drive\\
+antagonistic coevolution\\
+social monogamy
+\end{multicols}
+
+%\printclassoptions
+
+\section{Concepts}
+
+You should \emph{write} clear and concise answers to each question in the Concepts section.  The questions are not necessarily independent.  Think broadly across lectures to see ``the big picture.'' 
+
+\begin{enumerate}
+	
+	\item Sexual selection is a form of natural selection.  However, there is an important distinction to be made between how sexual and natural selection act on reproductive success.  One operates directly on reproductive success and the other operates indirectly. Tell which form of selection operates directly and which operates indirectly, and then explain why this distinction is evolutionarily important.
+	
+	\item Explain the difference between inter- and intrasexual selection.  Explain the direct or indirect role of the female, as appropriate, for each type.
+
+	\item Explain the difference between primary and secondary sexual traits.
+	
+	\item Explain Bateman's principle and operational sex ratio as hypotheses that explain the evolution of sexual selection.
+
+	\item Explain anisogamy and energy investment as a hypothesis that explains the evolution of sexual selection.
+
+	\item List and explain various forms of sexual selection (e.g., antagonistic coevolution, indirect male-male competition, etc). Search the scientific literature for examples of antagonistic coevolution.\marginnote{I won't ask you questions about what you find but the literature is full of many bizarrely wonderful examples. Or are they wonderfully bizarre?}
+	
+	\item How do honest indicators show a direct benefit to potential female mates and her offspring?
+
+	\item Compare and contrast the good genes hypothesis with the runaway sexual selection hypothesis.  
+
+%	\item Explain how sensory bias, sensory exploitation and sensory drive differ from each other.  How might these interact to lead to the evolution of sexually dimorphic traits?  How might ecological factors (e.g., predation) limit the evolution of the trait?
+
+	\item Explain how sensory bias and sensory drive differ from each other.  How might these interact to lead to the evolution of sexually dimorphic traits?  How might ecological factors (e.g., predation) limit the evolution of the trait?
+
+	\item Are exaggerated traits in males always beneficial from the standpoint of sexual selection?  What about natural selection?  Why or why not?  If not (for one or both sexual and natural selection), then what hypotheses explain the evolution of exaggerated traits?
+
+	\item Explain why natural selection could favor the evolution of sexual cannibalism (sacrificial males).  Use the Australian redback spider and Chinese praying mantis in your example.  Think in terms of fitness, the interests of the male, and the interests of the female.
+
+	\item Penis-fencing in marine flatworms involves a cost to the ``loser'' of the fencing match. What is this ``cost?''  Explain how the loser is determined and why losing is costly.  
+
+	\item Explain social monogamy. Explain why some species of birds are sexually dimorphic when they display social monogamy.
+
+\end{enumerate}
+
+\end{document}

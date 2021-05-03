@@ -1,0 +1,113 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[letterpaper]{tufte-handout}
+
+%\geometry{showframe} % display margins for debugging page layout
+
+\usepackage{fontspec}
+\def\mainfont{Linux Libertine O}
+\setmainfont[Ligatures={Common,TeX}, Contextuals={NoAlternate}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={OldStyle}]{\mainfont}
+\setsansfont[Scale=MatchLowercase]{Linux Biolinum O} 
+\usepackage{microtype}
+
+\usepackage{graphicx} % allow embedded images
+  \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+  \graphicspath{{img/}} % set of paths to search for images
+\usepackage{amsmath}  % extended mathematics
+\usepackage{booktabs} % book-quality tables
+\usepackage{units}    % non-stacked fractions and better unit spacing
+\usepackage{siunitx}
+\usepackage{multicol} % multiple column layout facilities
+\usepackage{microtype}   % filler text
+\usepackage{hyperref}
+
+\usepackage{enumitem}
+
+%\usepackage{fancyvrb} % extended verbatim environments
+%  \fvset{fontsize=\normalsize}% default font size for fancy-verbatim environments
+\makeatletter
+% Paragraph indentation and separation for normal text
+\renewcommand{\@tufte@reset@par}{%
+  \setlength{\RaggedRightParindent}{1.0pc}%
+  \setlength{\JustifyingParindent}{1.0pc}%
+  \setlength{\parindent}{0pc}%
+  \setlength{\parskip}{0.5\baselineskip}%
+}
+\@tufte@reset@par
+
+% Paragraph indentation and separation for marginal text
+\renewcommand{\@tufte@margin@par}{%
+  \setlength{\RaggedRightParindent}{0pt}%
+  \setlength{\JustifyingParindent}{0.5pc}%
+  \setlength{\parindent}{0.5pc}%
+  \setlength{\parskip}{0pt}%
+}
+\makeatother
+
+% Set up the spacing using fontspec features
+\renewcommand\allcapsspacing[1]{{\addfontfeatures{LetterSpace=15}#1}}
+\renewcommand\smallcapsspacing[1]{{\addfontfeatures{LetterSpace=10}#1}}
+
+
+\title{Study Guide 14\hfill}
+\author{Evolution and development}
+
+\date{} % without \date command, current date is supplied
+
+\begin{document}
+
+\maketitle	% this prints the handout title, author, and date
+
+\section{Vocabulary}\marginnote{\textbf{Read:} Chapter 15, pages 369-375; 378–384.}
+
+\begin{multicols}{2}
+allometry \\
+heterochrony \\
+paedomorphosis \\
+modularity \\
+serial homology\\
+maternal effect gene \\
+regulatory gene \\
+genetic toolkit \\
+hox genes\\
+sonic hedgehog (\textit{ssh})\\
+bone morphogenetic\\\hspace{1em}protein (\textit{bmp})\\
+co-option (recruitment) \\
+\textsc{mads} genes \\
+floral quartet model
+\end{multicols}
+
+%\printclassoptions
+
+\section{Concepts}
+
+You should \emph{write} clear and concise answers to each question in the Concepts section.  The questions are not necessarily independent.  Think broadly across lectures to see ``the big picture.'' 
+
+\begin{enumerate}
+	
+	\item What is the genetic toolkit?  What is the importance of the genetic toolkit to developmental biology?  What is the importance of the genetic toolkit to evolutionary biology?  
+	
+	\item Explain serial homology and how it relates to modularity of organisms.
+	
+	\item Compare and contrast allometry and heterochrony.\marginnote{Paedomorphosis is a type of heterochrony.}
+
+	\item Briefly describe the examples of toolkit genes discussed in class. Why do these examples suggest that developmental toolkit genes are likely to be important to understanding the evolutionary history and diversification of life on earth?
+
+	\item How have we used phylogenetics to infer that the hox genes were very important to the evolutionary diversity of organismal form (body plans)?
+
+	\item Explain the evolutionary importance of co-option.
+
+	\item Explain the relationship between the order of the hox genes on chromosomes and their relationship to segmentation order in developing animals.
+
+	\item What are regulatory genes?  Why is the relative concentration gradient of some regulatory genes important to the developing organism?  You may have to review the building of the fly slides.
+	
+		\item How many classes of MADS genes have been identified in plants?  List them.
+	
+		\item Describe the floral quartet model of flower morphology based on the classes of textsc{mads} genes.\marginnote{The four flower whorls, from outside in, are sepals, petals, stamens, carpels.}  Be sure to describe which class of \textsc{mads} genes are associated with each floral whorl.
+	
+		\item Discuss the evidence from the Ranunculaceae flowers (buttercup family) that suggests that the evolutionary history of MADS genes may be closely associated with diversity of angiosperms.\marginnote{Look up angiosperms if necessary!}  Explain the evolution of floral diversity, as represented by the Ranunculaceae, due to natural selection for different types of pollination / pollinators.
+	
+\end{enumerate}
+
+\end{document}

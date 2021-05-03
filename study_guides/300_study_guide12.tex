@@ -1,0 +1,111 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[letterpaper]{tufte-handout}
+
+%\geometry{showframe} % display margins for debugging page layout
+
+\usepackage{fontspec}
+\def\mainfont{Linux Libertine O}
+\setmainfont[Ligatures={Common,TeX}, Contextuals={NoAlternate}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={OldStyle}]{\mainfont}
+\setsansfont[Scale=MatchLowercase]{Linux Biolinum O} 
+\usepackage{microtype}
+
+\usepackage{graphicx} % allow embedded images
+  \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+  \graphicspath{{img/}} % set of paths to search for images
+\usepackage{amsmath}  % extended mathematics
+\usepackage{booktabs} % book-quality tables
+\usepackage{units}    % non-stacked fractions and better unit spacing
+\usepackage{siunitx}
+\usepackage{multicol} % multiple column layout facilities
+\usepackage{microtype}   % filler text
+\usepackage{hyperref}
+
+\usepackage{enumitem}
+
+%\usepackage{fancyvrb} % extended verbatim environments
+%  \fvset{fontsize=\normalsize}% default font size for fancy-verbatim environments
+\makeatletter
+% Paragraph indentation and separation for normal text
+\renewcommand{\@tufte@reset@par}{%
+  \setlength{\RaggedRightParindent}{1.0pc}%
+  \setlength{\JustifyingParindent}{1.0pc}%
+  \setlength{\parindent}{0pc}%
+  \setlength{\parskip}{0.5\baselineskip}%
+}
+\@tufte@reset@par
+
+% Paragraph indentation and separation for marginal text
+\renewcommand{\@tufte@margin@par}{%
+  \setlength{\RaggedRightParindent}{0pt}%
+  \setlength{\JustifyingParindent}{0.5pc}%
+  \setlength{\parindent}{0.5pc}%
+  \setlength{\parskip}{0pt}%
+}
+\makeatother
+
+% Set up the spacing using fontspec features
+\renewcommand\allcapsspacing[1]{{\addfontfeatures{LetterSpace=15}#1}}
+\renewcommand\smallcapsspacing[1]{{\addfontfeatures{LetterSpace=10}#1}}
+
+
+\title{Study Guide 12\hfill}
+\author{Evolution of sex}
+
+\date{} % without \date command, current date is supplied
+
+\begin{document}
+
+\maketitle	% this prints the handout title, author, and date
+
+\section{Vocabulary}\marginnote{\textbf{Read:} Chapter 10, pages 247–249; 263–268.}
+
+\begin{multicols}{2}
+anisogamy \\
+asexual reproduction\\
+parthenogenesis \\
+Muller's Ratchet \\
+sexual reproduction\\
+two-fold cost of sex\\
+Red Queen hypothesis \\
+Selective interference \\
+Clonal interference \\
+Ruby-in-the-rubbish \\
+sneaking males\\
+sequential hermaphroditism\\
+protogyny\\
+protandry\\
+
+\end{multicols}
+
+%\printclassoptions
+
+\section{Concepts}
+
+You should \emph{write} clear and concise answers to each question in the Concepts section.  The questions are not necessarily independent.  Think broadly across lectures to see ``the big picture.'' 
+
+\begin{enumerate}
+	
+	\item Discuss in terms of fitness and adaptive flexibility the advantages and disadvantages of both asexual and sexual reproduction. That is, what are the advantages and disadvantages of maintaining the same genome (asexual) versus a variable genome (sexual) in relation to the current environment (in a broad sense) and possible future changes to the environment.
+
+	\item Which has a greater inherent fitness, asexual or sexual reproduction?  Why?  Explain in terms of the ``two-fold cost of sex,'' using words and illustration. 
+
+	\item If sexual reproduction has a two-fold reduction of fitness relative to asexual reproduction, then explain selective advantages of sexual reproduction that favors it over asexual reproduction.
+	
+	\item Explain the Red Queen hypothesis as a selective mechanism favoring sexual reproduction.
+	
+	\item Explain is selective interference? Compare and contrast clonal interference with the “ruby-in-the-rubbish” hypothesis as forms of selective interference.
+	
+	\item Why does genetic recombination during meiosis speed the rate of adaptation? Does this apply to the models of selective interference?
+
+	\item What are sneaking males?  What selective forces might lead to the evolution of sneaking?  Would you expect sneaking to evolve in a sexually selected species?  Why or why not?
+
+	\item In terms of male and female fitness, what conditions favor the evolution of sequential hermaphroditism?
+
+	\item Discuss the relative fitness of males and of females at different ages or size classes\marginnote{Don't memorize the specific diagrams shown for each type of hermaphroditism shown in lecture; learn the models.} that lead to protogyny and to protandry.  How does this compare to fitness of both sexes for species that do not have sequential hermaphroditism? 
+
+
+\end{enumerate}
+
+\end{document}
