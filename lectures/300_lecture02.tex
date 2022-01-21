@@ -5,8 +5,8 @@
 
 %%%% HANDOUTS For online Uncomment the following four lines for handout
 %\documentclass[t,handout]{beamer}  %Use this for handouts.
-%\usepackage{handoutWithNotes}
 %\includeonlylecture{student}
+%\usepackage{handoutWithNotes}
 %\pgfpagesuselayout{3 on 1 with notes}[letterpaper,border shrink=5mm]
 %	\setbeamercolor{background canvas}{bg=black!5}
 
@@ -25,7 +25,7 @@
 % FONTS
 \usepackage{fontspec}
 \def\mainfont{Linux Biolinum O}
-\setmainfont[Ligatures={Common, TeX}, Contextuals={NoAlternate}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={Proportional}]{\mainfont}
+\setmainfont[Ligatures={Common, TeX}, Contextuals={NoAlternate}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={Proportional, OldStyle}]{\mainfont}
 %\setmonofont[Scale=MatchLowercase]{Inconsolata} 
 \setsansfont[Scale=MatchLowercase]{Linux Biolinum O} 
 \usepackage{microtype}
@@ -48,6 +48,10 @@
 \usepackage{tikz}
 	\tikzstyle{every picture}+=[remember picture,overlay]
 
+\usepackage[version=3]{mhchem}
+
+\usepackage{csquotes}
+
 \mode<presentation>
 {
   \usetheme{Lecture}
@@ -66,212 +70,136 @@
 
 \begin{document}
 
-% Lecture goals
 \lecture{student}{student}
 
+\begin{frame}[t]{What was missing from Darwin's concepts?}
+\vspace{-\baselineskip}
+\begin{multicols}{2}
+	\highlight{Species descend from common ancestor.}
+\bigskip
+
+\highlight{Adaptations evolve by natural selection.}
+
+\vspace{7\baselineskip}
+
+Charles Darwin, \textit{On the Origin of Species}, 1st edition, 1859
+
+	\columnbreak
+	\begin{displayquote}There is grandeur in this view of life, with its several powers, having been originally breathed into a few forms or into one; and that, whilst this planet has gone cycling on according to the fixed law of gravity, from so simple a beginning endless forms most beautiful and most wonderful have been, and are being, evolved.\end{displayquote}
+%— Charles Darwin, \textit{On the Origin of Species}, 1st edition, 1859
+	
+	
+\end{multicols}
+\end{frame}
+
+\begin{frame}{The \highlight{evolutionary synthesis} built upon Darwin's foundation.}
+
+\hangpara Natural selection and genetic processes that operate within species account for the \highlight{\textit{origin of new species.}}
+
+\end{frame}
+
+\begin{frame}[t]{The \highlight{evolutionary synthesis} determined that}
+\hangpara the unit of evolution is the population,
+
+\hangpara genetic variation is due to random mutation and genetic recombination,
+
+\hangpara genetic variation creates phenotypic variation, and
+
+\hangpara natural selection acting on phenotypic variation is the primary cause of evolutionary change.
+
+\end{frame}
+
+\begin{frame}[t]{The \highlight{evolutionary synthesis} determined that}
+\hangpara species are pools of shared alleles, 
+
+\hangpara speciation occurs when populations become reproductively isolated, and
+
+\hangpara macroevolution is the same process as microevolution.
+
+
+\end{frame}
+
+\lecture{instructor}{instructor}
+
 {
-\usebackgroundtemplate{\includegraphics[width=\paperwidth]{selection_flying_frog}}
-	\begin{frame}[t]{\textcolor{white}{Natural selection and adaptations}}
-	
-	\vfilll
-	
-	\tiny\hfill \textcolor{white}{\textcopyright\,sFutuyma 2017. \textit{Evolution}, 4th ed.}
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{thinking_gorilla}}
+\begin{frame}[b]
+
+	\tiny\hfill\textcolor{white}{\href{https://www.flickr.com/photos/34209020@N02/9612772316}{Elizabeth Haslam, Flickr,}~\ccbync{2.0}} 
 \end{frame}
 }
 
+\lecture{student}{student}
 
-{
-\usebackgroundtemplate{\includegraphics[width=\paperwidth]{adaptation_barrel_cactus}}
-	\begin{frame}[b,plain]{\textcolor{white}{How would you define} \highlight{adaptation?}}
-	
-	\vfilll
-	
-	\tiny \hfill \rotatebox{90}{\textcolor{white}{André Karwath, \href{https://commons.wikimedia.org/w/index.php?curid=369777}{Wikimedia Commons}. \ccbysa{2.5}}}
-	
-% Foxes	\tiny\hfill Jonatan Pie, Wikimedia Commons. \cc~v1.0
-\end{frame}
-}
-
-
-\begin{frame}[t, plain]{\highlight{Adaptations} are traits that increase reproductive success.}
+\begin{frame}[t]{Question! Answer?}
 
 \vspace{-\baselineskip}
 
-\hangpara Adaptations have been \highlight{modified} from the ancestral form.\bigskip
+\hangpara What are the four nucleotides that make up DNA? \mode<beamer>{\pause \quad\textbf{A C G T}}
 
-\includegraphics[width=0.95\textwidth]{adaptation_chough}\\
-Are the red eyes of this bird adaptive?
+\pause
 
-\vfilll
+\hangpara What is the fifth nucleotide found only in RNA? Which nucleotide from DNA does it replace? \mode<beamer>{\pause \quad \textbf{U replaces T}}
 
-\hfill \tiny White-winged Chough, \textcopyright\,Futuyma 2017. \textit{Evolution}, 4th ed.
+\pause
+
+\hangpara Which nucleotides are purines? Which are pyrimidines? \mode<beamer>{\pause \newline \hspace*{1em} \textbf{Purines: A G; Pyrimidines: C T}}
+
+\pause
+
+\hangpara In DNA, which pairs of nucleotides bond together to form the double helix? \mode<beamer>{\pause \hspace*{1em}\textbf{\ce{A\bond{=}T \quad C\bond{3}G}}}
 
 \end{frame}
 
-
-\begin{frame}[t,plain]{Natural selection results in \highlight{fitness} differences among phenotypes.}
+\begin{frame}[t]{More questions! More answers?}
 
 \vspace{-\baselineskip}
 
-\begin{multicols}{2}
+\hangpara What is transcription?  What is translation?
+	\mode<beamer>{\pause \newline \hspace*{1em} \textbf{Transcript: DNA to mRNA; Translate: mRNA to protein}}
 
-\hangpara Natural selection occurs when any consistent differences among different groups of \emph{heritable} phenotypes results in \highlight{differential reproductive success.}
+\pause
 
-\hangpara Fitness has two components. What are they?
+\hangpara How many different amino acids are used to build proteins in living organisms? \mode<beamer>{\pause \textbf{20.} How many can you name?}
 
-\columnbreak
+\pause
 
-\includegraphics[width=0.9\linewidth]{chap3_fig7a}
+\hangpara What is the universal genetic code? 
+\mode<beamer>{\pause \hspace*{1em} \textbf{Matches 3-nucleotide codons to specific amino acids, start and stop codons.}}
 
-\end{multicols}
-%\hangpara Natural selection causes variation in \highlight{reproductive success} among individuals that vary in \highlight{heritable traits.}
+%\pause
+
+%\hangpara What is an allele?
+
 \end{frame}
 
-\begin{frame}[t,plain]{Fitness is the \textit{average} contribution of allele copies to the next generation.}
+
+\begin{frame}{Speak truth to power (at the molecular level).}
 
 \vspace{-\baselineskip}
 
-\begin{multicols}{2}
-\hangpara Annual plants grow from seeds each year.
+\hangpara All DNA is in genes. \mode<beamer>{\pause \quad \textbf{False. Most \textsc{dna} is non-coding.}}
 
-\hangpara Assume that 1 in 500 seeds survive to reproduce. 
+\pause
 
-\hangpara Those that survive produce an average of 2000 seeds. 
+\hangpara Genes code for traits (e.g., a blue-eye gene, a brown-eye gene) \mode<beamer>{\pause \quad \textbf{False.}}
 
-\hangpara What is the average fitness of the plant?
+\pause
 
-\hangpara \textcolor{gray}{survival frequency $\times$ average number of offspring produced.}
-\columnbreak
+\hangpara All genes code for proteins. \mode<beamer>{\pause \quad \textbf{False. Some encode \textsc{rna.}}}
 
-\begin{center}
-\includegraphics[width=0.9\linewidth]{fitness_garden_pea}
-\end{center}
+\pause
 
+\hangpara Only genes evolve. \mode<beamer>{\pause \quad \textbf{False. All \textsc{dna} evolves by mutation.}}
 
-\end{multicols}
+\pause
 
-\vfilll
-
-\tiny \hfill Common garden pea. Photo by Rasbak, \href{https://commons.wikimedia.org/w/index.php?curid=194762}{Wikimedia Commons}. \ccbysa{3}
+\hangpara Only genes are subject to natural selection. \mode<beamer>{\pause \quad \textbf{True. Probably.}}
 
 \end{frame}
 
-\begin{frame}[t,plain]{Selection can occur at the level of }
+\begin{frame}[t]{Next time: Hardy-Weinberg review.}
 
-\vspace{-\baselineskip}
-
-\begin{multicols}{2}
-\hangpara genes,
-
-\hangpara \highlight{individuals,}
-
-\hangpara populations, and
-
-\hangpara species.
-
-\columnbreak
-
-\begin{center}
-\includegraphics[width=0.8\linewidth]{selection_selfish_gene_cover}
-\end{center}
-
-\end{multicols}
-
-\vfilll
-
-\tiny \hfill Source, Fair use, \href{https://en.wikipedia.org/w/index.php?curid=20132319}{Wikipedia} 
-\end{frame}
-
-\begin{frame}[t,plain]{\highlight{Genic selection} increases copies of certain genes.}
-
-\begin{multicols}{2}
-\hangpara Gene copies increase regardless of effect on individual fitness.
-
-\hangpara Other forms of genic selection include segregation distortion and meiotic drive.
-
-\columnbreak
-
-\includegraphics[width=0.95\linewidth]{selection_genic_transposons}
-
-\end{multicols}
-
-\vfilll
-
-\tiny \hfill Transposons. Modified from Kazasian, H.H. Science 303:1626.
-
-\end{frame}
-
-
-\begin{frame}[t]{\highlight{Kin selection} increases fitness of relatives.}
-
-\vspace{-\baselineskip}
-
-\begin{multicols}{2}
-
-\hangpara Relatives carry allele copies \highlight{identical by descent.}
-
-\hangpara Individuals sacrifice their own fitness to increase fitness of relatives.
-
-\hangpara Increases copies of their shared alleles.
-
-\columnbreak
-
-\includegraphics[width=0.9\linewidth]{selection_kin_flsj}
-
-\end{multicols}
-
-\vfilll
-
-\tiny \hfill \textcopyright\,Reanna Thomas, \href{https://macaulaylibrary.org/asset/199768971}{Macaulay Library ML199768971}
-
-\end{frame}
-
-
-\begin{frame}[t]{\highlight{Species selection} increases diversity of characteristics among species.}
-
-\vspace{-\baselineskip}
-
-\begin{multicols}{2}
-
-The proportion of \textit{species} with a particular trait increases over time compared to species without that trait.
-
-
-\columnbreak
-
-\includegraphics[width=0.9\linewidth]{asexual_rotifer}\\
-\includegraphics[width=0.9\linewidth]{asexual_dandelion}
-\end{multicols}
-
-\end{frame}
-
-
-\begin{frame}[t]{Selection \emph{for} traits. \hfill Are all traits adaptive?}
-
-\vspace{-\baselineskip}
-
-\begin{multicols}{2}
-\includegraphics[width=0.95\linewidth]{chap3_fig14}
-
-\columnbreak
-
-\includegraphics[width=\linewidth]{chap3_fig15b}
-\end{multicols}
-
-
-\end{frame}
-
-\begin{frame}[t]{Adaptative significance can be tested by experiment and comparative methods.}
-
-\vspace{-\baselineskip}
-
-\begin{multicols}{2}
-\includegraphics[width=\linewidth]{/Users/goby/pictures/teach/163/case_studies/pollen_grains_remaining}
-
-\columnbreak
-
-\includegraphics[width=\linewidth]{selection_female_bird_song}
-
-\end{multicols}
 
 \end{frame}
 
