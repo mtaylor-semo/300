@@ -5,8 +5,8 @@
 
 %%%% HANDOUTS For online Uncomment the following four lines for handout
 %\documentclass[t,handout]{beamer}  %Use this for handouts.
-%\usepackage{handoutWithNotes}
 %\includeonlylecture{student}
+%\usepackage{handoutWithNotes}
 %\pgfpagesuselayout{3 on 1 with notes}[letterpaper,border shrink=5mm]
 %	\setbeamercolor{background canvas}{bg=black!5}
 
@@ -70,233 +70,235 @@
 \lecture{student}{student}
 
 {
-\usebackgroundtemplate{\includegraphics[width=\paperwidth]{darwin_phylo_tree}}
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{hwe_gorilla}}
 \begin{frame}[t]
+
+\tinyfill\textcolor{white}{\href{https://www.flickr.com/photos/34209020@N02/9612772316}{Elizabeth Haslam, Flickr,}~\ccbync{2.0}} 
+
 \end{frame}
 }
 
 
-\begin{frame}[t,plain]{\highlight{Phylogenetic systematics} estimates evolutionary relationships.}
-	
-	\vspace{-0.75\baselineskip}
-	
-	\includegraphics[width=\linewidth]{phylogeny_genealogy_comparison}
-	
-	\vfilll
-	\tiny \hfill \textcopyright\,Zimmer and Emlen
-	
-% Foxes	\tiny\hfill Jonatan Pie, Wikimedia Commons. \cc~v1.0
+\lecture{student}{student}
+
+\begin{frame}[t]{Question! Answer?}
+
+\vspace{-\baselineskip}
+
+\hangpara What is a genotype?  \mode<beamer>{\pause \newline \hspace*{1em} \textbf{The combination of alleles at one or more genes. More broadly, the sequence of \textsc{dna} in an individual's chromosomes.}}
+
+\pause
+
+\hangpara  What is a phenotype? \mode<beamer>{\pause \newline \hspace*{1em} \textbf{The physical expression of a trait.}}
+
+\pause
+
+\hangpara Do proteins have phenotypes? \mode<beamer>{\pause \quad \textbf{Absolutely!}}
+
+\hangpara (T/F) The phenotype is determined only by the genotype of a gene. \mode<beamer>{\pause \quad \textbf{False. The environment can influence the phenotype of some traits.}}
+
+\pause
+
+\hangpara Extra credit: What is a locus? \mode<beamer>{\pause \quad \textbf{The location of a \textsc{dna} sequence on a chromosome.}}
+
+
 \end{frame}
 
-\begin{frame}[t,plain]{You must learn the basic parts of a phylogenetic tree.}
-	
-	\centering
-%	\vspace{-0.5\baselineskip}
-	
-	\includegraphics[width=\linewidth]{futuyma_fig2-6a}
-	
-	\vfilll
-	
-	\tiny \hfill Fig. 2.6~\textcopyright\,Futuyma and Kirkpatrick.
-	
+
+\begin{frame}
+\frametitle<1>{What is allele frequency?}
+\frametitle<2>{\highlight{Allele frequency} is a measure of how common an allele is for a locus in a population.}
+
+\onslide<2>{%
+\vspace{-0.5\baselineskip}
+\centering
+
+\includegraphics[height=0.82\textheight]{futuyma_fig4-5}
+
+\begin{tikzpicture}
+\node at (2,7.5) [font=\large, text width = 5.5cm, align=left] {$A_1$ frequency = 10/16 = 0.675.};
+
+\node at (2, 6.5) [font=\large, text width = 5.5cm, align=left] {$A_2$ frequency = 6/16 = 0.325.};
+
+\end{tikzpicture}
+
+}% end onslide<2>
 \end{frame}
 
-\begin{frame}[t,plain]{\highlight{Clades} include an ancestor and \emph{all} of its descendants.}
-	
-	\centering
-	\vspace{-0.5\baselineskip}
-	
-	\includegraphics[width=\linewidth]{phylogeny_clades}
-	
-	\hangpara Trees can be rearranged but still show the same relationships.
-	
-	\vfilll
-	\tiny \hfill \textcopyright\,Zimmer and Emlen.
-\end{frame}
 
-\begin{frame}[t,plain]{\highlight{Clades} can include one or more branches.}
-	
-	\centering
-	\vspace{-0.5\baselineskip}
-	
-	\includegraphics[width=\linewidth]{clades_collapse}
-	
-	\vfilll
-	\tiny \hfill \textcopyright\,Zimmer and Emlen.
-\end{frame}
-
-\begin{frame}[t,plain]{Clades are \highlight{monophyletic} groups.}
-	
-	\centering
-	\vspace{-0.5\baselineskip}
-	
-	\includegraphics[width=\linewidth]{monophyly_paraphyly_polyphyly}
-	
-	\vfilll
-	\tiny \hfill \textcopyright\,Zimmer and Emlen.
-\end{frame}
 %
-\begin{frame}[t,plain]{Linnean classification is based on nested clades.}
-	
-	\centering
-	\vspace{-0.5\baselineskip}
-	
-	\includegraphics[height=0.85\textheight]{phylogeny_classification}
-	
-	\vfilll
-	\tiny \hfill \textcopyright\,Zimmer and Emlen.
+
+\begin{frame}[t]
+\frametitle<1>{What is genotype frequency?}
+\frametitle<2>{\highlight{Genotype frequency} is a measure of how common a genotype is for one or more loci in a population.}
+
+\onslide<2>{%
+\vspace{-0.5\baselineskip}
+\centering
+
+\includegraphics[height=0.82\textheight]{futuyma_fig4-5}
+
+\begin{tikzpicture}
+\node at (2,7.5) [font=\large, text width = 5.5cm, align=left] {$A_1A_1$ frequency = 4/8 = 0.5.};
+
+\node at (2, 6.75) [font=\large, text width = 5.5cm, align=left] {$A_1A_2$ frequency = 2/8 = 0.25.};
+
+\node at (2, 6) [font=\large, text width = 5.5cm, align=left] {$A_2A_2$ frequency = 2/8 = 0.25.};
+
+\end{tikzpicture}
+} %end onslide<2>
 \end{frame}
-%
-\begin{frame}[t,plain]
-	
-	\centering
-%	\vspace{-0.5\baselineskip}
-	
-	\includegraphics[width=\linewidth]{phylogeny_example}
-	
-	\vfilll
-	\tiny \hfill \textcopyright\,Zimmer and Emlen.
-	
-	\pause
-	
-	\begin{tikzpicture}
-	\draw [draw=white, fill=white] (-0.5,1) rectangle ++(6.7,8.5);
-	\node at (3,8) [draw=white, align=left, font=\large, text width=4cm] {Which groups are \emph{not} monophyletic?};
-	\pause
-	\node at (3,6) [draw=white, align=left, font=\large, text width=4cm] {Are they paraphyletic\\ or polyphyletic?};
-%	\node (rect) at (-0.5,1) [draw, minimum width=6.7cm, minimum height=2cm] {TEST};
-	\end{tikzpicture}
-`\end{frame}
-%
-\begin{frame}[t,plain]{\highlight{Gene trees} show the evolutionary history of \textsc{dna} sequences.}
 
-	\centering
-	\vspace{-0.75\baselineskip}
 
-	\includegraphics[height=0.85\textheight]{futuyma_fig2-13}
+\begin{frame}{Assume a population of diploid individuals with only two alleles for a gene locus.}
 
-\end{frame}
-%
-\begin{frame}[t,plain]{\highlight{Paralogous} genes arise via \highlight{gene duplication}.}
+\hangpara What is the Hardy-Weinberg equation for allele frequency?
 
-	\centering
-	\vspace{-0.25\baselineskip}
+\pause
 
-	\includegraphics[height=0.85\textheight]{futuyma_fig2-14}
+\hangpara \highlight{$p + q = 1$} 
+
+\pause
+
+\hangpara What is the Hardy-Weinberg equation for genotype frequency?
+
+\pause
+
+\hangpara \highlight{$p^2 + 2pq + q^2 = 1.$}
+
+\vspace{2\baselineskip}
+
+\hangpara \textcolor{gray}{Recall that $(p + q)^2 = 1^2$}
+
 
 \end{frame}
 
 %
-\begin{frame}[t,plain]{\highlight{Orthologous} genes arise from speciation.}
 
-	\centering
-	\vspace{-0.25\baselineskip}
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{practice_progress}}
+\begin{frame}[t]
 
-	\includegraphics[height=0.85\textheight]{futuyma_fig2-14}
+\tinyfill \textcolor{white}{\href{https://www.flickr.com/photos/98195299@N00/296747958}{Steven S., Flickr}, \ccby{2.0}}
+\end{frame}
+}
+
+%
+
+%\begin{frame}[t]{Consider a population where$\dots$}
+%\hangpara Half the individuals are $A_1A_1$
+%
+%\hangpara Half the individuals are $A_2A_2$
+%
+%\hangpara What is the frequency of each allele?
+%
+%\hangpara What is the frequency of each genotype?
+%
+%\end{frame}
+%
+%%%
+%
+%%
+%
+%\begin{frame}[t]{If a very large population mates at random, what will be$\dots$}
+%
+%\hangpara the allele frequencies in the next generation?
+%
+%\hangpara the genotype frequencies in the next generation?
+%
+%\hangpara Will subsequent generations maintain the same frequencies?
+%
+%\vfilll
+%
+%\hangpara \textcolor{gray}{Starting freqs in first generation were 0.5 each.}
+%\end{frame}
+
+
+
+%\begin{frame}[t]
+%
+%\hangpara If $p$ and $q$ are the frequencies of two alleles at one locus, then
+%
+%\hangpara $p^2$ and $q^2$ are the frequencies of each possible homozygote, and 
+%
+%\hangpara $2pq$ is the frequency of heterozygotes.
+%
+%\hangpara \highlight{$p + q = 1$} and \highlight{$p^2 + 2pq + q^2 = 1.$}
+%
+%\hangpara \textcolor{gray}{Recall that $(p + q)^2 = 1^2$}
+%
+%\end{frame}
+
+%%
+
+\begin{frame}[t]{Hardy-Weinberg equations can be extended to more than two alleles.}
+
+For a diploid population with three alleles in equilibrium, then
+
+\hangpara $p + q + r = 1,$ and
+
+\hangpara $(p + q + r)^2 = 1^2,$ so
+
+\hangpara $p^2 + 2pq + q^2 + 2pr + 2qr + r^2 = 1$
+
 
 \end{frame}
-%
-\begin{frame}[t,plain]{Gene duplication can give rise to gene families.}
 
-	\centering
-	\vspace{-0.25\baselineskip}
 
-	\includegraphics[height=0.85\textheight]{futuyma_fig2-15}
+\begin{frame}[t]{Assume a sample of 1000 individuals in \textsc{hwe}.}
+
+\hangpara $q^2 = 0.2$ and $r^2 = 0.05.$
+
+\hangpara Calculate the three allele frequencies and the other four genotype frequencies.
+\end{frame}
+
+
+\lecture{instructor}{instructor}
+
+\begin{frame}[t]{Solution: If $q^2 = 0.2$ and $r^2 = 0.05$ then $\dots$}
+
+\vspace{-0.5\baselineskip}
+
+\hangpara $q = \sqrt{0.2} = 0.447$ and $r = \sqrt{0.05} = 0.224.$
+
+\pause \hangpara $p = 1 - 0.447 - 0.224 = 0.329.$
+
+\pause \hangpara $p^2 = 0.329^2 = 0.108.$
+
+\pause \hangpara $2pq = (2)(0.329)(0.447) = 0.294.$
+
+\pause \hangpara $2pr = (2)(0.329)(0.224) = 0.147.$
+
+\pause \hangpara $2qr = (2)(0.447)(0.224) = 0.200.$
+
+\pause \hangpara $0.108 + 0.200 + 0.050 + 0.294 + 0.147 + 0.200 = 1.$ (with rounding error)
 
 \end{frame}
-%
-%
-\begin{frame}[t,plain]{Orthologs have a shared evolutionary history.\\ Paralogs do not.}
 
-	\centering
-	\vspace{-0.75\baselineskip}
-
-	\includegraphics[height=0.82\textheight]{orthologs_paralogs_hemoglobin}
-
-\end{frame}
-%
-\begin{frame}[t,plain]{Gene trees can have different topologies than their species trees.}
-
-	\centering
-%	\vspace{-0.75\baselineskip}
-
-	\includegraphics[width=\linewidth]{futuyma_fig16-6}
-
-	\vfilll
-	
-	\tiny \hfill Fig.~16.6 \textcopyright\,Futuyma and Fitzpatrick
-\end{frame}
-%
-%
-\begin{frame}[t,plain]{Rapid diversification to fill empty niches is an \highlight{adaptive radiation.}}
-
-	\centering
-	\vspace{-0.75\baselineskip}
-
-	\includegraphics[height=0.85\textheight]{futuyma_fig2-24}
-
-\end{frame}
-%
-\begin{frame}[t,plain]
-
-	\centering
-%	\vspace{-0.75\baselineskip}
-
-	\includegraphics[height=0.9\textheight]{taylor_hellberg_phylogeny}
-	
-	\vfilll
-	
-	\tiny \hfill Taylor and Hellberg~2005.
-
-\end{frame}
-%
-\begin{frame}[t,plain]{\highlight{Incomplete lineage sorting} is the retention of genetic polymorphisms after speciation.}
-
-	\vspace{-0.5\baselineskip}
-	
-	\includegraphics[width=\textwidth]{genetic_polymorphism}
-	
-	\hangpara Descendant species retain ancestral genetic states.
-	
-	\hangpara I\textsc{ls} can cause incorrect inference of the evolutionary history \emph{of the species.}
-\end{frame}
 %
 
-\begin{frame}[t,plain]
+\begin{frame}[t]
+\frametitle<1>{What are the five assumptions of Hardy-Weinberg equilibrium?}
+\frametitle<2>{A population will reach or maintain Hardy-Weinberg equilibrium if}
 
-%\vspace{-\baselineskip}
+\onslide<2>{%
+\hangpara the population is infinitely large,
 
-\includegraphics[width=\linewidth]{ils_species_gene_trees}
+\hangpara mating is random,
+
+\hangpara mutations do not occur,
+
+\hangpara gene flow does not occur, and
+
+\hangpara natural selection does not occur.
+
+\hangpara \highlight {A population will evolve if \emph{any} one of these assumptions is violated.}
 
 \vfilll
 
-\tiny\hfill Leliaert et al.~2014. Eur. J. Phycol. 49:179.
-\end{frame}
-%
-\begin{frame}[t,plain]
-
-%\vspace{-\baselineskip}
-
-\includegraphics[width=\linewidth]{ils_lineage_sorting}
-
-\vfilll
-
-\tiny\hfill Leliaert et al.~2014. Eur. J. Phycol. 49:179.
+\textcolor{gray}{Equilibrium will be reached in one generation.}
+}%end onslide<2>
 \end{frame}
 
-\begin{frame}[t,plain]{Summary}
-\hangpara Phylogenetic trees are hypotheses of evolutionary history.
-
-\hangpara Monophyletic groups include the ancestor and all descendants.
-
-\hangpara Paralogous genes arise from gene duplication.
-
-\hangpara Orthologous genes arise from speciation.
-
-\hangpara Adaptive radiations result from rapid diversification to fill empty ecological niches.
-
-\hangpara Gene trees can differ from their species trees due to incomplete lineage sorting.
-
-\end{frame}
-
+%%
 \end{document}
