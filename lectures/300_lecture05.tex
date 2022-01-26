@@ -1,0 +1,302 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[t]{beamer}
+
+%%%% HANDOUTS For online Uncomment the following four lines for handout
+%\documentclass[t,handout]{beamer}  %Use this for handouts.
+%\includeonlylecture{student}
+%\usepackage{handoutWithNotes}
+%\pgfpagesuselayout{3 on 1 with notes}[letterpaper,border shrink=5mm]
+%	\setbeamercolor{background canvas}{bg=black!5}
+
+
+%%% Including only some slides for students.
+%%% Uncomment the following line. For the slides,
+%%% use the labels shown below the command.
+
+%% For students, use \lecture{student}{student}
+%% For mine, use \lecture{instructor}{instructor}
+
+
+%\usepackage{pgf,pgfpages}
+%\pgfpagesuselayout{4 on 1}[letterpaper,border shrink=5mm]
+
+% FONTS
+\usepackage{fontspec}
+\def\mainfont{Linux Biolinum O}
+\setmainfont[Ligatures={Common, TeX}, Contextuals={NoAlternate}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={Proportional}]{\mainfont}
+%\setmonofont[Scale=MatchLowercase]{Inconsolata} 
+\setsansfont[Scale=MatchLowercase]{Linux Biolinum O} 
+\usepackage{microtype}
+
+\usepackage{graphicx}
+	\graphicspath{%
+	{/Users/goby/Pictures/teach/300/lectures/}%
+	{/Users/goby/Pictures/teach/163/common/}} % set of paths to search for images
+
+\usepackage{amsmath,amssymb}
+
+%\usepackage{units}
+
+\usepackage{booktabs}
+\usepackage{multicol}
+%	\setlength{\columnsep=1em}
+
+\usepackage{textcomp}
+\usepackage{setspace}
+\usepackage{tikz}
+	\tikzstyle{every picture}+=[remember picture,overlay]
+
+\mode<presentation>
+{
+  \usetheme{Lecture}
+  \setbeamercovered{invisible}
+  \setbeamertemplate{items}[square]
+}
+
+\usepackage{calc}
+\usepackage{hyperref}
+
+\newcommand\HiddenWord[1]{%
+	\alt<handout>{\rule{\widthof{#1}}{\fboxrule}}{#1}%
+}
+
+
+
+\begin{document}
+
+% Lecture goals
+\lecture{student}{student}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{darwin_phylo_tree}}
+\begin{frame}[t]
+\end{frame}
+}
+
+
+\begin{frame}[t,plain]{\highlight{Phylogenetic systematics} estimates evolutionary relationships.}
+	
+	\vspace{-0.75\baselineskip}
+	
+	\includegraphics[width=\linewidth]{phylogeny_genealogy_comparison}
+	
+	\vfilll
+	\tiny \hfill \textcopyright\,Zimmer and Emlen
+	
+% Foxes	\tiny\hfill Jonatan Pie, Wikimedia Commons. \cc~v1.0
+\end{frame}
+
+\begin{frame}[t,plain]{You must learn the basic parts of a phylogenetic tree.}
+	
+	\centering
+%	\vspace{-0.5\baselineskip}
+	
+	\includegraphics[width=\linewidth]{futuyma_fig2-6a}
+	
+	\vfilll
+	
+	\tiny \hfill Fig. 2.6~\textcopyright\,Futuyma and Kirkpatrick.
+	
+\end{frame}
+
+\begin{frame}[t,plain]{\highlight{Clades} include an ancestor and \emph{all} of its descendants.}
+	
+	\centering
+	\vspace{-0.5\baselineskip}
+	
+	\includegraphics[width=\linewidth]{phylogeny_clades}
+	
+	\hangpara Trees can be rearranged but still show the same relationships.
+	
+	\vfilll
+	\tiny \hfill \textcopyright\,Zimmer and Emlen.
+\end{frame}
+
+\begin{frame}[t,plain]{\highlight{Clades} can include one or more branches.}
+	
+	\centering
+	\vspace{-0.5\baselineskip}
+	
+	\includegraphics[width=\linewidth]{clades_collapse}
+	
+	\vfilll
+	\tiny \hfill \textcopyright\,Zimmer and Emlen.
+\end{frame}
+
+\begin{frame}[t,plain]{Clades are \highlight{monophyletic} groups.}
+	
+	\centering
+	\vspace{-0.5\baselineskip}
+	
+	\includegraphics[width=\linewidth]{monophyly_paraphyly_polyphyly}
+	
+	\vfilll
+	\tiny \hfill \textcopyright\,Zimmer and Emlen.
+\end{frame}
+%
+\begin{frame}[t,plain]{Linnean classification is based on nested clades.}
+	
+	\centering
+	\vspace{-0.5\baselineskip}
+	
+	\includegraphics[height=0.85\textheight]{phylogeny_classification}
+	
+	\vfilll
+	\tiny \hfill \textcopyright\,Zimmer and Emlen.
+\end{frame}
+%
+\begin{frame}[t,plain]
+	
+	\centering
+%	\vspace{-0.5\baselineskip}
+	
+	\includegraphics[width=\linewidth]{phylogeny_example}
+	
+	\vfilll
+	\tiny \hfill \textcopyright\,Zimmer and Emlen.
+	
+	\pause
+	
+	\begin{tikzpicture}
+	\draw [draw=white, fill=white] (-0.5,1) rectangle ++(6.7,8.5);
+	\node at (3,8) [draw=white, align=left, font=\large, text width=4cm] {Which groups are \emph{not} monophyletic?};
+	\pause
+	\node at (3,6) [draw=white, align=left, font=\large, text width=4cm] {Are they paraphyletic\\ or polyphyletic?};
+%	\node (rect) at (-0.5,1) [draw, minimum width=6.7cm, minimum height=2cm] {TEST};
+	\end{tikzpicture}
+`\end{frame}
+%
+\begin{frame}[t,plain]{\highlight{Gene trees} show the evolutionary history of \textsc{dna} sequences.}
+
+	\centering
+	\vspace{-0.75\baselineskip}
+
+	\includegraphics[height=0.85\textheight]{futuyma_fig2-13}
+
+\end{frame}
+%
+\begin{frame}[t,plain]{\highlight{Paralogous} genes arise via \highlight{gene duplication}.}
+
+	\centering
+	\vspace{-0.25\baselineskip}
+
+	\includegraphics[height=0.85\textheight]{futuyma_fig2-14}
+
+\end{frame}
+
+%
+\begin{frame}[t,plain]{\highlight{Orthologous} genes arise from speciation.}
+
+	\centering
+	\vspace{-0.25\baselineskip}
+
+	\includegraphics[height=0.85\textheight]{futuyma_fig2-14}
+
+\end{frame}
+%
+\begin{frame}[t,plain]{Gene duplication can give rise to gene families.}
+
+	\centering
+	\vspace{-0.25\baselineskip}
+
+	\includegraphics[height=0.85\textheight]{futuyma_fig2-15}
+
+\end{frame}
+%
+%
+\begin{frame}[t,plain]{Orthologs have a shared evolutionary history.\\ Paralogs do not.}
+
+	\centering
+	\vspace{-0.75\baselineskip}
+
+	\includegraphics[height=0.82\textheight]{orthologs_paralogs_hemoglobin}
+
+\end{frame}
+%
+\begin{frame}[t,plain]{Gene trees can have different topologies than their species trees.}
+
+	\centering
+%	\vspace{-0.75\baselineskip}
+
+	\includegraphics[width=\linewidth]{futuyma_fig16-6}
+
+	\vfilll
+	
+	\tiny \hfill Fig.~16.6 \textcopyright\,Futuyma and Fitzpatrick
+\end{frame}
+%
+%
+\begin{frame}[t,plain]{Rapid diversification to fill empty niches is an \highlight{adaptive radiation.}}
+
+	\centering
+	\vspace{-0.75\baselineskip}
+
+	\includegraphics[height=0.85\textheight]{futuyma_fig2-24}
+
+\end{frame}
+%
+\begin{frame}[t,plain]
+
+	\centering
+%	\vspace{-0.75\baselineskip}
+
+	\includegraphics[height=0.9\textheight]{taylor_hellberg_phylogeny}
+	
+	\vfilll
+	
+	\tiny \hfill Taylor and Hellberg~2005.
+
+\end{frame}
+%
+\begin{frame}[t,plain]{\highlight{Incomplete lineage sorting} is the retention of genetic polymorphisms after speciation.}
+
+	\vspace{-0.5\baselineskip}
+	
+	\includegraphics[width=\textwidth]{genetic_polymorphism}
+	
+	\hangpara Descendant species retain ancestral genetic states.
+	
+	\hangpara I\textsc{ls} can cause incorrect inference of the evolutionary history \emph{of the species.}
+\end{frame}
+%
+
+\begin{frame}[t,plain]
+
+%\vspace{-\baselineskip}
+
+\includegraphics[width=\linewidth]{ils_species_gene_trees}
+
+\vfilll
+
+\tiny\hfill Leliaert et al.~2014. Eur. J. Phycol. 49:179.
+\end{frame}
+%
+\begin{frame}[t,plain]
+
+%\vspace{-\baselineskip}
+
+\includegraphics[width=\linewidth]{ils_lineage_sorting}
+
+\vfilll
+
+\tiny\hfill Leliaert et al.~2014. Eur. J. Phycol. 49:179.
+\end{frame}
+
+\begin{frame}[t,plain]{Summary}
+\hangpara Phylogenetic trees are hypotheses of evolutionary history.
+
+\hangpara Monophyletic groups include the ancestor and all descendants.
+
+\hangpara Paralogous genes arise from gene duplication.
+
+\hangpara Orthologous genes arise from speciation.
+
+\hangpara Adaptive radiations result from rapid diversification to fill empty ecological niches.
+
+\hangpara Gene trees can differ from their species trees due to incomplete lineage sorting.
+
+\end{frame}
+
+\end{document}
