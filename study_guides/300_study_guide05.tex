@@ -19,8 +19,11 @@
 \usepackage{units}    % non-stacked fractions and better unit spacing
 \usepackage{siunitx}
 \usepackage{multicol} % multiple column layout facilities
-\usepackage{enumitem}   % filler text
 \usepackage{hyperref}
+
+\usepackage{enumitem}
+
+
 %\usepackage{fancyvrb} % extended verbatim environments
 %  \fvset{fontsize=\normalsize}% default font size for fancy-verbatim environments
 \makeatletter
@@ -47,8 +50,8 @@
 \renewcommand\smallcapsspacing[1]{{\addfontfeatures{LetterSpace=10}#1}}
 
 
-\title{Study Guide 05\hfill}
-\author{Mutation and variation}
+\title{Study Guide 03\hfill}
+\author{Phylogenetic systematics}
 
 \date{} % without \date command, current date is supplied
 
@@ -56,32 +59,30 @@
 
 \maketitle	% this prints the handout title, author, and date
 
-\section{Vocabulary}\marginnote{\textbf{Read:} Chapter 4, pages 79--85, 88--94; Read and study the Genetics Review document from the course web page.}
-
-\begin{multicols}{2}
-mutation \\
-beneficial mutation \\
-detrimental mutation \\
-segregation \\
-recombination \\
-point mutation \\
-synonymous substitution \\
-non-synonymous substitution \\
-insertion \\
-deletion \\
-indel \\
-frameshift mutation \\
-gene duplication \\
-paralog \\
-ortholog \\
-neofunctionalization \\
-subfunctionalization \\
-allele frequency \\
-genotype frequency \\
-Hardy-Weinberg equilibrium 
-\end{multicols}
-
 %\printclassoptions
+
+\section{Vocabulary}\marginnote{\textbf{Read:} Chapter 2, pages 28--35, including Box 2\textsc{a}, 39--41, 50; Chapter 16, pages 407--409.\\[1em] \noindent Some vocabulary is defined below.}
+\vspace{-1\baselineskip}
+\begin{multicols}{2}
+	phylogenetic systematics\\
+	phylogenetic tree (phylogeny)\\
+	branch \\
+	internal node\\
+	terminal node (tip) \\
+	taxon (plural: taxa) \\
+	root \\
+	clade \\
+	monophyletic \\
+	paraphyletic \\
+	polyphyletic \\
+	species tree \\
+	gene tree \\
+	gene duplication \\
+	paralogous genes (paralogs) \\
+	orthologous genes (orthologs) \\
+	adaptive radiation \\
+	incomplete lineage sorting \\
+\end{multicols}
 
 \section{Concepts}
 
@@ -89,31 +90,37 @@ You should \emph{write} clear and concise answers to each question in the Concep
 
 \begin{enumerate}
 	
-	\item Read and study the Genetics Review document from the course web site. Just sayin’$\dots$.
+	\item Be able to identify the parts of a phylogenetic tree.
 	
-	\item Describe how the Mendelian “laws” of segregation and assortment (recombination) increase genetic polymorphism in a population.
+	\item Be able to recognize and delineate monophyletic, paraphyletic and polyphyletic groups on a phylogenetic tree.
+
+	\item Explain the difference between paralogous and orthologous genes. Explain whether paralogous or orthologous genes should be used to construct a phylogenetic tree. Justify your answer.
 	
-	\item Why are mutations the ultimate source of all genetic variation in a population? Why not segregation or recombination?
+	\item Explain the difference between a species tree and a gene tree.\marginnote{True in the sense of the actual evolutionary history of the species.} Will the gene tree always be an accurate reflection of the true species tree? Justify your answer.
 	
-	\item Explain why non-synyonymous substitutions are subject to natural selection but synonymous substitutions are not.
+	\item Explain incomplete lineage sorting. Explain how incomplete lineage sorting can affect interpretation of a phylogenetic tree. That is, if incomplete lineage sorting is present among a group of species, will you necessarily obtain the actual evolutionary history of the species? Why or why not?
 	
-	\item Describe why indels are usually going to be subject to negative selection.
-	
-	\item Describe the difference between neofunctionalization and subfunctionalization after gene duplication.
-	
-	\item This would be a good place to review lecture 3 to be sure you understand the difference between orthologs and paralogs.  
-	
-	\item If gene duplicates subfunctionalization, are the duplicates orthologs or paralogs? If one copy retains the original function and a duplicate copy evolves a new function, are the two copies orthologs or paralogs? Explain why for each question.
-	
-	\item What does it mean to say a population is in Hardy-Weinberg equilibrium (\textsc{hwe})?
-	
-	\item Describe the five assumptions necessary for \textsc{hwe} to exist in a population. Don't just list them. Explain them. Tell how violation of each assumption causes a population to deviate from equilibrium?
-	
-	\item If a population that is not in \textsc{hwe} meets all five assumptions, how long will it take for the population to return to equilibrium? Be able to demonstrate this given a frequency for one allele. (In the others, be able to use both \textsc{hwe} equations to show the return to equilibrium.)
-	
-	\item Be able to demonstrate the math for three alleles for one locus. We'll focus on two allele systems but you should understand and therefore be able to demonstrate how the \textsc{hwe} equations apply to multiple alleles. 
 	
 
 \end{enumerate}
+
+\section{Detailed Vocabulary}
+
+\textbf{Taxon} (plural: taxa): a term of convenience to reference any particular category of organisms. For example, a taxon may reference a subspecies, a species, a genus, a family, an order, or some other named group. \textbf{Higher taxa} is frequently used to reference taxa above the species level.
+
+\noindent\textbf{Branch}: The lines that represent the ancestral lineages of a group, or that represent the lineage leading to the current taxa at the tips.
+
+\noindent\textbf{Node}: The point where a branch splits into two descendants.  This is the implied ancestral taxon at the end of the lineage and also the implied speciation event forming the descendant taxa.
+
+\noindent\textbf{Tip}: the top end of a branch that represents a specific taxon; sometimes called terminal node.
+
+\noindent\textbf{Monophyletic Group}: a group that contains the common ancestor and all of the descendant taxa that evolved from that ancestor. Monophyletic groups can be identified by the presence of one or more shared, derived characters (synapomorphies) in the descendant taxa.
+
+\noindent\textbf{Clade}: another name for a monophyletic group.  Much easier to say than monophyletic.
+
+\noindent\textbf{Paraphyletic Group}: a group that contains the common ancestor and some but not all of the descendant taxa of that ancestor. 
+
+\noindent\textbf{Polyphyletic Group}: a group in which none of the included taxa share the same most recent common ancestor.  The last common ancestor of the taxa is not included in the group.
+
 
 \end{document}

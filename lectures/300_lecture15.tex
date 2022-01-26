@@ -1,13 +1,13 @@
 %!TEX TS-program = lualatex
 %!TEX encoding = UTF-8 Unicode
 
-%\documentclass[t]{beamer}
+\documentclass[t]{beamer}
 
 %%%% HANDOUTS For online Uncomment the following four lines for handout
-\documentclass[t,handout]{beamer}  %Use this for handouts.
-\usepackage{handoutWithNotes}
-\includeonlylecture{student}
-\pgfpagesuselayout{3 on 1 with notes}[letterpaper,border shrink=5mm]
+%\documentclass[t,handout]{beamer}  %Use this for handouts.
+%\usepackage{handoutWithNotes}
+%\includeonlylecture{student}
+%\pgfpagesuselayout{3 on 1 with notes}[letterpaper,border shrink=5mm]
 
 %\usefonttheme{professionalfonts}
 
@@ -22,7 +22,7 @@
 % FONTS
 \usepackage{fontspec}
 \def\mainfont{Linux Biolinum O}
-\setmainfont[Ligatures={Common, TeX}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={Proportional, OldStyle}]{\mainfont}
+\setmainfont[Ligatures={Common, TeX}, Contextuals={NoAlternate}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={Proportional, OldStyle}]{\mainfont}
 %\setmonofont[Scale=MatchLowercase]{Inconsolata} 
 \setsansfont[Scale=MatchLowercase]{Linux Biolinum O} 
 \setmonofont{Linux Libertine Mono O}
@@ -57,35 +57,7 @@
 \usepackage{setspace}
 \usepackage{tikz}
 	\tikzstyle{every picture}+=[remember picture,overlay]
-	\usetikzlibrary{arrows, arrows.meta}
-	\usetikzlibrary{positioning, backgrounds}
-
-\usepackage{forest}
-\forestset{
-    every leaf node/.style={
-        if n children=0{#1}{}
-    },
-    every tree node/.style={
-        if n children=0{}{#1}
-    },
-    mytree/.style={
-        for tree={
-            edge path={
-            \noexpand\path [draw, very thick, \forestoption{edge}] (!u.parent anchor) |- (.child anchor)\forestoption{edge label};
-            },
-            every tree node={draw=none,inner sep=0, outer sep=0, minimum size=0},
-            every leaf node/.style={align=left},
-            grow=east,
-            parent anchor=east, 
-            child anchor=west,
-            anchor=west,
-            l sep=5mm,
-            s sep=3mm,
-            draw=none,
-    			if n children=0{tier=word}{}
-        }
-    }
-}
+\usetikzlibrary{arrows}
 
 \mode<presentation>
 {
@@ -128,255 +100,452 @@
 \lecture{student}{student}
 
 {
-\usebackgroundtemplate{\includegraphics[width=\paperwidth]{macro_intro}}
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{sexsel_intro}}
 \begin{frame}[b]
 
-\vfilll
-
-\tiny  \textcolor{white}{\futuyma{}}
+\tinyfill  \textcolor{white}{\futuyma{}}
 \end{frame}
 }
 
 %%
+
+
 {
-\usebackgroundtemplate{\includegraphics[width=\paperwidth]{macroevolution_dinosaurs} }
-\begin{frame}{\highlight{Macroevolution} is broad evolutionary changes over time between different lineages.}
-\end{frame}
-}
-
-\begin{frame}{\highlight{Macroevolution} happens because of microevolution.}
-
-	\centering
-	\begin{tikzpicture}
-		[remember picture, overlay,
-		myLine/.style={color=black,very thick},
-		myArrow/.style={color=orange6, thick, ->}]
-
-			\draw [myLine] (-3,-2) -- (0,-2);
-			\draw [myLine] (0,-2) -- (0,-0.7); % vertical lines
-			\draw [myLine] (0,-2) -- (0,-3.3);
-			\draw [myLine] (0,-0.7) -- (3,-0.7); % descendants
-			\draw [myLine] (0,-3.3) -- (3,-3.3); 
-
-		% Draw the tree:
-		
-			\draw [myLine] (-3,-2) -- (0,-2); % ancestor
-
-			\draw [myLine] (0,-2) -- (0,-0.7); % vertical lines
-			\draw [myLine] (0,-2) -- (0,-3.3);
-		
-			\draw [myLine] (0,-0.7) -- (3,-0.7); % descendants
-			\draw [myLine] (0,-3.3) -- (3,-3.3); 
-
-		% Ancestor microevolution
-			\node [color=blue6] at (-1.5,-1.8) {Microevolution}; % ancestor
+	\usebackgroundtemplate{\includegraphics[width=\paperwidth]{intrasexual_selection_giraffes} }
+	\begin{frame}{\highlight{Intrasexual} selection is competition between males.}
 	
-		% Speciation
-		%	\node [color=orange6] (speciation) at (-1.5,-3.1) {Speciation};
-		%	\node [circle, draw=orange6, thick, minimum size=3mm] (speccirc) at (0,-2) {};
-		%	\draw [color=orange6, thick] (speciation) edge (speccirc);
-		
-		
-		% Descendant microevolution
-			\node [color=blue6] at (1.5,-0.5) {Microevolution}; % descendants
-			\node [color=blue6] at (1.5,-3.5) {Microevolution};
+	\vfilll
+	
+	\tiny \textcolor{white}{Luca Galuzzi, \href{http://www.galuzi.it}{www.galuzi.it}, \ccbysa{2.5}
+		\hfill \href{http://www.youtube.com/watch?v=C7HCIGFdBt8}{Link to Video}}
+	
+\end{frame}
+}
 
-		% Macroevolution
-			\node [color=orange6] (macro) at (1.7,-2) {Macroevolution};
-			\draw [myArrow] (macro.north) to (1.7,-0.8);
-			\draw [myArrow] (macro.south) to (1.7,-3.2);
+%%
 
-	\end{tikzpicture}
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{superb_bird_of_paradise} }
+\begin{frame}{\textcolor{orange5}{Intersexual} \textcolor{white!95!black}{selection is females choosing mates.}}
+
+\vfilll
+
+\tiny \textcolor{white}{\href{https://youtu.be/IPfW7iolmgc}{Link to Video} 
+	\hfill \href{https://youtu.be/1XkPeN3AWIE}{Bonus Video}}
+
+\end{frame}
+}
+
+
+%%
+
+\begin{frame}{\highlight{Sexual dimorphism} is the difference of  traits between sexes of the same species.}
+
+\backskip
+
+\begin{multicols}{2}
+
+\hangpara \highlight{Primary sexual traits} have a direct role in  reproduction.
+
+\hangpara \highlight{Secondary sexual traits} do not have a \emph{direct} role in reproduction.
+
+\vspace{\baselineskip}
+
+\centering
+
+\includegraphics[width=0.9\linewidth]{sex_dimorphism_lions}
+
+\columnbreak
+
+\includegraphics[width=\linewidth]{sex_dimorphism_fishes}
+
+
+\end{multicols}
+
+
+\vfilll
+
+\tiny \href{https://www.flickr.com/photos/11847703@N05/8234519412}{George Lamson, Flickr, \ccbyncsa{2}} \hfill
+\textcopyright\,M.G.~Simpson, Plant Systematics 2010.
+\end{frame}
+
+%%
+
+\begin{frame}{Why are males sexually selected?}
+
+\backskip
+
+\begin{multicols}{2}
+	\hangpara \highlight{Bateman's principle:} male \textit{Drosophila} sired more offspring if they mated with more females.
+
+	\hangpara \highlight{Operational sex ratio:} females can be limiting resource for males.
+
+	\hangpara \highlight{Anisogamy}
+	
+\columnbreak
+
+\includegraphics[width=0.9\linewidth]{sex_bateman}
+
+\end{multicols}
+
+\vfilll
+
+\tinyfill Bateman 1948. Heredity 2:349. 
+
+\end{frame}
+
+%%
+
+\begin{frame}{Intrasexual selection can be direct.}
+
+\backskip
+
+\begin{multicols}{2}
+\hangpara Visual ornaments can enhance apparent body size.
+
+\vspace{6\baselineskip}
+
+\hangpara Same-sex contests based on size, weapons, or other traits.
+
+\columnbreak
+
+\centering
+
+\includegraphics[width=0.7\linewidth]{sex_rwbl}
+
+\smallskip
+
+\includegraphics[width=0.8\linewidth]{sex_elk_combat}
+
+\end{multicols}
+	
+
+	
+\end{frame}
+
+%%
+
+\begin{frame}{Intrasexual selection can be indirect}
+\backskip
+
+\begin{multicols}{2}
+\hangpara Territories that limit movement.
+
+\hangpara External mechanisms that prevent copulation.
+
+\hangpara Internal mechanisms post-copulation.
+
+\columnbreak
+
+\centering
+
+\includegraphics[width=0.65\linewidth]{sex_mating_damselflies}
+
+\smallskip
+
+\includegraphics[width=0.65\linewidth]{sex_damselfly_penis}
+
+\end{multicols}
+	
+\end{frame}
+
+%%
+
+\begin{frame}{Female choice for male traits can be counteracted by other selective pressures.}
+
+\backskip
+
+\includegraphics[width=\linewidth]{sex_trinidad_guppies}
+
+\end{frame}
+
+%%
+
+\begin{frame}{Predators may cue in on same cues that females prefer.}
+
+\includegraphics[width=\linewidth]{sex_tungara_frogs}
+
+\tinyfill \href{https://www.smithsonianmag.com/science-nature/frogs-mating-call-also-attracts-predators-180949463/}{Audio of Tungara frogs calls.}
+\end{frame}
+
+%%
+
+\begin{frame}{Some females may be able to retain choice at the cellular level.}
+
+\backskip
+
+\begin{multicols}{2}
+
+\hangpara Multiple sperm enter egg of \textit{Beroë} (a comb jelly).
+
+\hangpara The egg pronuclei (red) visits all sperm pronuclei (black), then fuses with one.
+
+\columnbreak
+
+\vspace*{-2.5\baselineskip}\includegraphics[width=0.85\linewidth]{sex_beroe}
+
+\end{multicols}
+
+\vfilll
+
+\tiny Birkhead T.~2000. Promiscuity. Harvard Press.
+
+\end{frame}
+
+%%
+
+\begin{frame}{Why does sexual selection cause secondary sexual traits?}
+
+\hangpara \highlight{Direct benefits:} males display obvious benefits to female or her offspring.
+
+\hangpara \highlight{Indirect benefits:} Runaway sexual selection or good genes.
+
+\hangpara \highlight{Sensory bias:} females have an existing bias for trait, males later evolve trait.
+
+\hangpara \highlight{Sensory drive:} females prefer traits that standout from the background.
+
+\hangpara \highlight{Antagonistic coevolution:} conflicting self-interest leads to battle of the sexes.
+
+\end{frame}
+
+%%
+
+\begin{frame}{\highlight{Direct benefits:} males display obvious benefits to female or her offspring.}
+
+\backskip
+\begin{multicols}{2}
+
+\centering
+
+\includegraphics[width=\linewidth]{sex_bower}
+
+{\small Bower of Satin Bowerbird}
+
+\columnbreak
+
+\includegraphics[width=0.93\linewidth]{sex_hofi}
+
+\smallskip
+
+\includegraphics[width=0.93\linewidth]{sex_hofi_feeding}
+
+{\small House Finch}
+
+\end{multicols}
+
+\end{frame}
+
+
+%%
+
+\begin{frame}{\highlight{Runaway sexual selection} occurs if female preference is linked to male trait.}
+
+\vspace*{-\baselineskip}
+
+\includegraphics[width=\linewidth]{sex_runaway_selection}
+
+\end{frame}
+
+%%
+
+\begin{frame}{\highlight{Good genes:} Males sport traits that are energetically or ecologically costly.}
+
+\vspace{-\baselineskip}
+
+\begin{multicols}{2}
+
+\includegraphics[width=\linewidth]{sex_rnph}
+
+\smallskip
+
+\includegraphics[width=\linewidth]{sex_rnph_spurs}
+
+\columnbreak
+
+\begin{tabular}{@{}R{2cm}cc@{}}
+\toprule
+& \multicolumn{2}{c}{Genetic quality} \tabularnewline
+\cmidrule{2-3}
+Male traits & Good & Bad \tabularnewline
+\midrule
+Short tail (cheap) & Alive & Alive \tabularnewline
+Long tail (costly) & \highlight{Alive} & Dead \tabularnewline
+\bottomrule
+\end{tabular}
+
+\end{multicols}
+
+\end{frame}
+
+%%
+
+\begin{frame}{\highlight{Sensory bias} is when females have a pre-existing bias for a particular trait.}
+
+\backskip
+
+\includegraphics[width=\linewidth]{sex_sensory_bias}
+
+\end{frame}
+
+%%
+
+\begin{frame}{\highlight{Sensory drive} is a male response to female perception of signal relative to environment.}
+
+\hangpara Females prefer conspicuous signals that standout from the environment.
+
+\hangpara Perceptual sensitivity varies among environments.
+e.g., ability to perceive color varies with light regime
+
+\hangpara Male signals that match female perception are favored.
 
 \end{frame}
 
 %%
 
 \begin{frame}
+\begin{multicols}{2}
 
-\centering
+\includegraphics[width=\linewidth]{sex_phylloscopus}
 
-\includegraphics[height=0.93\textheight]{evodevo_hox_phylogeny}
+\columnbreak
 
-\tinyfill Carroll et al., 2001. \textit{From DNA to Diversity.}
-\end{frame}
+\includegraphics[width=\linewidth]{sex_phylloscopus_graphs}
 
-%%
+\end{multicols}
 
-
-\begin{frame}{Body plan complexity increased via \emph{Hox} expansion and co-option.}
-
-\backskip
-
-\centering
-
-\includegraphics[width=0.88\linewidth]{macro_hox_expansion}
-
-\tinyfill Peterson \& Davidson 2000. PNAS 97:4430.
-
-\end{frame}
-
-%%
-
-\begin{frame}{Jaws evolved before transition to land.}
-\backskip
-
-\centering
-
-\includegraphics[width=0.83\linewidth]{macro_jaws_first}
-
-\end{frame}
-%%
-
-\begin{frame}{Jaws evolved by specialization of toolkit genes.}
-
-%\backskip
-
-\centering
-
-\includegraphics[width=\linewidth]{macro_jaws_toolkit}
-
-\tinyfill Kuratani 2004. J Anat 205:335. Mehta \& Wainwright 2007. Nature 449:79.
-
-\end{frame}
-%%
-
-\begin{frame}{\highlight{CaM1} and \highlight{BMP4} influence jaw morphology of vertebrates.}
-
-\backskip
-
-\centering
-
-\includegraphics[width=0.95\linewidth]{macro_jaws_cam1}
-
-\tinyfill Parson \& Albertson 2009. Annu Rev Genet 43:369
+\begin{tikzpicture}
+\draw [->, ultra thick] (5.8,7.74) to (7.7,7.74);
+\draw [->, ultra thick] (5.8,2.35) to (9.65,2.62);
+\end{tikzpicture}
 
 
-\end{frame}
-%%
+\vfilll
 
-\begin{frame}{Bill shape influenced by \highlight{CaM1} and \highlight{BMP4.}}
-
-\backskip
-
-\centering
-
-\includegraphics[height=0.82\textheight]{macro_bill_shape}
-
-\tinyfill Abzhanov et al.~2004 Science 305:1462. Abzhanov et al.~2006 Nature 442:563.
-
-\end{frame}
-
-%%
-
-\begin{frame}{\highlight{CaM1} correlated with jaw width in fishes.}
-
-\backskip
-
-\centering
-
-\includegraphics[height=0.82\textheight]{macro_jaw_width}
-
-\tinyfill Parson \& Albertson 2009. Annu Rev Genet 43:369
-
-
+\tiny Martin Vavrik, Wikimedia (upper). David Cook, Flickr (lower)
 \end{frame}
 
 
 %%
 
-\begin{frame}{Tetrapod limbs evolved via co-option of Hox genes.}
 
-\backskip
+\begin{frame}{\highlight{Antagonistic coevolution} results from sexual conflict due to anisogamy.}
 
-\centering
+\hangpara Females produce few, large eggs that are energetic costly.
 
-\includegraphics[height=0.82\textheight]{macro_hox_limbs}
-
-\tinyfill \futuyma{15.12}
+\hangpara Male produce many small sperm that are energetically cheap.
 
 \end{frame}
 
 %%
 
 {
-\usebackgroundtemplate{\includegraphics[width=\paperwidth]{macro_hox_limbs_colinear}}
-\begin{frame}[b]
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{sex_social_monogamy}}
+\begin{frame}{\textcolor{white}{Are monogamous birds really monogamous?}}
 
-\tinyfill Modified from Shubin et al.~1997. Nature 388:639
+\vfilll
 
+\tiny \textcolor{white}{Sandysphotos2009, Wikimedia}
 \end{frame}
 }
 
 %%
 
-\begin{frame}{Homologous toolkit genes control limb patterning for arthropods and vertebrates.}
+\begin{frame}{Flatworm penis fencing: a courtship duel.}
 
 \backskip
 
 \centering
 
-\includegraphics[width=\linewidth]{macro_animal_appendages}
+\includegraphics[width=0.95\linewidth]{sex_penis_fencing}
 
-\tinyfill Shubin et al.~1997. Nature 388:639
+\vfilll
+
+\tiny \href{https://www.youtube.com/watch?v=wn3xluIRh1Y}{Link to video} \hfill Nico Michiels, University Tuebingen
+
 
 \end{frame}
+
+%%
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{sex_aggressive_mallards}}
+\begin{frame}
+
+\vfilll
+
+\tiny \href{https://www.youtube.com/watch?v=dQs1cw25dqw}{Link to video} \hfill AnemoneProjectors, Wikimedia
+\end{frame}
+}
 
 %%
 
 \begin{frame}
 
+\begin{multicols}{2}
+
 \centering
 
-\includegraphics[height=0.95\textheight]{macro_therapod_phylogeny}
+\includegraphics[height=0.85\textheight]{sex_duck_penis}
 
-\end{frame}
+\columnbreak
 
-%%
+\includegraphics[height=0.85\textheight]{sex_duck_genitalia}
 
-\begin{frame}{\highlight{Heterotopy} is an evolutionary change in the spatial position of a character.}
-
-{\centering
-
-\includegraphics[width=\linewidth]{futuyma_fig20-7}
-}
-
-\hangpara The gene networks for condensations 2–4 in therapods shift to form digits 1–3 in birds.
-\tinyfill \futuyma{20.7}
-
-\end{frame}
-
-%%
-
-
-\begin{frame}{\highlight{Shh} and \highlight{Bmp2} determine growth of alligator and bird scales, and feathers.}
-
-\backskip
-
-\includegraphics[width=\linewidth]{macro_scales_feathers}
-
-
-\tinyfill Harris et al.~2002. J Exp Zool 294:160
-
-\end{frame}
-
-%%
-
-\begin{frame}{Would the same toolkit genes determine growth of mammalian hair?}
-
-\backskip
-
-\includegraphics[width=\linewidth]{macro_toolkit_feathers}
+\end{multicols}
 
 \vfilll
 
-\tiny Chang et al.~2009. Int J Dev Biol 53:813
-\hfill Widelitz et al.~2003. J Exp Zool 298B:109
-
-
+\tiny McCracken et al. 2001. Nature 413: 128
+\hfill 
+Brennan et al. 2007. PLoS ONE 2(5):e418. 
 
 \end{frame}
 
+%%
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{sex_suicide}}
+\begin{frame}
+
+\begin{tikzpicture}
+\node at (2.5,-2) [text width=2cm] {\LARGE Sexual \highlight{suicide.}};
+\end{tikzpicture}
+
+
+\tinyfill Australian redback spider by Tony Hudson, Wikimedia Commons.
+\end{frame}
+}
+
+%%
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{sex_cannibalism}}
+\begin{frame}
+
+
+\begin{tikzpicture}
+\node at (4.5,-0.7) [text width=3.2cm] {\LARGE \textcolor{white}{Sexual}\\ \highlight{cannibalism.}};
+\end{tikzpicture}
+
+
+\vfilll
+
+\tiny \textcolor{white}{Oliver Koemmerling, Wikimedia Commons.\hfill \href{http://www.youtube.com/watch?v=KYp_Xi4AtAQ}{Link to video} \hfill \phantom{.}} 
+
+\end{frame}
+}
+
+%%
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{sex_humans}}
+\begin{frame}{\textcolor{white}{Does sexual selection occur in humans?}}
+
+%\vfilll
+
+\tinyfill AnemoneProjectors, Wikimedia
+\end{frame}
+}
 
 
 %%

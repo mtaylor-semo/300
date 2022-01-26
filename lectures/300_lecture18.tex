@@ -9,7 +9,7 @@
 %\includeonlylecture{student}
 %\pgfpagesuselayout{3 on 1 with notes}[letterpaper,border shrink=5mm]
 
-\usefonttheme{professionalfonts}
+%\usefonttheme{professionalfonts}
 
 
 %%% Including only some slides for students.
@@ -29,18 +29,20 @@
 
 \usepackage{microtype}
 
+\parindent=0pt
+
 \usepackage{unicode-math}
 \setmathfont[Scale=MatchLowercase]{Asana Math}
 
 \usepackage{graphicx}
 	\graphicspath{%
 	{/Users/goby/Pictures/teach/300/lectures/}%
-	{/Users/goby/Pictures/teach/163/lecture/}} % set of paths to search for images
+	{/Users/goby/Pictures/teach/438/lectures/}} % set of paths to search for images
 
 \usepackage{amsmath,amssymb}
 
 %\usepackage{units}
-%\usepackage{mhchem}
+
 \usepackage{booktabs}
 \usepackage{array}
 \newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
@@ -51,7 +53,6 @@
 \usepackage{multicol}
 %	\setlength{\columnsep=1em}
 \usepackage{enumitem}
-\usepackage{xcolor}
 \usepackage{textcomp}
 \usepackage{setspace}
 \usepackage{tikz}
@@ -99,330 +100,405 @@
 \lecture{student}{student}
 
 {
-\usebackgroundtemplate{\includegraphics[width=\paperwidth]{homo_intro}}
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{biogeo_intro}}
 \begin{frame}[b]
 
-\tinyfill  \textcolor{white}{\futuyma{}}
+%\tinyfill  \textcolor{white}{\futuyma{}}
+\end{frame}
+}
+
+%%
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{regions_terrestrial}}
+\begin{frame}{Eight \highlight{biogeographic realms} are recognized.}
+
+\tinyfill Modified from \futuyma{18.2}
 \end{frame}
 }
 
 
 %%
 
-\begin{frame}{Humans belong to the family \highlight{Hominidae.}}
+\begin{frame}{Higher level taxa are usually \highlight{endemic} to a realm.}
 
-\includegraphics[width=\linewidth]{futuyma_fig21-2}
+\backskip
 
-\tinyfill \futuyma{21.2}
+\includegraphics[width=\linewidth]{futuyma_fig18-3}
+	
+
+\tinyfill \futuyma{18.3}
 
 \end{frame}
+
 %%
 
-\begin{frame}{\highlight{Hominins} are \highlight{bipedal.} What are the adaptive advantages?}
+\begin{frame}{Realms are divided into \highlight{provinces}.}
 
 \backskip
 
 \centering
 
-\includegraphics[width=\linewidth]{futuyma_fig21-4}
+\includegraphics[height=0.83\textheight]{regions_north_american_provinces}
+	
 
-\tinyfill \futuyma{21.4}
+\tinyfill \textcopyright\,Lomolino et al.~2005. \emph{Biogeography}
+
 \end{frame}
+
+
 %%
 
-\begin{frame}{How many hominin species to you see?}
+\begin{frame}{Species ranges are endemic at smaller scales.}
 
 \backskip
 
-\includegraphics[width=\linewidth]{homo_skulls}
+\includegraphics[height=0.83\textheight]{range_marmota}
+	
 
-	\pause
-	\backskip
-	\alt<handout>{}{%
-	\begin{multicols}{3}
-	\begin{enumerate}[leftmargin=*,label=\textsc{\Alph*}.]
-	{\tiny
-	\item Chimpanzee, modern\\
-	\item \textit{Australopithecus africanus}, 2.6 \textsc{mya}\\
-	\item \textit{A. africanus}, 2.5 \textsc{mya}\\
-	\item \textit{Homo habilis}, 1.9 \textsc{mya}\\
-	\item \textit{H. habilis}, 1.8 \textsc{mya}\\
-	%
-	\item \textit{H. rudolfensis}, 1.8 \textsc{mya}\\
-	\item \textit{H. erectus}, 1.75 \textsc{mya}\\
-	\item \textit{H. ergaster}, 1.75 \textsc{mya}\\
-	\item \textit{H. heidelbergensis}, 300–125 \textsc{kya}\\
-	\item \textit{H. neanderthalensis}, 70 \textsc{kya}\\
-	%
-	\item \textit{H. neanderthalensis}, 60 \textsc{kya}\\
-	\item \textit{H. neanderthalensis}, 45 \textsc{kya}\\
-	\item \textit{H. sapiens}, Cro-Magnon, 30 \textsc{kya}\\
-	\item \textit{H. sapiens}, modern\\
-	}
-	\end{enumerate}
-	\end{multicols}
+\tinyfill \textcopyright\,Lomolino et al.~2005. \emph{Biogeography}
+
+
+\end{frame}
+
+%
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{range_allopatric}}
+\begin{frame}[t]{Closely related species have \highlight{allopatric} distributions.}
+
+\tinyfill \textcopyright\,Lomolino et al.~2005. \emph{Biogeography}
+
+\end{frame}
 }
+%
+%
+
+\begin{frame}{Ranges are hierarchical at higher taxonomic levels.}
+
+\backskip
+
+\centering 
+
+\includegraphics[height=0.83\textheight]{regions_endemism_hierarchy}
+	
+
+\tinyfill \textcopyright\,Lomolino et al.~2005. \emph{Biogeography}
+
+
+\end{frame}
+
+
+%
+%%
+
+\begin{frame}{Some taxa expand their range by \highlight{dispersal.}}
+
+\backskip
+
+\centering
+
+\includegraphics[height=0.83\textheight]{dispersal_jump_diffusion}
+	
+
+\tinyfill \textcopyright\,Lomolino et al.~2005. \emph{Biogeography}
+
+\end{frame}
+
+%%
+
+\begin{frame}{Humans have caused some range expansion.}
+
+\backskip
+
+\centering
+
+\includegraphics[height=0.83\textheight]{futuyma_fig18-5}
+	
+
+\tinyfill \futuyma{18.5}
+
+\end{frame}
+
+%%
+
+\begin{frame}{Some taxa have a \highlight{disjunt} distribution.}
+
+\backskip
+
+\centering
+
+\includegraphics[height=0.83\textheight]{futuyma_fig18-4}
+	
+
+\tinyfill \futuyma{18.4}
 
 \end{frame}
 %%
 
-\begin{frame}{How many species of \textit{Homo} have been described?}
+\begin{frame}{Disjunct distributions can be caused by \highlight{vicariance.}}
+
+\backskip
+
+\centering
+
+\includegraphics[height=0.83\textheight]{vicariance_reptile_mammals}
+	
+
+\tinyfill \textcopyright\,Lomolino et al.~2005. \emph{Biogeography}
+
+\end{frame}
+
+%%
+
+\begin{frame}{Many modern taxa have vicariant distributions.}
+
+\backskip
+
+\centering
+
+\includegraphics[width=\linewidth]{vicariance_ratites}
+	
+
+\tinyfill \textcopyright\,Lomolino et al.~2005. \emph{Biogeography}
+
+\end{frame}
+
+
+%%
+
+\begin{frame}{Vicariance is reflected in phylogenetic trees.}
+
+\backskip
+
+\centering
+
+\includegraphics[width=\linewidth]{futuyma_fig18-9}
+	
+\tinyfill \futuyma{18.9}
+
+\end{frame}
+
+%%
+
+\begin{frame}{Dispersal can also be reflected in phylogenetic trees.}
+
+\backskip
+
+\centering
+
+\includegraphics[height=0.83\textheight]{futuyma_fig18-12}
+	
+\tinyfill \futuyma{18.12}
+
+\end{frame}
+
+%%
+
+\begin{frame}{\highlight{Phylogeography} studies the geographic distribution of gene lineages.}
+
+\backskip
+
+\centering
+
+\includegraphics[height=0.79\textheight]{futuyma_fig18-13}
+	
+\tinyfill \futuyma{18.13}
+
+\end{frame}
+
+%%
+
+\begin{frame}{Gene lineages are not always resolved by phylogenies.}
+
+\backskip
+
+\centering
+
+\includegraphics[height=0.83\textheight]{biogeo_gene_phylogeny}
+	
+\tinyfill Guo et al.~2019. Korean J Parasitol 57:153
+
+\end{frame}
+
+%%
+
+\begin{frame}{Gene lineages can be represented as a network.}
+
+\backskip
+
+\centering
+
+\includegraphics[height=0.83\textheight]{biogeo_gene_network}
+	
+\tinyfill Guo et al.~2019. Korean J Parasitol 57:153
+
+\end{frame}
+
+
+
+%%
+
+\begin{frame}{Phylogeography reflects evolutionary history, such as refugia and range expansion.}
+
+\backskip
+	\begin{columns}[T]
+		\begin{column}{0.6\textwidth}
+			\includegraphics[width=0.9\textwidth]{pleistocene_macgillivray_range} %\hspace*{1cm}
+		\end{column}
+		\begin{column}{0.4\textwidth}
+			\includegraphics[width=0.9\textwidth]{pleistocene_macgillivray_picture}
+		\end{column}
+	\end{columns}
+	\begin{tikzpicture}[overlay, line width=2pt]
+		\draw [<-] (1.7,1.5) -- (0.3,1.5) ;
+	\end{tikzpicture}
+	\vspace{\baselineskip}
+	
+	Is the breeding resident population of MacGillivray's Warbler in Mexico a refugial population?
+	
+\end{frame}
+%
+\lecture{instructor}{instructor}
+{\setbeamercolor{background canvas}{bg=black}
+\begin{frame}[plain]
+%	Placeholder to work out parsimony network
+\end{frame}}
+%
+\lecture{student}{student}
+\begin{frame}{\highlight{Parsimony network} supports refuge and range expansion for MacGillivray's Warbler.}
+	\vspace{-\baselineskip}
+	\begin{center}
+		\includegraphics[width=0.9\textwidth]{pleistocene_macgillivray_network}
+	\end{center}
+\end{frame}
+
+%%
+
+\begin{frame}{Similar patterns of divergence suggest shared biogeographic histories.}
+
+%\backskip
+
+\centering
+
+\includegraphics[width=\linewidth]{futuyma_fig18-14}
+	
+\tinyfill \futuyma{18.13}
+
+\end{frame}
+
+%%
+
+\begin{frame}{Ecologically similar species are allopatric. Dissimilar species can be sympatric.}
+
+\backskip
 
 \begin{multicols}{2}
-\textit{habilis} (2.3–1.4 \textsc{mya})*\\
-\textit{rudolfensis} (1.9)*\\
-\textit{ergaster} (1.9–1.4)\\
-\textit{georgicus} (1.8)\\
-\textit{erectus} (1.5–0.2)\\
-\textit{antecessor} (1.2–0.8)\\
-\textit{cepranensis} (0.9–0.8)\\
+\includegraphics[width=\linewidth]{biogeo_morpho_divergence}
 
 \columnbreak
 
-\textit{heidelbergensis} (0.6-0.3 \textsc{mya})\\
-\textit{rhodesiensis} (0.3–0.12)\\
-\textit{neanderthalensis} (0.4–0.04)\\
-\textit{sapiens} (0.8–?)\\
-\textit{floresiensis} (0.10–0.012)\\
-Denisovans (0.5–0.03)\\
+\includegraphics[width=\linewidth]{futuyma_fig18-16}
 \end{multicols}
-
 
 \vfilll
-
-\tiny * Australopithecines?
-
-\end{frame}
-
-%%
-
-\begin{frame}{Many \textit{Homo} species are no longer recognized.}
-
-\includegraphics[width=\linewidth]{homo_jaw}
-
-\begin{tikzpicture}
-\node at (3.5,7) [text width=4.5cm]{\textit{capensis, dubius, leakeyi, kanamensis, mauritanicus, modjokertensis, pekinensis}};
-\end{tikzpicture}
+	
+\tiny Pigot \& Tobias 2013. Ecology Letters 16:330 \hfill \futuyma{18.16}
 
 \end{frame}
 
-%%
+%
 
-\begin{frame}
-
-\centering
-\includegraphics[height=0.94\textheight]{futuyma_fig21-6}
-
-\tinyfill \futuyma{21.6}
-
-\end{frame}
-
-%%
-
-
-\begin{frame}{Two waves of \textit{Homo} left Africa 1.9 and 0.6 \textsc{mya}.}
+\begin{frame}{Taxa show a \highlight{latitudinal diversity gradient.}}
 
 %\backskip
 
-\includegraphics[width=\linewidth]{futuyma_fig21-9}
+\centering
 
-\tinyfill \futuyma{21.9}
+\includegraphics[width=\linewidth]{futuyma_fig18-18}
+	
+	
+\begin{tikzpicture}
+
+\node at (-1,6) [text width=3.5cm] {Diversity is greatest in the tropics.};
+\end{tikzpicture}
+	
+\tinyfill \futuyma{18.18}
 
 \end{frame}
 
+%
+\begin{frame}[t,plain]{\highlight{Net primary productivity} is highest in the tropics.}
+
+\backskip
+\centering
+		\includegraphics[width=\textwidth]{diversity_gradient_npp}
+\end{frame}
+%
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{diversity_gradient_niche_conservatism_phylogeny}}
+\begin{frame}[t]{Oldest lineages are tropical. Younger lineages are temperate.}
+
+
+	\vfilll
+
+	\tiny \hfill Fig.~14.55\,\textcopyright Sinauer Associates, Inc.
+\end{frame}
+}
+
 %%
 
-\begin{frame}{\textit{Homo sapiens} left Africa 60 \textsc{kya}.}
+\begin{frame}{The oldest tree frog lineages are tropical.}
 
 %\backskip
 
-\includegraphics[width=\linewidth]{futuyma_fig21-12}
-
-\tinyfill \futuyma{21.12}
-
-\end{frame}
-
-%%
-
-\begin{frame}{\textit{Homo sapiens} interbred with other species of \textit{Homo.}}
-
-\backskip
-
 \centering
 
-\includegraphics[height=0.83\textheight]{futuyma_fig21-14}
-
-\tinyfill \futuyma{21.14}
-
-\end{frame}
-
-%%
-
-\begin{frame}[t]{Bipedalism evolved before large brain size}
-	\includegraphics[width=\textwidth]{hominin_brain_size}
+\includegraphics[width=\linewidth]{futuyma_fig18-20}
+	
+\tinyfill \futuyma{18.20}
 
 \end{frame}
 
-%%
+%
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{diversity_gradient_out_of_tropics}}
+\begin{frame}[t]{Tropics serve as cradle, museum, and immigration pump.}
 
-\begin{frame}{As brain size increased, skull structure changed.}
 
-\centering
+	\vfilll
 
-\includegraphics[width=\linewidth]{futuyma_fig21-8}
-
-\smallskip
-
-\includegraphics[width=0.8\linewidth]{futuyma_fig21-10}
-
-\tinyfill \futuyma{21.8, 21.10}
+	\tiny \hfill Fig.~14.56\,\textcopyright Sinauer Associates, Inc.
 \end{frame}
+}
+
 
 %%
 
-\begin{frame}{Larger brain size might be adaptive for ecological or social reasons.}
-
-\centering
-
-\includegraphics[height=0.75\textheight]{futuyma_fig21-15}
-
-\tinyfill \futuyma{21.15}
+\begin{frame}[t]{More marine bivalves tended to evolve first in tropics.}
+	\begin{center}
+		\includegraphics[width=\textwidth]{diversity_gradient_oot_first_occurrence}
+	\end{center}
+	
+	\vfilll
+	
+	\hfill \tiny Jablonski et al. 2013. Proc. Natl. Acad. Sci. 110: 10487.
 \end{frame}
-
-%%
-
-\begin{frame}{Cognitive ability for rudimentary language is old\ldots}
-
-\backskip
-
-\centering
-
-\includegraphics[height=0.83\textheight]{futuyma_fig21-16}
-
-\tinyfill \futuyma{21.16}
-
+%
+\begin{frame}[t]{Marine bivalves appear later in temperate zones.}
+	\vspace{-\baselineskip}
+	\begin{center}
+		\includegraphics[height=0.75\textheight]{diversity_gradient_oot_first_occurrence2}
+	\end{center}
+	
+	\vfilll
+	
+	\hfill \tiny Jablonski et al. 2013. Proc. Natl. Acad. Sci. 110: 10487.
 \end{frame}
+%
 
-%%
-
-\begin{frame}{\ldots but complex communication is young.}
-
-\backskip
-
-\centering
-
-\includegraphics[height=0.83\textheight]{futuyma_fig21-23}
-
-\tinyfill \futuyma{21.23}
-
-\end{frame}
-
-%%
-
-\begin{frame}{Large brains require high metabolic rates.}
-
-\backskip
-
-\centering
-
-\includegraphics[height=0.83\textheight]{futuyma_fig21-17}
-
-\tinyfill \futuyma{21.17}
-
-\end{frame}
-
-%%
-
-\begin{frame}{Agriculture had enormous evolutionary consequences.}
-
-\backskip
-
-\centering
-
-\includegraphics[width=\linewidth]{futuyma_fig21-18}
-
-\tinyfill \futuyma{21.18}
-
-\end{frame}
-
-%%
-
-\begin{frame}{Twelve genes have signature of adaptive evolution.}
-
-\backskip
-
-\centering
-
-\includegraphics[height=0.83\textheight]{futuyma_fig21-19}
-
-\tinyfill \futuyma{21.19}
-
-\end{frame}
-
-%%
-
-\begin{frame}{Selection still acts today.}
-
-\backskip
-
-\centering
-
-
-\begin{multicols}{2}
-
-Cholesterol
-
-\includegraphics[width=\linewidth]{futuyma_fig21-21a} 
-
-\columnbreak
-
-Height
-
-\includegraphics[width=\linewidth]{futuyma_fig21-21b}
-
-\end{multicols}
-
-
-\tinyfill \futuyma{21.21}
-
-\end{frame}
-
-%%
-
-\begin{frame}{Mutational load increases with distance from Africa.}
-
-\backskip
-
-\centering
-
-
-\begin{multicols}{2}
-
-\includegraphics[width=\linewidth]{futuyma_fig21-20a}
-
-\columnbreak
-
-\includegraphics[width=\linewidth]{futuyma_fig21-20b}
-
-\end{multicols}
-
-
-\tinyfill \futuyma{21.21}
-
-\end{frame}
-
-%%
-
-\begin{frame}{Global $F_{ST} \approx 0.12.$ Apparent differences are often adaptive.}
-
-\centering
-\includegraphics[width=0.95\linewidth]{homo_global_pops}
-
-\begin{tikzpicture}
-\node at (-3,1.5) [text width=4cm]{Nigeria, SE~Asia, Europe};
-\end{tikzpicture}
-
-
+\begin{frame}{Diversity on “islands” varies by \highlight{area and isolation.}}
+	\centering
+		\includegraphics[height=0.8\textheight]{island_equilibrium}
 \end{frame}
 
 

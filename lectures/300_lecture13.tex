@@ -9,7 +9,7 @@
 %\includeonlylecture{student}
 %\pgfpagesuselayout{3 on 1 with notes}[letterpaper,border shrink=5mm]
 
-%\usefonttheme{professionalfonts}
+\usefonttheme{professionalfonts}
 
 
 %%% Including only some slides for students.
@@ -29,15 +29,13 @@
 
 \usepackage{microtype}
 
-\parindent=0pt
-
 \usepackage{unicode-math}
 \setmathfont[Scale=MatchLowercase]{Asana Math}
 
 \usepackage{graphicx}
 	\graphicspath{%
 	{/Users/goby/Pictures/teach/300/lectures/}%
-	{/Users/goby/Pictures/teach/163/lecture/}} % set of paths to search for images
+	{/Users/goby/Pictures/teach/163/common/}} % set of paths to search for images
 
 \usepackage{amsmath,amssymb}
 
@@ -92,464 +90,427 @@
 
 \newcommand{\backskip}{\vspace{-0.5\baselineskip}}
 
-%% Remove indent from multicol.
-\parindent=0pt
-
 \begin{document}
 
 \lecture{student}{student}
 
 {
-\usebackgroundtemplate{\includegraphics[width=\paperwidth]{sexsel_intro}}
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{species_intro}}
 \begin{frame}[b]
 
-\tinyfill  \textcolor{white}{\futuyma{}}
-\end{frame}
-}
-
-%%
-
-
-{
-	\usebackgroundtemplate{\includegraphics[width=\paperwidth]{intrasexual_selection_giraffes} }
-	\begin{frame}{\highlight{Intrasexual} selection is competition between males.}
-	
-	\vfilll
-	
-	\tiny \textcolor{white}{Luca Galuzzi, \href{http://www.galuzi.it}{www.galuzi.it}, \ccbysa{2.5}
-		\hfill \href{http://www.youtube.com/watch?v=C7HCIGFdBt8}{Link to Video}}
-	
-\end{frame}
-}
-
-%%
-
-{
-\usebackgroundtemplate{\includegraphics[width=\paperwidth]{superb_bird_of_paradise} }
-\begin{frame}{\textcolor{orange5}{Intersexual} \textcolor{white!95!black}{selection is females choosing mates.}}
-
-\vfilll
-
-\tiny \textcolor{white}{\href{https://youtu.be/IPfW7iolmgc}{Link to Video} 
-	\hfill \href{https://youtu.be/1XkPeN3AWIE}{Bonus Video}}
-
+\tiny \hfill \textcolor{white}{\futuyma{}}
 \end{frame}
 }
 
 
+\begin{frame}{What is a species?}
+
+
+\includegraphics[width=\linewidth]{species_what_is_species}
+
+\tinyfill \futuyma{9.2}
+
+\end{frame}
+
 %%
 
-\begin{frame}{\highlight{Sexual dimorphism} is the difference of  traits between sexes of the same species.}
 
-\backskip
+\begin{frame}{Many species concepts have been defined.}
 
-\begin{multicols}{2}
+\vspace{-2\baselineskip}
 
-\hangpara \highlight{Primary sexual traits} have a direct role in  reproduction.
+\hangpara\begin{multicols}{2}
+Morphological\\
+Phylogenetic (I)\\
+Biological\\
+Ecological\\
+Phylogenetic (II)\\
+Evolutionary\\
+General Lineage\\
+Typological\\
+Cohesion\\
+%\columnbreak
+Genealogical\\
+Genotypic\\
+Recognition\\
+Phenetic\\
+Cladistic\\
+Diagnostic\\
+Polytypic\\
+Population\\[1ex]
 
-\hangpara \highlight{Secondary sexual traits} do not have a \emph{direct} role in reproduction.
+artificial concept\\
+\end{multicols}
+\end{frame}
 
-\vspace{\baselineskip}
 
-\centering
+%%
 
-\includegraphics[width=0.9\linewidth]{sex_dimorphism_lions}
+\begin{frame}{Two widely followed species concepts are$\dots$}
+
+
+\noindent\begin{multicols}{2}
+
+\reflectbox{\includegraphics[width=\linewidth]{species_evelynae1}}
+\vspace{1ex}
+\includegraphics[width=\linewidth]{species_evelynae2}
 
 \columnbreak
 
-\includegraphics[width=\linewidth]{sex_dimorphism_fishes}
+\hangpara \highlight{morphological} species, and
 
-
+\hangpara \highlight{biological} species.
 \end{multicols}
 
+\tinyfill \textcopyright\,Paul Humann
 
-\vfilll
-
-\tiny \href{https://www.flickr.com/photos/11847703@N05/8234519412}{George Lamson, Flickr, \ccbyncsa{2}} \hfill
-\textcopyright\,M.G.~Simpson, Plant Systematics 2010.
 \end{frame}
 
 %%
 
-\begin{frame}{Why are males sexually selected?}
+\begin{frame}{Morphological species can be diagnosed by morphology.}
 
 \backskip
 
-\begin{multicols}{2}
-	\hangpara \highlight{Bateman's principle:} male \textit{Drosophila} sired more offspring if they mated with more females.
+\includegraphics[width=\linewidth]{futuyma_fig9-6}
 
-	\hangpara \highlight{Operational sex ratio:} females can be limiting resource for males.
-
-	\hangpara \highlight{Anisogamy}
-	
-\columnbreak
-
-\includegraphics[width=0.9\linewidth]{sex_bateman}
-
-\end{multicols}
-
-\vfilll
-
-\tinyfill Bateman 1948. Heredity 2:349. 
+\tinyfill \futuyma{9.6}
 
 \end{frame}
 
-%%
-
-\begin{frame}{Intrasexual selection can be direct.}
-
-\backskip
-
-\begin{multicols}{2}
-\hangpara Visual ornaments can enhance apparent body size.
-
-\vspace{6\baselineskip}
-
-\hangpara Same-sex contests based on size, weapons, or other traits.
-
-\columnbreak
-
-\centering
-
-\includegraphics[width=0.7\linewidth]{sex_rwbl}
-
-\smallskip
-
-\includegraphics[width=0.8\linewidth]{sex_elk_combat}
-
-\end{multicols}
-	
-
-	
-\end{frame}
-
-%%
-
-\begin{frame}{Intrasexual selection can be indirect}
-\backskip
-
-\begin{multicols}{2}
-\hangpara Territories that limit movement.
-
-\hangpara External mechanisms that prevent copulation.
-
-\hangpara Internal mechanisms post-copulation.
-
-\columnbreak
-
-\centering
-
-\includegraphics[width=0.65\linewidth]{sex_mating_damselflies}
-
-\smallskip
-
-\includegraphics[width=0.65\linewidth]{sex_damselfly_penis}
-
-\end{multicols}
-	
-\end{frame}
-
-%%
-
-\begin{frame}{Female choice for male traits can be counteracted by other selective pressures.}
-
-\backskip
-
-\includegraphics[width=\linewidth]{sex_trinidad_guppies}
-
-\end{frame}
-
-%%
-
-\begin{frame}{Predators may cue in on same cues that females prefer.}
-
-\includegraphics[width=\linewidth]{sex_tungara_frogs}
-
-\tinyfill \href{https://www.smithsonianmag.com/science-nature/frogs-mating-call-also-attracts-predators-180949463/}{Audio of Tungara frogs calls.}
-\end{frame}
-
-%%
-
-\begin{frame}{Some females may be able to retain choice at the cellular level.}
-
-\backskip
-
-\begin{multicols}{2}
-
-\hangpara Multiple sperm enter egg of \textit{Beroë} (a comb jelly).
-
-\hangpara The egg pronuclei (red) visits all sperm pronuclei (black), then fuses with one.
-
-\columnbreak
-
-\vspace*{-2.5\baselineskip}\includegraphics[width=0.85\linewidth]{sex_beroe}
-
-\end{multicols}
-
-\vfilll
-
-\tiny Birkhead T.~2000. Promiscuity. Harvard Press.
-
-\end{frame}
-
-%%
-
-\begin{frame}{Why does sexual selection cause secondary sexual traits?}
-
-\hangpara \highlight{Direct benefits:} males display obvious benefits to female or her offspring.
-
-\hangpara \highlight{Indirect benefits:} Runaway sexual selection or good genes.
-
-\hangpara \highlight{Sensory bias:} females have an existing bias for trait, males later evolve trait.
-
-\hangpara \highlight{Sensory drive:} females prefer traits that standout from the background.
-
-\hangpara \highlight{Antagonistic coevolution:} conflicting self-interest leads to battle of the sexes.
-
-\end{frame}
-
-%%
-
-\begin{frame}{\highlight{Direct benefits:} males display obvious benefits to female or her offspring.}
-
-\backskip
-\begin{multicols}{2}
-
-\centering
-
-\includegraphics[width=\linewidth]{sex_bower}
-
-{\small Bower of Satin Bowerbird}
-
-\columnbreak
-
-\includegraphics[width=0.93\linewidth]{sex_hofi}
-
-\smallskip
-
-\includegraphics[width=0.93\linewidth]{sex_hofi_feeding}
-
-{\small House Finch}
-
-\end{multicols}
-
-\end{frame}
-
-
-%%
-
-\begin{frame}{\highlight{Runaway sexual selection} occurs if female preference is linked to male trait.}
-
-\vspace*{-\baselineskip}
-
-\includegraphics[width=\linewidth]{sex_runaway_selection}
-
-\end{frame}
-
-%%
-
-\begin{frame}{\highlight{Good genes:} Males sport traits that are energetically or ecologically costly.}
+\begin{frame}{The \textsc{bsc} defines species as$\dots$}
 
 \vspace{-\baselineskip}
 
-\begin{multicols}{2}
+\hangpara groups of actually or potentially interbreeding populations, which are \emph{reproductively isolated} from other such groups.
 
-\includegraphics[width=\linewidth]{sex_rnph}
+\hangpara What are the advantages of the \textsc{bsc?}
 
-\smallskip
+\hangpara What are the disadvantages of the \textsc{bsc?}
 
-\includegraphics[width=\linewidth]{sex_rnph_spurs}
-
-\columnbreak
-
-\begin{tabular}{@{}R{2cm}cc@{}}
-\toprule
-& \multicolumn{2}{c}{Genetic quality} \tabularnewline
-\cmidrule{2-3}
-Male traits & Good & Bad \tabularnewline
-\midrule
-Short tail (cheap) & Alive & Alive \tabularnewline
-Long tail (costly) & \highlight{Alive} & Dead \tabularnewline
-\bottomrule
-\end{tabular}
-
-\end{multicols}
+\hangpara Does the \textsc{bsc} actually tell us what \emph{is} a species?
 
 \end{frame}
 
 %%
 
-\begin{frame}{\highlight{Sensory bias} is when females have a pre-existing bias for a particular trait.}
+\begin{frame}[t]{\highlight{Allopatric} populations are difficult to test for reproductively isolation.}
+
+\backskip
+\centering
+
+\includegraphics[height=0.8\textheight]{futuyma_fig9-3}
+
+\tinyfill \futuyma{9.3}
+
+\end{frame}
+
+%%
+\begin{frame}
 
 \backskip
 
-\includegraphics[width=\linewidth]{sex_sensory_bias}
-
-\end{frame}
-
-%%
-
-\begin{frame}{\highlight{Sensory drive} is a male response to female perception of signal relative to environment.}
-
-\hangpara Females prefer conspicuous signals that standout from the environment.
-
-\hangpara Perceptual sensitivity varies among environments.
-e.g., ability to perceive color varies with light regime
-
-\hangpara Male signals that match female perception are favored.
-
-\end{frame}
-
-%%
-
-\begin{frame}
 \begin{multicols}{2}
 
-\includegraphics[width=\linewidth]{sex_phylloscopus}
+\centering
+\noindent \includegraphics[width=\linewidth]{species_fox_sparrow_forms}
 
 \columnbreak
 
-\includegraphics[width=\linewidth]{sex_phylloscopus_graphs}
+\centering
+\noindent\includegraphics[width=\linewidth]{species_fox_sparrow_map}
 
 \end{multicols}
 
-\begin{tikzpicture}
-\draw [->, ultra thick] (5.8,7.74) to (7.7,7.74);
-\draw [->, ultra thick] (5.8,2.35) to (9.65,2.62);
-\end{tikzpicture}
-
-
-\vfilll
-
-\tiny Martin Vavrik, Wikimedia (upper). David Cook, Flickr (lower)
-\end{frame}
-
-
-%%
-
-
-\begin{frame}{\highlight{Antagonistic coevolution} results from sexual conflict due to anisogamy.}
-
-\hangpara Females produce few, large eggs that are energetic costly.
-
-\hangpara Male produce many small sperm that are energetically cheap.
+\tinyfill\textcopyright\,iBird Pro 12.5, Mitchell Waite Group
 
 \end{frame}
 
 %%
 
-{
-\usebackgroundtemplate{\includegraphics[width=\paperwidth]{sex_social_monogamy}}
-\begin{frame}{\textcolor{white}{Are monogamous birds really monogamous?}}
 
-\vfilll
-
-\tiny \textcolor{white}{Sandysphotos2009, Wikimedia}
-\end{frame}
-}
-
-%%
-
-\begin{frame}{Flatworm penis fencing: a courtship duel.}
+\begin{frame}{\highlight{Hybrid zones} can form between \highlight{parapatric} species.}
 
 \backskip
 
 \centering
 
-\includegraphics[width=0.95\linewidth]{sex_penis_fencing}
+\includegraphics[height=0.85\textheight]{futuyma_fig9-4}
 
-\vfilll
-
-\tiny \href{https://www.youtube.com/watch?v=wn3xluIRh1Y}{Link to video} \hfill Nico Michiels, University Tuebingen
-
-
+\tinyfill \futuyma{9.4}
 \end{frame}
 
 %%
+\begin{frame}{\highlight{Introgression} in hybrid zones introduces alleles into a species from another.}
 
-{
-\usebackgroundtemplate{\includegraphics[width=\paperwidth]{sex_aggressive_mallards}}
-\begin{frame}
+\backskip
 
-\vfilll
+\centering
+\includegraphics[width=0.95\linewidth]{futuyma_fig9-5}
 
-\tiny \href{https://www.youtube.com/watch?v=dQs1cw25dqw}{Link to video} \hfill AnemoneProjectors, Wikimedia
+\tinyfill \futuyma{9.5}
+
 \end{frame}
-}
+
 
 %%
 
-\begin{frame}
+\begin{frame}{\highlight{Speciation} is the evolution of two species from one ancestor.}
 
-\begin{multicols}{2}
+\vspace{-\baselineskip}
 
 \centering
 
-\includegraphics[height=0.85\textheight]{sex_duck_penis}
+\includegraphics[height=0.85\textheight]{species_speciation}
+
+\end{frame}
+
+%%
+
+\begin{frame}{Speciation occurs when populations evolve \highlight{reproductive isolating barriers.}}
+
+\backskip
+\centering
+
+\includegraphics[width=0.9\linewidth]{futuyma_tab9-1}
+
+\tinyfill Table 9.1 Futuyma \& Kirkpatrick 2017, 4th ed.
+
+\end{frame}
+
+%%
+
+\begin{frame}{\highlight{Temporal isolation:} species reproduce at different times. }
+
+\includegraphics[width=\linewidth]{species_temporal_cicada}
+
+\vfilll
+
+\tiny \highlight{prezygotic} \hfill \futuyma{9.9\textsc{b}} \quad \href{https://commons.wikimedia.org/wiki/File:Periodical_Cicada_Broods_of_the_United_States.png}{U\textsc{sda}, Wikimedia}
+
+\end{frame}
+
+%%
+
+\begin{frame}{\highlight{Mechanical isolation:} reproductive structures are incompatible.}
+
+\backskip
+
+\centering
+
+\includegraphics[height=0.8\textheight]{species_mechanical}
+
+\vfilll
+
+\tiny \highlight{Prezygotic} \hfill \futuyma{9.10}
+\end{frame}
+
+%%
+
+\begin{frame}{\highlight{Pollinator isolation}: Species use different pollinators.}
+
+\backskip
+
+\centering
+
+\includegraphics[height=0.85\textheight]{species_pollinator}
+
+\vfilll
+
+\tiny \highlight{Prezygotic} \hfill \futuyma{9.7}
+
+\end{frame}
+
+%%
+
+\begin{frame}{Species can be isolated by multiple barriers.}
+
+\backskip
+
+\centering
+
+\includegraphics[width=\linewidth]{species_multiple_barriers}
+
+\vfilll
+
+\tiny \highlight{Prezygotic} \hfill \futuyma{9.8}
+
+\end{frame}
+
+%%
+
+\begin{frame}{Sperm competition occurs post-mating.}
+
+\backskip
+
+\begin{multicols}{2}
+
+{\centering
+\noindent\includegraphics[width=0.95 \linewidth]{species_sperm_speed}
+}
+
+%\vspace{2em}
+
+\hangpara Sperm swim faster in promiscuous species (above).
 
 \columnbreak
 
-\includegraphics[height=0.85\textheight]{sex_duck_genitalia}
-
+\onslide<2>{
+\noindent\includegraphics[width=\linewidth]{species_sperm_competition}
+}
 \end{multicols}
 
 \vfilll
 
-\tiny McCracken et al. 2001. Nature 413: 128
-\hfill 
-Brennan et al. 2007. PLoS ONE 2(5):e418. 
+\tiny \highlight{Prezygotic}\quad Nascimento et al.~2008. J.R.~Soc.~Interface 5:297. \onslide<2>{\hfill Copper \& Phadnis 2017. Genome Bio.~Evol.~9:1938.}
 
 \end{frame}
 
 %%
 
-{
-\usebackgroundtemplate{\includegraphics[width=\paperwidth]{sex_suicide}}
-\begin{frame}
-
-\begin{tikzpicture}
-\node at (2.5,-2) [text width=2cm] {\LARGE Sexual \highlight{suicide.}};
-\end{tikzpicture}
-
-
-\tinyfill Australian redback spider by Tony Hudson, Wikimedia Commons.
-\end{frame}
-}
-
-%%
-
-{
-\usebackgroundtemplate{\includegraphics[width=\paperwidth]{sex_cannibalism}}
-\begin{frame}
-
-
-\begin{tikzpicture}
-\node at (4.5,-0.7) [text width=3.2cm] {\LARGE \textcolor{white}{Sexual}\\ \highlight{cannibalism.}};
-\end{tikzpicture}
-
+\begin{frame}{\highlight{Ecological inviability:} hybrids have reduced survival.}
+\includegraphics[width=\linewidth]{futuyma_fig9-11}
 
 \vfilll
 
-\tiny \textcolor{white}{Oliver Koemmerling, Wikimedia Commons.\hfill \href{http://www.youtube.com/watch?v=KYp_Xi4AtAQ}{Link to video} \hfill \phantom{.}} 
+\tiny\highlight{postzygotic} \hfill \futuyma{9.11}
 
 \end{frame}
-}
 
 %%
 
-{
-\usebackgroundtemplate{\includegraphics[width=\paperwidth]{sex_humans}}
-\begin{frame}{\textcolor{white}{Does sexual selection occur in humans?}}
+\begin{frame}{\highlight{Hybrid sterility:} hybrids are incapable of reproducing.}
 
-%\vfilll
+\vspace{-\baselineskip}
 
-\tinyfill AnemoneProjectors, Wikimedia
+\begin{center}
+\includegraphics[height=0.85\textheight]{species_hybrid_sterility}
+\end{center}
+
+\begin{tikzpicture}
+\node at (2,4) {2n = 64};
+\node at (10,4) {2n = 62};
+\node at (9.7,1.5) {2n = 63};
+
+\end{tikzpicture}
+
+\vfilll
+
+\tiny \highlight{postzygotic}
 \end{frame}
-}
 
+
+\begin{frame}{\highlight{Reinforcement} reduces hybridization.}
+
+\backskip
+
+\begin{multicols}{2}
+\includegraphics[width=\linewidth]{futuyma_fig9-17a}
+
+
+%\medskip
+
+%\includegraphics[width=\linewidth]{futuyma_fig9-17b}
+
+\columnbreak
+
+\includegraphics[width=\linewidth]{futuyma_fig9-17c}
+
+
+%\medskip
+
+%\includegraphics[width=\linewidth]{species_reinforcement_criteria}
+
+\end{multicols}
+
+\pause 
+
+\hangpara \highlight{Character displacement} is the divergence of a phenotype in \highlight{sympatry.}
+
+\tinyfill \futuyma{9.17}
+
+\end{frame}
+
+%%
+\begin{frame}
+\centering
+
+\includegraphics[width=\linewidth]{species_reinforcement_criteria}
+
+\tinyfill Hopkins 2013. New Phytologist 197: 1095.
+
+\end{frame}
 
 %%
 
+\begin{frame}{\highlight{Allopatric speciation} is the evolution of reproductive barriers between geographically separated populations.}
+
+\hangpara Geographic isolation is \emph{not} a biological reproductive barrier.
+
+\hangpara Gene flow is disrupted between allopatric populations.
+
+\end{frame}
+
+%%
+
+\begin{frame}{\highlight{Vicariance} divides a large population into smaller, isolated populations.}
+
+\vspace{-\baselineskip}
+
+\centering
+
+\includegraphics[width=0.85\linewidth]{/Users/goby/pictures/teach/163/lecture/allopatric_shrimp2}
+
+\end{frame}
+
+%%
+
+\begin{frame}{\highlight{Founder events} by dispersal can isolate populations.}
+
+\backskip
+
+\centering
+
+\includegraphics[height=0.87\textheight]{futuyma_fig9-21}
+
+\tinyfill \futuyma{9.21}
+\end{frame}
+
+%%
+
+\begin{frame}{\highlight{Sympatric speciation} occurs \emph{without} geographic isolation.}
+
+\backskip
+
+\centering
+
+\includegraphics[height=0.8\textheight]{futuyma_fig9-27}
+
+\tinyfill \futuyma{9.27}
+
+\end{frame}
+
+%%
+
+\begin{frame}{\textit{Rhagoletis pomonella} is the poster child for sympatric speciation.}
+
+\backskip
+
+\includegraphics[width=\linewidth]{futuyma_fig9-26}
+
+\tinyfill \futuyma{9.26}
+
+\end{frame}
+
+%%
+
+\begin{frame}{\highlight{Parapatric speciation} can occur when gene flow is reduced between adjacent populations.}
+
+\backskip
+
+\includegraphics[width=\linewidth]{futuyma_fig9-28}
+
+\tinyfill \futuyma{9.28}
+
+\end{frame}
 \end{document}
-
-

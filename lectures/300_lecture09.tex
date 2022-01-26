@@ -25,8 +25,6 @@
 \setmainfont[Ligatures={Common, TeX}, Contextuals={NoAlternate}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={Proportional, OldStyle}]{\mainfont}
 %\setmonofont[Scale=MatchLowercase]{Inconsolata} 
 \setsansfont[Scale=MatchLowercase]{Linux Biolinum O} 
-\setmonofont{Linux Libertine Mono O}
-
 \usepackage{microtype}
 
 \usepackage{unicode-math}
@@ -42,15 +40,9 @@
 %\usepackage{units}
 
 \usepackage{booktabs}
-\usepackage{array}
-\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
-\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
-\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
-
-
 \usepackage{multicol}
 %	\setlength{\columnsep=1em}
-\usepackage{enumitem}
+
 \usepackage{textcomp}
 \usepackage{setspace}
 \usepackage{tikz}
@@ -70,13 +62,7 @@
 	\alt<handout>{\rule{\widthof{#1}}{\fboxrule}}{#1}%
 }
 
-
-\usepackage{xifthen}
-\newcommand{\futuyma}[1]{%
-	\ifthenelse{\isempty{#1}}%
-	{Futuyma \& Kirkpatrick 2017, 4th ed.}%
-	{Fig.~#1~Futuyma \& Kirkpatrick 2017, 4th ed.}%
-}
+\newcommand{\futuyma}[1]{Fig.~#1~Futuyma \& Kirkpatrick 2017, 4th ed.}
 
 % This defines \amper for the fancy ampersand
 % to be used in the header. See
@@ -87,354 +73,305 @@
 \DeclareRobustCommand{\amper}{{\amperfont\ifx\f@shape\scname\smaller[1.2]\fi\&}\xspace}
 \makeatother
 
-\newcommand{\backskip}{\vspace{-0.5\baselineskip}}
-
 \begin{document}
 
 \lecture{student}{student}
 
-\begin{frame}[t]{Drift causes \highlight{non-adaptive evolution.}}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{qt_evolution_intro}}
+\begin{frame}[b]{\textcolor{white}{Phenotypic evolution \amper quantitative traits}}
+
+\tinyfill{\textcolor{white}{\textit{Donax variabilis}, Debivort, \href{https://en.wikipedia.org/wiki/Phenotype\#/media/File:Coquina_variation3.jpg}{Wikimedia Commons}, \ccbysa{3}.}}
+%	\tiny\hfill \textcolor{white}{\textit{Donax variabilis}, Debivort, \href{https://en.wikipedia.org/wiki/Phenotype#/media/File:Coquina_variation3.jpg}{Wikimedia Commons}}
+\end{frame}}
+
+\begin{frame}[t,plain]{True or false: eye color is determined by one gene?}
+
 \centering
 
-\includegraphics[width=0.97\linewidth]{futuyma_fig7-4}
+\includegraphics[height=0.85\textheight]{human_eye_colors}
 \end{frame}
 
 %%
 
-\begin{frame}{Gene trees can evolve by drift alone.}
-\backskip
-
-\begin{multicols}{2}
-\noindent \includegraphics[width=\linewidth]{futuyma_fig7-5a}
-
-\columnbreak
-
-\pause
-\noindent \includegraphics[width=\linewidth]{futuyma_fig7-5b}
-
-\end{multicols}
-
-\vfilll
-
-\tinyfill \futuyma{7.5}
-
+\begin{frame}[t,plain]{True or false: height is determined by one gene?}
+\vspace{-0.5\baselineskip}
+\includegraphics[width=\linewidth]{human_height}
 \end{frame}
 
 %%
 
-\begin{frame}{The probability of fixation equals the frequency of the haplotype.}
-\backskip
-
-\begin{multicols}{2}
-
-\onslide<1-4>
-\hangpara What is the probability that a \emph{new} mutation in effective population of 50 diploid individuals drifts to fixation?
-
-\mode<beamer>{%
-\onslide<2-4>
-\hangpara $N_e = 50.$
-
-\onslide<3-4>
-\hangpara $2N_e = 100$ copies of the locus.
-
-\onslide<4>
-\hangpara $1$ new mutation out of $2N$ copies.
-
-\begin{equation*}
-\color{orange5}{\dfrac{1}{2N_e}}
-\end{equation*}
-}
-
-
-\columnbreak
-
-\onslide<1-4>
-\noindent \includegraphics[width=\linewidth]{futuyma_fig7-5b}
-
-
-\end{multicols}
-
-\vfilll
-
-\tinyfill \futuyma{7.5}
-
+\begin{frame}[t,plain]{Mendel worked with \highlight{discrete traits.}}
+\vspace{-0.5\baselineskip}
+\includegraphics[width=\linewidth]{qt_mendel_peas}
 \end{frame}
-
 
 %%
 
+\begin{frame}[t,plain]{\highlight{Quantitative traits} are \highlight{polygenic.}}
 
-%\begin{frame}{Non-adaptive evolution by drift occurs because$\dots$}
-%
-%\backskip
-%\begin{multicols}{2}
-%\hangpara Haplotype frequencies fluctuate randomly,
-%
-%\hangpara One haplotype drifts to fixation ($p = 1.0$), and
-%
-%\hangpara New haplotypes replace old haplotypes.
-%
-%\columnbreak
-%
+\vspace{-0.5\baselineskip}
+
 %\centering
-%\noindent\includegraphics[width=0.8\linewidth]{drift_haplotype_fluctuation}
-%
-%\bigskip
-%
-%\noindent\includegraphics[width=0.8\linewidth]{drift_haplotype_substitution}
-%
-%\end{multicols}
-%
-%\vfilll
-%
-%\tiny \textcopyright\,Pearson Prentice Hall, 2004.
-%\end{frame}
+
+\includegraphics[height=0.87\textheight]{futuyma_fig6-3}
+
+\begin{tikzpicture}
+\node at (9.5,7) [text width=4.1cm, align=left] {Quantitative traits show a continuous distribution.};
+\end{tikzpicture}
+
+\vfilll
+\tinyfill{\futuyma{6.3}}
+\end{frame}
 
 %%
 
-\begin{frame}{New neutral mutations occur at rate $\mu.$}
-
-\backskip
-
-\centering
-
-\includegraphics[height=0.85\textheight]{drift_new_neutral_mutation}
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{qt_horned_lizard}}
+\begin{frame}[b]
 
 \vfilll
 
-\tinyfill Modified from \futuyma{7.5}
+\tiny \textcolor{white}{\textit{Phrynosoma mcalli}, Jim Rorabaugh/\textsc{usfws}, \href{https://www.flickr.com/photos/54430347@N04/5162160238}{Flickr}, public domain}
 
-\end{frame}
+\end{frame}}
 
-\begin{frame}{Over time, new haplotypes replace old haplotypes.}
+%%
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{qt_loggerhead_shrike}}
+\begin{frame}[b]
+
+\vfilll
+
+\tinyfill{\textcolor{white}{Loggerhead Shrike, Marshall Hedin,  \href{https://www.flickr.com/photos/23660854@N07/23552219433}{Flickr}, \ccbysa{2}}}
+
+\end{frame}}
+
+%%
+
+\begin{frame}[t]{\highlight{Fitness functions} describe selection on quantitative traits.}
 
 \vspace{-0.5\baselineskip}
 
 \centering
-
-\includegraphics[height=0.85\textheight]{drift_haplotype_substitution}
-
-\vfilll
-
-\tinyfill \textcopyright\,Pearson Prentice Hall, 2004.
- 
-\end{frame}
-
-%%
-
-\begin{frame}{Haplotype substitution occurs at the \highlight{neutral mutation rate.}}
-
-\backskip
-
-\hangpara $\mu$ = neutral mutation rate / haplotype / generation.
-
-\hangpara $2N_e$ haplotype copies in diploid population.
-
-\hangpara $2N_e\mu$ new mutations each generation (avg).
-
-\hangpara $\dfrac{1}{2N_e}$ = fixation probability of each new mutation.
-
-\hangpara Average rate of haplotype substitution is
-
-\begin{equation*}
-2N_e\mu \times \dfrac{1}{2N_e} = \mu
-\end{equation*}
-\end{frame}
-
-
-%%
-
-\begin{frame}{The \highlight{neutral theory of molecular evolution} states that molecular evolution is neutral.}
-
-\backskip
-
-\begin{multicols}{2}
-\hangpara D\textsc{na} evolves by genetic drift at  rate equal to the neutral mutation rate $\mu$ in the population.
-
-\hangpara The rate of molecular evolution is greatest at \textsc{dna} positions \emph{least} like to affect function.
-
-\hangpara Purifying selection eliminates deleterious mutations.
-
-\columnbreak
-
-\noindent \includegraphics[width=\linewidth]{futuyma_fig7-19}
-
-\end{multicols}
+\includegraphics[height=0.85\textheight]{qt_fitness_function}
 
 \vfilll
 
-\tinyfill \futuyma{7.19}
-
+\tinyfill{Brodie et al.~2004. Science 304: 65.}
 \end{frame}
 
 %%
 
-\begin{frame}{Can drift affect frequencies of alleles under selection?}
+\begin{frame}[t]{\highlight{Fitness functions} change the mean or variance of a trait.}
 
-\backskip
+\vspace{-0.5\baselineskip}
 
 \centering
+\includegraphics[height=0.9\textheight]{futuyma_fig6-6}
 
-\includegraphics[height=0.85\textheight]{futuyma_fig7-13}
+\end{frame}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{qt_directional_selection}}
+\begin{frame}[t]
 
 \vfilll
 
-\tinyfill \futuyma{7.13}
+\tiny \textit{Male Long-tailed Widowbird}, Ashley Tubs,  \href{https://www.flickr.com/photos/47745688@N05/14808464640}{Flickr}, \ccby{2} 
 
-\end{frame}
+\end{frame}}
 
-\lecture{instructor}{instructor}
-
-\begin{frame}{Time for some simulations.}
-\hangpara $s = 0.01$ for each copy of the $A_1$ allele.
-
-\hangpara If $w_{11}$ has maximum fitness of 1.0, then
-
-\hangpara $w_{12} = 0.99$ and $w_{22} = 0.98.$
-
-\hangpara $2N_e$ will reduce from 5000 to 5.
-
-\hangpara Starting frequency of $A_1 = 0.25$. Recall probability of fixation by drift alone equals frequency of allele.
-
-\hangpara Let's start with no selection.
-
-
-\end{frame}
-
-\lecture{student}{student}
-
-\begin{frame}
-\begin{multicols}{2}
-\hangpara If $s\gg\frac{1}{2N_e}$ then selection will tend to overcome drift.
-
-\hangpara If $s\ll\frac{1}{2N_e}$ then drift will tend to overcome selection.
-
-\hangpara What are the implications for population size on evolution of alleles with very small fitness effects (say, $10^{-5}$)?
-
-\columnbreak
-
-\noindent \includegraphics[width=\linewidth]{drift_selection_drift_balance}
-
-\end{multicols}
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{qt_stabilizing_selection}}
+\begin{frame}[b]
 
 \vfilll
 
-\tinyfill Modified from \futuyma{7.13}
+\tiny \futuyma{6.8}
 
-\end{frame}
-
+\end{frame}}
 
 %%
 
-\begin{frame}{Alleles with very small fitness effects evolve as if they were selectively neutral unless $N_e$ is very large.}
-
-\backskip
-
-\begin{multicols}{2}
-\noindent\includegraphics[width=0.9\linewidth]{futuyma_fig7-14b}
-
-\columnbreak
-
-\noindent\includegraphics[width=0.9\linewidth]{futuyma_fig7-14c}
-\end{multicols}
-
-Gray: $2N_es \rightarrow 0$
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{qt_disruptive_selection}}
+\begin{frame}[t]
 
 \vfilll
 
-\tinyfill \futuyma{7.14}
+\tiny \futuyma{6.9}
 
-\end{frame}
-
+\end{frame}}
 
 %%
 
-\begin{frame}{Does selection occur at the molecular level?}
+\begin{frame}[t]{Selection can favor combinations of traits.}
 
-\hangpara \highlight{Selective sweep:} genetic hitchhiking.
+\vspace{-0.5\baselineskip}
 
-\hangpara \highlight{Positive selection:} More non-synonymous than synonymous substitutions in a gene.
-
-\hangpara \highlight{Codon bias:} Non-random use of codons.
+\centering
+\includegraphics[height=0.9\textheight]{futuyma_fig6-10}
 
 \end{frame}
 
 %%
 
-\begin{frame}{$dN > dS$ is genetic evidence of \highlight{positive selection.}}
+\begin{frame}[t]{The \highlight{selection gradient} measures the strength of directional selection on a quantitative trait.}
 
-\backskip
+\vspace{-0.5\baselineskip}
 
-\noindent \includegraphics[width=\linewidth]{drift_dn_ds}
+\centering
+\includegraphics[height=0.84\textheight]{futuyma_fig6-11}\par
 
-\vfilll
-
-\tinyfill \textcopyright\,Zimmer and Emlen.
-
-\end{frame}
-
-%%
-
-\begin{frame}{Snake venoms evolve under positive diversifying selection.}
-
-\backskip
-
-\includegraphics[height=0.7\textheight]{drift_snake_venoms}
+\pause
 
 \begin{tikzpicture}
-\node at (8.7,1) [text width=5.5cm] {\small Disintegrin proteins from rattlesnakes and vipers. Blue and red cirles show amino acid replacements from positive selection.};
+\node at (-2.1,7.4) [text width=3cm] {\small \highlight{$\beta$ is the slope of the fitness function.}};
 \end{tikzpicture}
 
-\vfilll
 
-\tiny Juarez et al.~2008. Mol.~Biol.~Evol.~25: 2391
+\end{frame}
+
+
+%%
+%% RECALL
+\begin{frame}[t,plain]{Evolution \emph{by} selection requires a correlation between$\dots$ }
+
+\includegraphics[width=\linewidth]{futuyma_fig5-4}
+
+\hangpara (1) a phenotypic trait and fitness, and\\
+ (2) phenotypes of parents and offspring.
+ 
+ \vfilll
+ 
+ \tinyfill{\futuyma{5.4}}
 
 \end{frame}
 
 %%
 
-\begin{frame}{Snake venoms evolve under positive diversifying selection.}
+\begin{frame}[t,plain]{How much will a trait mean evolve in one generation?}
 
-\vspace{-\baselineskip}
+\begin{multicols}{2}
+\noindent\includegraphics[width=\linewidth]{futuyma_fig6-13b}
+
+\columnbreak
+
+\noindent \includegraphics[width=\linewidth]{futuyma_fig6-13c}
+
+\end{multicols}
+
+\pause
+
+\hangpara \highlight{Breeder's equation: $\Delta \overline{z} = \overline{z}' - \overline{z} = h^2S$ }
+ 
+ \vfilll
+ 
+ \tinyfill{\futuyma{6.13}}
+
+\end{frame}
+
+%%
+
+\begin{frame}[t]{\highlight{Heritability $\left(h^2\right)$} is the proportion of phenotypic variation in a population due to genotypic variation.}
+
+\includegraphics[height=0.8\textheight]{futuyma_fig6-14}
+
+
+\end{frame}
+
+
+
+\begin{frame}[t]{The \highlight{breeder's equation} predicts the phenotypic response to selection \emph{between} generations.}
+
+%\vspace{-2\baselineskip}
+\begin{multicols}{2}
+\noindent\begin{align*}
+\Delta\overline{z} &= h^2S\\
+\\
+S &= P\beta
+\end{align*}
+
+\columnbreak
+\noindent\begin{align*}
+\color{orange5}\Delta\overline{z} &\color{orange5}= G\beta \\
+\\
+G &= h^2P \\
+\\
+h^2 &= G/P
+\end{align*}
+
+\end{multicols}
+
+where $P$ is phenotypic variance and $G$ is \highlight{additive genetic variance.}
+\end{frame}
+
+%%% EXAMPLE PROBLEM
+
+\begin{frame}[t]{Example problem: What is new mean leg length?}
+\vspace{-0.5\baselineskip}
+\begin{multicols}{2}
+
+\noindent Mean leg length $= 18.6\,\mathrm{mm}$\\[1ex]
+$\beta$ = $-0.13/\mathrm{mm}$ \\[1ex]
+$P = 1.4\,\mathrm{mm}^2$ \\[1ex]
+$h^2 = 0.37$\\[1ex]
+
+\vspace{\baselineskip}
+Recall:
+
+$\beta$ is the fitness function slope.\\[1ex]
+$\Delta\overline{z} = G\beta$ is predicted response, and\\[1ex]
+$G = h^2P$ is additive genetic variance.\\
+
+\columnbreak
 
 \centering
-\includegraphics[height=0.78\textheight]{drift_snake_venom_ratios}
+\noindent\includegraphics[width=0.95\linewidth]{qt_migratory_locust}
 
-
-\vfilll
-
-\tinyfill Juarez et al.~2008. Mol.~Biol.~Evol.~25: 2391
-
-
-\end{frame}
-
-%%
-
-\begin{frame}{\textit{FOXP2} evolved under positive directional selection.}
-
-\backskip
-
-\centering
-
-\includegraphics[width=\linewidth]{drift_foxp2}
-
+\end{multicols}
 
 \vfilll
 
-\tinyfill After Engard et al.~2002. Nature 418: 869.
-
+\tinyfill{Migratory Locust by ChriKo, \href{https://commons.wikimedia.org/wiki/File:Locusta_migratoria_migratorioides_male.jpg}{Wikimedia Commons}, \ccbysa{3}}
 \end{frame}
 
-%%
 
-\begin{frame}{\highlight{Codon bias} is the non-random use of codons.}
-\backskip
+%% ANSWER
+\lecture{instructor}{instructor}
+\begin{frame}[t]{Example problem: What is new mean leg length?}
+\vspace{-0.5\baselineskip}
+\begin{multicols}{2}
 
-\noindent \includegraphics[width=\linewidth]{drift_codon_bias}\\
-\raisebox{-0.7ex}{\Large *}\,= underused codons.
+Mean leg length $= 18.6\,\mathrm{mm}$\\[1ex]
+$\beta$ = $-0.13/\mathrm{mm}$ \\[1ex]
+$P = 1.4\,\mathrm{mm}^2$ \\[1ex]
+$h^2 = 0.37$\\[1ex]
 
-\vfilll
+\vspace{\baselineskip}
+Recall:
 
-\tinyfill Powell and Moriyama 1997. P\textsc{nas} 94: 7784.
+$\beta$ is the fitness function slope.\\[1ex]
+$\Delta\overline{z} = G\beta$ is predicted response, and\\[1ex]
+$G = h^2P$ is additive genetic variance.\\
+
+\columnbreak
+
+\mode<beamer>{%
+$G = 0.37 \times 1.4 = 0.518$\\[1ex]
+\pause
+
+$\Delta\overline{z} = 0.518 \times -0.13 = -0.067\,\mathrm{mm} $\\[1ex]
+
+\pause
+New mean length:\\
+$18.6 - 0.067 = 18.533\,\mathrm{mm.}$
+}
+
+\end{multicols}
 \end{frame}
+
 \end{document}

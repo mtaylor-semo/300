@@ -1,0 +1,104 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[letterpaper]{tufte-handout}
+
+%\geometry{showframe} % display margins for debugging page layout
+
+\usepackage{fontspec}
+\def\mainfont{Linux Libertine O}
+\setmainfont[Ligatures={Common,TeX}, Contextuals={NoAlternate}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={OldStyle}]{\mainfont}
+\setsansfont[Scale=MatchLowercase]{Linux Biolinum O} 
+\usepackage{microtype}
+
+\usepackage{graphicx} % allow embedded images
+  \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+  \graphicspath{{img/}} % set of paths to search for images
+\usepackage{amsmath}  % extended mathematics
+\usepackage{booktabs} % book-quality tables
+\usepackage{units}    % non-stacked fractions and better unit spacing
+\usepackage{siunitx}
+\usepackage{multicol} % multiple column layout facilities
+\usepackage{microtype}   % filler text
+\usepackage{hyperref}
+
+\usepackage{enumitem}
+
+%\usepackage{fancyvrb} % extended verbatim environments
+%  \fvset{fontsize=\normalsize}% default font size for fancy-verbatim environments
+\makeatletter
+% Paragraph indentation and separation for normal text
+\renewcommand{\@tufte@reset@par}{%
+  \setlength{\RaggedRightParindent}{1.0pc}%
+  \setlength{\JustifyingParindent}{1.0pc}%
+  \setlength{\parindent}{0pc}%
+  \setlength{\parskip}{0.5\baselineskip}%
+}
+\@tufte@reset@par
+
+% Paragraph indentation and separation for marginal text
+\renewcommand{\@tufte@margin@par}{%
+  \setlength{\RaggedRightParindent}{0pt}%
+  \setlength{\JustifyingParindent}{0.5pc}%
+  \setlength{\parindent}{0.5pc}%
+  \setlength{\parskip}{0pt}%
+}
+\makeatother
+
+% Set up the spacing using fontspec features
+\renewcommand\allcapsspacing[1]{{\addfontfeatures{LetterSpace=15}#1}}
+\renewcommand\smallcapsspacing[1]{{\addfontfeatures{LetterSpace=10}#1}}
+
+
+\title{Study Guide 18\hfill}
+\author{Human evolution}
+
+\date{} % without \date command, current date is supplied
+
+\begin{document}
+
+\maketitle	% this prints the handout title, author, and date
+
+\section{Vocabulary}\marginnote{\textbf{Read:} Chapter 21, pages 548–566.}
+
+\begin{multicols}{2}
+Hominidae \\
+Homininae \\
+bipedalism 
+\end{multicols}
+
+%\printclassoptions
+
+\section{Concepts}
+
+You should \emph{write} clear and concise answers to each question in the Concepts section.  The questions are not necessarily independent.  Think broadly across lectures to see ``the big picture.'' 
+
+\begin{enumerate}
+
+	\item Briefly state and explain 3--4 hypotheses proposed to explain the selective advantage of bipedalism over quadrupedalism.  Do you think any one hypothesis is more likely than the others?  Why or why not?
+	
+	\item What are the structural differences between chimpanzee and human skeletons associated with bipedalism?
+
+	\item Which evolved first in hominin\marginnote{Hominin is taxonomic shorthand for Hominini, a tribe within Hominidae. Some researchers define Hominini to include \textit{Homo,} \textit{Australopithecus,} and chimpanzees \textit{(Pan)}. Other researchers place chimps in their own tribe, Panini. For clarity in this course, I follow the latter; Hominini includes the bipedal apes after their split from the common ancestor with chimps.} lineages: larger brain size or bipedalism? How do you know?
+	
+	\item Describe the structural changes in hominin skulls as brain size increased.
+	
+	\item Explain the two hypotheses proposed to explain the adaptive advantage of increased brain size?
+	
+	\item How does human metabolic rate compare to other hominids. Why was this adaptive shift of metabolic rate necessary?\marginnote{Hominid is taxonomic shorthand for the family Hominidae. The Hominidae is the family of great apes. Not awesome apes, just great ones.}
+
+	\item How many “waves” of the genus \textit{Homo} emigrated out of Africa? About when (in terms of millions or thousands of years ago) did each wave occur? What species was associated with each wave?
+	
+	\item Does evidence support interbreeding between \textit{Homo sapiens} and other species of \textit{Homo?} If so, which species were invovled, and what evidence supports it?. If not, why could interbreeding not have occurred?
+	
+	\item What evidence suggests that the cognitive ability for language is old (ca.~6–7 \textsc{mya}) if the only evidence for complex language in humans is only about 50,000 years old?
+	
+	\item How has the invention of agriculture influenced natural selection in \textit{Homo sapiens?}
+	
+	\item Are modern humans still subject to natural selection? Explain.
+	
+	\item Why is the mutational load higher for native North American compared to native African populations? Your answer should include the important aspects of genetic drift and selection, especially as they related to population size.
+
+\end{enumerate}
+
+\end{document}

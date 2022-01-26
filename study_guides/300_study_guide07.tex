@@ -19,11 +19,8 @@
 \usepackage{units}    % non-stacked fractions and better unit spacing
 \usepackage{siunitx}
 \usepackage{multicol} % multiple column layout facilities
-\usepackage{microtype}   % filler text
+\usepackage{enumitem}   % filler text
 \usepackage{hyperref}
-
-\usepackage{enumitem}
-
 %\usepackage{fancyvrb} % extended verbatim environments
 %  \fvset{fontsize=\normalsize}% default font size for fancy-verbatim environments
 \makeatletter
@@ -50,8 +47,8 @@
 \renewcommand\smallcapsspacing[1]{{\addfontfeatures{LetterSpace=10}#1}}
 
 
-\title{Study Guide 07\hfill}
-\author{Phenotypic evolution and quantitative traits}
+\title{Study Guide 05\hfill}
+\author{Mutation and variation}
 
 \date{} % without \date command, current date is supplied
 
@@ -59,20 +56,29 @@
 
 \maketitle	% this prints the handout title, author, and date
 
-\section{Vocabulary}\marginnote{\textbf{Read:} Chapter 6, pages 135--148, 151--160.}
+\section{Vocabulary}\marginnote{\textbf{Read:} Chapter 4, pages 79--85, 88--94; Read and study the Genetics Review document from the course web page.}
 
 \begin{multicols}{2}
-discrete traits \\
-quantitative traits \\
-polygenic traits \\
-fitness functions \\
-directional selection \\
-stabilizing selection \\
-disruptive selection \\
-selection gradient \\
-breeder's equation $\left(\Delta z = h^2S\right)$ \\
-heritability $\left(h^2\right)$ \\
-additive genetic variance \\
+mutation \\
+beneficial mutation \\
+detrimental mutation \\
+segregation \\
+recombination \\
+point mutation \\
+synonymous substitution \\
+non-synonymous substitution \\
+insertion \\
+deletion \\
+indel \\
+frameshift mutation \\
+gene duplication \\
+paralog \\
+ortholog \\
+neofunctionalization \\
+subfunctionalization \\
+allele frequency \\
+genotype frequency \\
+Hardy-Weinberg equilibrium 
 \end{multicols}
 
 %\printclassoptions
@@ -83,16 +89,30 @@ You should \emph{write} clear and concise answers to each question in the Concep
 
 \begin{enumerate}
 	
-	\item Darwin's basic idea was that natural selection affects the ability of an organism to survive and reproduce.  Thus, natural selection acts on the phenotype.  However, evolutionary change occurs at the genetic level.  Explain the relationship between phenotype, genotype and fitness to explain how natural selection determines whether evolutionary change can occur in a population.
+	\item Read and study the Genetics Review document from the course web site. Just sayin’$\dots$.
 	
-	\item Describe the three fitness functions for selection given in class.  Illustrate and explain each mode.  Provide examples (real or hypothetical) of each.  Relate each to different values of relative fitness $\left(w\right)$. Describe and illustrate how survivorship and frequency changes for each function changes as a trait value changes.
+	\item Describe how the Mendelian “laws” of segregation and assortment (recombination) increase genetic polymorphism in a population.
 	
-	\item Evolution \emph{by} selection requires correlation between a phenotypic trait and fitness, and between parental and offspring phenotypes. Know and explain why both of these correlations are necessary for selection to occur.
+	\item Why are mutations the ultimate source of all genetic variation in a population? Why not segregation or recombination?
 	
-	\item Use the breeder's equation to show that a population will not evolve if a trait is heritable $(h^2 > 0)$ but there is no selection $(S = 0)$, or if there is selection $(s \ne 0)$ but the trait is not heritable $(h^2 = 0)$.
+	\item Explain why non-synyonymous substitutions are subject to natural selection but synonymous substitutions are not.
 	
-	\item Use the breeder's equation to calculate the predicted amount of phenotypic change given the appropriate values. I would give you $\beta$, $P$, and $h^2$. Be sure you understand what each of these variables represents.
-
+	\item Describe why indels are usually going to be subject to negative selection.
+	
+	\item Describe the difference between neofunctionalization and subfunctionalization after gene duplication.
+	
+	\item This would be a good place to review lecture 3 to be sure you understand the difference between orthologs and paralogs.  
+	
+	\item If gene duplicates subfunctionalization, are the duplicates orthologs or paralogs? If one copy retains the original function and a duplicate copy evolves a new function, are the two copies orthologs or paralogs? Explain why for each question.
+	
+	\item What does it mean to say a population is in Hardy-Weinberg equilibrium (\textsc{hwe})?
+	
+	\item Describe the five assumptions necessary for \textsc{hwe} to exist in a population. Don't just list them. Explain them. Tell how violation of each assumption causes a population to deviate from equilibrium?
+	
+	\item If a population that is not in \textsc{hwe} meets all five assumptions, how long will it take for the population to return to equilibrium? Be able to demonstrate this given a frequency for one allele. (In the others, be able to use both \textsc{hwe} equations to show the return to equilibrium.)
+	
+	\item Be able to demonstrate the math for three alleles for one locus. We'll focus on two allele systems but you should understand and therefore be able to demonstrate how the \textsc{hwe} equations apply to multiple alleles. 
+	
 
 \end{enumerate}
 

@@ -1,0 +1,432 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[t]{beamer}
+
+%%%% HANDOUTS For online Uncomment the following four lines for handout
+%\documentclass[t,handout]{beamer}  %Use this for handouts.
+%\usepackage{handoutWithNotes}
+%\includeonlylecture{student}
+%\pgfpagesuselayout{3 on 1 with notes}[letterpaper,border shrink=5mm]
+
+\usefonttheme{professionalfonts}
+
+
+%%% Including only some slides for students.
+%%% Uncomment the following line. For the slides,
+%%% use the labels shown below the command.
+
+%% For students, use \lecture{student}{student}
+%% For mine, use \lecture{instructor}{instructor}
+
+% FONTS
+\usepackage{fontspec}
+\def\mainfont{Linux Biolinum O}
+\setmainfont[Ligatures={Common, TeX}, Contextuals={NoAlternate}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={Proportional, OldStyle}]{\mainfont}
+%\setmonofont[Scale=MatchLowercase]{Inconsolata} 
+\setsansfont[Scale=MatchLowercase]{Linux Biolinum O} 
+\setmonofont{Linux Libertine Mono O}
+
+\usepackage{microtype}
+
+\usepackage{unicode-math}
+\setmathfont[Scale=MatchLowercase]{Asana Math}
+
+\usepackage{graphicx}
+	\graphicspath{%
+	{/Users/goby/Pictures/teach/300/lectures/}%
+	{/Users/goby/Pictures/teach/163/lecture/}} % set of paths to search for images
+
+\usepackage{amsmath,amssymb}
+
+%\usepackage{units}
+%\usepackage{mhchem}
+\usepackage{booktabs}
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+
+
+\usepackage{multicol}
+%	\setlength{\columnsep=1em}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{textcomp}
+\usepackage{setspace}
+\usepackage{tikz}
+	\tikzstyle{every picture}+=[remember picture,overlay]
+\usetikzlibrary{arrows}
+
+\mode<presentation>
+{
+  \usetheme{Lecture}
+  \setbeamercovered{invisible}
+  \setbeamertemplate{items}[square]
+}
+
+\usepackage{calc}
+\usepackage{hyperref}
+
+\newcommand\HiddenWord[1]{%
+	\alt<handout>{\rule{\widthof{#1}}{\fboxrule}}{#1}%
+}
+
+
+\usepackage{xifthen}
+\newcommand{\futuyma}[1]{%
+	\ifthenelse{\isempty{#1}}%
+	{Futuyma \& Kirkpatrick 2017, 4th ed.}%
+	{Fig.~#1~Futuyma \& Kirkpatrick 2017, 4th ed.}%
+}
+
+% This defines \amper for the fancy ampersand
+% to be used in the header. See
+% https://tex.stackexchange.com/a/58185/39194
+\usepackage{xspace}
+\newfontfamily\amperfont[Style=Alternate]{Linux Libertine O}    
+\makeatletter
+\DeclareRobustCommand{\amper}{{\amperfont\ifx\f@shape\scname\smaller[1.2]\fi\&}\xspace}
+\makeatother
+
+\newcommand{\backskip}{\vspace{-0.5\baselineskip}}
+
+%% Remove indent from multicol.
+\parindent=0pt
+
+\begin{document}
+
+\lecture{student}{student}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{homo_intro}}
+\begin{frame}[b]
+
+\tinyfill  \textcolor{white}{\futuyma{}}
+\end{frame}
+}
+
+
+%%
+
+\begin{frame}{Humans belong to the family \highlight{Hominidae.}}
+
+\includegraphics[width=\linewidth]{futuyma_fig21-2}
+
+\tinyfill \futuyma{21.2}
+
+\end{frame}
+%%
+
+\begin{frame}{\highlight{Hominins} are \highlight{bipedal.} What are the adaptive advantages?}
+
+\backskip
+
+\centering
+
+\includegraphics[width=\linewidth]{futuyma_fig21-4}
+
+\tinyfill \futuyma{21.4}
+\end{frame}
+%%
+
+\begin{frame}{How many hominin species to you see?}
+
+\backskip
+
+\includegraphics[width=\linewidth]{homo_skulls}
+
+	\pause
+	\backskip
+	\alt<handout>{}{%
+	\begin{multicols}{3}
+	\begin{enumerate}[leftmargin=*,label=\textsc{\Alph*}.]
+	{\tiny
+	\item Chimpanzee, modern\\
+	\item \textit{Australopithecus africanus}, 2.6 \textsc{mya}\\
+	\item \textit{A. africanus}, 2.5 \textsc{mya}\\
+	\item \textit{Homo habilis}, 1.9 \textsc{mya}\\
+	\item \textit{H. habilis}, 1.8 \textsc{mya}\\
+	%
+	\item \textit{H. rudolfensis}, 1.8 \textsc{mya}\\
+	\item \textit{H. erectus}, 1.75 \textsc{mya}\\
+	\item \textit{H. ergaster}, 1.75 \textsc{mya}\\
+	\item \textit{H. heidelbergensis}, 300–125 \textsc{kya}\\
+	\item \textit{H. neanderthalensis}, 70 \textsc{kya}\\
+	%
+	\item \textit{H. neanderthalensis}, 60 \textsc{kya}\\
+	\item \textit{H. neanderthalensis}, 45 \textsc{kya}\\
+	\item \textit{H. sapiens}, Cro-Magnon, 30 \textsc{kya}\\
+	\item \textit{H. sapiens}, modern\\
+	}
+	\end{enumerate}
+	\end{multicols}
+}
+
+\end{frame}
+%%
+
+\begin{frame}{How many species of \textit{Homo} have been described?}
+
+\begin{multicols}{2}
+\textit{habilis} (2.3–1.4 \textsc{mya})*\\
+\textit{rudolfensis} (1.9)*\\
+\textit{ergaster} (1.9–1.4)\\
+\textit{georgicus} (1.8)\\
+\textit{erectus} (1.5–0.2)\\
+\textit{antecessor} (1.2–0.8)\\
+\textit{cepranensis} (0.9–0.8)\\
+
+\columnbreak
+
+\textit{heidelbergensis} (0.6-0.3 \textsc{mya})\\
+\textit{rhodesiensis} (0.3–0.12)\\
+\textit{neanderthalensis} (0.4–0.04)\\
+\textit{sapiens} (0.8–?)\\
+\textit{floresiensis} (0.10–0.012)\\
+Denisovans (0.5–0.03)\\
+\end{multicols}
+
+
+\vfilll
+
+\tiny * Australopithecines?
+
+\end{frame}
+
+%%
+
+\begin{frame}{Many \textit{Homo} species are no longer recognized.}
+
+\includegraphics[width=\linewidth]{homo_jaw}
+
+\begin{tikzpicture}
+\node at (3.5,7) [text width=4.5cm]{\textit{capensis, dubius, leakeyi, kanamensis, mauritanicus, modjokertensis, pekinensis}};
+\end{tikzpicture}
+
+\end{frame}
+
+%%
+
+\begin{frame}
+
+\centering
+\includegraphics[height=0.94\textheight]{futuyma_fig21-6}
+
+\tinyfill \futuyma{21.6}
+
+\end{frame}
+
+%%
+
+
+\begin{frame}{Two waves of \textit{Homo} left Africa 1.9 and 0.6 \textsc{mya}.}
+
+%\backskip
+
+\includegraphics[width=\linewidth]{futuyma_fig21-9}
+
+\tinyfill \futuyma{21.9}
+
+\end{frame}
+
+%%
+
+\begin{frame}{\textit{Homo sapiens} left Africa 60 \textsc{kya}.}
+
+%\backskip
+
+\includegraphics[width=\linewidth]{futuyma_fig21-12}
+
+\tinyfill \futuyma{21.12}
+
+\end{frame}
+
+%%
+
+\begin{frame}{\textit{Homo sapiens} interbred with other species of \textit{Homo.}}
+
+\backskip
+
+\centering
+
+\includegraphics[height=0.83\textheight]{futuyma_fig21-14}
+
+\tinyfill \futuyma{21.14}
+
+\end{frame}
+
+%%
+
+\begin{frame}[t]{Bipedalism evolved before large brain size}
+	\includegraphics[width=\textwidth]{hominin_brain_size}
+
+\end{frame}
+
+%%
+
+\begin{frame}{As brain size increased, skull structure changed.}
+
+\centering
+
+\includegraphics[width=\linewidth]{futuyma_fig21-8}
+
+\smallskip
+
+\includegraphics[width=0.8\linewidth]{futuyma_fig21-10}
+
+\tinyfill \futuyma{21.8, 21.10}
+\end{frame}
+
+%%
+
+\begin{frame}{Larger brain size might be adaptive for ecological or social reasons.}
+
+\centering
+
+\includegraphics[height=0.75\textheight]{futuyma_fig21-15}
+
+\tinyfill \futuyma{21.15}
+\end{frame}
+
+%%
+
+\begin{frame}{Cognitive ability for rudimentary language is old\ldots}
+
+\backskip
+
+\centering
+
+\includegraphics[height=0.83\textheight]{futuyma_fig21-16}
+
+\tinyfill \futuyma{21.16}
+
+\end{frame}
+
+%%
+
+\begin{frame}{\ldots but complex communication is young.}
+
+\backskip
+
+\centering
+
+\includegraphics[height=0.83\textheight]{futuyma_fig21-23}
+
+\tinyfill \futuyma{21.23}
+
+\end{frame}
+
+%%
+
+\begin{frame}{Large brains require high metabolic rates.}
+
+\backskip
+
+\centering
+
+\includegraphics[height=0.83\textheight]{futuyma_fig21-17}
+
+\tinyfill \futuyma{21.17}
+
+\end{frame}
+
+%%
+
+\begin{frame}{Agriculture had enormous evolutionary consequences.}
+
+\backskip
+
+\centering
+
+\includegraphics[width=\linewidth]{futuyma_fig21-18}
+
+\tinyfill \futuyma{21.18}
+
+\end{frame}
+
+%%
+
+\begin{frame}{Twelve genes have signature of adaptive evolution.}
+
+\backskip
+
+\centering
+
+\includegraphics[height=0.83\textheight]{futuyma_fig21-19}
+
+\tinyfill \futuyma{21.19}
+
+\end{frame}
+
+%%
+
+\begin{frame}{Selection still acts today.}
+
+\backskip
+
+\centering
+
+
+\begin{multicols}{2}
+
+Cholesterol
+
+\includegraphics[width=\linewidth]{futuyma_fig21-21a} 
+
+\columnbreak
+
+Height
+
+\includegraphics[width=\linewidth]{futuyma_fig21-21b}
+
+\end{multicols}
+
+
+\tinyfill \futuyma{21.21}
+
+\end{frame}
+
+%%
+
+\begin{frame}{Mutational load increases with distance from Africa.}
+
+\backskip
+
+\centering
+
+
+\begin{multicols}{2}
+
+\includegraphics[width=\linewidth]{futuyma_fig21-20a}
+
+\columnbreak
+
+\includegraphics[width=\linewidth]{futuyma_fig21-20b}
+
+\end{multicols}
+
+
+\tinyfill \futuyma{21.21}
+
+\end{frame}
+
+%%
+
+\begin{frame}{Global $F_{ST} \approx 0.12.$ Apparent differences are often adaptive.}
+
+\centering
+\includegraphics[width=0.95\linewidth]{homo_global_pops}
+
+\begin{tikzpicture}
+\node at (-3,1.5) [text width=4cm]{Nigeria, SE~Asia, Europe};
+\end{tikzpicture}
+
+
+\end{frame}
+
+
+%%
+\end{document}
+
+

@@ -1,0 +1,118 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[letterpaper]{tufte-handout}
+
+%\geometry{showframe} % display margins for debugging page layout
+
+\usepackage{fontspec}
+\def\mainfont{Linux Libertine O}
+\setmainfont[Ligatures={Common,TeX}, Contextuals={NoAlternate}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={OldStyle}]{\mainfont}
+\setsansfont[Scale=MatchLowercase]{Linux Biolinum O} 
+\usepackage{microtype}
+
+\usepackage{graphicx} % allow embedded images
+  \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+  \graphicspath{{img/}} % set of paths to search for images
+\usepackage{amsmath}  % extended mathematics
+\usepackage{booktabs} % book-quality tables
+\usepackage{units}    % non-stacked fractions and better unit spacing
+\usepackage{siunitx}
+\usepackage{multicol} % multiple column layout facilities
+\usepackage{microtype}   % filler text
+\usepackage{hyperref}
+
+\usepackage{enumitem}
+
+%\usepackage{fancyvrb} % extended verbatim environments
+%  \fvset{fontsize=\normalsize}% default font size for fancy-verbatim environments
+\makeatletter
+% Paragraph indentation and separation for normal text
+\renewcommand{\@tufte@reset@par}{%
+  \setlength{\RaggedRightParindent}{1.0pc}%
+  \setlength{\JustifyingParindent}{1.0pc}%
+  \setlength{\parindent}{0pc}%
+  \setlength{\parskip}{0.5\baselineskip}%
+}
+\@tufte@reset@par
+
+% Paragraph indentation and separation for marginal text
+\renewcommand{\@tufte@margin@par}{%
+  \setlength{\RaggedRightParindent}{0pt}%
+  \setlength{\JustifyingParindent}{0.5pc}%
+  \setlength{\parindent}{0.5pc}%
+  \setlength{\parskip}{0pt}%
+}
+\makeatother
+
+% Set up the spacing using fontspec features
+\renewcommand\allcapsspacing[1]{{\addfontfeatures{LetterSpace=15}#1}}
+\renewcommand\smallcapsspacing[1]{{\addfontfeatures{LetterSpace=10}#1}}
+
+
+\title{Study Guide 17\hfill}
+\author{Evolution of biodiversity}
+
+\date{} % without \date command, current date is supplied
+
+\begin{document}
+
+\maketitle	% this prints the handout title, author, and date
+
+\section{Vocabulary}\marginnote{\textbf{Read:} Chapter 19, pages 491–503.}
+
+\begin{multicols}{2}
+diversification rate ($D$)\\
+origination rate\\\hspace{1em}(Speciation; $S$)\\
+extinction eate ($E$)\\
+turnover rate\\
+ecological specialization \\
+population dynamics \\
+geographic range \\
+End Ordovician\\
+Late Devonian\\
+End Permian\\
+End Triassic\\
+End Cretaceous \textsc{(k/t)}
+ecological release\\
+ecological divergence\\
+coevolution \\
+
+\end{multicols}
+
+%\printclassoptions
+
+\section{Concepts}
+
+You should \emph{write} clear and concise answers to each question in the Concepts section.  The questions are not necessarily independent.  Think broadly across lectures to see ``the big picture.'' 
+
+\begin{enumerate}
+	
+	\item The fossil record is unfortunately very incomplete.  Discuss the three principle reasons the fossil record is incomplete, and the consequences of inferring evolutionary history from the incomplete fossil record.
+
+	\item The fossil record is also biased.  Discuss the three types of bias found in the fossil record and the consequences of inferring evolutionary history from the biased fossil record.  The term ``consequences'' has a negative undertone.  Can you think of a positive benefit that could result from this bias?
+
+	\item If the fossil record of a particular geological formation is found to have a diversification rate $R > 0$, what does this mean in terms of origination rate and extinction rate?  What if $R < 0$?
+
+	\item What trends have been observed in the fossil record in terms of:
+	\begin{itemize}
+		\item overall diversity
+		\item rate of origination
+		\item rate of extinction
+	\end{itemize}
+	
+	\item Define turnover rate.  What trends have been observed when turnover rate is compared across multiple taxa in the fossil record?
+
+	\item What mechanisms have been proposed to explain the link between rates of origination and rates of extinction?  That is, what mechanisms have been proposed to explain observed turnover rates (high or low)?  What justification do evolutionary biologists have for these explanations?  
+
+	\item When did the five mass extinctions occur (at the end of which periods)?  What trends have been observed in taxonomic diversity following the mass extinctions?
+
+	\item Which was the largest mass extinction?  Which is the most famous mass extinction?
+
+	\item Describe the hypotheses proposed to explain the end Permian and \textsc{k/t} (end Cretaceous) mass extinctions.
+
+	\item What is the common link that explains all mass extinctions?  What are the implications of this change for the current flora and fauna. That is, is there evidence of a sixth mass extinction that is currently ongoing? If so, what is the cause?
+
+\end{enumerate}
+
+\end{document}

@@ -9,7 +9,7 @@
 %\includeonlylecture{student}
 %\pgfpagesuselayout{3 on 1 with notes}[letterpaper,border shrink=5mm]
 
-%\usefonttheme{professionalfonts}
+\usefonttheme{professionalfonts}
 
 
 %%% Including only some slides for students.
@@ -28,8 +28,6 @@
 \setmonofont{Linux Libertine Mono O}
 
 \usepackage{microtype}
-
-\parindent=0pt
 
 \usepackage{unicode-math}
 \setmathfont[Scale=MatchLowercase]{Asana Math}
@@ -97,304 +95,535 @@
 \lecture{student}{student}
 
 {
-\usebackgroundtemplate{\includegraphics[width=\paperwidth]{sex_intro}}
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{geneflow_intro}}
 \begin{frame}[b]
 
-\tiny \textcolor{white}{\href{https://www.flickr.com/photos/76738608@N08/36518035882}{Christian Gloor, Flickr, \ccby{2}}}
+\tiny \textcolor{white}{\futuyma{}}
 \end{frame}
 }
 
-\begin{frame}{\highlight{Anisogamy} is the dimorphism of gamete size between sexes.}
+
+\begin{frame}{\highlight{Gene flow} is the movement of alleles among populations.}
+
+\vspace{-\baselineskip}
 
 \begin{multicols}{2}
-\includegraphics[width=\linewidth]{sex_pollen}
+\centering
+\noindent\includegraphics[width=0.945\linewidth]{geneflow_pollen_release}
 
-\highlight{Males} produce small sperm.
+\vspace{1ex}
 
+\noindent\includegraphics[width=0.945\linewidth]{geneflow_pollinator}
 
 \columnbreak
 
-\includegraphics[width=\linewidth]{sex_megasporangia}
+\noindent\includegraphics[width=0.92\linewidth]{geneflow_dandelion}
 
-\highlight{Females} produce large eggs.
+\vspace{1ex}
 
-\end{multicols}
+\noindent\reflectbox{\includegraphics[width=0.92\linewidth]{geneflow_bird_berry}}
 
-
-\vfilll
-
-\tiny \href{https://www.flickr.com/photos/132318516@N08/26565353152}{\textsc{nih} image gallery, \ccbync{2}} \hfill
-\textcopyright\,M.G.~Simpson, Plant Systematics 2010.
-\end{frame}
-
-
-\begin{frame}{\highlight{Asexual reproduction} occurs without meiosis and syngamy.}
-
-\includegraphics[width=\linewidth]{futuyma_fig10-20}
-
-\tinyfill \futuyma{10.20}
-
-\end{frame}
-
-%%
-
-
-\begin{frame}{What are advantages and disadvantages of asexual reproduction?}
-
-\begin{multicols}{2}
-
-\includegraphics[width=\linewidth]{sex_binary_fission}
-
-\columnbreak
-
-\includegraphics[width=\linewidth]{sex_budding_yeast}
 \end{multicols}
 
 \vfilll
 
-\tiny \href{https://www.sciencephoto.com/media/11784/view/dividing-bacterium-sem}{\textcopyright\,David Sharf, Science Photo Library} \hfill \href{https://commons.wikimedia.org/wiki/File:Saccharomyces_cerevisiae_SEM.jpg}{Mogana Das Murtey \& Patchamuthu Ramasamy, Wikimedia Commons, \ccbysa{3}}
+\tiny Buzzfeed \hfill \href{https://www.flickr.com/photos/22786627@N04/3584415133}{Erlend Schei, \ccby{2}}\newline
+\href{https://nature.mdc.mo.gov/discover-nature/field-guide/megachilid-bees}{\textcopyright\,Tim Rather, \textsc{mdc}} \hfill \href{https://www.flickr.com/photos/yuri_timofeyev/3140287109}{Yuri Timofeyev, \ccbync{2}}
+%\begin{tabular}{@{}cc@{}}
+%\includegraphics[width=0.45\]
+
+\end{frame}
+
+%%
+
+
+\begin{frame}[t]{Why could these populations drift independently?}
+\centering
+
+\includegraphics[width=0.97\linewidth]{futuyma_fig7-4}
 
 
 \end{frame}
 
-
 %%
 
-\begin{frame}{Is it good to maintain the same genome?}
+\begin{frame}{This species has little gene flow between ridges.}
+\backskip
 
-\begin{multicols}{2}
-\includegraphics[width=\linewidth]{futuyma_fig10-20a}
+\centering
+\includegraphics[height=0.85\textheight]{geneflow_populations_isolated}
 
-\columnbreak
-
-\includegraphics[width=\linewidth]{sex_mullers_ratchet}
-
-\end{multicols}
-
-\pause
-
-\hangpara \highlight{Muller's Ratchet} is the accumulation of mildly deleterious mutations in asexual populations.
 
 \vfilll
 
-
-\tiny \futuyma{10.20} \hfill Brockhaus Konversations-Lexikon (1894, 14th edition, adapted by Georg Wiora.
-
-\end{frame}
-
-%%
-
-\begin{frame}{Sexual reproduction includes both meiotic recombination and syngamy.}
-
-%\hangpara Sex breaks up allele combinations. Is this good or bad?
-
-%\pause
-
-\hangpara What are the advantages and disadvantages of sexual reproduction?
+\tinyfill Millar et al.~2013. Heredity 111: 437.
 
 \end{frame}
 
 %%
 
-\begin{frame}{All else equal, does asexual or sexual reproduction have greater relative fitness?}
+\begin{frame}{\highlight{Clines} show gradual change of genetic variation.}
+\backskip
 
-\onslide<1-3>{
-\includegraphics[width=\linewidth]{sex_two_fold_cost}
-}
+\centering
 
-\begin{tikzpicture}
-\onslide<1>{
-\fill [white] (0,0) rectangle (12,3.5);
-}
+\includegraphics[height=0.85\textheight]{futuyma_fig8-1}
 
+\vfilll\tinyfill \futuyma{8.1}
+\end{frame}
 
-\onslide<2>{\fill [white] (0,0) rectangle (12,2.5);}
+%%
+
+\begin{frame}{Bergman's Rule is an example of a cline.}
+\backskip
+
+\centering
+
+\includegraphics[height=0.85\textheight]{futuyma_fig8-2}
+
+\tinyfill \futuyma{8.2}
+
+\end{frame}
+
+%%
+
+\begin{frame}[c]{Migration rate can be used to estimate gene flow.}
+
+\begin{tikzpicture}[->,>=stealth',auto,node distance=4cm,
+  thick,main node/.style={circle,draw,align=center, text width=1.2cm}]
+  
+\node at (1.5,0) [main node] (1) {A {$p=0.7$}};
+\node[main node] (2) [right of=1] {B $p = 0.4$};
+
+\draw [->] (1)  to [out=30,in=150] node [midway, above] {0.2} (2) ;
+
+\onslide<1>{\node [right of=2, text width=3cm] {How will $p$ change after migration?}; }
+
+\onslide<2->{\node [right of=2, text width=3cm] {What is new $p$ for B after migration?};}
 
 \end{tikzpicture}
 
-\onslide<3>{%
+\vspace{1.5\baselineskip}
+\onslide<2->{%
+{\Large
+\begin{align*}
+\Delta p &= m(p_m - p)\\
+\Delta p &= 0.2(0.7 - 0.4) = 0.06
+\end{align*}}
+}
+\end{frame}
+
+%%
+\begin{frame}{\highlight{Fixation index $\left(F_{ST}\right)$} compares heterozygosity within populations to heterozygosity of all populations.}
+
+\backskip
+
+\begin{multicols}{2}
+
+\hangpara $F_{ST}$ measures \emph{difference} between probability of sampling the same allele \emph{within} a population and sampling the same allele from the species as a whole.
+
+
+%\onslide<2>{%
+%\vspace*{\baselineskip}
+%$p_1 = 0.8$
+
+%$p_2 = 0.2$
+
+%$p = 0.5$ (overall)
+%}
+
+\columnbreak
+
+\centering
+\noindent\includegraphics[height=0.68\textheight]{futuyma_fig8-6}
+
+\end{multicols}
+
+%\onslide<2>{
+%\begin{tikzpicture}
+%\draw (6,2.8) rectangle (12.1,4.9);
+%\end{tikzpicture}}
+
+
+\tinyfill \futuyma{8.6}
+
+\end{frame}
+
+%%
+
+%% This math from Gillespie tends to emphasize
+%% homozygosity even though I emphasize heterozygosity.
+%% Save for future perhaps but don't use as is.
+%%
+%\begin{frame}
+%\begin{multicols}{2}
+%\raggedbottom
+%%\begin{align*}
+%\hangpara $F_{ST} = \dfrac{G_S - G_T}{1-G_T}$
+%%\end{align*}
+%
+%\hangpara where
+%\begin{align*}
+%G_T &= p^2 + q^2,\\
+%G_S &= \sum c_i(p^2_i + q^2_i)\\
+%c_i &=\,\mathrm{weight\ of\ population}\ i.
+%\end{align*}
+%
+%\hangpara Sample size was equal so each population contributes (weights) equally to the calculations. So,
+%
+%\hangpara $c_1 = c_2 = 0.5.$
+%
+%\columnbreak
+%\noindent\begin{align*}
+%G_T &= 0.5^2 + 0.5^2 = 0.5\\
+%& \\
+%%& \text{Pop.~1, with $p_1 = 0.8$ and $q_1 = 0.2$,}\\
+%G_{S1} &= 0.5(0.8^2 + 02^2)\\
+%G_{S1} &= 0.5(0.68)\\
+%G_{S1} &= 0.34\\[1em]
+%G_{S2} &= 0.34\\[1em]
+%G_S &= 0.34 + 0.34 = 0.68\\[1em]
+%%
+%F_{ST} &= \dfrac{0.68 - 0.5}{1 - 0.5} = 0.36
+%\end{align*}
+%
+%\end{multicols}
+%\end{frame}
+
+\begin{frame}{Sidebar: use weighted means for unequal sample sizes.}
+
 \vspace{-\baselineskip}
-\hangpara \highlight{Two-fold cost of sex:} males reduce reproductive potential by a factor of two every generation.
+\begin{multicols}{2}
+\raggedbottom
+
+\onslide<1->{%
+\qquad\begin{tabular}{@{}rcc@{}}
+Overall & $\overline{Y}=$& 3.5 \tabularnewline
+\midrule
+ & 1 & 2 \tabularnewline 
+ & 2 & 3 \tabularnewline 
+ & 3 & 4 \tabularnewline 
+ & 4 & 5 \tabularnewline 
+ & 5 & 6 \tabularnewline 
+\midrule
+$\overline{Y}_i$ & 3 & 4 \tabularnewline
+%$w_i$ & 0.5 & 0.5 \tabularnewline
+%$w_i\overline{Y_i}$ & 3	& 1.4
+\end{tabular}
+
+\hangpara Average of $\{3,4\} = 3.5.$
+}% End slide 1
+
+\onslide<3->{%
+\quad\begin{tabular}{@{}rcc@{}}
+\phantom{Overall} & & \tabularnewline
+$c_i$	& 0.5 & 0.5 \tabularnewline
+$c_i\overline{Y}_i$ & 1.5 & 2 \tabularnewline
+\end{tabular}
+
+\hangpara Sum of $\{1.5,2\} = 3.5$
 }
 
+\onslide<1->{
+\par\columnbreak
+}
 
-\tinyfill \textcopyright\,Sinauer Associates, Inc.~2005
+\onslide<2->{%
+\quad\begin{tabular}{@{}rcc@{}}
+Overall & $\overline{Y}=$& 3.1\tabularnewline
+\midrule
+ & 1 & 1 \tabularnewline 
+ & 2 & 2 \tabularnewline 
+ & 3 & 3 \tabularnewline 
+ & 4 & 4 \tabularnewline 
+ & 5 &  \tabularnewline 
+ & 6 &  \tabularnewline 
+\midrule
+$\overline{Y_i}$ & 3.5 & 2.5 \tabularnewline
+$c_i$ & 0.6 & 0.4 \tabularnewline
+$c_i\overline{Y}_i$ & 2.1	& 1.0
+\end{tabular}
 
+\hangpara Average of $\{3.5,2.5\} = 3.0 \ne 3.1$
+
+\hangpara Sum of $\{2.1,1.0\} = 3.1$
+} % End slide 2
+
+\end{multicols}
+
+\end{frame}
+
+%% Quick reminder
+\lecture{instructor}{instrutor}
+
+%%
+\begin{frame}{\highlight{Fixation index $\left(F_{ST}\right)$} compares heterozygosity within populations to heterozygosity of all populations.}
+
+\backskip
+
+\begin{multicols}{2}
+
+
+\hangpara $F_{ST}$ measures \emph{difference} between probability of sampling the same allele \emph{within} a population and sampling the same allele from the species as a whole.
+
+\vspace*{\baselineskip}
+$p_1 = 0.8$ \\ 
+$p_2 = 0.2$ \\
+$p = 0.5$ (overall)
+
+\onslide<2>{%
+\hangpara What is $2pq$ for population~1 and overall?
+}
+
+\columnbreak
+
+\centering
+\noindent\includegraphics[height=0.68\textheight]{futuyma_fig8-6}
+
+\end{multicols}
+
+\begin{tikzpicture}
+\draw (6,2.8) rectangle (12.1,4.9);
+\end{tikzpicture}
+
+\tinyfill \futuyma{8.6}
+\end{frame}
+
+\lecture{student}{student}
+
+%% Emphasize heterozygosity
+
+\begin{frame}
+\begin{multicols}{2}
+\raggedbottom
+%\begin{align*}
+\hangpara $F_{ST} = \dfrac{2pq - \sum c_i2p_iq_i}{2pq}$
+%\end{align*}
+
+\hangpara where
+
+\hangpara $2pq =$ overall heterozygosity across populations.
+
+\hangpara $c_i2p_iq_i =$ heterozygosity of each population, weighted for sample size.
+
+%\begin{align*}
+%G_T &= p^2 + q^2,\\
+%G_S &= \sum c_i(p^2_i + q^2_i)\\
+%c_i &=\,\mathrm{weight\ of\ population}\ i.
+%\end{align*}
+
+\hangpara Sample size was equal so each population has equal weight,
+
+\hangpara $c_1 = c_2 = 0.5.$
+
+\columnbreak
+\noindent\begin{align*}
+2pq &= 0.5\ \text{overall}\\ 
+& \\
+%& \text{Pop.~1, with $p_1 = 0.8$ and $q_1 = 0.2$,}\\
+c_12p_1q_1 &= 0.5\left(2\cdot0.8\cdot0.2\right)\\
+c_12p_1q_1 &= 0.5(0.32)\\
+c_12p_1q_1 &= 0.16\\[1em]
+c_22p_2q_2 &= 0.16\\[1em]
+\sum c_i2p_iq_i &= 0.16 + 0.16 = 0.32\\[1em]
+%
+F_{ST} &= \dfrac{0.5 - 0.32}{0.5} = 0.36
+\end{align*}
+
+\end{multicols}
 \end{frame}
 
 %%
 
-\begin{frame}{If sex has a fitness cost, then why did sex evolve?}
+\begin{frame}
+\begin{multicols}{2}
+\raggedbottom
+\begin{tabular}{@{}lrrr@{}}
+Pop	& $N$	& $p$ & $q$ \tabularnewline
+A & 500	& 0.5 & 0.5 \tabularnewline
+B & 100 & 0.65 & 0.35 \tabularnewline
+C & 1000 & 0.35 & 0.65 \tabularnewline
+\end{tabular}
+\vskip-1.5em
+\noindent\begin{flalign*}
+\onslide<2->{%
+\intertext{For weights, divide each $N$ by total.}
+c_\mathrm{\textsc{a}} &= 0.3125, \\
+c_\mathrm{\textsc{b}} &= 0.0625, \\
+c_\mathrm{\textsc{c}} &= 0.625} \\[-1.5em]
+\onslide<3->{%
+\intertext{Calculate mean $p$ and $q$ overall.}
+p &= 0.31(0.5) + 0.06(0.65) + 0.62(0.35) \\
+  &= 0.415625\ \text{overall}\\[1ex]
+q &= 1 - 0.415625 \\
+  &= 0.584375\ \text{overall}}
+\end{flalign*}
+
+\columnbreak
+\noindent\begin{align*}
+\onslide<4->{%
+2pq &= 2\cdot0.416\cdot0.584 \\
+    &= 0.48576172\\[1em]}
+\onslide<5->{%
+c_\mathrm{\textsc{a}}2p_\mathrm{\textsc{a}}q_\mathrm{\textsc{a}} &= 0.3125\cdot2\cdot0.5\cdot0.5\\
+&=0.15625\\[1ex]
+c_\mathrm{\textsc{b}}2p_\mathrm{\textsc{b}}q_\mathrm{\textsc{b}} &= 0.0284375\\[1ex]
+c_\mathrm{\textsc{c}}2p_\mathrm{\textsc{c}}q_\mathrm{\textsc{c}} &= 0.284375\\[1em]
+\sum c_i2p_iq_i &= 0.4690625 \\[1em]}
+\onslide<6->{%
+F_{ST} &= \dfrac{0.48576172-4690625}{0.48576172}\\
+       &= 0.0344}
+\end{align*}
+
+\end{multicols}
+\end{frame}
+
+%%
+
+\begin{frame}{\highlight{Wahlund effect} is the reduction of heterozygosity due to population substructure (or inbreeding).}
+
 \vspace{-\baselineskip}
 
-\begin{multicols}{2}
+\hangpara Suppose I sample 100 individuals from Bollinger and 100 individuals from Cape Girardeau populations in \textsc{hwe}.
+
+\bigskip
 
 \centering
+\begin{tabular}{@{}rccc@{}}
+\toprule
+ & Bollinger & Cape & BollCape \tabularnewline
+\midrule
+$AA$ & 49 & 16 & 65 \tabularnewline
+$Aa$ & 42 & 48 & 90 \tabularnewline
+$aa$ & 9 & 36 & 45 \tabularnewline
+\midrule 
+\onslide<2->{%
+$p$ & 0.7 & 0.4 & 0.55 \tabularnewline
+$q$ & 0.3 & 0.6 & 0.45 \tabularnewline
+$2pq$ & 0.42 & 0.48 & 0.495 \tabularnewline
+\midrule }
+\onslide<3->{%
+Expected & 42 & 48 & 99 \tabularnewline
+\bottomrule}
+\end{tabular}
 
-\reflectbox{\includegraphics[width=0.9\linewidth]{sex_penguins}}
+\end{frame}
 
-\smallskip
+\begin{frame}{\highlight{Isolation by distance} describes how $F_{ST}$ increases as geographic distance increases.}
 
-\includegraphics[width=0.9\linewidth]{sex_bees}
+\begin{tikzpicture}[->,>=stealth',auto,node distance=2cm,
+  thick,main node/.style={circle,draw,align=center}]
+%  
+\node at (2,-1) [main node] (1) {A};
+\node[main node] (2) [right of=1] {B};
+\node[main node] (3) [right of=2] {C};
+\node[main node] (4) [right of=3] {D};
+\node[main node] (5) [right of=4] {E};
+%%
+\draw [<->] (1) to [out=30,in=150]  node [midway, above] {$m$} (2);
+\draw [<->] (2) to [out=30,in=150]  node [midway, above] {$m$} (3) ;
+\draw [<->] (3)  to [out=30,in=150]  node [midway, above] {$m$} (4) ;
+\draw [<->] (4)  to [out=30,in=150]  node [midway, above] {$m$} (5) ;
+%%
+\draw [<->] (1)  to [out=330,in=210]  node [midway, below] {$m$} (5) ;
+%
 
-\columnbreak
+\node at (5,-4) [text width=8cm] {Migration rate $m$ decreases with distance.\\For example, $m_{\mathrm{AE}} \ll m_{\mathrm{AB}}$ or $m_{\mathrm{AC}}$};
+\end{tikzpicture}
 
-\reflectbox{\includegraphics[width=0.9\linewidth]{sex_hoverflies}}
-
-\smallskip
-
-\includegraphics[width=0.8\linewidth]{sex_fleas}
-
-\end{multicols}
 \end{frame}
 
 %%
 
-\begin{frame}{Sexual reproduction breaks up allele combinations.}
+\begin{frame}{Human populations show evidence of isolation by distance.}
+\centering
+\includegraphics[width=\linewidth]{futuyma_fig8-7}
 
-\hangpara Is this good or bad?
-
-\hangpara What if \emph{AB} is the ideal allele combination in an individual that is \emph{AB} on one chromosome and \emph{ab} on the other?
-
-\hangpara What if an \emph{individual} had a theoretically “perfect” genome? 
-
-
-\end{frame}
-
-
-\begin{frame}{Sexual reproduction has advantages in changing environments.}
-
-\hangpara \highlight{Red queen hypothesis}
-
-\hangpara \highlight{Selective interference} is reduced.\newline
-	\hspace*{1em} \highlight{Clonal interference}\newline
-	\hspace*{1em} \highlight{Ruby-in-the-rubbish}
-	
-\hangpara Enhanced rate of adaptation
+\tinyfill \futuyma{8.7}
 
 \end{frame}
 
 %%
 
-\begin{frame}{\highlight{Red queen hypothesis} describes the \emph{evolutionary arms race} between hosts and their pathogens.}
+\begin{frame}{$F_{ST}$ can be estimated from $N_e$ and migration rate $m$.}
+
+\begin{equation*}
+F_{ST} = \dfrac{1}{1+4N_em}
+\end{equation*}
+
+\pause
+\hangpara List two ways that a \emph{new} allele can be introduced into a population.
+
+\pause
+\hangpara Therefore, $F_{ST}$ can also be estimated with mutation rate $\mu$.
+
+\begin{equation*}
+F_{ST} = \dfrac{1}{1+4N_e\mu}
+\end{equation*}
+
+
+
+\end{frame}
+
+%%
+
+\begin{frame}{Genomic $F_{ST}$ can identify chromosomal regions underyling population differences.}
 
 \backskip
-
 \centering
+\includegraphics[height=0.80\textheight]{futuyma_fig8-8}
 
-
-\includegraphics[height=0.79\textheight]{futuyma_fig10-22}
-
-\tinyfill \futuyma{10.22}
-
+\tinyfill \futuyma{8.8}
 
 \end{frame}
 
 %%
 
-\begin{frame}{\highlight{Clonal interference} slows adaptation in asexual species.}
-\backskip
+\begin{frame}{Can gene flow offset the effects of selection?}
 
-\centering
+\hangpara If $m \gg s$ then \highlight{gene swamping} can occur. Local adaptation is overwhelmed by gene flow.
 
+\hangpara If $m \ll s$ then local adaptation can occur.
 
-\includegraphics[height=0.82\textheight]{futuyma_fig10-23}
-
-\tinyfill \futuyma{10.23}
 \end{frame}
 
 %%
 
-\begin{frame}{\highlight{Ruby-in-the-rubbish effect} links detrimental and beneficial mutations in asexual species.}
-\backskip
-
-\centering
-
-\includegraphics[width=\linewidth]{futuyma_fig10-24}
-
-\hangpara Analogous to selective sweep but genome wide.
-
-\tinyfill \futuyma{10.24}
-\end{frame}
-
-%%
-
-\begin{frame}{Muller's ratchet is a form of selective interference in areas of low recombination.}
+\begin{frame}{Strong selection will overcome migration when $s \gg m$}
 
 \backskip
+\centering
+\includegraphics[height=0.8\textheight]{futuyma_fig8-10}
 
-\begin{multicols}{2}
-\includegraphics[width=\linewidth]{futuyma_fig10-27}
+\begin{tikzpicture}
+\node at (4,7) [align=left, text width=2cm] {$s \gg 0.1 $\\$m \ll 0.01 $};
+%\node at (4,6.5) [align=left, text width=1.5cm] {};
+\end{tikzpicture}
 
-\columnbreak
-
-\includegraphics[width=\linewidth]{futuyma_fig10-26}
-\end{multicols}
-
-\vfilll
-
-\tiny \futuyma{10.27} \hfill \futuyma{10.26}
-
+\tinyfill \futuyma{8.10}
 \end{frame}
 
 %%
 
-\begin{frame}{Recombination speeds the rate of adaptation.}
-
-\backskip
+\begin{frame}[t]{Underdominance can form \highlight{tension zones.}}
 
 \centering
+\includegraphics[width=0.97\linewidth]{geneflow_bombina_tension_zone}
 
-\includegraphics[height=0.8\textheight]{futuyma_fig10-25}
+{\tinyfill \textcopyright\,Pearson Education, Inc.}
 
-\tinyfill \futuyma{10.25}
+\begin{tikzpicture}
+\node at (4,4.7) (1) {20\%};
+\node [right of=1] (2) {2\%};
+\node [above right of=1, yshift=-9pt,xshift=-8pt] {Mortality};
+\end{tikzpicture}
+
 
 \end{frame}
 
-%%
-
-
-\begin{frame}{Many alternate mating strategies have evolved.}
-
-\vspace{-\baselineskip}
-
-\begin{multicols}{2}
-
-\hangpara \highlight{Sneaking male} strategy increases fitness of non-territorial males.
-
-\vspace{6\baselineskip}
-
-\hangpara \highlight{Sequential hermaphroditism} increases fitness of different age or size classes.
-
-\columnbreak
-
-\centering
-
-\noindent\includegraphics[width=0.94\linewidth]{sex_sneaking_males}
-
-\smallskip
-
-\reflectbox{\includegraphics[width=0.94\linewidth]{sex_blue-head_wrasse}}
-\end{multicols}
-
-\end{frame}
 
 %%
 
-\begin{frame}{Sequential hermaphroditism can be \highlight{protogynous} or \highlight{protandrous.}}
-
-
-\includegraphics[width=\linewidth]{sex_sequential_hermaphroditism}
-
-\vfilll
-
-\tinyfill \textcopyright\,2005 Sinauer Associates, Inc.
-
-\end{frame}
-
-%%
 
 
 \end{document}
-
-

@@ -1,13 +1,13 @@
 %!TEX TS-program = lualatex
 %!TEX encoding = UTF-8 Unicode
 
-%\documentclass[t]{beamer}
+\documentclass[t]{beamer}
 
 %%%% HANDOUTS For online Uncomment the following four lines for handout
-\documentclass[t,handout]{beamer}  %Use this for handouts.
-\usepackage{handoutWithNotes}
-\includeonlylecture{student}
-\pgfpagesuselayout{3 on 1 with notes}[letterpaper,border shrink=5mm]
+%\documentclass[t,handout]{beamer}  %Use this for handouts.
+%\usepackage{handoutWithNotes}
+%\includeonlylecture{student}
+%\pgfpagesuselayout{3 on 1 with notes}[letterpaper,border shrink=5mm]
 
 %\usefonttheme{professionalfonts}
 
@@ -37,7 +37,7 @@
 \usepackage{graphicx}
 	\graphicspath{%
 	{/Users/goby/Pictures/teach/300/lectures/}%
-	{/Users/goby/Pictures/teach/163/lecture/}} % set of paths to search for images
+	{/Users/goby/Pictures/teach/163/common/}} % set of paths to search for images
 
 \usepackage{amsmath,amssymb}
 
@@ -92,568 +92,309 @@
 
 \newcommand{\backskip}{\vspace{-0.5\baselineskip}}
 
-%% Remove indent from multicol.
-\parindent=0pt
-
 \begin{document}
 
 \lecture{student}{student}
 
 {
-\usebackgroundtemplate{\includegraphics[width=\paperwidth]{evodevo_intro}}
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{sex_intro}}
 \begin{frame}[b]
 
-%\tinyfill  \textcolor{white}{\futuyma{}}
+\tiny \textcolor{white}{\href{https://www.flickr.com/photos/76738608@N08/36518035882}{Christian Gloor, Flickr, \ccby{2}}}
 \end{frame}
 }
 
+\begin{frame}{\highlight{Anisogamy} is the dimorphism of gamete size between sexes.}
+
+\begin{multicols}{2}
+\includegraphics[width=\linewidth]{sex_pollen}
+
+\highlight{Males} produce small sperm.
+
+
+\columnbreak
+
+\includegraphics[width=\linewidth]{sex_megasporangia}
+
+\highlight{Females} produce large eggs.
+
+\end{multicols}
+
+
+\vfilll
+
+\tiny \href{https://www.flickr.com/photos/132318516@N08/26565353152}{\textsc{nih} image gallery, \ccbync{2}} \hfill
+\textcopyright\,M.G.~Simpson, Plant Systematics 2010.
+\end{frame}
+
+
+\begin{frame}{\highlight{Asexual reproduction} occurs without meiosis and syngamy.}
+
+\includegraphics[width=\linewidth]{futuyma_fig10-20}
+
+\tinyfill \futuyma{10.20}
+
+\end{frame}
+
 %%
-\begin{frame}{Here are embryos of human, alligator, and mouse. Which is which?}
 
-\backskip
 
-\includegraphics[width=\linewidth]{evodevo_embryos}
+\begin{frame}{What are advantages and disadvantages of asexual reproduction?}
+
+\begin{multicols}{2}
+
+\includegraphics[width=\linewidth]{sex_binary_fission}
+
+\columnbreak
+
+\includegraphics[width=\linewidth]{sex_budding_yeast}
+\end{multicols}
+
+\vfilll
+
+\tiny \href{https://www.sciencephoto.com/media/11784/view/dividing-bacterium-sem}{\textcopyright\,David Sharf, Science Photo Library} \hfill \href{https://commons.wikimedia.org/wiki/File:Saccharomyces_cerevisiae_SEM.jpg}{Mogana Das Murtey \& Patchamuthu Ramasamy, Wikimedia Commons, \ccbysa{3}}
+
+
+\end{frame}
+
+
+%%
+
+\begin{frame}{Is it good to maintain the same genome?}
+
+\begin{multicols}{2}
+\includegraphics[width=\linewidth]{futuyma_fig10-20a}
+
+\columnbreak
+
+\includegraphics[width=\linewidth]{sex_mullers_ratchet}
+
+\end{multicols}
 
 \pause
 
-\mode<beamer>{%
+\hangpara \highlight{Muller's Ratchet} is the accumulation of mildly deleterious mutations in asexual populations.
+
+\vfilll
+
+
+\tiny \futuyma{10.20} \hfill Brockhaus Konversations-Lexikon (1894, 14th edition, adapted by Georg Wiora.
+
+\end{frame}
+
+%%
+
+\begin{frame}{Sexual reproduction includes both meiotic recombination and syngamy.}
+
+%\hangpara Sex breaks up allele combinations. Is this good or bad?
+
+%\pause
+
+\hangpara What are the advantages and disadvantages of sexual reproduction?
+
+\end{frame}
+
+%%
+
+\begin{frame}{All else equal, does asexual or sexual reproduction have greater relative fitness?}
+
+\onslide<1-3>{
+\includegraphics[width=\linewidth]{sex_two_fold_cost}
+}
+
 \begin{tikzpicture}
-\node at (2,0) {Alligator};
-\node at (5.35,0) {Human};
-\node at (9.4,0) {Mouse};
-\end{tikzpicture}
+\onslide<1>{
+\fill [white] (0,0) rectangle (12,3.5);
 }
 
 
-\tinyfill \futuyma{15.1}
+\onslide<2>{\fill [white] (0,0) rectangle (12,2.5);}
 
-\end{frame}
-
-%%
-
-\begin{frame}{\highlight{Allometry} is the differential rate of growth of different parts or dimensions during development.}
-
-\backskip
-
-\begin{multicols}{2}
-
-\includegraphics[width=0.9\linewidth]{evodevo_allometry_beetles}
-	
-\columnbreak
-
-\includegraphics[width=0.9\linewidth]{evodevo_allometry_human}
-
-\end{multicols}
-
-\vfilll
-
-\tiny \futuyma{15.2\textsc{b}} \hfill \textcopyright\,Pearson
-
-\end{frame}
-
-%%
-
-\begin{frame}{\highlight{Heterochrony} is an evolutionary change in the timing or rate of developmental events.}
-
-\backskip
-
-\begin{multicols}{2}
-\hangpara \highlight{Paedomorphosis} is the retention of juvenile characteristics in the adult form.
-
-\medskip
-
-\centering
-
-\reflectbox{\includegraphics[width=0.9\linewidth]{evodevo_paedomorphosis}}
-
-\columnbreak
-
-\reflectbox{\includegraphics[width=0.8\linewidth]{evodevo_paedomorphosis_chimp}}
-
-\end{multicols}
-	
-\vfilll
-
-\tiny\futuyma{15.3\textsc{c}}\hfill Original source lost with the sands of time.
-	
-\end{frame}
-
-%%
-
-\begin{frame}{Organisms are modular.}
-\vspace{-\baselineskip}
-
-\begin{multicols}{2}
-
-\centering
-
-\includegraphics[width=0.85\linewidth]{evodevo_trilobite}
-
-\vspace{0.5ex}
-
-\noindent\includegraphics[width=0.85\linewidth]{evodevo_millipede}
-
-\columnbreak
-
-\noindent\includegraphics[width=0.9\linewidth]{evodevo_fish}
-
-\vspace{0.5ex}
-
-\includegraphics[width=0.9\linewidth]{evodevo_human_hand}
-
-\end{multicols}
-	
-\end{frame}
-
-%%
-
-\begin{frame}{Modules have distinct genetic specifications, developmental patterns, locations and interactions.}
-\vspace{-\baselineskip}
-
-\begin{multicols}{2}
-
-\centering
-
-\includegraphics[width=0.85\linewidth]{evodevo_plotosids}
-
-\vspace{0.5ex}
-
-\noindent\includegraphics[width=0.85\linewidth]{evodevo_zebras}
-
-\columnbreak
-
-\includegraphics[width=0.85\linewidth]{evodevo_butterfly}
-
-\vspace{0.5ex}
-
-\includegraphics[width=0.85\linewidth]{evodevo_peacock_feathers}
-
-\end{multicols}
-	
-\end{frame}
-
-%%
-
-\begin{frame}{Repeated modules are \highlight{serially homologous.}}
-
-\vspace{-\baselineskip}
-
-\begin{multicols}{2}
-
-\centering
-
-\includegraphics[width=0.85\linewidth]{evodevo_flower}
-
-\vspace{0.5ex}
-
-\noindent\includegraphics[width=0.85\linewidth]{evodevo_trillium}
-
-\columnbreak
-
-\includegraphics[width=0.9\linewidth]{evodevo_seed_pod}
-
-\vspace{0.5ex}
-
-\includegraphics[width=0.9\linewidth]{evodevo_compound_leaf}
-
-\end{multicols}
-	
-\end{frame}
-
-%%
-
-\begin{frame}{\highlight{Serial homology:} repeating structures with similar developmental origins.}
-
-\vspace{-\baselineskip}
-
-\begin{multicols}{2}
-
-\centering
-
-\includegraphics[width=0.9\linewidth]{evodevo_velvet_worm}
-
-\columnbreak
-
-\vspace*{-2\baselineskip}
-
-\includegraphics[width=0.85\linewidth]{evodevo_lobster_exploded}
-
-\end{multicols}
-
-\vfilll
-
-\tiny\href{https://commons.wikimedia.org/wiki/File:Velvet_worm.jpg}{Velvet Worm, Geoff Gallice, Wikimedia, \ccby{2}}
-
-	
-\end{frame}
-
-%%
-
-\begin{frame}{Gene transcription is regulated by other genes.}
-
-\backskip
-
-%\vspace{-\baselineskip}
-
-\centering
-
-\includegraphics[height=0.85\textheight]{futuyma_fig15-7}
-
-\tinyfill \futuyma{15.7}
-
-
-\end{frame}
-
-%%
-
-\begin{frame}{Let's build a fly.}
-
-\backskip
-
-\begin{multicols}{2}
-
-\includegraphics[width=\linewidth]{futuyma_fig15-8a}
-
-\columnbreak
-
-\includegraphics[width=\linewidth]{futuyma_fig15-8b}
-
-\end{multicols}
-
-\tinyfill \futuyma{15.8}
-
-\end{frame}
-
-
-%%
-
-\begin{frame}{Initial polarity is determined by \highlight{maternal effect} genes.}
-
-\backskip
-
-%\vspace{-\baselineskip}
-
-\centering
-
-\includegraphics[height=0.85\textheight]{evodevo_fly_egg}
-
-\tinyfill Carroll et al., 2001. \textit{From DNA to Diversity.}
-
-
-\end{frame}
-
-%%
-
-\begin{frame}{\highlight{Regulatory genes} control expression of other genes.}
-
-\vspace{-\baselineskip}
-
-\begin{multicols}{2}
-
-\includegraphics[width=\linewidth]{evodevo_maternal_effects1}
-
-\columnbreak
-
-\includegraphics[width=\linewidth]{evodevo_maternal_effects2}
-
-\end{multicols}
-
-\hangpara Concentration gradient determines expression.
-
-\tinyfill Carroll et al., 2001. \textit{From DNA to Diversity.}
-
-
-\end{frame}
-
-%%
-
-\begin{frame}
-
-\begin{multicols}{2}
-
-\centering
-
-\includegraphics[width=0.95\linewidth]{futuyma_fig15-10b}
-
-\includegraphics[width=0.95\linewidth]{futuyma_fig15-10c}
-
-\includegraphics[width=0.95\linewidth]{futuyma_fig15-10d}
-
-\columnbreak
-
-\includegraphics[height=0.88\textheight]{evodevo_hierarchy}
-\end{multicols}
-
-\vfilll
-
-\tiny \futuyma{15.10} \hfill Carroll et al., 2001. \textit{From DNA to Diversity.}
-
-\begin{tikzpicture}
-\draw [<-, ultra thick] (5.7,6.94) -- (6.4,6.94);
-
-\draw [<-, ultra thick] (5.7,4.93) -- (8,4.93);
-
-\draw [<-, ultra thick] (5.7,1.7) -- (8.1,1);
 \end{tikzpicture}
 
+\onslide<3>{%
+\vspace{-\baselineskip}
+\hangpara \highlight{Two-fold cost of sex:} males reduce reproductive potential by a factor of two every generation.
+}
+
+
+\tinyfill \textcopyright\,Sinauer Associates, Inc.~2005
+
 \end{frame}
 
 %%
 
-\begin{frame}{\highlight{Hox genes} determine fate of cells in each segment.}
-
-\backskip
-
-\centering
-
-\includegraphics[width=\linewidth]{futuyma_fig15-10d}
-
-\tinyfill \futuyma{15.10}
-\end{frame}
-
-%%
-
-\begin{frame}{Hox \emph{expression} order corresponds to anterior-posterior axis.}
-
-\vspace*{-1.5\baselineskip}
-
-\centering
-
-\includegraphics[height=0.84\textheight]{futuyma_fig15-9}
-
-\tinyfill \futuyma{15.9}
-\end{frame}
-
-%%
-
-
-
-\begin{frame}{Hox expression in mouse is similar to Drosophila.}
-
-\backskip
-
-\centering
-
-\includegraphics[height=0.84\textheight]{futuyma_fig15-11}
-
-\tinyfill \futuyma{15.11}
-\end{frame}
-
-%%
-
-\begin{frame}
-
-\centering
-
-\includegraphics[height=0.93\textheight]{evodevo_hox_phylogeny}
-
-\tinyfill Carroll et al., 2001. \textit{From DNA to Diversity.}
-\end{frame}
-
-%%
-
-\begin{frame}{The \highlight{genetic toolkit} is the set of regulatory genes that “builds” the organism.}
-
-\backskip
- 
-\centering
-
-\includegraphics[height=0.8\textheight]{evodevo_toolkit}
-
-\tinyfill Carroll et al., 2001. \textit{From DNA to Diversity.}
-\end{frame}
-
-%%
-
-\begin{frame}{Sonic hedgehog \highlight{(shh)} is a toolkit gene.}
-
-\vspace*{-\baselineskip}
+\begin{frame}{If sex has a fitness cost, then why did sex evolve?}
+\vspace{-\baselineskip}
 
 \begin{multicols}{2}
 
 \centering
 
-\includegraphics[width=0.9\linewidth]{evodevo_shh1}
+\reflectbox{\includegraphics[width=0.9\linewidth]{sex_penguins}}
 
-\vspace{0.5ex}
+\smallskip
 
-\includegraphics[width=0.9\linewidth]{evodevo_shh2}
+\includegraphics[width=0.9\linewidth]{sex_bees}
 
 \columnbreak
 
-\vspace*{-\baselineskip}
+\reflectbox{\includegraphics[width=0.9\linewidth]{sex_hoverflies}}
 
-\includegraphics[width=0.5\linewidth]{evodevo_sonic_hedgehog}
+\smallskip
 
-\vspace{0.5ex}
-
-\includegraphics[width=0.8\linewidth]{evodevo_shh3}
-
+\includegraphics[width=0.8\linewidth]{sex_fleas}
 
 \end{multicols}
+\end{frame}
+
+%%
+
+\begin{frame}{Sexual reproduction breaks up allele combinations.}
+
+\hangpara Is this good or bad?
+
+\hangpara What if \emph{AB} is the ideal allele combination in an individual that is \emph{AB} on one chromosome and \emph{ab} on the other?
+
+\hangpara What if an \emph{individual} had a theoretically “perfect” genome? 
+
+
+\end{frame}
+
+
+\begin{frame}{Sexual reproduction has advantages in changing environments.}
+
+\hangpara \highlight{Red queen hypothesis}
+
+\hangpara \highlight{Selective interference} is reduced.\newline
+	\hspace*{1em} \highlight{Clonal interference}\newline
+	\hspace*{1em} \highlight{Ruby-in-the-rubbish}
+	
+\hangpara Enhanced rate of adaptation
 
 \end{frame}
 
 %%
 
-\begin{frame}{Bone morphogenetic protein \highlight{(bmp)} is a toolkit gene.}
+\begin{frame}{\highlight{Red queen hypothesis} describes the \emph{evolutionary arms race} between hosts and their pathogens.}
 
-\vspace*{-\baselineskip}
-
-\begin{multicols}{2}
+\backskip
 
 \centering
 
-\includegraphics[width=0.7\linewidth]{evodevo_bat_wing}
 
-\vspace{0.5ex}
+\includegraphics[height=0.79\textheight]{futuyma_fig10-22}
 
-\includegraphics[width=\linewidth]{evodevo_bmp}
+\tinyfill \futuyma{10.22}
 
-\vspace{0.5ex}
 
-\includegraphics[width=0.7\linewidth]{evodevo_duck_feet}
+\end{frame}
+
+%%
+
+\begin{frame}{\highlight{Clonal interference} slows adaptation in asexual species.}
+\backskip
+
+\centering
+
+
+\includegraphics[height=0.82\textheight]{futuyma_fig10-23}
+
+\tinyfill \futuyma{10.23}
+\end{frame}
+
+%%
+
+\begin{frame}{\highlight{Ruby-in-the-rubbish effect} links detrimental and beneficial mutations in asexual species.}
+\backskip
+
+\centering
+
+\includegraphics[width=\linewidth]{futuyma_fig10-24}
+
+\hangpara Analogous to selective sweep but genome wide.
+
+\tinyfill \futuyma{10.24}
+\end{frame}
+
+%%
+
+\begin{frame}{Muller's ratchet is a form of selective interference in areas of low recombination.}
+
+\backskip
+
+\begin{multicols}{2}
+\includegraphics[width=\linewidth]{futuyma_fig10-27}
 
 \columnbreak
 
-\includegraphics[width=0.85\linewidth]{evodevo_bmp_effects}
-
+\includegraphics[width=\linewidth]{futuyma_fig10-26}
 \end{multicols}
 
 \vfilll
-\tiny Weatherbee 2006, PNAS 103:15103 
-\hfill
-Sears 2008. Cells Tissues Organs 187:6
 
+\tiny \futuyma{10.27} \hfill \futuyma{10.26}
 
 \end{frame}
 
 %%
 
-\begin{frame}{Different eye types evolved multiple times.}
+\begin{frame}{Recombination speeds the rate of adaptation.}
 
 \backskip
 
 \centering
 
-\includegraphics[height=0.85\textheight]{evodevo_eye_types}
+\includegraphics[height=0.8\textheight]{futuyma_fig10-25}
+
+\tinyfill \futuyma{10.25}
 
 \end{frame}
 
 %%
 
-\begin{frame}{Eve development regulated by \highlight{\emph{pax6}} in all species studied.}
 
-\backskip
-
-\begin{multicols}{2}
-
-\includegraphics[width=0.9\linewidth]{evodevo_eye_phylogeny}
-
-\columnbreak
-
-\includegraphics[width=0.78\linewidth]{evodevo_misplaced_eyes}\newline
-\footnotesize Mouse \emph{pax6} expressed in \textit{Drosophila.}
-
-\end{multicols}
-
-
-\end{frame}
-
-%%
-
-\begin{frame}{Existing genes can be \highlight{recruited} or \highlight{co-opted} to serve new functions.}
-
-\backskip
-
-\includegraphics[width=\linewidth]{evodevo_crystallin_phylogeny}
-
-\tinyfill Futuyma 2004.
-
-\end{frame}
-
-%%
-
-\begin{frame}
-
-\centering
-
-\includegraphics[height=0.9\textheight]{evodevo_crystallin_table}
-
-\tinyfill Futuyma 2004.
-
-\end{frame}
-
-%%
-
-\begin{frame}{Eye spots in butterfly wings controlled by pigment genes and co-opted toolkit genes.}
-
-%\backskip
-
-\includegraphics[width=\linewidth]{evodevo_toolkit_cooption}
-
-\tinyfill Futuyma 2004.
-\end{frame}
-%%
-
-{
-\usebackgroundtemplate{\includegraphics[width=\paperwidth]{evodevo_columbines}}
-\begin{frame}[b]
-
-%\tinyfill  \textcolor{white}{\futuyma{}}
-\end{frame}
-}
-%%
-
-\begin{frame}{Five classes of \textsc{mads} genes regulate development of four flower whorls.}
+\begin{frame}{Many alternate mating strategies have evolved.}
 
 \vspace{-\baselineskip}
 
-\centering
-\includegraphics[width=0.8\linewidth]{evodevo_floral_whorls}
+\begin{multicols}{2}
 
-\includegraphics[width=0.36\linewidth]{evodevo_flower_cutaway}
+\hangpara \highlight{Sneaking male} strategy increases fitness of non-territorial males.
 
-\end{frame}
-%%
+\vspace{6\baselineskip}
 
-\begin{frame}{The floral quartet model explains flower development.}
+\hangpara \highlight{Sequential hermaphroditism} increases fitness of different age or size classes.
 
-\backskip
+\columnbreak
 
 \centering
 
-\includegraphics[width=\linewidth]{evodevo_floral_quartet_model}
+\noindent\includegraphics[width=0.94\linewidth]{sex_sneaking_males}
 
-\tinyfill Theißen et al.~2016. Development 143:3259
+\smallskip
 
-\end{frame}
-%%
-
-\begin{frame}{M\textsc{ads} genes generate floral diversity in Ranunculaceae, including columbines.}
-
-\backskip
-
-\centering
-
-\includegraphics[width=\linewidth]{evodevo_ranuncs}
-
-\tinyfill Kramer et al.~2003. Intl J Plant Sci 164:1  
+\reflectbox{\includegraphics[width=0.94\linewidth]{sex_blue-head_wrasse}}
+\end{multicols}
 
 \end{frame}
 
 %%
-\begin{frame}{Spur size increases with pollinator tongue length in columbine flowers.}
-\backskip
 
-\centering
+\begin{frame}{Sequential hermaphroditism can be \highlight{protogynous} or \highlight{protandrous.}}
 
-\includegraphics[width=\linewidth]{evodevo_columbine_phylogeny}
 
-\tinyfill Whittall \& Hodges 2007. Nature 447:706  
+\includegraphics[width=\linewidth]{sex_sequential_hermaphroditism}
+
+\vfilll
+
+\tinyfill \textcopyright\,2005 Sinauer Associates, Inc.
 
 \end{frame}
+
 %%
+
+
 \end{document}
 
 

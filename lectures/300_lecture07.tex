@@ -9,7 +9,6 @@
 %\includeonlylecture{student}
 %\pgfpagesuselayout{3 on 1 with notes}[letterpaper,border shrink=5mm]
 %	\setbeamercolor{background canvas}{bg=black!5}
-\usefonttheme{professionalfonts}
 
 
 %%% Including only some slides for students.
@@ -19,6 +18,10 @@
 %% For students, use \lecture{student}{student}
 %% For mine, use \lecture{instructor}{instructor}
 
+
+%\usepackage{pgf,pgfpages}
+%\pgfpagesuselayout{4 on 1}[letterpaper,border shrink=5mm]
+
 % FONTS
 \usepackage{fontspec}
 \def\mainfont{Linux Biolinum O}
@@ -26,9 +29,6 @@
 %\setmonofont[Scale=MatchLowercase]{Inconsolata} 
 \setsansfont[Scale=MatchLowercase]{Linux Biolinum O} 
 \usepackage{microtype}
-
-\usepackage{unicode-math}
-\setmathfont[Scale=MatchLowercase]{Asana Math}
 
 \usepackage{graphicx}
 	\graphicspath{%
@@ -62,16 +62,7 @@
 	\alt<handout>{\rule{\widthof{#1}}{\fboxrule}}{#1}%
 }
 
-\newcommand{\futuyma}[1]{Fig.~#1~Futuyma \& Kirkpatrick 2017, 4th ed.}
 
-% This defines \amper for the fancy ampersand
-% to be used in the header. See
-% https://tex.stackexchange.com/a/58185/39194
-\usepackage{xspace}
-\newfontfamily\amperfont[Style=Alternate]{Linux Libertine O}    
-\makeatletter
-\DeclareRobustCommand{\amper}{{\amperfont\ifx\f@shape\scname\smaller[1.2]\fi\&}\xspace}
-\makeatother
 
 \begin{document}
 
@@ -79,299 +70,262 @@
 
 
 {
-\usebackgroundtemplate{\includegraphics[width=\paperwidth]{qt_evolution_intro}}
-\begin{frame}[b]{\textcolor{white}{Phenotypic evolution \amper quantitative traits}}
-
-\tinyfill{\textcolor{white}{\textit{Donax variabilis}, Debivort, \href{https://en.wikipedia.org/wiki/Phenotype\#/media/File:Coquina_variation3.jpg}{Wikimedia Commons}, \ccbysa{3}.}}
-%	\tiny\hfill \textcolor{white}{\textit{Donax variabilis}, Debivort, \href{https://en.wikipedia.org/wiki/Phenotype#/media/File:Coquina_variation3.jpg}{Wikimedia Commons}}
-\end{frame}}
-
-\begin{frame}[t,plain]{True or false: eye color is determined by one gene?}
-
-\centering
-
-\includegraphics[height=0.85\textheight]{human_eye_colors}
-\end{frame}
-
-%%
-
-\begin{frame}[t,plain]{True or false: height is determined by one gene?}
-\vspace{-0.5\baselineskip}
-\includegraphics[width=\linewidth]{human_height}
-\end{frame}
-
-%%
-
-\begin{frame}[t,plain]{Mendel worked with \highlight{discrete traits.}}
-\vspace{-0.5\baselineskip}
-\includegraphics[width=\linewidth]{qt_mendel_peas}
-\end{frame}
-
-%%
-
-\begin{frame}[t,plain]{\highlight{Quantitative traits} are \highlight{polygenic.}}
-
-\vspace{-0.5\baselineskip}
-
-%\centering
-
-\includegraphics[height=0.87\textheight]{futuyma_fig6-3}
-
-\begin{tikzpicture}
-\node at (9.5,7) [text width=4.1cm, align=left] {Quantitative traits show a continuous distribution.};
-\end{tikzpicture}
-
-\vfilll
-\tinyfill{\futuyma{6.3}}
-\end{frame}
-
-%%
-
-{
-\usebackgroundtemplate{\includegraphics[width=\paperwidth]{qt_horned_lizard}}
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{mutation_variation_intro}}
 \begin{frame}[b]
 
-\vfilll
-
-\tiny \textcolor{white}{\textit{Phrynosoma mcalli}, Jim Rorabaugh/\textsc{usfws}, \href{https://www.flickr.com/photos/54430347@N04/5162160238}{Flickr}, public domain}
-
-\end{frame}}
-
-%%
-
-{
-\usebackgroundtemplate{\includegraphics[width=\paperwidth]{qt_loggerhead_shrike}}
-\begin{frame}[b]
-
-\vfilll
-
-\tinyfill{\textcolor{white}{Loggerhead Shrike, Marshall Hedin,  \href{https://www.flickr.com/photos/23660854@N07/23552219433}{Flickr}, \ccbysa{2}}}
-
-\end{frame}}
-
-%%
-
-\begin{frame}[t]{\highlight{Fitness functions} describe selection on quantitative traits.}
-
-\vspace{-0.5\baselineskip}
-
-\centering
-\includegraphics[height=0.85\textheight]{qt_fitness_function}
-
-\vfilll
-
-\tinyfill{Brodie et al.~2004. Science 304: 65.}
+	\tiny\hfill \textcopyright\,Futuyma \& Kirkpatrick 2017, 4th ed ed.
 \end{frame}
-
-%%
-
-\begin{frame}[t]{\highlight{Fitness functions} change the mean or variance of a trait.}
-
-\vspace{-0.5\baselineskip}
-
-\centering
-\includegraphics[height=0.9\textheight]{futuyma_fig6-6}
-
-\end{frame}
-
-{
-\usebackgroundtemplate{\includegraphics[width=\paperwidth]{qt_directional_selection}}
-\begin{frame}[t]
-
-\vfilll
-
-\tiny \textit{Male Long-tailed Widowbird}, Ashley Tubs,  \href{https://www.flickr.com/photos/47745688@N05/14808464640}{Flickr}, \ccby{2} 
-
-\end{frame}}
-
-{
-\usebackgroundtemplate{\includegraphics[width=\paperwidth]{qt_stabilizing_selection}}
-\begin{frame}[b]
-
-\vfilll
-
-\tiny \futuyma{6.8}
-
-\end{frame}}
-
-%%
-
-{
-\usebackgroundtemplate{\includegraphics[width=\paperwidth]{qt_disruptive_selection}}
-\begin{frame}[t]
-
-\vfilll
-
-\tiny \futuyma{6.9}
-
-\end{frame}}
-
-%%
-
-\begin{frame}[t]{Selection can favor combinations of traits.}
-
-\vspace{-0.5\baselineskip}
-
-\centering
-\includegraphics[height=0.9\textheight]{futuyma_fig6-10}
-
-\end{frame}
-
-%%
-
-\begin{frame}[t]{The \highlight{selection gradient} measures the strength of directional selection on a quantitative trait.}
-
-\vspace{-0.5\baselineskip}
-
-\centering
-\includegraphics[height=0.84\textheight]{futuyma_fig6-11}\par
-
-\pause
-
-\begin{tikzpicture}
-\node at (-2.1,7.4) [text width=3cm] {\small \highlight{$\beta$ is the slope of the fitness function.}};
-\end{tikzpicture}
-
-
-\end{frame}
-
-
-%%
-%% RECALL
-\begin{frame}[t,plain]{Evolution \emph{by} selection requires a correlation between$\dots$ }
-
-\includegraphics[width=\linewidth]{futuyma_fig5-4}
-
-\hangpara (1) a phenotypic trait and fitness, and\\
- (2) phenotypes of parents and offspring.
- 
- \vfilll
- 
- \tinyfill{\futuyma{5.4}}
-
-\end{frame}
-
-%%
-
-\begin{frame}[t,plain]{How much will a trait mean evolve in one generation?}
-
-\begin{multicols}{2}
-\noindent\includegraphics[width=\linewidth]{futuyma_fig6-13b}
-
-\columnbreak
-
-\noindent \includegraphics[width=\linewidth]{futuyma_fig6-13c}
-
-\end{multicols}
-
-\pause
-
-\hangpara \highlight{Breeder's equation: $\Delta \overline{z} = \overline{z}' - \overline{z} = h^2S$ }
- 
- \vfilll
- 
- \tinyfill{\futuyma{6.13}}
-
-\end{frame}
-
-%%
-
-\begin{frame}[t]{\highlight{Heritability $\left(h^2\right)$} is the proportion of phenotypic variation in a population due to genotypic variation.}
-
-\includegraphics[height=0.8\textheight]{futuyma_fig6-14}
-
-
-\end{frame}
-
-
-
-\begin{frame}[t]{The \highlight{breeder's equation} predicts the phenotypic response to selection \emph{between} generations.}
-
-%\vspace{-2\baselineskip}
-\begin{multicols}{2}
-\noindent\begin{align*}
-\Delta\overline{z} &= h^2S\\
-\\
-S &= P\beta
-\end{align*}
-
-\columnbreak
-\noindent\begin{align*}
-\color{orange5}\Delta\overline{z} &\color{orange5}= G\beta \\
-\\
-G &= h^2P \\
-\\
-h^2 &= G/P
-\end{align*}
-
-\end{multicols}
-
-where $P$ is phenotypic variance and $G$ is \highlight{additive genetic variance.}
-\end{frame}
-
-%%% EXAMPLE PROBLEM
-
-\begin{frame}[t]{Example problem: What is new mean leg length?}
-\vspace{-0.5\baselineskip}
-\begin{multicols}{2}
-
-\noindent Mean leg length $= 18.6\,\mathrm{mm}$\\[1ex]
-$\beta$ = $-0.13/\mathrm{mm}$ \\[1ex]
-$P = 1.4\,\mathrm{mm}^2$ \\[1ex]
-$h^2 = 0.37$\\[1ex]
-
-\vspace{\baselineskip}
-Recall:
-
-$\beta$ is the fitness function slope.\\[1ex]
-$\Delta\overline{z} = G\beta$ is predicted response, and\\[1ex]
-$G = h^2P$ is additive genetic variance.\\
-
-\columnbreak
-
-\centering
-\noindent\includegraphics[width=0.95\linewidth]{qt_migratory_locust}
-
-\end{multicols}
-
-\vfilll
-
-\tinyfill{Migratory Locust by ChriKo, \href{https://commons.wikimedia.org/wiki/File:Locusta_migratoria_migratorioides_male.jpg}{Wikimedia Commons}, \ccbysa{3}}
-\end{frame}
-
-
-%% ANSWER
-\lecture{instructor}{instructor}
-\begin{frame}[t]{Example problem: What is new mean leg length?}
-\vspace{-0.5\baselineskip}
-\begin{multicols}{2}
-
-Mean leg length $= 18.6\,\mathrm{mm}$\\[1ex]
-$\beta$ = $-0.13/\mathrm{mm}$ \\[1ex]
-$P = 1.4\,\mathrm{mm}^2$ \\[1ex]
-$h^2 = 0.37$\\[1ex]
-
-\vspace{\baselineskip}
-Recall:
-
-$\beta$ is the fitness function slope.\\[1ex]
-$\Delta\overline{z} = G\beta$ is predicted response, and\\[1ex]
-$G = h^2P$ is additive genetic variance.\\
-
-\columnbreak
-
-\mode<beamer>{%
-$G = 0.37 \times 1.4 = 0.518$\\[1ex]
-\pause
-
-$\Delta\overline{z} = 0.518 \times -0.13 = -0.067\,\mathrm{mm} $\\[1ex]
-
-\pause
-New mean length:\\
-$18.6 - 0.067 = 18.533\,\mathrm{mm.}$
 }
+%
+
+\begin{frame}[t,plain]{Genetic variation is created by \highlight{segregation} and \highlight{recombination.}}
+
+\begin{multicols}{2}
+
+\hangpara Segregation: a gamete gets only one of two alleles at a locus.
+
+\hangpara Recombination: creates new, random combinations of alleles across loci.
+
+\columnbreak
+
+\includegraphics[width=0.9\linewidth]{futuyma_fig4-7}
 
 \end{multicols}
+
+\vfilll
+
+\tiny Shout out to Gregor Mendel!
+
 \end{frame}
+
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{/Users/goby/pictures/teach/163/lecture/mutation_types}}
+\begin{frame}[b]{Mutations are the ultimate source of genetic variation.}
+\end{frame}
+}
+%
+
+\begin{frame}[t,plain]{Point mutations in an exon can be \highlight{synonymous} or \highlight{non-synonymous.}}
+
+\begin{tabular}[t]{ll}
+\includegraphics[width=0.48\linewidth]{/Users/goby/pictures/teach/300/review/genetic_code} & \includegraphics[width=0.48\linewidth]{mutation_point_nonsynonymous}
+\end{tabular}
+
+\bigskip
+
+Non-synonymous mutations are subject to natural selection!
+
+
+\vfilll
+
+\hfill Figs.~4.2 \& 4.3 \textcopyright\,Futuyma \& Fitzpatrick 2017.
+\end{frame}
+
+%%
+
+\begin{frame}[t,plain]{Indels in an exon can cause \highlight{frameshift} mutations.}
+
+\centering
+
+\begin{tabular}{@{}cccccc@{}}
+
+\multicolumn{5}{l}{Original sequence} \\[1ex]
+ATG & CCC & GAT & ATA & AAA & $\dots$ \\
+Met & Pro & Asp & Ile & Lys & $\dots$ \\[0.5em]
+
+\midrule \addlinespace[0.5em]
+
+\multicolumn{5}{l}{Deletion (first C)} \\[1ex]
+ATG & CCG & ATA & TAA & AAx & $\dots$ \\
+Met & Pro & Asp & STOP & & \\ [0.5em]
+
+\midrule \addlinespace[0.5em]
+
+\multicolumn{5}{l}{Insertion (T before first C)} \\[1ex]
+ATG & TCC & CGA & TAT & AAA & $\dots$ \\
+Met & Ser & Arg & Tyr & Lys & $\dots$ \\ [1em]
+
+\end{tabular}\par
+
+\end{frame}
+
+
+%%
+\begin{frame}[t,plain]{A new duplicate gene has one of four fates.}
+\includegraphics[width=\linewidth]{mutation_duplication_fates}
+
+\vfilll
+
+\tiny\hfill Rensing 2014, Curr Opin Plant Biol 17:43.
+
+\end{frame}
+
+\begin{frame}[t]{Low mutation rates vary among organismal groups.}
+\centering
+\includegraphics[height=0.85\textheight]{futuyma_fig4-15}
+\end{frame}
+
+\begin{frame}[t]{Large genomes still have lots of mutations every generation.}
+
+\hangpara Human mutation rate ($\mu$) is $\approx 10^{-8}$ per base pair (bp).
+
+\hangpara Human genome size is $\approx 3 \times 10^{9}.$
+
+\hangpara $\left(10^{-8}\right)\left(3 \times 10^9\right) = 30$ new mutations in \emph{every} gamete.
+
+\hangpara Not all mutations can be inherited.
+
+%% Most animals have germ line cells that produce gametes. However,
+%% plants and some animals do not have germ lines. (See page 94
+%% of Futuyma and Kirkpatrick, 4th ed.
+
+\end{frame}
+
+\begin{frame}[t]{\highlight{Allele frequency} is a measure of how common an allele is for a locus.}
+
+\vspace{-\baselineskip}
+\centering
+
+\includegraphics[height=0.85\textheight]{futuyma_fig4-5}
+
+\begin{tikzpicture}
+\node at (2,7.5) [font=\large, text width = 5.5cm, align=left] {$A_1$ frequency = 10/16 = 0.675.};
+
+\node at (2, 6.5) [font=\large, text width = 5.5cm, align=left] {$A_2$ frequency = 6/16 = 0.325.};
+
+\end{tikzpicture}
+
+\end{frame}
+
+%
+
+\begin{frame}[t]{\highlight{Genotype frequency} is a measure of how common a genotype is for one or more loci.}
+
+\vspace{-\baselineskip}
+\centering
+
+\includegraphics[height=0.85\textheight]{futuyma_fig4-5}
+
+\begin{tikzpicture}
+\node at (2,7.5) [font=\large, text width = 5.5cm, align=left] {$A_1A_1$ frequency = 4/8 = 0.5.};
+
+\node at (2, 6.75) [font=\large, text width = 5.5cm, align=left] {$A_1A_2$ frequency = 2/8 = 0.25.};
+
+\node at (2, 6) [font=\large, text width = 5.5cm, align=left] {$A_2A_2$ frequency = 2/8 = 0.25.};
+
+\end{tikzpicture}
+
+\end{frame}
+
+
+\begin{frame}[t]{Consider a population where$\dots$}
+\hangpara Half the individuals are $A_1A_1$
+
+\hangpara Half the individuals are $A_2A_2$
+
+\hangpara What is the frequency of each allele?
+
+\hangpara What is the frequency of each genotype?
+
+\end{frame}
+
+%%
+
+\begin{frame}[t]{If a very large population mates at random, what will be$\dots$}
+
+\hangpara the allele frequencies in the next generation?
+
+\hangpara the genotype frequencies in the next generation?
+
+\hangpara Will subsequent generations maintain the same frequencies?
+
+\vfilll
+
+\hangpara \textcolor{gray}{Starting freqs in first generation were 0.5 each.}
+\end{frame}
+
+\begin{frame}[t]{A population will reach or maintain Hardy-Weinberg equilibrium if}
+
+\hangpara the population is infinitely large,
+
+\hangpara mating is random,
+
+\hangpara mutations do not occur,
+
+\hangpara gene flow does not occur, and
+
+\hangpara natural selection does not occur.
+
+\hangpara \highlight {A population will evolve if \emph{any} one of these assumptions is violated.}
+
+\vfilll
+
+\textcolor{gray}{Equilibrium will be reached in one generation.}
+
+\end{frame}
+
+%%
+
+\begin{frame}[t]
+
+\hangpara If $p$ and $q$ are the frequencies of two alleles at one locus, then
+
+\hangpara $p^2$ and $q^2$ are the frequencies of each possible homozygote, and 
+
+\hangpara $2pq$ is the frequency of heterozygotes.
+
+\hangpara \highlight{$p + q = 1$} and \highlight{$p^2 + 2pq + q^2 = 1.$}
+
+\hangpara \textcolor{gray}{Recall that $(p + q)^2 = 1^2$}
+
+\end{frame}
+
+%%
+
+\begin{frame}[t]{Hardy-Weinberg equations can be extended to more than two alleles.}
+
+\hangpara If $p + q + r = 1,$ then because
+
+\hangpara $(p + q + r)^2 = 1^2,$ so
+
+\hangpara $p^2 + 2pq + q^2 + 2pr + 2qr + r^2 = 1$
+
+
+\end{frame}
+
+
+\begin{frame}[t]{Assume a sample of 1000 individuals in \textsc{hwe}.}
+
+\hangpara $q^2 = 200$ and $r^2 = 0.05.$
+
+\hangpara Calculate the three allele frequencies and the other four genotype frequencies.
+\end{frame}
+
+
+\lecture{instructor}{instructor}
+
+\begin{frame}[t]{Solution: If $q^2 = 0.2$ and $r^2 = 0.05$ then $\dots$}
+
+\vspace{-0.5\baselineskip}
+
+\hangpara $q = \sqrt{0.2} = 0.447$ and $r = \sqrt{0.05} = 0.224.$
+
+\pause \hangpara $p = 1 - 0.447 - 0.224 = 0.329.$
+
+\pause \hangpara $p^2 = 0.329^2 = 0.108.$
+
+\pause \hangpara $2pq = (2)(0.329)(0.447) = 0.294.$
+
+\pause \hangpara $2pr = (2)(0.329)(0.224) = 0.147.$
+
+\pause \hangpara $2qr = (2)(0.447)(0.224) = 0.200.$
+
+\pause \hangpara $0.108 + 0.200 + 0.050 + 0.294 + 0.147 + 0.200 = 1.$ (with rounding error)
+
+\end{frame}
+
+
+
 
 \end{document}

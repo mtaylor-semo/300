@@ -25,8 +25,6 @@
 \setmainfont[Ligatures={Common, TeX}, Contextuals={NoAlternate}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={Proportional, OldStyle}]{\mainfont}
 %\setmonofont[Scale=MatchLowercase]{Inconsolata} 
 \setsansfont[Scale=MatchLowercase]{Linux Biolinum O} 
-\setmonofont{Linux Libertine Mono O}
-
 \usepackage{microtype}
 
 \usepackage{unicode-math}
@@ -42,15 +40,9 @@
 %\usepackage{units}
 
 \usepackage{booktabs}
-\usepackage{array}
-\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
-\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
-\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
-
-
 \usepackage{multicol}
 %	\setlength{\columnsep=1em}
-\usepackage{enumitem}
+
 \usepackage{textcomp}
 \usepackage{setspace}
 \usepackage{tikz}
@@ -70,22 +62,7 @@
 	\alt<handout>{\rule{\widthof{#1}}{\fboxrule}}{#1}%
 }
 
-
-\usepackage{xifthen}
-\newcommand{\futuyma}[1]{%
-	\ifthenelse{\isempty{#1}}%
-	{Futuyma \& Kirkpatrick 2017, 4th ed.}%
-	{Fig.~#1~Futuyma \& Kirkpatrick 2017, 4th ed.}%
-}
-
-% This defines \amper for the fancy ampersand
-% to be used in the header. See
-% https://tex.stackexchange.com/a/58185/39194
-\usepackage{xspace}
-\newfontfamily\amperfont[Style=Alternate]{Linux Libertine O}    
-\makeatletter
-\DeclareRobustCommand{\amper}{{\amperfont\ifx\f@shape\scname\smaller[1.2]\fi\&}\xspace}
-\makeatother
+\newcommand{\futuyma}[1]{Fig.~#1~Futuyma \& Kirkpatrick 2017, 4th ed.}
 
 \begin{document}
 
@@ -93,297 +70,326 @@
 
 
 {
-\usebackgroundtemplate{\includegraphics[width=\paperwidth]{drift_intro}}
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{gentheory_intro}}
 \begin{frame}[b]
 
-\tiny \textcolor{white}{\futuyma{}}
+	\tiny\hfill \textcolor{white}{Photo \textcopyright\,Futuyma \& Kirkpatrick 2017, 4th ed.}
 \end{frame}
 }
+%
 
+\begin{frame}[t,plain]{“Natural selection is not evolution.” --- R.A.~Fisher}
+
+\includegraphics[width=\linewidth]{futuyma_fig5-1}
+
+
+\end{frame}
 %%
 
-{
-\usebackgroundtemplate{\includegraphics[width=\paperwidth]{drift_cockroach}}
-\begin{frame}[t]{\highlight{Genetic drift} is the \emph{random} change of allele frequencies.}
+\begin{frame}[t,plain]{Evolution \emph{by} selection requires a correlation between$\dots$ }
+
+\includegraphics[width=\linewidth]{futuyma_fig5-4}
+
+\hangpara (1) a phenotypic trait and fitness, and\\
+ (2) phenotypes of parents and offspring.
+ 
+ \vfilll
+ 
+ \tinyfill{Fig.~5.4 Futuyma \& Kirkpatrick 2017, 4th ed.}
+
+\end{frame}
+
+
+%
+\begin{frame}[t]{\highlight{Absolute fitness $\left(W\right)$}  is a measure of two fitness components.}
+\begin{multicols}{2}
+\includegraphics[width=\linewidth]{futuyma_fig5-5}
+
+\columnbreak
+
+(1) probability the  individual survives to maturity
+
+\quad {\Large $\times$}\\
+
+(2) expected number of offspring produced.
+\end{multicols}
 
 \vfilll
 
-\tiny Photo by Furryscaly, \href{https://www.flickr.com/photos/98528214@N00/428682623}{Flickr}, \ccbysa{2}
-\end{frame}
-}
-
-%%
-{
-\usebackgroundtemplate{\includegraphics[width=\paperwidth]{drift_meiosis_example}}
-\begin{frame}[t]{A simple example of genetic drift.}
+\tinyfill{Fig.~5.5 Futuyma \& Kirkpatrick 2017, 4th ed.}
 
 \end{frame}
-}
 
-%%
+%% Relative fitness
+\begin{frame}[t]{\highlight{Relative fitness $\left(w\right)$} is absolute fitness divided by a reference fitness.}
 
-\begin{frame}[t]{Genetic drift$\dots$}
+\hangpara If $A_1A_1 \left(W_{11}\right)$ is the reference genotype, then
+
+\begin{align*}
+w_{11} &= W_{11}/W_{11} = 1\\
+w_{12} &= W_{12}/W_{11}\\
+w_{22} &= W_{22}/W_{11}
+\end{align*}
+
+\end{frame}
+
+%% Selection coefficient
+
+\begin{frame}[t]{\highlight{Selection coefficient $\left(s\right)$} is a measure of the strength of selection.}
 
 \vspace{-\baselineskip}
 
-\begin{multicols}{2}
-\noindent\includegraphics[width=\linewidth]{futuyma_fig7-2}
+\includegraphics[width=\linewidth]{gentheory_selection_coefficient_zimmer}
 
-\columnbreak
-
-\begin{itemize}[label=\textcolor{white}{\textbullet}, leftmargin=6pt]
-\item is unbiased,
-\item decreases \highlight{heterozygosity,}
-\item is stronger in smaller populations,
-\item fixes alleles without selection, and
-\item increases differences among populations.
-\end{itemize}
-
-\end{multicols}
-
-\end{frame}
-
-
-%%
-
-\begin{frame}
-\centering
-
-\includegraphics[height=0.97\textheight]{futuyma_fig7-3}
-\end{frame}
-
-%% HETEROZYGOSITY
-
-\begin{frame}[t]{\highlight{Heterozygosity} is a measure of genetic variation in a population.}
-
-%\vspace{-\baselineskip}
-
-One measure is \highlight{expected heterozygosity.}
-
-\begin{equation*}
-H = 1-\sum_{i}^{k}p_i^2
-\end{equation*}
-
-\hangpara If $p_1 = 0.7$ and $p_2 = 0.3$, then 
-
-\vspace{-0.5\baselineskip}
-
-\begin{equation*}
-H = 1 - 0.7^2 + 0.3^2 = 1-0.49-0.09 = 0.42
-\end{equation*}
-
-\hangpara If $p_1 = 0.35, p_2 = 0.41,$ and $p_3 = 0.24,$ then
-
-\vspace{-0.5\baselineskip}
-
-\begin{equation*}
-H = 1- 0.35^2 + 0.41^2 + 0.24^2 = 0.652
-\end{equation*}
-
-
-\end{frame}
-
-%%
-
-\begin{frame}[t, fragile]{Another measure of heterozygosity is \highlight{nucleotide diversity.}}
-
-\vspace{-0.5\baselineskip}
-
-
-
-\begin{equation*}
-\pi = \dfrac{1}{[n(n-1)]/2}\sum_{i<j}\pi_{ij}
-\end{equation*}
-
-
-\hangpara These two sequences are 39 nucleotides long with 11 differences.
-{\footnotesize
-\begin{verbatim}
-   ATCTTCAGGTCTTGGACATTAAGACAACATGCATAGCAT
-   ATGACAGGGTCATGGACAATAAGTCAACATCCACAGAAT
-     *****    *      *    *      *  *  *
-\end{verbatim}
-}
-
-\begin{multicols}{2}
-\hangpara If one copy of each, then
-
-\begin{equation*}
-\pi = 0.282
-\end{equation*}
-
-\columnbreak
-
-\hangpara If 3 copies and 1 copy, then
-
-\begin{equation*}
-\pi = 0.141
-\end{equation*}
-
-\end{multicols}
-
-
-\end{frame}
-
-
-%%
-\lecture{instructor}{instructor}
-{
-\usebackgroundtemplate{\includegraphics[width=\paperwidth]{drift_pelagibacter}}
-\begin{frame}[t]{\textcolor{white}{\textit{Pelagibacter ubique} may be the most abundant species on Earth $(10^{28}\ \mathrm{cells}).$}}
+\begin{tikzpicture}
+\node at (2.2,2) [text width = 3.5cm, align=left] {$s =$ fitness difference relative to reference genotype.};
+\end{tikzpicture}
 
 \vfilll
 
-\tinyfill{\textcolor{white}{\textsc{noaa},\href{https://commons.wikimedia.org/wiki/File:Pelagibacter.jpg}{Wikimedia} public domain.}}
+\tinyfill{Zimmer and Emlen, 2nd ed.}
+\end{frame}
 
+
+\begin{frame}[t]{\highlight{Positive selection} favors alleles that increase fitness.}
+\includegraphics[width=\linewidth]{futuyma_fig5-6}
+
+\vfilll
+
+\tinyfill{\futuyma{5.6}}
+\end{frame}
+
+%%
+
+\begin{frame}[t]{$s$ determines the rate of adaptation: \highlight{$\Delta p = sp(1-p)$}}
+
+\includegraphics[width=\linewidth]{futuyma_fig5-7}
+
+\begin{tikzpicture}
+\node at (10.85,7.5) {\highlight{$A_2$ is fixed.}};
+\end{tikzpicture}
+
+\vfilll
+
+\tinyfill{\futuyma{5.7}}
+\end{frame}
+
+%%
+\begin{frame}[t]{We've been discussing beneficial mutations but$\dots$}
+
+\hangpara {\Large \highlight{$\dots$does this apply to detrimental mutations?}}
+
+\pause
+
+\mode<beamer>{\Large \hangpara Yes! Purifying selection $\left(-s\right)$ removes detrimental mutations.}
+\end{frame}
+
+%%
+\begin{frame}[t]{Rate of adaptation depends on dominance of allele.}
+
+\includegraphics[width=\linewidth]{futuyma_fig5-10}
+
+\begin{tikzpicture}
+\node at (3.9,8.45) {\highlight{$w_{12} = w_{22}$}};
+\node at (8.3,4.6) {\highlight{$w_{12} = w_{11}$}};
+\node at (9,8) [text width=5.5cm] {If recessive $p = 0.001$ then most copies of $A_2$ are in heterozygotes.};
+\end{tikzpicture}
+
+\vfilll
+
+\tinyfill{\futuyma{5.10}}
+\end{frame}
+
+
+\begin{frame}[t]{Positive selection can lead to \highlight{hitchhiking} among linked genes.}
+
+\includegraphics[width=\linewidth]{gentheory_selective_sweep_zimmer}
+
+
+\vfilll
+
+\tinyfill{Zimmer and Emlen 2nd ed.}
+\end{frame}
+
+
+%%
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{gentheory_lactose_persistence_zimmer}}
+\begin{frame}[t]{Lactose persistance in humans is the result of a \highlight{selective sweep.}}
+
+\vfilll
+
+\tinyfill{Zimmer and Emlen 2nd ed.}
 \end{frame}
 }
-
 %%
 
-\lecture{student}{student}
+\begin{frame}[t]{\highlight{Balancing selection} maintains genetic polymorphism.}
 
-\begin{frame}[t]{Not all individuals contribute alleles to the next generation.}
+\includegraphics[width=\linewidth]{futuyma_fig5-19b}
 
-\hangpara  \highlight{Effective population size $\left(N_e\right)$} is the size of an ideal population that loses heterozygosity at the same rate as the \highlight{census population size.}
 
+\vfilll
+
+\tinyfill{\futuyma{5.19}}
 \end{frame}
 
 %%
 
-\begin{frame}[t]{$N_e$ example 1: monogamy}
+\begin{frame}[t]{\highlight{Overdominance} occurs when heterozygotes have highest fitness.}
 
-\vspace{-\baselineskip}
+\includegraphics[width=\linewidth]{futuyma_fig5-18}
 
-\raggedcolumns
-\begin{multicols}{2}
+\vfilll
 
-\noindent\includegraphics[width=\linewidth]{drift_canada_goose}
-
-\columnbreak
-Assume 500 Canada Goose
-
-\begin{itemize}[label=\textcolor{white}{\textbullet}, leftmargin=6pt]
-\item 200 males
-\item 300 females
-\item 1:1 mating ratio
-\end{itemize}
-
-\bigskip
-
-\textcolor{orange5}{$N_e = 400$}
-
-\end{multicols}
-
+\tinyfill{\futuyma{5.18}}
 \end{frame}
 
 %%
 
-
-\begin{frame}[t]{$N_e$ example 2: harem polygyny}
-
-\vspace{-\baselineskip}
-
-\raggedcolumns
-\begin{multicols}{2}
-
-\noindent\includegraphics[width=\linewidth]{drift_elephant_seals}
-
-\columnbreak
-Assume 500 Elephant Seal
-
-\begin{itemize}[label=\textcolor{white}{\textbullet}, leftmargin=6pt]
-\item 500 males
-\item 500 females
-\item 1:50 male:female mating ratio
-\end{itemize}
-
-Only 10 males are able to breed.
-
-\bigskip
-
-\textcolor{orange5}{$N_e \approx 39$}
+\begin{frame}[t]{Relative fitness of homozygotes determines \highlight{polymorphic equilibrium} frequency.}
 
 
-\vspace{3\baselineskip}
-
-\textcolor{gray}{$N_e = 4(N_mN_f)/(N_m + N_f)$}
-\end{multicols}
-
-
-\end{frame}
-
-%% BOTTLENECK
-
-\begin{frame}[t]{Population \highlight{bottlenecks} reduce heterozygosity.}
-
-\vspace{-\baselineskip}
-
-\begin{multicols}{2}
-
-\includegraphics[width=\linewidth]{drift_elephant_seal_pop_size}
-
-\columnbreak
-{\footnotesize
-\begin{tabular}{@{}L{2.9cm}rr@{}}
-
-\toprule
-Species	& Loci	& Alleles \tabularnewline
-\midrule
-Nor.~elephant seal	 &  21	 &  3.19 \tabularnewline
-Hawaiian monk seal	 &  8	 &  3.5 \tabularnewline
-Med. monk seal	 &  15	 &  2.32 \\[0.75ex]
-Weighted mean	& & 3.09 \tabularnewline
-& & \tabularnewline
-Sou.~elephant seal	 &  17	 &  3.65 \tabularnewline
-Grey seal	 &  9	 &  9.8 \tabularnewline
-Harbor seal	 &  15	 &  5.13 \\[0.75ex]
-Weighted mean	& & 5.41 \tabularnewline
-\bottomrule
-
+\begin{center}
+\begin{tabular}{lccc}
+Genotype & $AA$ & $AS$ & $SS$ \tabularnewline
+Fitness $\left(w\right)$ & 0.88 & 1 & 0.14 \tabularnewline
 \end{tabular}
-}%@ End small font
-\end{multicols}
+\end{center}
 
-\vfilll
+\hangpara Let $\hat{p} =$ equilibrium frequency of $S$ allele.
 
-\tinyfill{Abadio-Cardozo et al.~2017. J.~Hered.~108:618.}
-\end{frame}
-%%
-
-
-%% FOUNDER
-
-\begin{frame}[t]{\highlight{Founder effects} reduce heterozygosity.}
-
-\vspace{-\baselineskip}
-
+\vspace{\baselineskip}
 \begin{multicols}{2}
-
-\includegraphics[width=\linewidth]{drift_zebra_finch_map}
-
+\noindent\begin{equation*}
+\hat{p} = \dfrac{1-w_{AA}}{2-w_{AA} - w_{SS}}
+\end{equation*}
 
 \columnbreak
-
-\includegraphics[width=\linewidth]{drift_zebra_finch_nucleotide_diversity}
-
-\bigskip
-
-\centering
-
-\includegraphics[height=3.5cm]{drift_zebra_finch}
+{\setlength{\jot}{1em}
+\noindent\begin{align*}
+\hat{p} &= \dfrac{1-0.88}{2-0.88 - 0.14} \\
+        &= \mathbf{0.122}
+\end{align*}
+}
 
 \end{multicols}
 
+\end{frame}
 
+%%
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{gentheory_frequency_dependent_cichlids}}
+\begin{frame}[t]{\highlight{Negative frequency dependence:} common alleles have lower fitness.}
 
+	\vfilll
+
+	\tiny Ichijo, \href{https://doi.org/10.3389/fnins.2016.00595}{Front. Neurosci. 4 Jan 2017} \hfill Hori 1993. Science 260:216.
+\end{frame}
+}
+
+%%
+
+\begin{frame}[t]{\highlight{Underdominance} eliminates genetic polymorphism.}
+
+\includegraphics[width=\linewidth]{futuyma_fig5-19c}
 
 \vfilll
 
-\tiny Photo by JJ Harrison, \href{https://commons.wikimedia.org/wiki/File:Taeniopygia_guttata_-_Bushell's_Lagoon.jpg}{Wikimedia}, \ccbysa{4} \hfill Balakrishnan and Edwards.~2009. Genetics~181:645.
-
+\tinyfill{\futuyma{5.19}}
 \end{frame}
+
 %%
 
+\begin{frame}[t]{\highlight{Positive frequency dependence:} common alleles have higher fitness.}
 
+\vspace{-0.5\baselineskip}
+\centering
+
+\includegraphics[height=0.8\textheight]{futuyma_fig5-24}
+
+\vfilll
+
+\tinyfill{\futuyma{5.24}}
+\end{frame}
+
+%%
+
+\begin{frame}[t]{If purifying selection removes detrimental alleles, then why do so many genetic disorders remain?}
+
+Common disorders:
+
+\begin{multicols}{3}
+{\small 
+Angelman syndrome\\
+Canavan disease\\
+Charcot–Marie–Tooth\\
+Color blindness\\
+Cri du chat syndrome\\
+Cystic fibrosis\\
+DiGeorge syndrome\\
+Down syndrome\\
+Duchenne muscular dyst.\\
+Hypercholesterolemia\\
+Haemochromatosis\\
+Hemophilia\\
+Klinefelter syndrome\\
+Neurofibromatosis\\
+Phenylketonuria\\
+Polycystic kidney disease\\
+Prader–Willi syndrome\\
+Sickle cell disease\\
+Spinal muscular atrophy\\
+Tay–Sachs disease\\
+Turner syndrome\\
+}
+\end{multicols}
+
+\hrule
+
+\hangpara The Genetics and Rare Disease Center (NIH) lists nearly 3000 known genetic disorders.
+
+\vfilll
+
+\tiny \href{https://en.wikipedia.org/wiki/List_of_genetic_disorders}{Wikipedia List of Genetic Disorders} \hfill \href{https://rarediseases.info.nih.gov/diseases/diseases-by-category/5/congenital-and-genetic-diseases}{\textsc{Genetics and Rare Disease Center}}
+
+\end{frame}
+
+%%
+
+\begin{frame}[c]{\highlight{Mutation-selection balance} is an equilibrium between new mutations and purifying selection.}
+
+\vspace{-1.5\baselineskip}
+\begin{tikzpicture}
+\filldraw[left color=white, right color=black!70!white] 
+(0.5,-0.5)-- (4.5,-0.5)--(4.5,-1)--(5.5,0)--(4.5,1)--(4.5,0.5)--(0.5,0.5)--cycle;
+\filldraw[right color=white, left color=black!70!white] 
+(11,-0.5)--(7,-0.5)--(7,-1)--(6,0)--(7,1)--(7,0.5)--(11,0.5)--cycle;
+\draw [dashed, thick] (5.75,-1.5) -- (5.75,1.5);
+\node at (5.75,2.2) {$\hat{p}\approx \dfrac{\mu}{s}$};
+\node at (2.5,1) {New mutations $\left(\mu\right)$};
+\node at (9.1,1) {Purifying selection $\left(-s\right)$};
+%
+\node at (6.4,-2.5) {If $\mu = 10^{-6}$ and $s = 0.01$, then $\hat{p} \approx 0.0001.$};
+\end{tikzpicture}
+\end{frame}
+
+{\setbeamercolor{math text}{fg=gray}
+\begin{frame}[t]{\highlight{Mutation load} is the reduction of mean fitness due to deleterious mutations in a population.}
+
+\hangpara Mutation load in humans might reduce $\overline{w}$ by as much as 89\%. (There are a lot of caveats!)
+
+\hangpara \textcolor{gray}{If $U = 2.2$ new mutations per genome per generation\footnotemark, then}
+\begin{align*}
+L &= 1 - e^{-U}\\
+  &= 1-e^{-2.2}\\
+  &= 1-0.11 = 0.89.
+\end{align*}
+ 
+ \vfilll
+ 
+ \tinyfill{\textsuperscript{1}\,Keightly 2012.~Genetics 190:295}
+\end{frame}
+}
 \end{document}

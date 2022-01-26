@@ -8,7 +8,7 @@
 %\usepackage{handoutWithNotes}
 %\includeonlylecture{student}
 %\pgfpagesuselayout{3 on 1 with notes}[letterpaper,border shrink=5mm]
-
+%	\setbeamercolor{background canvas}{bg=black!5}
 \usefonttheme{professionalfonts}
 
 
@@ -55,7 +55,6 @@
 \usepackage{setspace}
 \usepackage{tikz}
 	\tikzstyle{every picture}+=[remember picture,overlay]
-\usetikzlibrary{arrows}
 
 \mode<presentation>
 {
@@ -94,423 +93,348 @@
 
 \lecture{student}{student}
 
-{
-\usebackgroundtemplate{\includegraphics[width=\paperwidth]{species_intro}}
-\begin{frame}[b]
+\begin{frame}[t]{Drift causes \highlight{non-adaptive evolution.}}
+\centering
 
-\tiny \hfill \textcolor{white}{\futuyma{}}
+\includegraphics[width=0.97\linewidth]{futuyma_fig7-4}
 \end{frame}
-}
 
+%%
 
-\begin{frame}{What is a species?}
+\begin{frame}{Gene trees can evolve by drift alone.}
+\backskip
 
+\begin{multicols}{2}
+\noindent \includegraphics[width=\linewidth]{futuyma_fig7-5a}
 
-\includegraphics[width=\linewidth]{species_what_is_species}
+\columnbreak
 
-\tinyfill \futuyma{9.2}
+\pause
+\noindent \includegraphics[width=\linewidth]{futuyma_fig7-5b}
+
+\end{multicols}
+
+\vfilll
+
+\tinyfill \futuyma{7.5}
 
 \end{frame}
 
 %%
 
+\begin{frame}{The probability of fixation equals the frequency of the haplotype.}
+\backskip
 
-\begin{frame}{Many species concepts have been defined.}
+\begin{multicols}{2}
 
-\vspace{-2\baselineskip}
+\onslide<1-4>
+\hangpara What is the probability that a \emph{new} mutation in effective population of 50 diploid individuals drifts to fixation?
 
-\hangpara\begin{multicols}{2}
-Morphological\\
-Phylogenetic (I)\\
-Biological\\
-Ecological\\
-Phylogenetic (II)\\
-Evolutionary\\
-General Lineage\\
-Typological\\
-Cohesion\\
+\mode<beamer>{%
+\onslide<2-4>
+\hangpara $N_e = 50.$
+
+\onslide<3-4>
+\hangpara $2N_e = 100$ copies of the locus.
+
+\onslide<4>
+\hangpara $1$ new mutation out of $2N$ copies.
+
+\begin{equation*}
+\color{orange5}{\dfrac{1}{2N_e}}
+\end{equation*}
+}
+
+
+\columnbreak
+
+\onslide<1-4>
+\noindent \includegraphics[width=\linewidth]{futuyma_fig7-5b}
+
+
+\end{multicols}
+
+\vfilll
+
+\tinyfill \futuyma{7.5}
+
+\end{frame}
+
+
+%%
+
+
+%\begin{frame}{Non-adaptive evolution by drift occurs because$\dots$}
+%
+%\backskip
+%\begin{multicols}{2}
+%\hangpara Haplotype frequencies fluctuate randomly,
+%
+%\hangpara One haplotype drifts to fixation ($p = 1.0$), and
+%
+%\hangpara New haplotypes replace old haplotypes.
+%
 %\columnbreak
-Genealogical\\
-Genotypic\\
-Recognition\\
-Phenetic\\
-Cladistic\\
-Diagnostic\\
-Polytypic\\
-Population\\[1ex]
+%
+%\centering
+%\noindent\includegraphics[width=0.8\linewidth]{drift_haplotype_fluctuation}
+%
+%\bigskip
+%
+%\noindent\includegraphics[width=0.8\linewidth]{drift_haplotype_substitution}
+%
+%\end{multicols}
+%
+%\vfilll
+%
+%\tiny \textcopyright\,Pearson Prentice Hall, 2004.
+%\end{frame}
 
-artificial concept\\
-\end{multicols}
+%%
+
+\begin{frame}{New neutral mutations occur at rate $\mu.$}
+
+\backskip
+
+\centering
+
+\includegraphics[height=0.85\textheight]{drift_new_neutral_mutation}
+
+\vfilll
+
+\tinyfill Modified from \futuyma{7.5}
+
+\end{frame}
+
+\begin{frame}{Over time, new haplotypes replace old haplotypes.}
+
+\vspace{-0.5\baselineskip}
+
+\centering
+
+\includegraphics[height=0.85\textheight]{drift_haplotype_substitution}
+
+\vfilll
+
+\tinyfill \textcopyright\,Pearson Prentice Hall, 2004.
+ 
+\end{frame}
+
+%%
+
+\begin{frame}{Haplotype substitution occurs at the \highlight{neutral mutation rate.}}
+
+\backskip
+
+\hangpara $\mu$ = neutral mutation rate / haplotype / generation.
+
+\hangpara $2N_e$ haplotype copies in diploid population.
+
+\hangpara $2N_e\mu$ new mutations each generation (avg).
+
+\hangpara $\dfrac{1}{2N_e}$ = fixation probability of each new mutation.
+
+\hangpara Average rate of haplotype substitution is
+
+\begin{equation*}
+2N_e\mu \times \dfrac{1}{2N_e} = \mu
+\end{equation*}
 \end{frame}
 
 
 %%
 
-\begin{frame}{Two widely followed species concepts are$\dots$}
+\begin{frame}{The \highlight{neutral theory of molecular evolution} states that molecular evolution is neutral.}
 
+\backskip
 
-\noindent\begin{multicols}{2}
+\begin{multicols}{2}
+\hangpara D\textsc{na} evolves by genetic drift at  rate equal to the neutral mutation rate $\mu$ in the population.
 
-\reflectbox{\includegraphics[width=\linewidth]{species_evelynae1}}
-\vspace{1ex}
-\includegraphics[width=\linewidth]{species_evelynae2}
+\hangpara The rate of molecular evolution is greatest at \textsc{dna} positions \emph{least} like to affect function.
+
+\hangpara Purifying selection eliminates deleterious mutations.
 
 \columnbreak
 
-\hangpara \highlight{morphological} species, and
+\noindent \includegraphics[width=\linewidth]{futuyma_fig7-19}
 
-\hangpara \highlight{biological} species.
 \end{multicols}
 
-\tinyfill \textcopyright\,Paul Humann
+\vfilll
+
+\tinyfill \futuyma{7.19}
 
 \end{frame}
 
 %%
 
-\begin{frame}{Morphological species can be diagnosed by morphology.}
+\begin{frame}{Can drift affect frequencies of alleles under selection?}
 
 \backskip
 
-\includegraphics[width=\linewidth]{futuyma_fig9-6}
-
-\tinyfill \futuyma{9.6}
-
-\end{frame}
-
-\begin{frame}{The \textsc{bsc} defines species as$\dots$}
-
-\vspace{-\baselineskip}
-
-\hangpara groups of actually or potentially interbreeding populations, which are \emph{reproductively isolated} from other such groups.
-
-\hangpara What are the advantages of the \textsc{bsc?}
-
-\hangpara What are the disadvantages of the \textsc{bsc?}
-
-\hangpara Does the \textsc{bsc} actually tell us what \emph{is} a species?
-
-\end{frame}
-
-%%
-
-\begin{frame}[t]{\highlight{Allopatric} populations are difficult to test for reproductively isolation.}
-
-\backskip
 \centering
 
-\includegraphics[height=0.8\textheight]{futuyma_fig9-3}
+\includegraphics[height=0.85\textheight]{futuyma_fig7-13}
 
-\tinyfill \futuyma{9.3}
+\vfilll
+
+\tinyfill \futuyma{7.13}
 
 \end{frame}
 
-%%
+\lecture{instructor}{instructor}
+
+\begin{frame}{Time for some simulations.}
+\hangpara $s = 0.01$ for each copy of the $A_1$ allele.
+
+\hangpara If $w_{11}$ has maximum fitness of 1.0, then
+
+\hangpara $w_{12} = 0.99$ and $w_{22} = 0.98.$
+
+\hangpara $2N_e$ will reduce from 5000 to 5.
+
+\hangpara Starting frequency of $A_1 = 0.25$. Recall probability of fixation by drift alone equals frequency of allele.
+
+\hangpara Let's start with no selection.
+
+
+\end{frame}
+
+\lecture{student}{student}
+
 \begin{frame}
-
-\backskip
-
 \begin{multicols}{2}
+\hangpara If $s\gg\frac{1}{2N_e}$ then selection will tend to overcome drift.
 
-\centering
-\noindent \includegraphics[width=\linewidth]{species_fox_sparrow_forms}
+\hangpara If $s\ll\frac{1}{2N_e}$ then drift will tend to overcome selection.
+
+\hangpara What are the implications for population size on evolution of alleles with very small fitness effects (say, $10^{-5}$)?
 
 \columnbreak
 
-\centering
-\noindent\includegraphics[width=\linewidth]{species_fox_sparrow_map}
+\noindent \includegraphics[width=\linewidth]{drift_selection_drift_balance}
 
-\end{multicols}
-
-\tinyfill\textcopyright\,iBird Pro 12.5, Mitchell Waite Group
-
-\end{frame}
-
-%%
-
-
-\begin{frame}{\highlight{Hybrid zones} can form between \highlight{parapatric} species.}
-
-\backskip
-
-\centering
-
-\includegraphics[height=0.85\textheight]{futuyma_fig9-4}
-
-\tinyfill \futuyma{9.4}
-\end{frame}
-
-%%
-\begin{frame}{\highlight{Introgression} in hybrid zones introduces alleles into a species from another.}
-
-\backskip
-
-\centering
-\includegraphics[width=0.95\linewidth]{futuyma_fig9-5}
-
-\tinyfill \futuyma{9.5}
-
-\end{frame}
-
-
-%%
-
-\begin{frame}{\highlight{Speciation} is the evolution of two species from one ancestor.}
-
-\vspace{-\baselineskip}
-
-\centering
-
-\includegraphics[height=0.85\textheight]{species_speciation}
-
-\end{frame}
-
-%%
-
-\begin{frame}{Speciation occurs when populations evolve \highlight{reproductive isolating barriers.}}
-
-\backskip
-\centering
-
-\includegraphics[width=0.9\linewidth]{futuyma_tab9-1}
-
-\tinyfill Table 9.1 Futuyma \& Kirkpatrick 2017, 4th ed.
-
-\end{frame}
-
-%%
-
-\begin{frame}{\highlight{Temporal isolation:} species reproduce at different times. }
-
-\includegraphics[width=\linewidth]{species_temporal_cicada}
-
-\vfilll
-
-\tiny \highlight{prezygotic} \hfill \futuyma{9.9\textsc{b}} \quad \href{https://commons.wikimedia.org/wiki/File:Periodical_Cicada_Broods_of_the_United_States.png}{U\textsc{sda}, Wikimedia}
-
-\end{frame}
-
-%%
-
-\begin{frame}{\highlight{Mechanical isolation:} reproductive structures are incompatible.}
-
-\backskip
-
-\centering
-
-\includegraphics[height=0.8\textheight]{species_mechanical}
-
-\vfilll
-
-\tiny \highlight{Prezygotic} \hfill \futuyma{9.10}
-\end{frame}
-
-%%
-
-\begin{frame}{\highlight{Pollinator isolation}: Species use different pollinators.}
-
-\backskip
-
-\centering
-
-\includegraphics[height=0.85\textheight]{species_pollinator}
-
-\vfilll
-
-\tiny \highlight{Prezygotic} \hfill \futuyma{9.7}
-
-\end{frame}
-
-%%
-
-\begin{frame}{Species can be isolated by multiple barriers.}
-
-\backskip
-
-\centering
-
-\includegraphics[width=\linewidth]{species_multiple_barriers}
-
-\vfilll
-
-\tiny \highlight{Prezygotic} \hfill \futuyma{9.8}
-
-\end{frame}
-
-%%
-
-\begin{frame}{Sperm competition occurs post-mating.}
-
-\backskip
-
-\begin{multicols}{2}
-
-{\centering
-\noindent\includegraphics[width=0.95 \linewidth]{species_sperm_speed}
-}
-
-%\vspace{2em}
-
-\hangpara Sperm swim faster in promiscuous species (above).
-
-\columnbreak
-
-\onslide<2>{
-\noindent\includegraphics[width=\linewidth]{species_sperm_competition}
-}
 \end{multicols}
 
 \vfilll
 
-\tiny \highlight{Prezygotic}\quad Nascimento et al.~2008. J.R.~Soc.~Interface 5:297. \onslide<2>{\hfill Copper \& Phadnis 2017. Genome Bio.~Evol.~9:1938.}
+\tinyfill Modified from \futuyma{7.13}
 
 \end{frame}
 
+
 %%
 
-\begin{frame}{\highlight{Ecological inviability:} hybrids have reduced survival.}
-\includegraphics[width=\linewidth]{futuyma_fig9-11}
+\begin{frame}{Alleles with very small fitness effects evolve as if they were selectively neutral unless $N_e$ is very large.}
+
+\backskip
+
+\begin{multicols}{2}
+\noindent\includegraphics[width=0.9\linewidth]{futuyma_fig7-14b}
+
+\columnbreak
+
+\noindent\includegraphics[width=0.9\linewidth]{futuyma_fig7-14c}
+\end{multicols}
+
+Gray: $2N_es \rightarrow 0$
 
 \vfilll
 
-\tiny\highlight{postzygotic} \hfill \futuyma{9.11}
+\tinyfill \futuyma{7.14}
+
+\end{frame}
+
+
+%%
+
+\begin{frame}{Does selection occur at the molecular level?}
+
+\hangpara \highlight{Selective sweep:} genetic hitchhiking.
+
+\hangpara \highlight{Positive selection:} More non-synonymous than synonymous substitutions in a gene.
+
+\hangpara \highlight{Codon bias:} Non-random use of codons.
 
 \end{frame}
 
 %%
 
-\begin{frame}{\highlight{Hybrid sterility:} hybrids are incapable of reproducing.}
+\begin{frame}{$dN > dS$ is genetic evidence of \highlight{positive selection.}}
 
-\vspace{-\baselineskip}
+\backskip
 
-\begin{center}
-\includegraphics[height=0.85\textheight]{species_hybrid_sterility}
-\end{center}
+\noindent \includegraphics[width=\linewidth]{drift_dn_ds}
+
+\vfilll
+
+\tinyfill \textcopyright\,Zimmer and Emlen.
+
+\end{frame}
+
+%%
+
+\begin{frame}{Snake venoms evolve under positive diversifying selection.}
+
+\backskip
+
+\includegraphics[height=0.7\textheight]{drift_snake_venoms}
 
 \begin{tikzpicture}
-\node at (2,4) {2n = 64};
-\node at (10,4) {2n = 62};
-\node at (9.7,1.5) {2n = 63};
-
+\node at (8.7,1) [text width=5.5cm] {\small Disintegrin proteins from rattlesnakes and vipers. Blue and red cirles show amino acid replacements from positive selection.};
 \end{tikzpicture}
 
 \vfilll
 
-\tiny \highlight{postzygotic}
-\end{frame}
-
-
-\begin{frame}{\highlight{Reinforcement} reduces hybridization.}
-
-\backskip
-
-\begin{multicols}{2}
-\includegraphics[width=\linewidth]{futuyma_fig9-17a}
-
-
-%\medskip
-
-%\includegraphics[width=\linewidth]{futuyma_fig9-17b}
-
-\columnbreak
-
-\includegraphics[width=\linewidth]{futuyma_fig9-17c}
-
-
-%\medskip
-
-%\includegraphics[width=\linewidth]{species_reinforcement_criteria}
-
-\end{multicols}
-
-\pause 
-
-\hangpara \highlight{Character displacement} is the divergence of a phenotype in \highlight{sympatry.}
-
-\tinyfill \futuyma{9.17}
-
-\end{frame}
-
-%%
-\begin{frame}
-\centering
-
-\includegraphics[width=\linewidth]{species_reinforcement_criteria}
-
-\tinyfill Hopkins 2013. New Phytologist 197: 1095.
+\tiny Juarez et al.~2008. Mol.~Biol.~Evol.~25: 2391
 
 \end{frame}
 
 %%
 
-\begin{frame}{\highlight{Allopatric speciation} is the evolution of reproductive barriers between geographically separated populations.}
-
-\hangpara Geographic isolation is \emph{not} a biological reproductive barrier.
-
-\hangpara Gene flow is disrupted between allopatric populations.
-
-\end{frame}
-
-%%
-
-\begin{frame}{\highlight{Vicariance} divides a large population into smaller, isolated populations.}
+\begin{frame}{Snake venoms evolve under positive diversifying selection.}
 
 \vspace{-\baselineskip}
 
 \centering
+\includegraphics[height=0.78\textheight]{drift_snake_venom_ratios}
 
-\includegraphics[width=0.85\linewidth]{/Users/goby/pictures/teach/163/lecture/allopatric_shrimp2}
+
+\vfilll
+
+\tinyfill Juarez et al.~2008. Mol.~Biol.~Evol.~25: 2391
+
 
 \end{frame}
 
 %%
 
-\begin{frame}{\highlight{Founder events} by dispersal can isolate populations.}
+\begin{frame}{\textit{FOXP2} evolved under positive directional selection.}
 
 \backskip
 
 \centering
 
-\includegraphics[height=0.87\textheight]{futuyma_fig9-21}
+\includegraphics[width=\linewidth]{drift_foxp2}
 
-\tinyfill \futuyma{9.21}
-\end{frame}
 
-%%
+\vfilll
 
-\begin{frame}{\highlight{Sympatric speciation} occurs \emph{without} geographic isolation.}
-
-\backskip
-
-\centering
-
-\includegraphics[height=0.8\textheight]{futuyma_fig9-27}
-
-\tinyfill \futuyma{9.27}
+\tinyfill After Engard et al.~2002. Nature 418: 869.
 
 \end{frame}
 
 %%
 
-\begin{frame}{\textit{Rhagoletis pomonella} is the poster child for sympatric speciation.}
-
+\begin{frame}{\highlight{Codon bias} is the non-random use of codons.}
 \backskip
 
-\includegraphics[width=\linewidth]{futuyma_fig9-26}
+\noindent \includegraphics[width=\linewidth]{drift_codon_bias}\\
+\raisebox{-0.7ex}{\Large *}\,= underused codons.
 
-\tinyfill \futuyma{9.26}
+\vfilll
 
-\end{frame}
-
-%%
-
-\begin{frame}{\highlight{Parapatric speciation} can occur when gene flow is reduced between adjacent populations.}
-
-\backskip
-
-\includegraphics[width=\linewidth]{futuyma_fig9-28}
-
-\tinyfill \futuyma{9.28}
-
+\tinyfill Powell and Moriyama 1997. P\textsc{nas} 94: 7784.
 \end{frame}
 \end{document}
