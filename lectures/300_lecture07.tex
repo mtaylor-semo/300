@@ -5,8 +5,8 @@
 
 %%%% HANDOUTS For online Uncomment the following four lines for handout
 %\documentclass[t,handout]{beamer}  %Use this for handouts.
-%\usepackage{handoutWithNotes}
 %\includeonlylecture{student}
+%\usepackage{handoutWithNotes}
 %\pgfpagesuselayout{3 on 1 with notes}[letterpaper,border shrink=5mm]
 %	\setbeamercolor{background canvas}{bg=black!5}
 
@@ -62,6 +62,12 @@
 	\alt<handout>{\rule{\widthof{#1}}{\fboxrule}}{#1}%
 }
 
+\usepackage{xifthen}
+\newcommand{\futuyma}[1]{%
+	\ifthenelse{\isempty{#1}}%
+	{Futuyma \& Kirkpatrick 2017, 4th ed.}%
+	{Fig.~#1~Futuyma \& Kirkpatrick 2017, 4th ed.}%
+}
 
 
 \begin{document}
@@ -71,9 +77,11 @@
 
 {
 \usebackgroundtemplate{\includegraphics[width=\paperwidth]{mutation_variation_intro}}
-\begin{frame}[b]
+\begin{frame}
 
-	\tiny\hfill \textcopyright\,Futuyma \& Kirkpatrick 2017, 4th ed ed.
+	\vfilll
+	
+	\tinyfill \textcolor{white}{\textcopyright\,Futuyma \& Kirkpatrick 2017, 4th ed ed.}
 \end{frame}
 }
 %
@@ -84,7 +92,7 @@
 
 \hangpara Segregation: a gamete gets only one of two alleles at a locus.
 
-\hangpara Recombination: creates new, random combinations of alleles across loci.
+\hangpara Recombination: creates new combinations of alleles across loci.
 
 \columnbreak
 
@@ -94,7 +102,114 @@
 
 \vfilll
 
-\tiny Shout out to Gregor Mendel!
+\tiny Shout out to Gregor Mendel! \hfill \futuyma{4.7}
+
+\end{frame}
+
+
+\begin{frame}[t]{Recombination creates new alleles combinations between loci on one chromosome.}
+
+\vspace{-\baselineskip}
+
+\begin{center}
+\includegraphics[width=\linewidth]{crossing_over}
+\end{center}
+
+\hangpara If loci are far apart, then all allele combinations for two loci should occur at similar frequency; e.g., AB, Ab, aB, and ab.
+
+\vfilll
+
+\tinyfill \href{https://www.oercommons.org/courseware/lesson/15023/overview}{OER Commons, \ccbyncsa{4.0}}
+
+\end{frame}
+
+%
+
+\begin{frame}[t]{\highlight{Linkage disequilibrium} results from lower recombination rates between close loci.}
+
+\vspace{-\baselineskip}
+
+\begin{center}
+\includegraphics[width=\linewidth]{crossing_over}
+\end{center}
+
+\hangpara \highlight{Linked loci} have allele combinations at higher frequency than expected by chance; e.g., BC and bc occur with higher frequency than Bc and bC.
+
+\vfilll
+
+\tinyfill \href{https://www.oercommons.org/courseware/lesson/15023/overview}{OER Commons, \ccbyncsa{4.0}}
+
+\end{frame}
+
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{primulus_vulgaris}}
+\begin{frame}[b]{Disequilibrium can result from \highlight{epistasis} and selection.}
+
+\vfilll
+
+\tinynofill \textcolor{white}{\textit{Primulus vulgaris}, \href{https://commons.wikimedia.org/wiki/File:Prole\%C4\%87no\_cve\%C4\%87e_3.JPG}{Wikimedia Commons, \ccbysa{3.0}}}
+\end{frame}
+}
+
+
+\begin{frame}[t]{\highlight{Epistasis:} the effect of an allele at one locus depends on the effect of an allele at a different locus.}
+
+\centering
+\includegraphics[height=0.73\textheight]{futuyma_fig4-12}
+
+\begin{tikzpicture}
+\node [text width=4cm] at (-3.7,2) {\small Selection against \textit{gA} \& \textit{Ga} allele combinations due to lower fitness.};
+\end{tikzpicture}
+
+
+\vfilll
+
+
+\tinyfill \futuyma{4.12}
+\end{frame}
+
+%%
+
+\begin{frame}[t]{Some species can obtain \textsc{dna} via \highlight{horizontal gene transfer.}}
+
+\vspace{-\baselineskip}
+\begin{multicols}{2}
+
+\centering
+
+\includegraphics[width=0.9\linewidth]{hgt_conjugation}
+
+\columnbreak
+
+\includegraphics[width=0.9\linewidth]{hgt_endosymbiosis}
+
+\end{multicols}
+
+\vfilll
+
+\tiny Mike Jones, \href{https://commons.wikimedia.org/w/index.php?curid=1216076}{Wikimedia Commons, \ccbysa{2.5}} \hfill Andrew Z. Colvin, \href{https://commons.wikimedia.org/w/index.php?curid=69411999}{Wikimedia, \ccbysa{4.0}}
+
+\end{frame}
+
+%%
+
+\begin{frame}[t]{H\textsc{GT} explains genetic variation in some bdelloid rotifers.}
+
+\begin{multicols}{2}
+
+\includegraphics[width=\linewidth]{bdelloid_rotifer}
+
+\columnbreak
+
+\includegraphics[width=\linewidth]{hgt_rotifera}
+
+\end{multicols}
+
+
+\vfilll
+
+\tiny Proyecto Agua, \href{https://www.flickr.com/photos/microagua/50464670972}{Flickr, \ccbyncsa{2.0}} \hfill \href{https://doi.org/10.1371/journal.pbio.2004830}{Nowell et al.~2018. P\textsc{los} Biol 16(4): e2004830}
 
 \end{frame}
 
@@ -119,7 +234,7 @@ Non-synonymous mutations are subject to natural selection!
 
 \vfilll
 
-\hfill Figs.~4.2 \& 4.3 \textcopyright\,Futuyma \& Fitzpatrick 2017.
+\tinyfill Figs.~4.2 \& 4.3 \textcopyright\,Futuyma \& Fitzpatrick 2017.
 \end{frame}
 
 %%
@@ -166,7 +281,7 @@ Met & Ser & Arg & Tyr & Lys & $\dots$ \\ [1em]
 \includegraphics[height=0.85\textheight]{futuyma_fig4-15}
 \end{frame}
 
-\begin{frame}[t]{Large genomes still have lots of mutations every generation.}
+\begin{frame}[t]{Large genomes still have many mutations every generation.}
 
 \hangpara Human mutation rate ($\mu$) is $\approx 10^{-8}$ per base pair (bp).
 
@@ -180,152 +295,191 @@ Met & Ser & Arg & Tyr & Lys & $\dots$ \\ [1em]
 %% plants and some animals do not have germ lines. (See page 94
 %% of Futuyma and Kirkpatrick, 4th ed.
 
-\end{frame}
+\vfilll
 
-\begin{frame}[t]{\highlight{Allele frequency} is a measure of how common an allele is for a locus.}
-
-\vspace{-\baselineskip}
-\centering
-
-\includegraphics[height=0.85\textheight]{futuyma_fig4-5}
-
-\begin{tikzpicture}
-\node at (2,7.5) [font=\large, text width = 5.5cm, align=left] {$A_1$ frequency = 10/16 = 0.675.};
-
-\node at (2, 6.5) [font=\large, text width = 5.5cm, align=left] {$A_2$ frequency = 6/16 = 0.325.};
-
-\end{tikzpicture}
-
+\tinyfill \futuyma{4.15}
 \end{frame}
 
 %
+%\begin{frame}[t]{Many genes that affect phenotype show \highlight{pleiotropy.}}
+%
+%\centering
+%
+%\includegraphics[width=\linewidth]{cat_deaf}
+%
+%\end{frame}
 
-\begin{frame}[t]{\highlight{Genotype frequency} is a measure of how common a genotype is for one or more loci.}
+%%
 
-\vspace{-\baselineskip}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{cat_deaf}}
+\begin{frame}[t]{Most genes that affect phenotype show \highlight{pleiotropy.}}
+
+%	\vfilll
+	
+%	\tinyfill \textcolor{white}{\textcopyright\,Futuyma \& Kirkpatrick 2017, 4th ed ed.}
+\end{frame}
+}
+
+%%
+
+\begin{frame}[t]{Mutations that affect fitness are \highlight{beneficial} or \highlight{deleterious.}}
+
 \centering
 
-\includegraphics[height=0.85\textheight]{futuyma_fig4-5}
+\includegraphics[width=\linewidth]{futuyma_fig4-17}
 
-\begin{tikzpicture}
-\node at (2,7.5) [font=\large, text width = 5.5cm, align=left] {$A_1A_1$ frequency = 4/8 = 0.5.};
+%\vfilll
 
-\node at (2, 6.75) [font=\large, text width = 5.5cm, align=left] {$A_1A_2$ frequency = 2/8 = 0.25.};
-
-\node at (2, 6) [font=\large, text width = 5.5cm, align=left] {$A_2A_2$ frequency = 2/8 = 0.25.};
-
-\end{tikzpicture}
+\tinyfill \futuyma{4.17}
 
 \end{frame}
 
-
-\begin{frame}[t]{Consider a population where$\dots$}
-\hangpara Half the individuals are $A_1A_1$
-
-\hangpara Half the individuals are $A_2A_2$
-
-\hangpara What is the frequency of each allele?
-
-\hangpara What is the frequency of each genotype?
-
-\end{frame}
-
+%\begin{frame}[t]{\highlight{Allele frequency} is a measure of how common an allele is for a locus.}
+%
+%\vspace{-\baselineskip}
+%\centering
+%
+%\includegraphics[height=0.85\textheight]{futuyma_fig4-5}
+%
+%\begin{tikzpicture}
+%\node at (2,7.5) [font=\large, text width = 5.5cm, align=left] {$A_1$ frequency = 10/16 = 0.675.};
+%
+%\node at (2, 6.5) [font=\large, text width = 5.5cm, align=left] {$A_2$ frequency = 6/16 = 0.325.};
+%
+%\end{tikzpicture}
+%
+%\end{frame}
+%
 %%
-
-\begin{frame}[t]{If a very large population mates at random, what will be$\dots$}
-
-\hangpara the allele frequencies in the next generation?
-
-\hangpara the genotype frequencies in the next generation?
-
-\hangpara Will subsequent generations maintain the same frequencies?
-
-\vfilll
-
-\hangpara \textcolor{gray}{Starting freqs in first generation were 0.5 each.}
-\end{frame}
-
-\begin{frame}[t]{A population will reach or maintain Hardy-Weinberg equilibrium if}
-
-\hangpara the population is infinitely large,
-
-\hangpara mating is random,
-
-\hangpara mutations do not occur,
-
-\hangpara gene flow does not occur, and
-
-\hangpara natural selection does not occur.
-
-\hangpara \highlight {A population will evolve if \emph{any} one of these assumptions is violated.}
-
-\vfilll
-
-\textcolor{gray}{Equilibrium will be reached in one generation.}
-
-\end{frame}
-
-%%
-
-\begin{frame}[t]
-
-\hangpara If $p$ and $q$ are the frequencies of two alleles at one locus, then
-
-\hangpara $p^2$ and $q^2$ are the frequencies of each possible homozygote, and 
-
-\hangpara $2pq$ is the frequency of heterozygotes.
-
-\hangpara \highlight{$p + q = 1$} and \highlight{$p^2 + 2pq + q^2 = 1.$}
-
-\hangpara \textcolor{gray}{Recall that $(p + q)^2 = 1^2$}
-
-\end{frame}
-
-%%
-
-\begin{frame}[t]{Hardy-Weinberg equations can be extended to more than two alleles.}
-
-\hangpara If $p + q + r = 1,$ then because
-
-\hangpara $(p + q + r)^2 = 1^2,$ so
-
-\hangpara $p^2 + 2pq + q^2 + 2pr + 2qr + r^2 = 1$
-
-
-\end{frame}
-
-
-\begin{frame}[t]{Assume a sample of 1000 individuals in \textsc{hwe}.}
-
-\hangpara $q^2 = 200$ and $r^2 = 0.05.$
-
-\hangpara Calculate the three allele frequencies and the other four genotype frequencies.
-\end{frame}
-
-
-\lecture{instructor}{instructor}
-
-\begin{frame}[t]{Solution: If $q^2 = 0.2$ and $r^2 = 0.05$ then $\dots$}
-
-\vspace{-0.5\baselineskip}
-
-\hangpara $q = \sqrt{0.2} = 0.447$ and $r = \sqrt{0.05} = 0.224.$
-
-\pause \hangpara $p = 1 - 0.447 - 0.224 = 0.329.$
-
-\pause \hangpara $p^2 = 0.329^2 = 0.108.$
-
-\pause \hangpara $2pq = (2)(0.329)(0.447) = 0.294.$
-
-\pause \hangpara $2pr = (2)(0.329)(0.224) = 0.147.$
-
-\pause \hangpara $2qr = (2)(0.447)(0.224) = 0.200.$
-
-\pause \hangpara $0.108 + 0.200 + 0.050 + 0.294 + 0.147 + 0.200 = 1.$ (with rounding error)
-
-\end{frame}
-
-
+%
+%\begin{frame}[t]{\highlight{Genotype frequency} is a measure of how common a genotype is for one or more loci.}
+%
+%\vspace{-\baselineskip}
+%\centering
+%
+%\includegraphics[height=0.85\textheight]{futuyma_fig4-5}
+%
+%\begin{tikzpicture}
+%\node at (2,7.5) [font=\large, text width = 5.5cm, align=left] {$A_1A_1$ frequency = 4/8 = 0.5.};
+%
+%\node at (2, 6.75) [font=\large, text width = 5.5cm, align=left] {$A_1A_2$ frequency = 2/8 = 0.25.};
+%
+%\node at (2, 6) [font=\large, text width = 5.5cm, align=left] {$A_2A_2$ frequency = 2/8 = 0.25.};
+%
+%\end{tikzpicture}
+%
+%\end{frame}
+%
+%
+%\begin{frame}[t]{Consider a population where$\dots$}
+%\hangpara Half the individuals are $A_1A_1$
+%
+%\hangpara Half the individuals are $A_2A_2$
+%
+%\hangpara What is the frequency of each allele?
+%
+%\hangpara What is the frequency of each genotype?
+%
+%\end{frame}
+%
+%%%
+%
+%\begin{frame}[t]{If a very large population mates at random, what will be$\dots$}
+%
+%\hangpara the allele frequencies in the next generation?
+%
+%\hangpara the genotype frequencies in the next generation?
+%
+%\hangpara Will subsequent generations maintain the same frequencies?
+%
+%\vfilll
+%
+%\hangpara \textcolor{gray}{Starting freqs in first generation were 0.5 each.}
+%\end{frame}
+%
+%\begin{frame}[t]{A population will reach or maintain Hardy-Weinberg equilibrium if}
+%
+%\hangpara the population is infinitely large,
+%
+%\hangpara mating is random,
+%
+%\hangpara mutations do not occur,
+%
+%\hangpara gene flow does not occur, and
+%
+%\hangpara natural selection does not occur.
+%
+%\hangpara \highlight {A population will evolve if \emph{any} one of these assumptions is violated.}
+%
+%\vfilll
+%
+%\textcolor{gray}{Equilibrium will be reached in one generation.}
+%
+%\end{frame}
+%
+%%%
+%
+%\begin{frame}[t]
+%
+%\hangpara If $p$ and $q$ are the frequencies of two alleles at one locus, then
+%
+%\hangpara $p^2$ and $q^2$ are the frequencies of each possible homozygote, and 
+%
+%\hangpara $2pq$ is the frequency of heterozygotes.
+%
+%\hangpara \highlight{$p + q = 1$} and \highlight{$p^2 + 2pq + q^2 = 1.$}
+%
+%\hangpara \textcolor{gray}{Recall that $(p + q)^2 = 1^2$}
+%
+%\end{frame}
+%
+%%%
+%
+%\begin{frame}[t]{Hardy-Weinberg equations can be extended to more than two alleles.}
+%
+%\hangpara If $p + q + r = 1,$ then because
+%
+%\hangpara $(p + q + r)^2 = 1^2,$ so
+%
+%\hangpara $p^2 + 2pq + q^2 + 2pr + 2qr + r^2 = 1$
+%
+%
+%\end{frame}
+%
+%
+%\begin{frame}[t]{Assume a sample of 1000 individuals in \textsc{hwe}.}
+%
+%\hangpara $q^2 = 200$ and $r^2 = 0.05.$
+%
+%\hangpara Calculate the three allele frequencies and the other four genotype frequencies.
+%\end{frame}
+%
+%
+%\lecture{instructor}{instructor}
+%
+%\begin{frame}[t]{Solution: If $q^2 = 0.2$ and $r^2 = 0.05$ then $\dots$}
+%
+%\vspace{-0.5\baselineskip}
+%
+%\hangpara $q = \sqrt{0.2} = 0.447$ and $r = \sqrt{0.05} = 0.224.$
+%
+%\pause \hangpara $p = 1 - 0.447 - 0.224 = 0.329.$
+%
+%\pause \hangpara $p^2 = 0.329^2 = 0.108.$
+%
+%\pause \hangpara $2pq = (2)(0.329)(0.447) = 0.294.$
+%
+%\pause \hangpara $2pr = (2)(0.329)(0.224) = 0.147.$
+%
+%\pause \hangpara $2qr = (2)(0.447)(0.224) = 0.200.$
+%
+%\pause \hangpara $0.108 + 0.200 + 0.050 + 0.294 + 0.147 + 0.200 = 1.$ (with rounding error)
+%
+%\end{frame}
+%
+%
 
 
 \end{document}
