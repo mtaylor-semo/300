@@ -69,138 +69,210 @@
 % Lecture goals
 \lecture{student}{student}
 
-\begin{frame}[t]{Estimating phylogenetic trees.}
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{selection_flying_frog}}
+	\begin{frame}[t]{\textcolor{white}{Natural selection and adaptations}}
 	
-\includegraphics[width=\linewidth]{origin_phylo_tree}	
-\end{frame}
-
-\begin{frame}[t]{But first, some essential vocabulary\dots}
-
-Relate these to “descent with modification.”
-
-\hangpara \highlight{Plesiomorphic} (plesiomorphy): an ancestral character state.
-
-\hangpara \highlight{Apomorphic} (apomorphy): a derived character, changed from the ancestral state.
-
-\hangpara \highlight{Synapomorphic} (synapomorphy): a derived character shared by two or more taxa. Provides evidence of common ancestry.
-
-\hangpara \highlight{Autapomorphic} (autapomorphy): a derived character unique to one species or group. Cannot provide evidence of ancestry because not shared.
-
-\end{frame}
-
-\begin{frame}[t]{But first, some essential vocabulary\dots}
-
-\hangpara \highlight{Outgroup:} a taxon outside the group of interest that helps determine the direction of ancestral change; i.e., distinguish between plesiomorphic and apomorphic characters.
-
-\hangpara \highlight{Mosaic evolution:} characters evolve independently. Species have combinations of plesiomorphic and apomorphic characters.
-
-\end{frame}
-
-
-\begin{frame}[t,plain]{Clades are united by \highlight{synapomorphies.}}
-	
-	\centering
-	
-	\includegraphics[height=0.85\textheight]{futuyma_fig16-2a_synapomorphy}
-	
-\vfilll
-
-\tiny \hfill Fig.~16-2, \textcopyright\,Futuyma and Kirkpatrick.
-\end{frame}
-%
-\begin{frame}[t,plain]{Homoplasies are the result of \highlight{convergent evolution.}}
-
-	\centering
-
-	\includegraphics[height=0.85\textheight]{futuyma_fig16-2a_homoplasy}
-
-	\vfilll
-
-	\tiny \hfill Fig.~16-2, \textcopyright\,Futuyma and Kirkpatrick.
-\end{frame}
-%
-%
-\begin{frame}[t,plain]{Trees built using homoplasies are incorrect.}
-
-\includegraphics[width=\linewidth]{futuyma_fig16-2}
-
-\hangpara The left tree requires \emph{fewer} evolutionary changes.
-
-\vfilll
-
-\tiny \hfill Fig.~16-2, \textcopyright\,Futuyma and Kirkpatrick.
-\end{frame}
-%
-%
-\begin{frame}[t,plain]{Trees can be estimated with different techniques.}
-
-\hangpara \highlight{Maximum Parsimony:} the best estimate of the phylogeny requires the fewest evolutionary changes.
-
-\hangpara \highlight{Maximum Likelihood:} uses evolutionary models of genetic evolution.
-
-\hangpara \highlight{Bayesian:} also uses evolutionary models of genetic evolution.
-
-\end{frame}
-%
-\begin{frame}[t,plain]{Confidence: how good is the hypothesis?}
-
-\hangpara \highlight{Bootstrap:} \textcolor{gray}{(non-parametric)} 
-
-\quad Evaluates confidence of each node.
-Values between 50-100.\\  
-
-\smallskip
-
-\quad Values above 70 are good.
-
-\hangpara \highlight{Bayesian:} \textcolor{gray}{(parametric)} 
-
-\quad Simultaneously infers phylogeny \& evaluates confidence of each node.
-\\
-
-\quad Values above 80\% are good (above 95\% for greatest confidence).
-
-\end{frame}
-%
-\begin{frame}[t,plain]
-
-	\includegraphics[height=0.94\textheight]{taylor_hellberg_phylogeny}
-
 	\vfilll
 	
-	\tiny \hfill Taylor and Hellberg 2005.
-	
-	\begin{tikzpicture}
-	\node at (10.5cm,8cm) [text width=6cm]{\large Bootstrap (upper or left)\\Bayesian (lower or right)};
-	\end{tikzpicture}
-\end{frame}
-
-{
-\usebackgroundtemplate{\includegraphics[width=\paperwidth]{zimmer_fig14-13}}
-\begin{frame}[b]
-
-	\begin{tikzpicture}
-\node at (10cm,2cm) [align=left, text width=6cm]{0 = plesiomorphic character.\\1 = apomorphic character.};
-\end{tikzpicture}
-
-
-	
-%	\vfilll
-
-	\tiny\hfill \textcopyright\,Zimmer and Emlen 2016, 2nd ed.
-\end{frame}
-}
-%
-{
-	\usebackgroundtemplate{\includegraphics[width=\paperwidth]{zimmer_fig14-15}}
-	\begin{frame}[b]
-	
-	%	\vfilll
-	
-	\tiny \textcopyright\,Zimmer and Emlen 2016, 2nd ed.
+	\tiny\hfill \textcolor{white}{\textcopyright\,sFutuyma 2017. \textit{Evolution}, 4th ed.}
 \end{frame}
 }
 
 
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{adaptation_barrel_cactus}}
+	\begin{frame}[b,plain]{\textcolor{white}{How would you define} \highlight{adaptation?}}
+	
+	\vfilll
+	
+	\tiny \hfill \rotatebox{90}{\textcolor{white}{André Karwath, \href{https://commons.wikimedia.org/w/index.php?curid=369777}{Wikimedia Commons}. \ccbysa{2.5}}}
+	
+% Foxes	\tiny\hfill Jonatan Pie, Wikimedia Commons. \cc~v1.0
+\end{frame}
+}
+
+
+\begin{frame}[t, plain]{\highlight{Adaptations} are traits that increase reproductive success.}
+
+\vspace{-\baselineskip}
+
+\hangpara Adaptations have been \highlight{modified} from the ancestral form.\bigskip
+
+\includegraphics[width=0.95\textwidth]{adaptation_chough}\\
+Are the red eyes of this bird adaptive?
+
+\vfilll
+
+\hfill \tiny White-winged Chough, \textcopyright\,Futuyma 2017. \textit{Evolution}, 4th ed.
+
+\end{frame}
+
+
+\begin{frame}[t,plain]{Natural selection results in \highlight{fitness} differences among phenotypes.}
+
+\vspace{-\baselineskip}
+
+\begin{multicols}{2}
+
+\hangpara Natural selection occurs when any consistent differences among different groups of \emph{heritable} phenotypes results in \highlight{differential reproductive success.}
+
+\hangpara Fitness has two components. What are they?
+
+\columnbreak
+
+\includegraphics[width=0.9\linewidth]{chap3_fig7a}
+
+\end{multicols}
+%\hangpara Natural selection causes variation in \highlight{reproductive success} among individuals that vary in \highlight{heritable traits.}
+\end{frame}
+
+\begin{frame}[t,plain]{Fitness is the \textit{average} contribution of allele copies to the next generation.}
+
+\vspace{-\baselineskip}
+
+\begin{multicols}{2}
+\hangpara Annual plants grow from seeds each year.
+
+\hangpara Assume that 1 in 500 seeds survive to reproduce. 
+
+\hangpara Those that survive produce an average of 2000 seeds. 
+
+\hangpara What is the average fitness of the plant?
+
+\hangpara \textcolor{gray}{survival frequency $\times$ average number of offspring produced.}
+\columnbreak
+
+\begin{center}
+\includegraphics[width=0.9\linewidth]{fitness_garden_pea}
+\end{center}
+
+
+\end{multicols}
+
+\vfilll
+
+\tiny \hfill Common garden pea. Photo by Rasbak, \href{https://commons.wikimedia.org/w/index.php?curid=194762}{Wikimedia Commons}. \ccbysa{3}
+
+\end{frame}
+
+\begin{frame}[t,plain]{Selection can occur at the level of }
+
+\vspace{-\baselineskip}
+
+\begin{multicols}{2}
+\hangpara genes,
+
+\hangpara \highlight{individuals,}
+
+\hangpara populations, and
+
+\hangpara species.
+
+\columnbreak
+
+\begin{center}
+\includegraphics[width=0.8\linewidth]{selection_selfish_gene_cover}
+\end{center}
+
+\end{multicols}
+
+\vfilll
+
+\tiny \hfill Source, Fair use, \href{https://en.wikipedia.org/w/index.php?curid=20132319}{Wikipedia} 
+\end{frame}
+
+\begin{frame}[t,plain]{\highlight{Genic selection} increases copies of certain genes.}
+
+\begin{multicols}{2}
+\hangpara Gene copies increase regardless of effect on individual fitness.
+
+\hangpara Other forms of genic selection include segregation distortion and meiotic drive.
+
+\columnbreak
+
+\includegraphics[width=0.95\linewidth]{selection_genic_transposons}
+
+\end{multicols}
+
+\vfilll
+
+\tiny \hfill Transposons. Modified from Kazasian, H.H. Science 303:1626.
+
+\end{frame}
+
+
+\begin{frame}[t]{\highlight{Kin selection} increases fitness of relatives.}
+
+\vspace{-\baselineskip}
+
+\begin{multicols}{2}
+
+\hangpara Relatives carry allele copies \highlight{identical by descent.}
+
+\hangpara Individuals sacrifice their own fitness to increase fitness of relatives.
+
+\hangpara Increases copies of their shared alleles.
+
+\columnbreak
+
+\includegraphics[width=0.9\linewidth]{selection_kin_flsj}
+
+\end{multicols}
+
+\vfilll
+
+\tiny \hfill \textcopyright\,Reanna Thomas, \href{https://macaulaylibrary.org/asset/199768971}{Macaulay Library ML199768971}
+
+\end{frame}
+
+
+\begin{frame}[t]{\highlight{Species selection} increases diversity of characteristics among species.}
+
+\vspace{-\baselineskip}
+
+\begin{multicols}{2}
+
+The proportion of \textit{species} with a particular trait increases over time compared to species without that trait.
+
+
+\columnbreak
+
+\includegraphics[width=0.9\linewidth]{asexual_rotifer}\\
+\includegraphics[width=0.9\linewidth]{asexual_dandelion}
+\end{multicols}
+
+\end{frame}
+
+
+\begin{frame}[t]{Selection \emph{for} traits. \hfill Are all traits adaptive?}
+
+\vspace{-\baselineskip}
+
+\begin{multicols}{2}
+\includegraphics[width=0.95\linewidth]{chap3_fig14}
+
+\columnbreak
+
+\includegraphics[width=\linewidth]{chap3_fig15b}
+\end{multicols}
+
+
+\end{frame}
+
+\begin{frame}[t]{Adaptative significance can be tested by experiment and comparative methods.}
+
+\vspace{-\baselineskip}
+
+\begin{multicols}{2}
+\includegraphics[width=\linewidth]{/Users/goby/pictures/teach/163/case_studies/pollen_grains_remaining}
+
+\columnbreak
+
+\includegraphics[width=\linewidth]{selection_female_bird_song}
+
+\end{multicols}
+
+\end{frame}
 
 \end{document}

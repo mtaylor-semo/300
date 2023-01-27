@@ -70,208 +70,232 @@
 \lecture{student}{student}
 
 {
-\usebackgroundtemplate{\includegraphics[width=\paperwidth]{selection_flying_frog}}
-	\begin{frame}[t]{\textcolor{white}{Natural selection and adaptations}}
-	
-	\vfilll
-	
-	\tiny\hfill \textcolor{white}{\textcopyright\,sFutuyma 2017. \textit{Evolution}, 4th ed.}
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{darwin_phylo_tree}}
+\begin{frame}[t]
 \end{frame}
 }
 
 
-{
-\usebackgroundtemplate{\includegraphics[width=\paperwidth]{adaptation_barrel_cactus}}
-	\begin{frame}[b,plain]{\textcolor{white}{How would you define} \highlight{adaptation?}}
+\begin{frame}[t,plain]{\highlight{Phylogenetic systematics} estimates evolutionary relationships.}
+	
+	\vspace{-0.75\baselineskip}
+	
+	\includegraphics[width=\linewidth]{phylogeny_genealogy_comparison}
 	
 	\vfilll
-	
-	\tiny \hfill \rotatebox{90}{\textcolor{white}{André Karwath, \href{https://commons.wikimedia.org/w/index.php?curid=369777}{Wikimedia Commons}. \ccbysa{2.5}}}
+	\tiny \hfill \textcopyright\,Zimmer and Emlen
 	
 % Foxes	\tiny\hfill Jonatan Pie, Wikimedia Commons. \cc~v1.0
 \end{frame}
-}
 
+\begin{frame}[t,plain]{You must learn the basic parts of a phylogenetic tree.}
+	
+	\centering
+%	\vspace{-0.5\baselineskip}
+	
+	\includegraphics[width=\linewidth]{futuyma_fig2-6a}
+	
+	\vfilll
+	
+	\tiny \hfill Fig. 2.6~\textcopyright\,Futuyma and Kirkpatrick.
+	
+\end{frame}
 
-\begin{frame}[t, plain]{\highlight{Adaptations} are traits that increase reproductive success.}
+\begin{frame}[t,plain]{\highlight{Clades} include an ancestor and \emph{all} of its descendants.}
+	
+	\centering
+	\vspace{-0.5\baselineskip}
+	
+	\includegraphics[width=\linewidth]{phylogeny_clades}
+	
+	\hangpara Trees can be rearranged but still show the same relationships.
+	
+	\vfilll
+	\tiny \hfill \textcopyright\,Zimmer and Emlen.
+\end{frame}
 
-\vspace{-\baselineskip}
+\begin{frame}[t,plain]{\highlight{Clades} can include one or more branches.}
+	
+	\centering
+	\vspace{-0.5\baselineskip}
+	
+	\includegraphics[width=\linewidth]{clades_collapse}
+	
+	\vfilll
+	\tiny \hfill \textcopyright\,Zimmer and Emlen.
+\end{frame}
 
-\hangpara Adaptations have been \highlight{modified} from the ancestral form.\bigskip
+\begin{frame}[t,plain]{Clades are \highlight{monophyletic} groups.}
+	
+	\centering
+	\vspace{-0.5\baselineskip}
+	
+	\includegraphics[width=\linewidth]{monophyly_paraphyly_polyphyly}
+	
+	\vfilll
+	\tiny \hfill \textcopyright\,Zimmer and Emlen.
+\end{frame}
+%
+\begin{frame}[t,plain]{Linnean classification is based on nested clades.}
+	
+	\centering
+	\vspace{-0.5\baselineskip}
+	
+	\includegraphics[height=0.85\textheight]{phylogeny_classification}
+	
+	\vfilll
+	\tiny \hfill \textcopyright\,Zimmer and Emlen.
+\end{frame}
+%
+\begin{frame}[t,plain]
+	
+	\centering
+%	\vspace{-0.5\baselineskip}
+	
+	\includegraphics[width=\linewidth]{phylogeny_example}
+	
+	\vfilll
+	\tiny \hfill \textcopyright\,Zimmer and Emlen.
+	
+	\pause
+	
+	\begin{tikzpicture}
+	\draw [draw=white, fill=white] (-0.5,1) rectangle ++(6.7,8.5);
+	\node at (3,8) [draw=white, align=left, font=\large, text width=4cm] {Which groups are \emph{not} monophyletic?};
+	\pause
+	\node at (3,6) [draw=white, align=left, font=\large, text width=4cm] {Are they paraphyletic\\ or polyphyletic?};
+%	\node (rect) at (-0.5,1) [draw, minimum width=6.7cm, minimum height=2cm] {TEST};
+	\end{tikzpicture}
+`\end{frame}
+%
+\begin{frame}[t,plain]{\highlight{Gene trees} show the evolutionary history of \textsc{dna} sequences.}
 
-\includegraphics[width=0.95\textwidth]{adaptation_chough}\\
-Are the red eyes of this bird adaptive?
+	\centering
+	\vspace{-0.75\baselineskip}
+
+	\includegraphics[height=0.85\textheight]{futuyma_fig2-13}
+
+\end{frame}
+%
+\begin{frame}[t,plain]{\highlight{Paralogous} genes arise via \highlight{gene duplication}.}
+
+	\centering
+	\vspace{-0.25\baselineskip}
+
+	\includegraphics[height=0.85\textheight]{futuyma_fig2-14}
+
+\end{frame}
+
+%
+\begin{frame}[t,plain]{\highlight{Orthologous} genes arise from speciation.}
+
+	\centering
+	\vspace{-0.25\baselineskip}
+
+	\includegraphics[height=0.85\textheight]{futuyma_fig2-14}
+
+\end{frame}
+%
+\begin{frame}[t,plain]{Gene duplication can give rise to gene families.}
+
+	\centering
+	\vspace{-0.25\baselineskip}
+
+	\includegraphics[height=0.85\textheight]{futuyma_fig2-15}
+
+\end{frame}
+%
+%
+\begin{frame}[t,plain]{Orthologs have a shared evolutionary history.\\ Paralogs do not.}
+
+	\centering
+	\vspace{-0.75\baselineskip}
+
+	\includegraphics[height=0.82\textheight]{orthologs_paralogs_hemoglobin}
+
+\end{frame}
+%
+\begin{frame}[t,plain]{Gene trees can have different topologies than their species trees.}
+
+	\centering
+%	\vspace{-0.75\baselineskip}
+
+	\includegraphics[width=\linewidth]{futuyma_fig16-6}
+
+	\vfilll
+	
+	\tiny \hfill Fig.~16.6 \textcopyright\,Futuyma and Fitzpatrick
+\end{frame}
+%
+%
+\begin{frame}[t,plain]{Rapid diversification to fill empty niches is an \highlight{adaptive radiation.}}
+
+	\centering
+	\vspace{-0.75\baselineskip}
+
+	\includegraphics[height=0.85\textheight]{futuyma_fig2-24}
+
+\end{frame}
+%
+\begin{frame}[t,plain]
+
+	\centering
+%	\vspace{-0.75\baselineskip}
+
+	\includegraphics[height=0.9\textheight]{taylor_hellberg_phylogeny}
+	
+	\vfilll
+	
+	\tiny \hfill Taylor and Hellberg~2005.
+
+\end{frame}
+%
+\begin{frame}[t,plain]{\highlight{Incomplete lineage sorting} is the retention of genetic polymorphisms after speciation.}
+
+	\vspace{-0.5\baselineskip}
+	
+	\includegraphics[width=\textwidth]{genetic_polymorphism}
+	
+	\hangpara Descendant species retain ancestral genetic states.
+	
+	\hangpara I\textsc{ls} can cause incorrect inference of the evolutionary history \emph{of the species.}
+\end{frame}
+%
+
+\begin{frame}[t,plain]
+
+%\vspace{-\baselineskip}
+
+\includegraphics[width=\linewidth]{ils_species_gene_trees}
 
 \vfilll
 
-\hfill \tiny White-winged Chough, \textcopyright\,Futuyma 2017. \textit{Evolution}, 4th ed.
-
+\tiny\hfill Leliaert et al.~2014. Eur. J. Phycol. 49:179.
 \end{frame}
+%
+\begin{frame}[t,plain]
 
+%\vspace{-\baselineskip}
 
-\begin{frame}[t,plain]{Natural selection results in \highlight{fitness} differences among phenotypes.}
-
-\vspace{-\baselineskip}
-
-\begin{multicols}{2}
-
-\hangpara Natural selection occurs when any consistent differences among different groups of \emph{heritable} phenotypes results in \highlight{differential reproductive success.}
-
-\hangpara Fitness has two components. What are they?
-
-\columnbreak
-
-\includegraphics[width=0.9\linewidth]{chap3_fig7a}
-
-\end{multicols}
-%\hangpara Natural selection causes variation in \highlight{reproductive success} among individuals that vary in \highlight{heritable traits.}
-\end{frame}
-
-\begin{frame}[t,plain]{Fitness is the \textit{average} contribution of allele copies to the next generation.}
-
-\vspace{-\baselineskip}
-
-\begin{multicols}{2}
-\hangpara Annual plants grow from seeds each year.
-
-\hangpara Assume that 1 in 500 seeds survive to reproduce. 
-
-\hangpara Those that survive produce an average of 2000 seeds. 
-
-\hangpara What is the average fitness of the plant?
-
-\hangpara \textcolor{gray}{survival frequency $\times$ average number of offspring produced.}
-\columnbreak
-
-\begin{center}
-\includegraphics[width=0.9\linewidth]{fitness_garden_pea}
-\end{center}
-
-
-\end{multicols}
+\includegraphics[width=\linewidth]{ils_lineage_sorting}
 
 \vfilll
 
-\tiny \hfill Common garden pea. Photo by Rasbak, \href{https://commons.wikimedia.org/w/index.php?curid=194762}{Wikimedia Commons}. \ccbysa{3}
-
+\tiny\hfill Leliaert et al.~2014. Eur. J. Phycol. 49:179.
 \end{frame}
 
-\begin{frame}[t,plain]{Selection can occur at the level of }
+\begin{frame}[t,plain]{Summary}
+\hangpara Phylogenetic trees are hypotheses of evolutionary history.
 
-\vspace{-\baselineskip}
+\hangpara Monophyletic groups include the ancestor and all descendants.
 
-\begin{multicols}{2}
-\hangpara genes,
+\hangpara Paralogous genes arise from gene duplication.
 
-\hangpara \highlight{individuals,}
+\hangpara Orthologous genes arise from speciation.
 
-\hangpara populations, and
+\hangpara Adaptive radiations result from rapid diversification to fill empty ecological niches.
 
-\hangpara species.
-
-\columnbreak
-
-\begin{center}
-\includegraphics[width=0.8\linewidth]{selection_selfish_gene_cover}
-\end{center}
-
-\end{multicols}
-
-\vfilll
-
-\tiny \hfill Source, Fair use, \href{https://en.wikipedia.org/w/index.php?curid=20132319}{Wikipedia} 
-\end{frame}
-
-\begin{frame}[t,plain]{\highlight{Genic selection} increases copies of certain genes.}
-
-\begin{multicols}{2}
-\hangpara Gene copies increase regardless of effect on individual fitness.
-
-\hangpara Other forms of genic selection include segregation distortion and meiotic drive.
-
-\columnbreak
-
-\includegraphics[width=0.95\linewidth]{selection_genic_transposons}
-
-\end{multicols}
-
-\vfilll
-
-\tiny \hfill Transposons. Modified from Kazasian, H.H. Science 303:1626.
-
-\end{frame}
-
-
-\begin{frame}[t]{\highlight{Kin selection} increases fitness of relatives.}
-
-\vspace{-\baselineskip}
-
-\begin{multicols}{2}
-
-\hangpara Relatives carry allele copies \highlight{identical by descent.}
-
-\hangpara Individuals sacrifice their own fitness to increase fitness of relatives.
-
-\hangpara Increases copies of their shared alleles.
-
-\columnbreak
-
-\includegraphics[width=0.9\linewidth]{selection_kin_flsj}
-
-\end{multicols}
-
-\vfilll
-
-\tiny \hfill \textcopyright\,Reanna Thomas, \href{https://macaulaylibrary.org/asset/199768971}{Macaulay Library ML199768971}
-
-\end{frame}
-
-
-\begin{frame}[t]{\highlight{Species selection} increases diversity of characteristics among species.}
-
-\vspace{-\baselineskip}
-
-\begin{multicols}{2}
-
-The proportion of \textit{species} with a particular trait increases over time compared to species without that trait.
-
-
-\columnbreak
-
-\includegraphics[width=0.9\linewidth]{asexual_rotifer}\\
-\includegraphics[width=0.9\linewidth]{asexual_dandelion}
-\end{multicols}
-
-\end{frame}
-
-
-\begin{frame}[t]{Selection \emph{for} traits. \hfill Are all traits adaptive?}
-
-\vspace{-\baselineskip}
-
-\begin{multicols}{2}
-\includegraphics[width=0.95\linewidth]{chap3_fig14}
-
-\columnbreak
-
-\includegraphics[width=\linewidth]{chap3_fig15b}
-\end{multicols}
-
-
-\end{frame}
-
-\begin{frame}[t]{Adaptative significance can be tested by experiment and comparative methods.}
-
-\vspace{-\baselineskip}
-
-\begin{multicols}{2}
-\includegraphics[width=\linewidth]{/Users/goby/pictures/teach/163/case_studies/pollen_grains_remaining}
-
-\columnbreak
-
-\includegraphics[width=\linewidth]{selection_female_bird_song}
-
-\end{multicols}
+\hangpara Gene trees can differ from their species trees due to incomplete lineage sorting.
 
 \end{frame}
 
