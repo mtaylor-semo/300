@@ -11,8 +11,6 @@
 \setsansfont[Scale=MatchLowercase]{Linux Biolinum O} 
 \usepackage{microtype}
 
-\usepackage[libertine]{newtxmath}
-
 \usepackage{graphicx} % allow embedded images
   \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
   \graphicspath{{img/}} % set of paths to search for images
@@ -21,18 +19,20 @@
 \usepackage{units}    % non-stacked fractions and better unit spacing
 \usepackage{siunitx}
 \usepackage{multicol} % multiple column layout facilities
-\usepackage{enumitem}
 \usepackage{hyperref}
+
+\usepackage{enumitem}
+
+
 %\usepackage{fancyvrb} % extended verbatim environments
 %  \fvset{fontsize=\normalsize}% default font size for fancy-verbatim environments
-
 \makeatletter
 % Paragraph indentation and separation for normal text
 \renewcommand{\@tufte@reset@par}{%
   \setlength{\RaggedRightParindent}{1.0pc}%
   \setlength{\JustifyingParindent}{1.0pc}%
-  \setlength{\parindent}{1pc}%
-  \setlength{\parskip}{0pt}%
+  \setlength{\parindent}{0pc}%
+  \setlength{\parskip}{0.5\baselineskip}%
 }
 \@tufte@reset@par
 
@@ -50,11 +50,8 @@
 \renewcommand\smallcapsspacing[1]{{\addfontfeatures{LetterSpace=10}#1}}
 
 
-\newcommand{\allele}[1]{\textit{#1}}
-
-
-\title{Study Guide 04\hfill}
-\author{Natural selection and adaptations}
+\title{Study Guide 05\hfill}
+\author{Phylogenetic systematics}
 
 \date{} % without \date command, current date is supplied
 
@@ -64,50 +61,66 @@
 
 %\printclassoptions
 
-\section{Vocabulary}\marginnote{\textbf{Read:} 55--61, 62--65; 67--71} 
+\section{Vocabulary}\marginnote{\textbf{Read:} Chapter 2, pages 28--35, including Box 2\textsc{a}, 39--41, 50; Chapter 16, pages 407--409.\\[1em] \noindent Some vocabulary is defined below.}
 \vspace{-1\baselineskip}
 \begin{multicols}{2}
-natural selection\\
-fitness\\
-relative fitness\\
-differential reproductive success\\
-individual selection \\
-genic selection \\
-kin selection \\
-identical by descent \\
-species selection \\
+	phylogenetic systematics\\
+	phylogenetic tree (phylogeny)\\
+	branch \\
+	internal node\\
+	terminal node (tip) \\
+	taxon (plural: taxa) \\
+	root \\
+	clade \\
+	monophyletic \\
+	paraphyletic \\
+	polyphyletic \\
+	species tree \\
+	gene tree \\
+	gene duplication \\
+	paralogous genes (paralogs) \\
+	orthologous genes (orthologs) \\
+	adaptive radiation \\
+	incomplete lineage sorting \\
 \end{multicols}
 
 \section{Concepts}
 
-You should \emph{write} clear and concise answers to each question in the Concepts section.  The questions are not necessarily independent.  Think broadly across lectures to see “the big picture.”
+You should \emph{write} clear and concise answers to each question in the Concepts section.  The questions are not necessarily independent.  Think broadly across lectures to see ``the big picture.'' 
 
 \begin{enumerate}
 	
-	\item Explain what are adaptations. How do they evolve? What is the role of natural selection in the evolution of adaptations? How do adaptations affect the fitness of an organism?
+	\item Be able to identify the parts of a phylogenetic tree.
 	
-	\item Explain the difference between fitness and relative fitness. Explain relative fitness in terms of differential reproductive success.
+	\item Be able to recognize and delineate monophyletic, paraphyletic and polyphyletic groups on a phylogenetic tree.
+
+	\item Explain the difference between paralogous and orthologous genes. Explain whether paralogous or orthologous genes should be used to construct a phylogenetic tree. Justify your answer.
 	
-	\item Explain the difference between individual, genic, kin, and species selection.
+	\item Explain the difference between a species tree and a gene tree.\marginnote{True in the sense of the actual evolutionary history of the species.} Will the gene tree always be an accurate reflection of the true species tree? Justify your answer.
 	
-	\item Is genic selection truly different from individual selection? Or, can you argue that genic selection is just a special case of individual selection? Justify your argument. Repeat this question separately for kin selection and for species selection.
-	
-	\item \textit{The Selfish Gene} (1976) \marginnote{Dawkins does not argue that genes have a will or specific selfish intent. He argues that genes evolve \emph{as if} they do.} was written by Richard Dawkins. He argues that genes (alleles, really) that are passed on evolve to serve their own interests, that is, the interests of the genes and not the whole organism. Explain this in terms of natural selection acting on the individual phenotype.
-	
-	\item Explain what it means to say that two gene copies are identical by descent.
-	
-	\item Could natural selection, at any level of organization (e.g., genic, individual, kin, etc.), ever cause the extinction of a population or a species?
-	
-	\item Explain criteria or measurements by which you might conclude that a population is better adapted after a certain evolutionary change than before the change.
-	
-	
-	
-	
-	
-	
+	\item Explain incomplete lineage sorting. Explain how incomplete lineage sorting can affect interpretation of a phylogenetic tree. That is, if incomplete lineage sorting is present among a group of species, will you necessarily obtain the actual evolutionary history of the species? Why or why not?
 	
 	
 
 \end{enumerate}
+
+\section{Detailed Vocabulary}
+
+\textbf{Taxon} (plural: taxa): a term of convenience to reference any particular category of organisms. For example, a taxon may reference a subspecies, a species, a genus, a family, an order, or some other named group. \textbf{Higher taxa} is frequently used to reference taxa above the species level.
+
+\noindent\textbf{Branch}: The lines that represent the ancestral lineages of a group, or that represent the lineage leading to the current taxa at the tips.
+
+\noindent\textbf{Node}: The point where a branch splits into two descendants.  This is the implied ancestral taxon at the end of the lineage and also the implied speciation event forming the descendant taxa.
+
+\noindent\textbf{Tip}: the top end of a branch that represents a specific taxon; sometimes called terminal node.
+
+\noindent\textbf{Monophyletic Group}: a group that contains the common ancestor and all of the descendant taxa that evolved from that ancestor. Monophyletic groups can be identified by the presence of one or more shared, derived characters (synapomorphies) in the descendant taxa.
+
+\noindent\textbf{Clade}: another name for a monophyletic group.  Much easier to say than monophyletic.
+
+\noindent\textbf{Paraphyletic Group}: a group that contains the common ancestor and some but not all of the descendant taxa of that ancestor. 
+
+\noindent\textbf{Polyphyletic Group}: a group in which none of the included taxa share the same most recent common ancestor.  The last common ancestor of the taxa is not included in the group.
+
 
 \end{document}
