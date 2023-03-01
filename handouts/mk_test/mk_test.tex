@@ -323,10 +323,13 @@ Synonymous		&	29 	&	5	\\
 \begin{questions}
 
 \question[5] Calculate $G$ for Exon 1. Show your work!
+\ifprintanswers \textbf{7.6} \fi
 
 \question[5] Calculate $G$ for Exons 2 and 3. Show your work!
+\ifprintanswers \textbf{0.002} \fi
 
 \question[5] Tell which exons show signs of positive selection or neutral evolution. Provide a reasonable hypothesis on why you think there is a difference between exon~1 and exons~2 \&~3.
+\ifprintanswers \textbf{Exon 1 is evolving under \textsc{n.s.}} \fi
 
 %\begin{enumerate}[label=\arabic*.]
 %\item Calculate $G$ for Exon 1. Show your work!
@@ -356,15 +359,46 @@ My goal here is for you to examine the data to get a feel for what fixed and pol
 
 \bigskip
 
-\begin{tabular}{@{}lrr@{}}
+\begin{tabular}{@{}lrrr@{}}
 \toprule
-\textit{Adh} & Fixed & Polymorphic \\
+\textit{Adh} & Fixed & Polymorphic & Row totals\\
 \midrule
 &&\\[1em]
-Non-synonymous	&	\rule{0.5in}{0.4pt} &	\rule{0.5in}{0.4pt}  	\\[2em]
-Synonymous		&	\rule{0.5in}{0.4pt} &	\rule{0.5in}{0.4pt} \\
+Non-synonymous																				&	
+\ifprintanswers\textbf{7}\else\rule{0.5in}{0.4pt}\fi	&
+\ifprintanswers\textbf{2}\else\rule{0.5in}{0.4pt}\fi	&
+\ifprintanswers\textbf{9}\else\rule{0.5in}{0.4pt}\fi \\[2em]
+Synonymous																						&
+\ifprintanswers\textbf{17}\else\rule{0.5in}{0.4pt}\fi &	\ifprintanswers\textbf{42}\else\rule{0.5in}{0.4pt}\fi & \ifprintanswers\textbf{59}\else\rule{0.5in}{0.4pt}\fi \\[2em]
+Column totals																					&
+\ifprintanswers\textbf{24}\else\rule{0.5in}{0.4pt}\fi & \ifprintanswers\textbf{44}\else\rule{0.5in}{0.4pt}\fi & \ifprintanswers\textbf{68}\else\rule{0.5in}{0.4pt}\fi \\
 \bottomrule
 \end{tabular}
+
+
+\ifprintanswers
+Answers below were calculated in Excel but rounded here.
+\begin{align*}
+\text{Cells:}\\
+7 \cdot \ln 7 &= 13.6\\
+2 \cdot \ln 2 &= 1.4\\
+17 \cdot \ln 17 &= 48.2\\
+42 \cdot \ln 42 &= 157.0\\
+68 \cdot \ln 68  &= 286.9\\
+\\
+\text{Row and column totals:}\\
+(7 + 2) \cdot \ln(7+2) &= 19.8 \\
+(17 + 42) \cdot \ln(17+42) &= 240.6 \\
+(7 + 17) \cdot \ln(7+17) &= 76.3 \\
+(2 + 42) \cdot \ln(2+42) &= 166.5 \\
+\\
+\begin{split}
+G &= 2 \times \left[13.6 + 1.4 + 48.2 + 157.0 + 286.9 - 19.8 - 240.6 - 76.3 - 166.5\right]\\ &= \mathbf{7.9.}
+\end{split}
+\end{align*}
+
+$7.9 > 3.841$ so \textit{Adh} is evolving under natural selection.
+\fi
 
 %\begin{tabular}{@{}lrrr@{}}
 %\toprule
