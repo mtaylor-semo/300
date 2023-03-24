@@ -1,21 +1,21 @@
 library(DescTools)
 
-# Input =("
-#  ADH       fixed  polymorphic
-#  Replacement    7          2
-#  Synonymous   17          42
-# ")
-
 Input =("
- PSE       fixed  polymorphic
- Replacement    38          16
- Synonymous   30          2
+ ADH       fixed  polymorphic
+ Replacement    7          2
+ Synonymous   17          42
 ")
+
+# Input =("
+#  PSE       fixed  polymorphic
+#  Replacement    38          16
+#  Synonymous   30          2
+# ")
 
 Matriz = as.matrix(read.table(textConnection(Input),
                               header=TRUE,
                               row.names=1))
-f
+
 GTest(Matriz, correct = "none")
 
 N <- sum(Matriz)
