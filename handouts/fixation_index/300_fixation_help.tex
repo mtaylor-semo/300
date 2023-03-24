@@ -1,0 +1,125 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[12pt, addpoints, hidelinks]{exam}
+
+\printanswers
+
+\usepackage{fontspec}
+\setmainfont[Ligatures={TeX, Common}, BoldFont={* Bold}, ItalicFont={* Italic}, BoldItalicFont={* BoldItalic}, Numbers={OldStyle,Proportional}]{Linux Libertine O}
+\setsansfont[Scale=MatchLowercase,Ligatures={TeX,Common}, Numbers={OldStyle,Proportional}]{Linux Biolinum O}
+%\setmonofont[Scale=MatchLowercase]{Inconsolata}
+\usepackage{microtype}
+
+\usepackage{geometry}
+\geometry{letterpaper, bottom=1in}                   
+%\geometry{landscape}                % Activate for for rotated page geometry
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage[fleqn]{amsmath}
+%\usepackage{amssymb}
+\usepackage{cancel}
+%\everymath{\displaystyle}
+
+
+\usepackage{unicode-math}
+\setmathfont[Scale=MatchLowercase, Numbers=Lining]{Asana Math}
+%\setmathfont[Scale=MatchLowercase]{XITS Math}
+
+% To define fonts for particular uses within a document. For example, 
+% This sets the Libertine font to use tabular number format for tables.
+\newfontfamily{\tablenumbers}[Numbers={Monospaced}]{Linux Libertine O}
+\newfontfamily{\libertinedisplay}{Linux Libertine Display O}
+
+%
+%\usepackage{graphicx}
+%\graphicspath{{/Users/goby/Pictures/teach/300/exercises/}
+%	{img/}} % set of paths to search for images
+%
+
+
+%\usepackage{booktabs}
+%%\usepackage{longtable}
+%%\usepackage{siunitx}
+%\usepackage{array}
+%\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+%\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+%\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+%
+%\usepackage{multicol}
+%
+%\usepackage{enumitem}
+%\setlist{leftmargin=*}
+%\setlist[1]{labelindent=\parindent}
+%\setlist[enumerate]{label=\textsc{\alph*}., ref=\textsc{\alph*}}
+%
+%\usepackage{tikz}
+
+
+\usepackage[sc]{titlesec}
+
+
+\makeatletter
+\def\SetTotalwidth{\advance\linewidth by \@totalleftmargin
+	\@totalleftmargin=0pt}
+\makeatother
+
+
+\pagestyle{headandfoot}
+\firstpageheader{BI 300: Evolution}{}{\ifprintanswers\textbf{Cheat Sheet}\else Name: \enspace \makebox[2.5in]{\hrulefill}\fi}
+\runningheader{}{}{\footnotesize{pg. \thepage}}
+\footer{}{}{}
+\runningheadrule
+
+
+\newcommand{\fst}{$F_{\mathrm{ST}}$}
+
+
+\begin{document}
+%\thispagestyle{firstpage}
+
+\subsection*{Algebraic rearrangement of the fixation index \fst{}}
+
+
+Solve for $\mu$, using the mutation form of the $F_{ST}$ equation. For clarity, I use $N$ and $F$ for $N_e$~and $F_{ST},$ respectively.
+
+\vspace{-\baselineskip}
+
+\begin{align*}
+F &= \dfrac{1}{1 + 4N\mu}
+%%
+%\intertext{First, we want $m$ on the left side of the equation so rearrange the starting equation (not necessary, but easier to follow). Note too that $1 + 4N\mu$ is equivalent to $4N\mu + 1.$}
+\intertext{Note that $1 + 4N\mu$ is equivalent to $4N\mu + 1.$}
+%%
+F &= \dfrac{1}{4N\mu + 1}
+%%
+\intertext{Multiply both sides by $4N\mu + 1$ and cancel.}
+%%
+F \times (4N\mu + 1) &= \frac{1}{4N\mu + 1} \times 4N\mu + 1\\[2\jot]
+%%
+F \times (4N\mu + 1) &= \frac{1}{\cancel{4N\mu + 1}} \times \cancel{4N\mu + 1}\\
+%%
+F (4N\mu + 1) &= 1
+%%
+\intertext{Expand $F(4N\mu + 1).$}
+%%
+4FN\mu + F &= 1
+%%
+\intertext{Add $-F$ to both sides (subtract $F$).}
+4FN\mu + F - F &= 1 - F\\
+4FN\mu &= 1 - F
+%
+\intertext{Divide both sides by $4FN$ and cancel.}
+%%
+\frac{\cancel{4FN}\mu}{\cancel{4FN}} &= \frac{1 - F}{4FN}\\[2\jot]
+%
+\mu &= \frac{1 - F}{4FN}
+%%
+\intertext{The final form with subscripts returned to $F_{ST}$ and $N_e$ is,}
+%
+\mu &= \dfrac{1-F_{ST}}{4F_{ST}N_e}
+\end{align*}
+%
+
+Surely this can't work for the migration version of the equation. Right?
+
+\end{document}  

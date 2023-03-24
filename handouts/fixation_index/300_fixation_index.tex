@@ -1,0 +1,226 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[12pt, addpoints, hidelinks]{exam}
+
+%\printanswers
+
+\usepackage{fontspec}
+\setmainfont[Ligatures={TeX, Common}, BoldFont={* Bold}, ItalicFont={* Italic}, BoldItalicFont={* BoldItalic}, Numbers={OldStyle,Proportional}]{Linux Libertine O}
+\setsansfont[Scale=MatchLowercase,Ligatures={TeX,Common}, Numbers={OldStyle,Proportional}]{Linux Biolinum O}
+%\setmonofont[Scale=MatchLowercase]{Inconsolata}
+\usepackage{microtype}
+
+\usepackage{geometry}
+\geometry{letterpaper, bottom=1in}                   
+%\geometry{landscape}                % Activate for for rotated page geometry
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage[fleqn]{amsmath}
+%\usepackage{amssymb}
+%\usepackage{mathtools}
+%\everymath{\displaystyle}
+
+
+\usepackage{unicode-math}
+\setmathfont[Scale=MatchLowercase, Numbers=Lining]{Asana Math}
+%\setmathfont[Scale=MatchLowercase]{XITS Math}
+
+% To define fonts for particular uses within a document. For example, 
+% This sets the Libertine font to use tabular number format for tables.
+\newfontfamily{\tablenumbers}[Numbers={Monospaced}]{Linux Libertine O}
+\newfontfamily{\libertinedisplay}{Linux Libertine Display O}
+
+
+\usepackage{graphicx}
+\graphicspath{{/Users/goby/Pictures/teach/300/exercises/}
+	{img/}} % set of paths to search for images
+
+
+
+\usepackage{booktabs}
+%\usepackage{longtable}
+%\usepackage{siunitx}
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+
+\usepackage{multicol}
+
+\usepackage{enumitem}
+\setlist{leftmargin=*}
+\setlist[1]{labelindent=\parindent}
+\setlist[enumerate]{label=\textsc{\alph*}., ref=\textsc{\alph*}}
+
+\usepackage{tikz}
+
+
+\usepackage[sc]{titlesec}
+
+\renewcommand{\solutiontitle}{\noindent}
+\unframedsolutions
+\SolutionEmphasis{\bfseries}
+
+\renewcommand{\questionshook}{%
+	\setlength{\leftmargin}{-\leftskip}%
+}
+
+\makeatletter
+\def\SetTotalwidth{\advance\linewidth by \@totalleftmargin
+	\@totalleftmargin=0pt}
+\makeatother
+
+
+\pagestyle{headandfoot}
+\firstpageheader{BI 300: Evolution}{}{\ifprintanswers\textbf{KEY}\else Name: \enspace \makebox[2.5in]{\hrulefill}\fi}
+\runningheader{}{}{\footnotesize{pg. \thepage}}
+\footer{}{}{}
+\runningheadrule
+
+\newcommand*\AnswerBox[2]{%
+	\parbox[t][#1]{0.92\textwidth}{%
+		\begin{solution}#2\end{solution}}
+	\vspace{\stretch{1}}
+}
+
+\newenvironment{AnswerPage}[1]
+{\begin{minipage}[t][#1]{0.92\textwidth}%
+		\begin{solution}}
+		{\end{solution}\end{minipage}
+	\vspace{\stretch{1}}}
+
+\newlength{\basespace}
+\setlength{\basespace}{5\baselineskip}
+
+\newcommand{\fst}{$F_{\mathrm{ST}}$}
+
+
+\begin{document}
+%\thispagestyle{firstpage}
+
+\subsection*{Fixation index \fst{} (\numpoints\ points)}
+
+The fixation index $(F_\mathrm{ST})$ is useful for estimating the amount of genetic structuring and gene flow among populations. \fst{} can be calculated by several related equations. The equations you need for this exercise are,
+\begin{multicols}{2}
+\noindent	
+\begin{equation}
+F_\mathrm{ST} = \dfrac{2pq-\sum c_i2p_iq_i}{2pq},
+\end{equation}
+
+%\[F_\mathrm{ST} = \dfrac{2pq-\sum c_i2p_iq_i}{2pq}\]
+	
+	\columnbreak
+	
+\noindent	
+\begin{equation}
+F_\mathrm{ST} = \dfrac{1}{1+4N_em},
+\end{equation}%\[F_\mathrm{ST} = \dfrac{1}{1+4N_em}, \]
+\end{multicols}
+
+where $p$ is the frequency of the first allele, $q$ is the frequency of the second allele, $c_i$ is the contribution of each population to the total (the “weight” of each sample), $N_e$ is effective population size, and $m$ is the migration rate.
+
+Be sure to review the slides and your lecture notes to understand how to calculate the sample weights and mean heterozygosity when sample sizes are unequal.
+
+\textbf{Round your final answers to three digits after the decimal point except for the final question. Show your work for each question!} You may use a spreadsheet to set up the calculations; if you do then upload it with your answers to show your work.
+
+\subsubsection*{Problem set}
+
+\begin{questions}
+	\question[4]
+	
+	Calculate \fst{} for populations \textsc{a} and \textsc{b}.
+
+	\begin{multicols}{2}
+	
+		\begin{tabular}{rccc}
+			\toprule
+			& $N$ & $p$ & $q$ \tabularnewline
+			\midrule
+			A & 50 & 0.44 & 0.56 \tabularnewline
+			B & 50 & 0.72 & 0.28 \tabularnewline
+			\bottomrule
+		\end{tabular}
+		
+		\columnbreak
+		
+		\ifprintanswers \fst{} $= 0.080$ \else \phantom{\fst{} $= 0.080$} \fi
+	\end{multicols}
+	
+	
+
+\question[4]\label{q:migration}
+
+Calculate \fst{} for populations \textsc{a}, \textsc{b}, \textsc{c}, and \textsc{d}.
+
+
+\begin{multicols}{2}
+	\begin{tabular}{rccc}
+	\toprule
+  & $N$ & $p$  & $q$ \tabularnewline
+  \midrule
+A & 50  & 0.44 & 0.56 \tabularnewline
+B & 50  & 0.72 & 0.28 \tabularnewline
+C & 50  & 0.20 & 0.80 \tabularnewline
+D & 50  & 0.16 & 0.84 \tabularnewline
+\bottomrule
+\end{tabular}
+
+\columnbreak
+
+\ifprintanswers \fst{} $= 0.212$ \else \phantom{\fst{} $= 0.212$} \fi
+
+\end{multicols}
+
+\question[4]\label{q:unequal}
+
+Calculate \fst{} for populations \textsc{a}, \textsc{b}, and \textsc{c}.
+
+
+\begin{multicols}{2}
+	\begin{tabular}{rccc}
+	\toprule
+	& $N$ & $p$  & $q$ \tabularnewline
+	\midrule
+	A & 40  & 0.81 & 0.19 \tabularnewline
+	B & 100 & 0.27 & 0.73 \tabularnewline
+	C & 60  & 0.35 & 0.65 \tabularnewline
+	\bottomrule
+\end{tabular}
+
+\columnbreak
+
+\ifprintanswers \fst{} $= 0.178$ \else \phantom{\fst{} $= 0.178$} \fi
+
+\end{multicols}
+	
+\newpage
+
+The last two questions require you to algebraically rearrange equation~(2) above to solve for $m$ or $N_e$.
+
+\textsc{Hint:} use $F_\mathrm{ST} = 0.2$ and $N_e = 100$ or $m = 0.01$ as needed to test your rearranged equation. Using $F_\mathrm{ST} = 0.2$ and $N_e = 100$ should give you $m = 0.01$. Using $F_\mathrm{ST} = 0.2$ and $m = 0.01$ should give you $N_e = 100$. If so, then you are ready to proceed to the last two questions. If not, find and fix your mistake(s).
+
+\question[4]
+Use the \fst{} value you calculated for question~\ref{q:migration} and $N_e = 2,200$ individuals to estimate the migration rate, $m$. 
+
+\ifprintanswers 
+	$m = 0.000422384$ \quad $4.22 \times 10^{-4}$ \hfill $m = \dfrac{1-F_{ST}}{4F_{ST}N_e}$
+	
+	\vspace{2\baselineskip} 
+\else 
+	\vspace{3\baselineskip}
+\fi
+
+\question[4]
+Use the \fst{} value you calculated for question~\ref{q:unequal} and $m = 0.000005\ (5\times 10^{-6})$ to estimate the effective population size, $N_e$. Round your answer to the nearest whole individual.
+
+\ifprintanswers 
+	$N_e = 230,898$ \hfill $N_e = \dfrac{1-F_{ST}}{4F_{ST}m}$\newline
+	\vspace{\baselineskip}
+\else 
+	\vspace{2\baselineskip} 
+\fi
+
+\end{questions}
+
+
+\end{document}  
