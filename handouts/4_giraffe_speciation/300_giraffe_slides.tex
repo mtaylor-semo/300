@@ -1,0 +1,386 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[t]{beamer}
+
+%%%% HANDOUTS For online Uncomment the following four lines for handout
+%\documentclass[t,handout]{beamer}  %Use this for handouts.
+%\usepackage{handoutWithNotes}
+%\includeonlylecture{student}
+%\pgfpagesuselayout{3 on 1 with notes}[letterpaper,border shrink=5mm]
+%	\setbeamercolor{background canvas}{bg=black!5}
+
+
+%%% Including only some slides for students.
+%%% Uncomment the following line. For the slides,
+%%% use the labels shown below the command.
+
+%% For students, use \lecture{student}{student}
+%% For mine, use \lecture{instructor}{instructor}
+
+% FONTS
+\usepackage{fontspec}
+\def\mainfont{Linux Biolinum O}
+\setmainfont[Ligatures={Common, TeX}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={Proportional, OldStyle}]{\mainfont}
+%\setmonofont[Scale=MatchLowercase]{Inconsolata} 
+\setsansfont[Scale=MatchLowercase]{Linux Biolinum O} 
+\usepackage{microtype}
+
+\usepackage{graphicx}
+	\graphicspath{%
+	{/Users/goby/Pictures/teach/300/lectures/}%
+	{/Users/goby/Pictures/teach/163/common/}} % set of paths to search for images
+
+\usepackage{amsmath,amssymb}
+
+\usepackage{booktabs}
+\usepackage{multicol}
+%	\setlength{\columnsep=1em}
+
+
+%\usepackage{textcomp}
+%\usepackage{setspace}
+\usepackage{tikz}
+	\tikzstyle{every picture}+=[remember picture,overlay]
+\usetikzlibrary{positioning}
+\usetikzlibrary{calc,shapes.callouts,shapes.arrows}
+\newcommand{\bubblethis}[2]{
+    \tikz[remember picture,baseline]{\node[anchor=base,inner sep=0,outer sep=0]%
+    (#1) {\phantom{#1}};\node[overlay,cloud callout,callout relative pointer={(0.2cm,-0.7cm)},%
+    aspect=2.5,fill=yellow!90] at ($(#1.north)+(-0.5cm,1.6cm)$) {#2};}%
+}%
+
+\mode<presentation>
+{
+  \usetheme{Lecture}
+  \setbeamercovered{invisible}
+  \setbeamertemplate{items}[square]
+}
+
+\usepackage{xcolor}
+\definecolor{giraffe_blue}{HTML}{5991db}
+
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\beamer@calculateheadfoot}{\advance\footheight by 4pt}{\advance\footheight by 0pt}{}{}
+\makeatother
+
+\begin{document}
+
+{
+\setbeamercolor{background canvas}{bg=giraffe_blue}
+\begin{frame}[t]{\textcolor{white}{\Huge Giraffes: one species or many?}}
+
+\vfilll
+
+\includegraphics[width=\linewidth]{giraffe_splash}	
+\end{frame}
+}
+
+\begin{frame}[t,plain]
+\begin{multicols}{2}
+
+Giraffes have a patchy distribution across western, eastern-central and southern Africa.
+
+\medskip
+
+The distribution may be remnants of a once wider distribution.
+
+\bigskip
+
+\highlight{Giraffes tend to have a distinct coat pattern specific to each region.}
+
+\columnbreak
+
+\includegraphics[width=\linewidth]{giraffe_range}
+\end{multicols}
+
+\end{frame}
+
+
+\begin{frame}[t, plain]{Phenotypic variation or geographic correlation?}
+\centering
+\includegraphics[width=0.98\linewidth]{giraffe_patterns}
+\end{frame}
+
+\begin{frame}[t]
+
+\hfill\includegraphics[height=0.9\textheight]{patterns_geography}
+
+\begin{tikzpicture}
+\node (a) at (1, 4) [anchor=west] {\large 35 mt\textsc{dna} haplotypes};
+
+\node (b) [below = of a.west, anchor = west]  {\large 6 regions};
+
+\node (c) [below = of b.west, anchor = west]  {\large 5 coat patterns};
+
+\end{tikzpicture}
+	
+\end{frame}
+
+\begin{frame}[t]{Analyze the data and develop a hypothesis.}
+
+\hangpara Obtain the \textsc{dna} sequences
+
+\hangpara Align the sequences
+
+\hangpara Perform the phylogenetic analysis
+
+\hangpara Interpret the phylogenetic tree
+
+\hangpara Estimate the number of species based on the tree.
+
+\end{frame}
+
+\begin{frame}[t]{The \textsc{dna} sequences are in \textsc{fasta} format.}
+
+\vspace{-\baselineskip}
+
+\hangpara \texttt{>pattern3\_h3\newline
+ATGATCAACATCCGAAAGTCCCACCCACTAATAAAAATCGTAAATAACGC\newline
+ACTAATCGATCTACCAGCCCCATCAAATATCTCATCATGATGAAACTTCG\newline
+GCTCCCTACTAGGCATCTGCCTCATTTTACAAATTCTAAC}
+
+\hangpara \texttt{>pattern2\_h29\newline
+ATGATCAACATCCGAAAGTCCCACCCACTAATAAAAATCGTAAATAACGC\newline
+ACTAATCGATCTACCAGCCCCATCAAATATCTCATCATGATGAAACTTCG\newline
+GCTCCCTACTAGGCATCTGTCTCATCTTACAAATCCTAAC}
+
+\hangpara \texttt{>pattern5\_h11\newline
+ATGATCAACATCCGAAAGTCCCACCCACTAATAAAAATCGTAAATAACGC\newline
+ACTAATCGATCTACCAGCCCCATCAAATATCTCATCATGATGAAACTTCG\newline
+GCTCCCTACTAGGCATTTGTCTCATTTTACAAATTCTAAC}
+
+\bigskip
+
+etc\dots
+
+\end{frame}
+
+\begin{frame}[t]{The aligned sequences will be in Clustal format.}
+
+\vspace{-\baselineskip}
+
+\hangpara \texttt{pattern3\_h3\ \ \  ATGATCAACATCCGAAAGTCCCACCCACTAATAAAAATCGT\newline
+pattern2\_h29\ \  ATGATCAACATCCGAAAGTCCCACCCACTAATAAAAATCGT\newline
+pattern5\_h11\ \ ATGATCAACATCCGAAAGTCCCACCCACTAATAAAAATCGT
+}
+
+\bigskip
+
+etc\dots
+
+\end{frame}
+
+{
+\setbeamercolor{background canvas}{bg=giraffe_blue}
+\begin{frame}[t]{\textcolor{white}{Upload your results for Part~1 to the drop box.}}
+
+\vfilll
+
+\includegraphics[width=\linewidth]{giraffe_splash}	
+\end{frame}
+}
+
+{\setbeamercolor{background canvas}{bg=black}
+\begin{frame}
+\end{frame}
+}
+
+{
+\setbeamercolor{background canvas}{bg=giraffe_blue}
+\begin{frame}[t]{\textcolor{white}{\Huge Giraffes: one species or many?}}
+
+\vfilll
+
+\includegraphics[width=\linewidth]{giraffe_splash}	
+\end{frame}
+}
+
+\begin{frame}[t]
+
+\hspace{5em}\includegraphics[height=0.9\textheight]{example_result}
+
+\begin{tikzpicture}
+\onslide<2-3>{
+\draw [ultra thick] (8,1) -- (8,4.4) node [midway, right] {Species 1};
+
+\draw [ultra thick] (8,4.55) -- (8,6.1) node [midway, right] {Species 2};
+
+\draw [ultra thick] (8,6.35) -- (8,9) node [midway, right] {Species 3};
+}
+
+\onslide<3>{
+\draw [<-, ultra thick] (7.5, 6.24) -- (8.05, 6.24) node [right] {Species 4?};
+}
+\end{tikzpicture}
+
+\end{frame}
+
+{
+\setbeamercolor{background canvas}{bg=giraffe_blue}
+\begin{frame}[t]{\textcolor{white}{\Huge But wait\dots \hfill there's more!}}
+
+\vfilll
+
+\includegraphics[width=\linewidth]{giraffe_splash}	
+\end{frame}
+}
+
+\begin{frame}[t]
+
+\hfill\includegraphics[height=0.9\textheight]{patterns_geography}
+
+\begin{tikzpicture}
+\node (a) at (1, 4) [anchor=west] {\large \highlight{Microsatellite \textsc{dna}}};
+
+\node (b) at (1, 4) [below = of a.west, anchor = west] {\large 35 mt\textsc{dna} haplotypes};
+
+\node (c) [below = of b.west, anchor = west]  {\large 6 regions};
+
+\node (d) [below = of c.west, anchor = west]  {\large 5 coat patterns};
+
+\end{tikzpicture}
+	
+\end{frame}
+
+\begin{frame}[t]{\onslide*<1>{Microsatellites are segments of repeated nucleotides.}\onslide*<2>{Their microsatellite results are intriguing.}}
+\begin{multicols}{2}
+\includegraphics[width=\linewidth]{microsat_slippage}
+
+\columnbreak
+
+\onslide*<2>{
+\includegraphics[width=\linewidth]{microsat_result}
+}
+
+\end{multicols}
+
+\visible<2>{
+\begin{tikzpicture}
+\filldraw [fill=white,opacity=0.75, draw opacity=0] (0,2) rectangle (6,7.5);
+\end{tikzpicture}
+}
+\vfilll
+
+
+
+\tiny Modified from Ellgren, H. Trends in Genetics 16: 551.
+\end{frame}
+
+{\setbeamercolor{background canvas}{bg=black}
+\begin{frame}
+\end{frame}
+}
+
+{
+\setbeamercolor{background canvas}{bg=giraffe_blue}
+\begin{frame}[t]{\textcolor{white}{\Huge Giraffes: one species or many?}}
+
+\vfilll
+
+\includegraphics[width=\linewidth]{giraffe_splash}	
+\end{frame}
+}
+
+\begin{frame}[t]{What did all y'all hypothesize?}
+
+\vspace{-0.5\baselineskip}
+\centering
+\includegraphics<1>[width=\linewidth]{num_giraffe_spp1}
+\includegraphics<2>[width=\linewidth]{num_giraffe_spp2}
+
+\end{frame}
+
+
+\begin{frame}[t]
+\begin{multicols}{2}
+
+\hangpara Very strong agreement between coat pattern and microsat loci.
+
+\hangpara Little to no evidence of gene flow.
+
+\hangpara Strong support for 5 species, at least.
+
+\hangpara Is there a 6th species? More than 6?
+
+\columnbreak
+
+\noindent\includegraphics[width=\linewidth]{microsat_result}
+
+\end{multicols}
+
+\vfilll
+
+\tinyfill Brown et al.~2007.
+\end{frame}
+
+\begin{frame}[t]
+\centering
+\includegraphics[height=0.88\textheight]{structure1}
+
+\vfilll
+
+\tinyfill Brown et al.~2007.
+
+\end{frame}
+
+\begin{frame}[t]
+\centering
+\includegraphics[height=0.88\textheight]{structure2}
+
+\vfill
+
+\tinyfill Brown et al.~2007.
+
+\end{frame}
+
+{
+\setbeamercolor{background canvas}{bg=giraffe_blue}
+\begin{frame}[t]{\textcolor{white}{\Huge But wait\dots \hfill there's more!}}
+
+\vfilll
+
+\includegraphics[width=\linewidth]{giraffe_splash}	
+\end{frame}
+}
+
+\begin{frame}[t]
+\centering
+\includegraphics[height=0.88\textheight]{fennessy_result}
+
+\begin{tikzpicture}
+\node at (-2,5.5) [align = left] {Fennessy et al.~2016\\ argue four species.};
+\end{tikzpicture}
+
+%\vfilll
+\vfill
+
+\tinyfill Fennessy et al.~2016
+
+\end{frame}
+
+\begin{frame}
+\begin{tikzpicture}
+\node [inner sep=0] at (7.85,-2.9) {\includegraphics[width=9cm]{image16}};
+
+\node [inner sep=0] at (2.2,-6.3) {\includegraphics[width=5cm]{image17}};
+
+\end{tikzpicture}
+
+\vfill
+
+\tinyfill Fennessy et al.~2016
+\end{frame}
+
+{
+\setbeamercolor{background canvas}{bg=giraffe_blue}
+\begin{frame}[t]{\textcolor{white}{\Huge Does it matter?}}
+
+\vfilll
+
+\includegraphics[width=\linewidth]{giraffe_splash}	
+\end{frame}
+}
+
+\end{document}
