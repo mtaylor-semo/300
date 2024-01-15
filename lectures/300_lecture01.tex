@@ -47,6 +47,7 @@
 \usepackage{setspace}
 \usepackage{tikz}
 	\tikzstyle{every picture}+=[remember picture,overlay]
+	\usetikzlibrary{trees}
 
 \mode<presentation>
 {
@@ -224,26 +225,90 @@ Voyage of the \textit{Beagle}
 }
 
 
-{
-\usebackgroundtemplate{\includegraphics[width=\paperwidth]{descent_with_modification} }
-\begin{frame}[t]{}
+%{
+%\usebackgroundtemplate{\includegraphics[width=\paperwidth]{descent_with_modification} }
+%\begin{frame}[t]{}
+%\end{frame}
+%}
+
+\begin{frame}[t]{\highlight{Descent with modification} means that}
+
+\vspace{-\baselineskip}
+\hangpara all organisms \highlight{descend} from a common ancestor, and
+
+\hangpara the descendants are \highlight{modified} from the ancestral form.
+
+\centering
+\begin{tikzpicture}
+%	[every node/.style={orange6, rounded corners},
+	[every node/.append style={rounded corners}]
+	\node at (0,-3.5) [color=orange7] {\textbf{ancestor}}
+		[edge from parent fork up, grow=up,
+		edge from parent/.style={very thick, draw}]
+		child [sibling distance=20mm] {
+			child {node [color=green6] {\textbf{desc. \textsc{c}}}}
+			child {node [color=blue7] {\textbf{desc. \textsc{b}}}}
+		}
+		child [sibling distance=40mm] {
+			child {node [color=orange6] {\textbf{desc. \textsc{a} }}}
+			%child {node {D}}
+		};
+\end{tikzpicture}
+
 \end{frame}
-}
+
+
+
 
 \begin{frame}
-%\begin{tabular}{cc}
 \centering
-\includegraphics[width=\textheight]{feline_phylogeny} %&
-%\includegraphics[width=0.3\textwidth]{domestic_cat_phylogeny} \\
-%\end{tabular}
-\vfilll
+\includegraphics[height=0.95\textheight]{feline_phylogeny}
+
+\tinyfill
+Johnson et~al.~2006. Science 311: 76.
+
 \end{frame}
 
-{
-\usebackgroundtemplate{\includegraphics[width=\paperwidth]{adaptation_by_natural_selection} }
-	\begin{frame}[t]{}
+%{
+%\usebackgroundtemplate{\includegraphics[width=\paperwidth]{adaptation_by_natural_selection} }
+%	\begin{frame}[t]{}
+%\end{frame}
+%}
+
+% Cycle of Natural Selection
+\begin{frame}[c]
+	\begin{center}
+	
+	\vspace{1cm}
+	\begin{tikzpicture}
+			[scale=0.6, transform shape,
+			myNode/.style={circle, inner sep=2mm, minimum size=4cm, draw=black, fill=blue3},
+			myLine/.style={line width=2pt, draw=black!70!white, ->},
+			textNode/.style={text width=3.5cm, align=flush center, font=\Large}]
+		\node (adapt) at (0,0) {\textcolor{orange6}{\textbf{\Huge Adaptation}}};
+		\foreach \r in {60,120,...,360} {%
+			\begin{scope}[shift={(\r:6)}]
+				\node[myNode] (n\r) {};
+			\end{scope};
+		};
+		\draw [myLine] (n60) to (n360);
+		\draw [myLine] (n360) to (n300);
+		\draw [myLine] (n300) to (n240);
+		\draw [myLine] (n240) to (n180);
+		\draw [myLine] (n180) to (n120);
+		\draw [myLine] (n120) to (n60);
+	
+		\node [textNode] at (n60) {Individuals \highlight{vary} in populations};
+		\node [textNode] at (n360) {Populations \highlight{overproduce} offspring};
+		\node [textNode] at (n300) {Not all \highlight{survive}};
+		\node [textNode] at (n240) {\highlight{Traits} determine survival};
+		\node [textNode] at (n180) {More survival, \highlight{more offspring}};
+		\node [textNode] at (n120) {Better traits \highlight{spread} through population};
+	
+	\end{tikzpicture}
+	
+	\end{center}
 \end{frame}
-}
 
 \begin{frame}[t]{What was missing from Darwin's concepts?}
 \vspace{-\baselineskip}
@@ -290,6 +355,10 @@ There is grandeur in this view of life, with its several powers, having been ori
 \hangpara speciation occurs when populations become reproductively isolated, and
 
 \hangpara macroevolution is the same process as microevolution.
+
+\pause
+
+\hangpara \highlight{So, what is microevolution?}
 
 
 \end{frame}
