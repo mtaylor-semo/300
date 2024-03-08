@@ -3,7 +3,7 @@
 
 \documentclass[12pt, addpoints, hidelinks]{exam}
 
-%\printanswers
+\printanswers
 
 \usepackage{fontspec}
 \setmainfont[Ligatures={TeX, Common}, BoldFont={* Bold}, ItalicFont={* Italic}, BoldItalicFont={* BoldItalic}, Numbers={OldStyle,Proportional}]{Linux Libertine O}
@@ -132,18 +132,23 @@ Be sure to review the slides and your lecture notes to understand how to calcula
 
 	\begin{multicols}{2}
 	
-		\begin{tabular}{rccc}
+		\begin{tabular}{rcccc}
 			\toprule
-			& $N$ & $p$ & $q$ \tabularnewline
+			& \ifprintanswers$c_i$\else$N$\fi & $p$ & $q$ & \ifprintanswers $c_i2p_iq_i$\else \phantom{fred}\fi \tabularnewline
 			\midrule
-			A & 50 & 0.44 & 0.56 \tabularnewline
-			B & 50 & 0.72 & 0.28 \tabularnewline
+			A & \ifprintanswers0.5 \else 50\fi & 0.44 & 0.56 &  \ifprintanswers 0.2464 \fi \tabularnewline
+			B & \ifprintanswers0.5 \else 50\fi & 0.72 & 0.28 & \ifprintanswers 0.2016 \tabularnewline
 			\bottomrule
+			
 		\end{tabular}
-		
+
 		\columnbreak
 		
-		\ifprintanswers \fst{} $= 0.080$ \else \phantom{\fst{} $= 0.080$} \fi
+		\ifprintanswers
+
+			 \fst{}  =$ 0.080$ 
+		 
+		 \else \phantom{\fst{} $= 0.080$} \fi
 	\end{multicols}
 	
 	
@@ -167,7 +172,9 @@ D & 50  & 0.16 & 0.84 \tabularnewline
 
 \columnbreak
 
-\ifprintanswers \fst{} $= 0.212$ \else \phantom{\fst{} $= 0.212$} \fi
+\ifprintanswers  As above, but $c_i$ for each pop is 0.25.
+
+ \fst{} $= 0.212$ \else \phantom{\fst{} $= 0.212$} \fi
 
 \end{multicols}
 
@@ -178,18 +185,22 @@ Calculate \fst{} for populations \textsc{a}, \textsc{b}, and \textsc{c}.
 
 \begin{multicols}{2}
 	\begin{tabular}{rccc}
-	\toprule
-	& $N$ & $p$  & $q$ \tabularnewline
-	\midrule
-	A & 40  & 0.81 & 0.19 \tabularnewline
-	B & 100 & 0.27 & 0.73 \tabularnewline
-	C & 60  & 0.35 & 0.65 \tabularnewline
-	\bottomrule
-\end{tabular}
+		\toprule
+		& $N$ & $p$  & $q$ \tabularnewline
+		\midrule
+		A & 40  & 0.81 & 0.19 \tabularnewline
+		B & 100 & 0.27 & 0.73 \tabularnewline
+		C & 60  & 0.35 & 0.65 \tabularnewline
+		\bottomrule
+	\end{tabular}
 
 \columnbreak
 
-\ifprintanswers \fst{} $= 0.178$ \else \phantom{\fst{} $= 0.178$} \fi
+\ifprintanswers 
+
+As above but weights are 0.2, 0.5. 0.3 
+
+\fst{} $= 0.178$ \else \phantom{\fst{} $= 0.178$} \fi
 
 \end{multicols}
 	
@@ -219,6 +230,119 @@ Use the \fst{} value you calculated for question~\ref{q:unequal} and $m = 0.0000
 \else 
 	\vspace{2\baselineskip} 
 \fi
+
+\ifprintanswers
+
+\newpage
+
+\begin{multicols}{2}
+
+\textbf{Problem 1.}
+
+	\begin{tabular}{rccc}
+	\toprule
+	& $c_i$ $p$ & $q$  \tabularnewline
+	\midrule
+	A & 0.5 & 0.44 & 0.56  \tabularnewline
+	B & 0.5 & 0.72 & 0.28  \tabularnewline
+	\bottomrule
+
+\end{tabular}
+
+			$2pq$ overall:
+
+			$p = (0.5)(0.44) + (0.5)(0.72) = 0.22 + 0.36 = 0.58$
+
+			$q = 1 - p = 1 - 0.58 = 0.42$
+
+			$2pq = 2(0.58)(0.42) = 0.4872) $ (overall)
+
+			$c_i2p_iq_i = c_i \times p \times q$ for each row.
+			
+			$c_A2p_Aq_A = (0.5)(2)(0.44)(0.56) = 0.2464$
+			
+			$c_B2p_Bq_B = (0.5)(2)(0.72)(0.28) = 0.2016$
+
+			$\sum c_i 2p_iq_i = 0.2464 + 0.2016 = 0.448$ 
+
+			 \fst{} $\dfrac{0.4872 - 0.448}{0.4872} = 0.080$ 
+
+\end{multicols}
+
+\vspace{2\baselineskip}
+
+\begin{multicols}{2}
+\textbf{Problem 2}
+
+	\begin{tabular}{rccc}
+	\toprule
+	& $c_i$ & $p$  & $q$ \tabularnewline
+	\midrule
+	A & 0.25  & 0.44 & 0.56 \tabularnewline
+	B & 0.25  & 0.72 & 0.28 \tabularnewline
+	C & 0.25  & 0.20 & 0.80 \tabularnewline
+	D & 0.25  & 0.16 & 0.84 \tabularnewline
+	\bottomrule
+\end{tabular}
+
+			$2pq$ overall:
+
+			$p = (0.25)(0.44) + (0.25)(0.72) + (0.25)(0.20) + (0.25)(0.16) = 0.38$
+			
+			$q = 1 - 0.38 = 0.62$
+			
+			$2pq = 2(0.38)(0.62) = 0.4712$ (overall)
+			
+			$c_A2p_Aq_A = (0.25)(2)(0.44)(0.56) = 0.1232$
+			
+			$c_B2p_Bq_B = (0.25)(2)(0.72)(0.28) = 0.1008$
+			
+			$c_C2p_Cq_C = (0.25)(2)(0.2)(0.8) = 0.08$
+			
+			$c_D2p_Dq_D = (0.25)(2)(0.16)(0.84) = 0.0672$
+			
+			$\sum c_i 2p_iq_i = 0.1232 + 0.1008 + 0.08 + 0.0672 = 0.3712$
+			
+			  \fst{} $\dfrac{0.4712 - 0.3712}{0.4712} = 0.212$ 
+\end{multicols}
+
+\vspace{2\baselineskip}
+
+\begin{multicols}{2}
+\textbf{Problem 3}
+
+	\begin{tabular}{rccc}
+	\toprule
+	& $c_i$ & $p$  & $q$ \tabularnewline
+	\midrule
+	A & 0.2  & 0.81 & 0.19 \tabularnewline
+	B & 0.5 & 0.27 & 0.73 \tabularnewline
+	C & 0.3  & 0.35 & 0.65 \tabularnewline
+	\bottomrule
+\end{tabular}
+
+			$2pq$ overall:
+
+$p = (0.2)(0.81) + (0.5)(0.27) + (0.3)(0.35) = 0.402$
+
+$q = 1 - 0.402 = 0.598$
+
+$2pq = 2(0.402)(0.598) = 0.480792$ (overall)
+
+			$c_A2p_Aq_A = (0.2)(2)(0.81)(0.19) = 0.06156$
+
+			$c_B2p_Bq_B = (0.5)(2)(0.27)(0.73) = 0.1971$
+
+			$c_C2p_Cq_C = (0.3)(2)(0.35)(0.65) = 0.1365$
+
+			$\sum c_i 2p_iq_i = 0.06156 + 0.1971 + 0.1365 = 0.39516$
+			
+			 \fst{} $\dfrac{0.480792 - 0.39516}{0.480792} = 0.178$ 
+\end{multicols}
+
+
+\fi
+
 
 \end{questions}
 
