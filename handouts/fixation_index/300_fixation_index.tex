@@ -132,12 +132,12 @@ Be sure to review the slides and your lecture notes to understand how to calcula
 
 	\begin{multicols}{2}
 	
-		\begin{tabular}{rcccc}
+		\begin{tabular}{rccc}
 			\toprule
-			& \ifprintanswers$c_i$\else$N$\fi & $p$ & $q$ & \ifprintanswers $c_i2p_iq_i$\else \phantom{fred}\fi \tabularnewline
+			& $N$ & $p$ & $q$   \tabularnewline
 			\midrule
-			A & \ifprintanswers0.5 \else 50\fi & 0.44 & 0.56 &  \ifprintanswers 0.2464 \fi \tabularnewline
-			B & \ifprintanswers0.5 \else 50\fi & 0.72 & 0.28 & \ifprintanswers 0.2016 \tabularnewline
+			A & 50 & 0.44 & 0.56  \tabularnewline
+			B & 50 & 0.72 & 0.28  \tabularnewline
 			\bottomrule
 			
 		\end{tabular}
@@ -147,6 +147,8 @@ Be sure to review the slides and your lecture notes to understand how to calcula
 		\ifprintanswers
 
 			 \fst{}  =$ 0.080$ 
+			 
+			 Weights both equal 0.5. See last page for detailed work.
 		 
 		 \else \phantom{\fst{} $= 0.080$} \fi
 	\end{multicols}
@@ -172,10 +174,11 @@ D & 50  & 0.16 & 0.84 \tabularnewline
 
 \columnbreak
 
-\ifprintanswers  As above, but $c_i$ for each pop is 0.25.
+\ifprintanswers 
 
  \fst{} $= 0.212$ \else \phantom{\fst{} $= 0.212$} \fi
 
+	Weights all equal 0.25. See last page for detailed work.
 \end{multicols}
 
 \question[4]\label{q:unequal}
@@ -198,9 +201,11 @@ Calculate \fst{} for populations \textsc{a}, \textsc{b}, and \textsc{c}.
 
 \ifprintanswers 
 
-As above but weights are 0.2, 0.5. 0.3 
+
 
 \fst{} $= 0.178$ \else \phantom{\fst{} $= 0.178$} \fi
+
+Weights are 0.2, 0.5. 0.3. See last page for detailed work.
 
 \end{multicols}
 	
@@ -214,7 +219,7 @@ The last two questions require you to algebraically rearrange equation~(2) above
 Use the \fst{} value you calculated for question~\ref{q:migration} and $N_e = 2,200$ individuals to estimate the migration rate, $m$. 
 
 \ifprintanswers 
-	$m = 0.000422384$ \quad $4.22 \times 10^{-4}$ \hfill $m = \dfrac{1-F_{ST}}{4F_{ST}N_e}$
+	$m = 0.000422384$  \hfill $m = \dfrac{1-F_{ST}}{4F_{ST}N_e}$ \hspace{1em} so \hspace{1em} $m = \dfrac{1 - 0.212}{4(0.212)(2,200)} = 4.22 \times 10^{-4}$
 	
 	\vspace{2\baselineskip} 
 \else 
@@ -225,7 +230,9 @@ Use the \fst{} value you calculated for question~\ref{q:migration} and $N_e = 2,
 Use the \fst{} value you calculated for question~\ref{q:unequal} and $m = 0.000005\ (5\times 10^{-6})$ to estimate the effective population size, $N_e$. Round your answer to the nearest whole individual.
 
 \ifprintanswers 
-	$N_e = 230,898$ \hfill $N_e = \dfrac{1-F_{ST}}{4F_{ST}m}$\newline
+	$N_e = 230,898$ \hfill $N_e = \dfrac{1-F_{ST}}{4F_{ST}m}$ \quad so \quad $N_e = \dfrac{1 - 0.178}{4(0.178)(0.000005)} = 230,898$
+
+	
 	\vspace{\baselineskip}
 \else 
 	\vspace{2\baselineskip} 
