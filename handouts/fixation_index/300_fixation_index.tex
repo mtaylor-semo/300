@@ -14,7 +14,7 @@
 \usepackage{geometry}
 \geometry{letterpaper, bottom=1in}                   
 %\geometry{landscape}                % Activate for for rotated page geometry
-\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indentd
 \usepackage[fleqn]{amsmath}
 %\usepackage{amssymb}
 %\usepackage{mathtools}
@@ -144,12 +144,12 @@ Be sure to review the slides and your lecture notes to understand how to calcula
 
 		\columnbreak
 		
-		\ifprintanswers
-
+		\ifprintanswers{%
+			%
 			 \fst{}  =$ 0.080$ 
-			 
-			 Weights both equal 0.5. See last page for detailed work.
-		 
+			 %
+			 Weights both equal 0.5. See last page for detailed work.}
+		 %
 		 \else \phantom{\fst{} $= 0.080$} \fi
 	\end{multicols}
 	
@@ -174,11 +174,15 @@ D & 50  & 0.16 & 0.84 \tabularnewline
 
 \columnbreak
 
-\ifprintanswers 
+\ifprintanswers{%
+%
+ \fst{} $= 0.212$ 
 
- \fst{} $= 0.212$ \else \phantom{\fst{} $= 0.212$} \fi
-
-	Weights all equal 0.25. See last page for detailed work.
+ Weights all equal 0.25. See last page for detailed work.
+ 
+}\else \phantom{\fst{} $= 0.212$} \fi
+%
+	
 \end{multicols}
 
 \question[4]\label{q:unequal}
@@ -201,11 +205,11 @@ Calculate \fst{} for populations \textsc{a}, \textsc{b}, and \textsc{c}.
 
 \ifprintanswers 
 
-
-
-\fst{} $= 0.178$ \else \phantom{\fst{} $= 0.178$} \fi
+\fst{} $= 0.178$ 
 
 Weights are 0.2, 0.5. 0.3. See last page for detailed work.
+
+\else \phantom{\fst{} $= 0.178$} \fi
 
 \end{multicols}
 	
