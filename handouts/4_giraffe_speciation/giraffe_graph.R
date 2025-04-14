@@ -19,9 +19,9 @@ part2_colors <- c(plot_colors[7], plot_colors[9])
 
 label_size = 13 # For x- and y-axis labels
 
-part1 <- c(1, 0, 6, 7, 1, 1, 3, 0, 0, 2) # after part 1
+part1 <- c(1, 1, 2, 6, 2, 0, 0, 0, 1, 5) # after part 1
 #part <- c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10+) # to help me add values to the parts
-part2 <- c(0, 1, 1, 5, 8, 4, 0, 0, 0, 1) # after part 2
+part2 <- c(0, 0, 0, 5, 7, 3, 0, 1, 0, 2) # after part 2
 max_val <- max(part1, part2)
 
 giraffe_spp <- c("1","2","3","4","5", "6", "7", "8", "9", "10+")
