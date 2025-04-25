@@ -1,13 +1,13 @@
 %!TEX TS-program = lualatex
 %!TEX encoding = UTF-8 Unicode
 
-\documentclass[t]{beamer}
+%\documentclass[t]{beamer}
 
 %%%% HANDOUTS For online Uncomment the following four lines for handout
-%\documentclass[t,handout]{beamer}  %Use this for handouts.
-%\usepackage{handoutWithNotes}
-%\includeonlylecture{student}
-%\pgfpagesuselayout{3 on 1 with notes}[letterpaper,border shrink=5mm]
+\documentclass[t,handout]{beamer}  %Use this for handouts.
+\usepackage{handoutWithNotes}
+\includeonlylecture{student}
+\pgfpagesuselayout{3 on 1 with notes}[letterpaper,border shrink=5mm]
 
 \usefonttheme{professionalfonts}
 
@@ -166,54 +166,60 @@
 \end{frame}
 %%
 
-\begin{frame}{How many species of \textit{Homo} have been described?}
+\begin{frame}%{How many species of \textit{Homo} have been described?}
 
-\begin{multicols}{2}
-\textit{habilis} (2.3–1.4 \textsc{mya})*\\
-\textit{rudolfensis} (1.9)*\\
-\textit{ergaster} (1.9–1.4)\\
-\textit{georgicus} (1.8)\\
-\textit{erectus} (1.5–0.2)\\
-\textit{antecessor} (1.2–0.8)\\
-\textit{cepranensis} (0.9–0.8)\\
+\includegraphics[width=0.8\linewidth]{homo_species_list2}
 
-\columnbreak
+%\begin{multicols}{2}
+%\textit{habilis} (2.3–1.4 \textsc{mya})*\\
+%\textit{rudolfensis} (1.9)*\\
+%\textit{ergaster} (1.9–1.4)\\
+%\textit{georgicus} (1.8)\\
+%\textit{erectus} (1.5–0.2)\\
+%\textit{antecessor} (1.2–0.8)\\
+%\textit{cepranensis} (0.9–0.8)\\
+%
+%\columnbreak
+%
+%\textit{heidelbergensis} (0.6-0.3 \textsc{mya})\\
+%\textit{rhodesiensis} (0.3–0.12)\\
+%\textit{neanderthalensis} (0.4–0.04)\\
+%\textit{sapiens} (0.8–?)\\
+%\textit{floresiensis} (0.10–0.012)\\
+%Denisovans (0.5–0.03)\\
+%\end{multicols}
 
-\textit{heidelbergensis} (0.6-0.3 \textsc{mya})\\
-\textit{rhodesiensis} (0.3–0.12)\\
-\textit{neanderthalensis} (0.4–0.04)\\
-\textit{sapiens} (0.8–?)\\
-\textit{floresiensis} (0.10–0.012)\\
-Denisovans (0.5–0.03)\\
-\end{multicols}
 
+\tinyfill Martin et al.\,2024.  Evolutionary Anthropology 33e22018
 
-\vfilll
-
-\tiny * Australopithecines?
+%\tiny * Australopithecines?
 
 \end{frame}
 
 %%
 
-\begin{frame}{Many \textit{Homo} species are no longer recognized.}
-
-\includegraphics[width=\linewidth]{homo_jaw}
-
-\begin{tikzpicture}
-\node at (3.5,7) [text width=4.5cm]{\textit{capensis, dubius, leakeyi, kanamensis, mauritanicus, modjokertensis, pekinensis}};
-\end{tikzpicture}
-
-\end{frame}
+%\begin{frame}{Many \textit{Homo} species are no longer recognized.}
+%
+%\includegraphics[width=\linewidth]{homo_jaw}
+%
+%\begin{tikzpicture}
+%\node at (3.5,7) [text width=4.5cm]{\textit{capensis, dubius, leakeyi, kanamensis, mauritanicus, modjokertensis, pekinensis}};
+%\end{tikzpicture}
+%
+%\end{frame}
 
 %%
 
 \begin{frame}
 
 \centering
-\includegraphics[height=0.94\textheight]{futuyma_fig21-6}
+%\includegraphics[height=0.94\textheight]{futuyma_fig21-6}
 
-\tinyfill \futuyma{21.6}
+%\tinyfill \futuyma{21.6}
+
+\includegraphics[height=0.94\textheight]{homo_phylogeny}
+
+\tinyfill Martin et al.\,2024.  Evolutionary Anthropology 33e22018
 
 \end{frame}
 
